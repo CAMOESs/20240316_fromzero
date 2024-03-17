@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/plugins/vuetify.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** @format */\n\n// plugins/vuetify.js\nimport \"@mdi/font/css/materialdesignicons.css\";\nimport \"vuetify/styles\";\n//import { VDataTable } from 'vuetify/labs/VDataTable'\nimport { createVuetify } from \"vuetify\";\n// import * as labs from 'vuetify/labs/components'\n// import * as components_basics from 'vuetify/components'\nimport {\n  VCarouselItem,\n  VCarousel,\n  VProgressLinear,\n  VCardSubtitle,\n  VSelect,\n  VMenu,\n  VTable,\n  VAlert,\n  VAutocomplete,\n  VRadioGroup,\n  VRadio,\n  VRow,\n  VCol,\n  VTextField,\n  VTextarea,\n  VContainer,\n  VBtn,\n  VCard,\n  VCardActions,\n  VCardTitle,\n  VCardText,\n  VToolbar,\n  VToolbarTitle,\n  VList,\n  VListItem,\n  VListItemTitle,\n  VAvatar,\n  VIcon,\n  VTab,\n  VTabs,\n  VSheet,\n  VDialog,\n  VFileInput,\n  VImg,\n  VLayout,\n  VSpacer,\n  VApp,\n  VAppBar,\n  VForm,\n  VTooltip,\n  VSnackbar,\n  VNavigationDrawer,\n  VMain,\n  VDivider,\n  VCheckbox,\n  VWindow,\n  VWindowItem,\n  VPagination,\n  VSwitch,\n  VChip,\n} from \"vuetify/components\";\nimport * as directives from \"vuetify/directives\";\n\nexport default defineNuxtPlugin((nuxtApp) => {\n  const vuetify = createVuetify({\n    ssr: true,\n    // components: {\n    //   ...labs, ...components_basics,\n    //   /* VDataTable */\n    // },\n    components: {\n      VCarouselItem,\n      VCarousel,\n      VProgressLinear,\n      VCardSubtitle,\n      VSelect,\n      VMenu,\n      VTable,\n      VAlert,\n      VAutocomplete,\n      VRadioGroup,\n      VRadio,\n      VRow,\n      VCol,\n      VTextField,\n      VTextarea,\n      VContainer,\n      VBtn,\n      VCard,\n      VCardActions,\n      VCardTitle,\n      VCardText,\n      VToolbar,\n      VToolbarTitle,\n      VList,\n      VListItem,\n      VListItemTitle,\n      VAvatar,\n      VIcon,\n      VTab,\n      VTabs,\n      VSheet,\n      VDialog,\n      VFileInput,\n      VImg,\n      VLayout,\n      VSpacer,\n      VApp,\n      VAppBar,\n      VForm,\n      VTooltip,\n      VSnackbar,\n      VNavigationDrawer,\n      VMain,\n      VDivider,\n      VCheckbox,\n      VWindow,\n      VWindowItem,\n      VPagination,\n      VSwitch,\n      VChip,\n    },\n    directives,\n    //defaultSet: 'mdi',\n    // defaults: {\n    //   VDataTable: {\n    //     fixedHeader: true,\n    //     noDataText: 'Results not found',\n    //   },\n    // },\n  });\n\n  nuxtApp.vueApp.use(vuetify);\n});\n",
+      "start": 1709717376523,
+      "end": 1709717378150,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717378176,
+      "end": 1709717378176,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717378176,
+      "end": 1709717378176,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717378176,
+      "end": 1709717378177,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717378177,
+      "end": 1709717378177,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import \"@mdi/font/css/materialdesignicons.css\";\nimport \"vuetify/styles\";\nimport { createVuetify } from \"vuetify\";\nimport {\n  VCarouselItem,\n  VCarousel,\n  VProgressLinear,\n  VCardSubtitle,\n  VSelect,\n  VMenu,\n  VTable,\n  VAlert,\n  VAutocomplete,\n  VRadioGroup,\n  VRadio,\n  VRow,\n  VCol,\n  VTextField,\n  VTextarea,\n  VContainer,\n  VBtn,\n  VCard,\n  VCardActions,\n  VCardTitle,\n  VCardText,\n  VToolbar,\n  VToolbarTitle,\n  VList,\n  VListItem,\n  VListItemTitle,\n  VAvatar,\n  VIcon,\n  VTab,\n  VTabs,\n  VSheet,\n  VDialog,\n  VFileInput,\n  VImg,\n  VLayout,\n  VSpacer,\n  VApp,\n  VAppBar,\n  VForm,\n  VTooltip,\n  VSnackbar,\n  VNavigationDrawer,\n  VMain,\n  VDivider,\n  VCheckbox,\n  VWindow,\n  VWindowItem,\n  VPagination,\n  VSwitch,\n  VChip\n} from \"vuetify/components\";\nimport * as directives from \"vuetify/directives\";\nexport default defineNuxtPlugin((nuxtApp) => {\n  const vuetify = createVuetify({\n    ssr: true,\n    // components: {\n    //   ...labs, ...components_basics,\n    //   /* VDataTable */\n    // },\n    components: {\n      VCarouselItem,\n      VCarousel,\n      VProgressLinear,\n      VCardSubtitle,\n      VSelect,\n      VMenu,\n      VTable,\n      VAlert,\n      VAutocomplete,\n      VRadioGroup,\n      VRadio,\n      VRow,\n      VCol,\n      VTextField,\n      VTextarea,\n      VContainer,\n      VBtn,\n      VCard,\n      VCardActions,\n      VCardTitle,\n      VCardText,\n      VToolbar,\n      VToolbarTitle,\n      VList,\n      VListItem,\n      VListItemTitle,\n      VAvatar,\n      VIcon,\n      VTab,\n      VTabs,\n      VSheet,\n      VDialog,\n      VFileInput,\n      VImg,\n      VLayout,\n      VSpacer,\n      VApp,\n      VAppBar,\n      VForm,\n      VTooltip,\n      VSnackbar,\n      VNavigationDrawer,\n      VMain,\n      VDivider,\n      VCheckbox,\n      VWindow,\n      VWindowItem,\n      VPagination,\n      VSwitch,\n      VChip\n    },\n    directives\n    //defaultSet: 'mdi',\n    // defaults: {\n    //   VDataTable: {\n    //     fixedHeader: true,\n    //     noDataText: 'Results not found',\n    //   },\n    // },\n  });\n  nuxtApp.vueApp.use(vuetify);\n});\n",
+      "start": 1709717378177,
+      "end": 1709717378199,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/plugins/vuetify.ts"
+        ],
+        "sourcesContent": [
+          "/** @format */\n\n// plugins/vuetify.js\nimport \"@mdi/font/css/materialdesignicons.css\";\nimport \"vuetify/styles\";\n//import { VDataTable } from 'vuetify/labs/VDataTable'\nimport { createVuetify } from \"vuetify\";\n// import * as labs from 'vuetify/labs/components'\n// import * as components_basics from 'vuetify/components'\nimport {\n  VCarouselItem,\n  VCarousel,\n  VProgressLinear,\n  VCardSubtitle,\n  VSelect,\n  VMenu,\n  VTable,\n  VAlert,\n  VAutocomplete,\n  VRadioGroup,\n  VRadio,\n  VRow,\n  VCol,\n  VTextField,\n  VTextarea,\n  VContainer,\n  VBtn,\n  VCard,\n  VCardActions,\n  VCardTitle,\n  VCardText,\n  VToolbar,\n  VToolbarTitle,\n  VList,\n  VListItem,\n  VListItemTitle,\n  VAvatar,\n  VIcon,\n  VTab,\n  VTabs,\n  VSheet,\n  VDialog,\n  VFileInput,\n  VImg,\n  VLayout,\n  VSpacer,\n  VApp,\n  VAppBar,\n  VForm,\n  VTooltip,\n  VSnackbar,\n  VNavigationDrawer,\n  VMain,\n  VDivider,\n  VCheckbox,\n  VWindow,\n  VWindowItem,\n  VPagination,\n  VSwitch,\n  VChip,\n} from \"vuetify/components\";\nimport * as directives from \"vuetify/directives\";\n\nexport default defineNuxtPlugin((nuxtApp) => {\n  const vuetify = createVuetify({\n    ssr: true,\n    // components: {\n    //   ...labs, ...components_basics,\n    //   /* VDataTable */\n    // },\n    components: {\n      VCarouselItem,\n      VCarousel,\n      VProgressLinear,\n      VCardSubtitle,\n      VSelect,\n      VMenu,\n      VTable,\n      VAlert,\n      VAutocomplete,\n      VRadioGroup,\n      VRadio,\n      VRow,\n      VCol,\n      VTextField,\n      VTextarea,\n      VContainer,\n      VBtn,\n      VCard,\n      VCardActions,\n      VCardTitle,\n      VCardText,\n      VToolbar,\n      VToolbarTitle,\n      VList,\n      VListItem,\n      VListItemTitle,\n      VAvatar,\n      VIcon,\n      VTab,\n      VTabs,\n      VSheet,\n      VDialog,\n      VFileInput,\n      VImg,\n      VLayout,\n      VSpacer,\n      VApp,\n      VAppBar,\n      VForm,\n      VTooltip,\n      VSnackbar,\n      VNavigationDrawer,\n      VMain,\n      VDivider,\n      VCheckbox,\n      VWindow,\n      VWindowItem,\n      VPagination,\n      VSwitch,\n      VChip,\n    },\n    directives,\n    //defaultSet: 'mdi',\n    // defaults: {\n    //   VDataTable: {\n    //     fixedHeader: true,\n    //     noDataText: 'Results not found',\n    //   },\n    // },\n  });\n\n  nuxtApp.vueApp.use(vuetify);\n});\n"
+        ],
+        "mappings": "AAGA,OAAO;AACP,OAAO;AAEP,SAAS,qBAAqB;AAG9B;AAAA,EACE;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,OACK;AACP,YAAY,gBAAgB;AAE5B,eAAe,iBAAiB,CAAC,YAAY;AAC3C,QAAM,UAAU,cAAc;AAAA,IAC5B,KAAK;AAAA;AAAA;AAAA;AAAA;AAAA,IAKL,YAAY;AAAA,MACV;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,IACF;AAAA,IACA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAQF,CAAC;AAED,UAAQ,OAAO,IAAI,OAAO;AAC5B,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717378199,
+      "end": 1709717378200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717378200,
+      "end": 1709717378200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717378206,
+      "end": 1709717378206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717378207,
+      "end": 1709717378207,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717378207,
+      "end": 1709717378207,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717378331,
+      "end": 1709717378345,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717378348,
+      "end": 1709717378348,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717378348,
+      "end": 1709717378348,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717378350,
+      "end": 1709717378350,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717378351,
+      "end": 1709717378351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717378351,
+      "end": 1709717378351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717378361,
+      "end": 1709717378361,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717378361,
+      "end": 1709717378361,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717378363,
+      "end": 1709717378363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport \"@mdi/font/css/materialdesignicons.css\";\nimport \"vuetify/styles\";\nimport { createVuetify } from \"vuetify\";\nimport {\n  VCarouselItem,\n  VCarousel,\n  VProgressLinear,\n  VCardSubtitle,\n  VSelect,\n  VMenu,\n  VTable,\n  VAlert,\n  VAutocomplete,\n  VRadioGroup,\n  VRadio,\n  VRow,\n  VCol,\n  VTextField,\n  VTextarea,\n  VContainer,\n  VBtn,\n  VCard,\n  VCardActions,\n  VCardTitle,\n  VCardText,\n  VToolbar,\n  VToolbarTitle,\n  VList,\n  VListItem,\n  VListItemTitle,\n  VAvatar,\n  VIcon,\n  VTab,\n  VTabs,\n  VSheet,\n  VDialog,\n  VFileInput,\n  VImg,\n  VLayout,\n  VSpacer,\n  VApp,\n  VAppBar,\n  VForm,\n  VTooltip,\n  VSnackbar,\n  VNavigationDrawer,\n  VMain,\n  VDivider,\n  VCheckbox,\n  VWindow,\n  VWindowItem,\n  VPagination,\n  VSwitch,\n  VChip\n} from \"vuetify/components\";\nimport * as directives from \"vuetify/directives\";\nexport default defineNuxtPlugin((nuxtApp) => {\n  const vuetify = createVuetify({\n    ssr: true,\n    // components: {\n    //   ...labs, ...components_basics,\n    //   /* VDataTable */\n    // },\n    components: {\n      VCarouselItem,\n      VCarousel,\n      VProgressLinear,\n      VCardSubtitle,\n      VSelect,\n      VMenu,\n      VTable,\n      VAlert,\n      VAutocomplete,\n      VRadioGroup,\n      VRadio,\n      VRow,\n      VCol,\n      VTextField,\n      VTextarea,\n      VContainer,\n      VBtn,\n      VCard,\n      VCardActions,\n      VCardTitle,\n      VCardText,\n      VToolbar,\n      VToolbarTitle,\n      VList,\n      VListItem,\n      VListItemTitle,\n      VAvatar,\n      VIcon,\n      VTab,\n      VTabs,\n      VSheet,\n      VDialog,\n      VFileInput,\n      VImg,\n      VLayout,\n      VSpacer,\n      VApp,\n      VAppBar,\n      VForm,\n      VTooltip,\n      VSnackbar,\n      VNavigationDrawer,\n      VMain,\n      VDivider,\n      VCheckbox,\n      VWindow,\n      VWindowItem,\n      VPagination,\n      VSwitch,\n      VChip\n    },\n    directives\n    //defaultSet: 'mdi',\n    // defaults: {\n    //   VDataTable: {\n    //     fixedHeader: true,\n    //     noDataText: 'Results not found',\n    //   },\n    // },\n  });\n  nuxtApp.vueApp.use(vuetify);\n});\n",
+      "start": 1709717378368,
+      "end": 1709717378407,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717378459,
+      "end": 1709717378475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717378476,
+      "end": 1709717378476,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717378477,
+      "end": 1709717378477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717378477,
+      "end": 1709717378477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717378478,
+      "end": 1709717378478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717378479,
+      "end": 1709717378479,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717378479,
+      "end": 1709717378480,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717378480,
+      "end": 1709717378480,
+      "order": "normal"
+    }
+  ]
+}

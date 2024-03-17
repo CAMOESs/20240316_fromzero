@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/VaProgressCircle.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": ":root,\n:host {\n  /* Circle */\n  --va-progress-circle-position: relative;\n  --va-progress-circle-overflow: hidden;\n  /* Circle Wrapper */\n  --va-progress-circle-width: 80%;\n  --va-progress-circle-height: 80%;\n  /* Circle Overlay */\n  --va-progress-circle-overlay-transition: all ease 2s;\n  /* Circle Info */\n  --va-progress-circle-font-size: 0.75rem;\n}\n.va-progress-circle {\n  position: var(--va-progress-circle-position);\n  overflow: var(--va-progress-circle-overflow);\n  font-family: var(--va-font-family);\n}\n.va-progress-circle__wrapper {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  transform: rotate(-90deg);\n  width: var(--va-progress-circle-width);\n  height: var(--va-progress-circle-height);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.va-progress-circle--indeterminate .va-progress-circle__wrapper {\n  animation: va-progress-circle__wrapper--indeterminate 2s linear infinite;\n}\n.va-progress-circle__overlay {\n  transition: var(--va-progress-circle-overlay-transition);\n}\n.va-progress-circle--indeterminate .va-progress-circle__overlay {\n  animation: va-progress-circle__overlay--indeterminate 2s ease-in-out infinite;\n}\n.va-progress-circle__info {\n  font-size: var(--va-progress-circle-font-size);\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n}\n@keyframes va-progress-circle__wrapper--indeterminate {\n100% {\n    transform: rotate(270deg);\n}\n}\n@keyframes va-progress-circle__overlay--indeterminate {\n0% {\n    stroke-dasharray: 1, 125;\n    stroke-dashoffset: 0;\n}\n50% {\n    stroke-dasharray: 125, 125;\n    stroke-dashoffset: -65px;\n}\n100% {\n    stroke-dasharray: 125, 125;\n    stroke-dashoffset: -125px;\n}\n}",
+      "start": 1709717423023,
+      "end": 1709717423149,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423149,
+      "end": 1709717423149,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423149,
+      "end": 1709717423149,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423149,
+      "end": 1709717423149,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ":host,:root{--va-progress-circle-position:relative;--va-progress-circle-overflow:hidden;--va-progress-circle-width:80%;--va-progress-circle-height:80%;--va-progress-circle-overlay-transition:all ease 2s;--va-progress-circle-font-size:0.75rem}.va-progress-circle{font-family:var(--va-font-family);overflow:var(--va-progress-circle-overflow);position:var(--va-progress-circle-position)}.va-progress-circle__wrapper{align-items:center;bottom:0;display:flex;height:var(--va-progress-circle-height);justify-content:center;left:0;margin:auto;position:absolute;right:0;top:0;transform:rotate(-90deg);width:var(--va-progress-circle-width)}.va-progress-circle--indeterminate .va-progress-circle__wrapper{animation:va-progress-circle__wrapper--indeterminate 2s linear infinite}.va-progress-circle__overlay{transition:var(--va-progress-circle-overlay-transition)}.va-progress-circle--indeterminate .va-progress-circle__overlay{animation:va-progress-circle__overlay--indeterminate 2s ease-in-out infinite}.va-progress-circle__info{font-size:var(--va-progress-circle-font-size);left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}@keyframes va-progress-circle__wrapper--indeterminate{to{transform:rotate(270deg)}}@keyframes va-progress-circle__overlay--indeterminate{0%{stroke-dasharray:1,125;stroke-dashoffset:0}50%{stroke-dasharray:125,125;stroke-dashoffset:-65px}to{stroke-dasharray:125,125;stroke-dashoffset:-125px}}",
+      "start": 1709717423149,
+      "end": 1709717423155,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423155,
+      "end": 1709717423155,
+      "order": "normal"
+    }
+  ]
+}

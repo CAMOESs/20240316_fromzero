@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-select/components/VaSelectOptionList/VaSelectOptionList.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaSelectOptionList.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createElementBlock, withKeys, withModifiers, Fragment, renderList, toDisplayString, createCommentVNode, createBlock, withCtx, renderSlot, normalizeProps, guardReactiveProps, createVNode, mergeProps } from \"vue\";\nimport { _ as _export_sfc } from \"../../../../../plugin-vue_export-helper.mjs\";\nconst VaSelectOptionList_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = [\"tabindex\", \"aria-multiselectable\"];\nconst _hoisted_2 = {\n  key: 0,\n  class: \"va-select-option-list__group-name\",\n  role: \"presentation\"\n};\nconst _hoisted_3 = {\n  key: 0,\n  class: \"va-select-option-list--empty\"\n};\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_select_option = resolveComponent(\"va-select-option\");\n  const _component_va_virtual_scroller = resolveComponent(\"va-virtual-scroller\");\n  return openBlock(), createElementBlock(\"div\", {\n    ref: \"root\",\n    class: \"va-select-option-list\",\n    tabindex: _ctx.tabindex,\n    onKeydown: [\n      _cache[0] || (_cache[0] = withKeys(withModifiers((...args) => _ctx.focusPreviousOption && _ctx.focusPreviousOption(...args), [\"stop\", \"prevent\"]), [\"up\"])),\n      _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => _ctx.focusPreviousOption && _ctx.focusPreviousOption(...args), [\"stop\", \"prevent\"]), [\"left\"])),\n      _cache[2] || (_cache[2] = withKeys(withModifiers((...args) => _ctx.focusNextOption && _ctx.focusNextOption(...args), [\"stop\", \"prevent\"]), [\"down\"])),\n      _cache[3] || (_cache[3] = withKeys(withModifiers((...args) => _ctx.focusNextOption && _ctx.focusNextOption(...args), [\"stop\", \"prevent\"]), [\"right\"])),\n      _cache[4] || (_cache[4] = withKeys(withModifiers((...args) => _ctx.selectHoveredOption && _ctx.selectHoveredOption(...args), [\"stop\", \"prevent\"]), [\"enter\"])),\n      _cache[5] || (_cache[5] = withKeys(withModifiers((...args) => _ctx.selectHoveredOption && _ctx.selectHoveredOption(...args), [\"stop\", \"prevent\"]), [\"space\"]))\n    ],\n    onScrollPassive: _cache[6] || (_cache[6] = (...args) => _ctx.onScroll && _ctx.onScroll(...args)),\n    role: \"listbox\",\n    \"aria-multiselectable\": _ctx.$props.multiple\n  }, [\n    (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.optionGroups, (options, groupName) => {\n      return openBlock(), createElementBlock(Fragment, { key: groupName }, [\n        groupName !== \"_noGroup\" ? (openBlock(), createElementBlock(\"span\", _hoisted_2, toDisplayString(groupName), 1)) : createCommentVNode(\"\", true),\n        _ctx.$props.virtualScroller ? (openBlock(), createBlock(_component_va_virtual_scroller, {\n          key: 1,\n          ref_for: true,\n          ref: \"virtualScrollerRef\",\n          items: options,\n          \"track-by\": _ctx.getTrackBy,\n          \"wrapper-size\": _ctx.rootHeight,\n          \"onScroll:bottom\": _ctx.handleScrollToBottom\n        }, {\n          default: withCtx(({ item: option, index }) => [\n            renderSlot(_ctx.$slots, \"default\", normalizeProps(guardReactiveProps({ option, index, selectOption: _ctx.selectOption })), () => [\n              createVNode(_component_va_select_option, mergeProps({\n                option,\n                \"current-option\": _ctx.currentOptionComputed,\n                disabled: _ctx.getDisabled(option)\n              }, _ctx.selectOptionProps, {\n                onClick: withModifiers(_ctx.selectHoveredOption, [\"stop\"]),\n                onMouseenter: ($event) => _ctx.handleMouseEnter(option),\n                onMousemove: ($event) => _ctx.handleMouseMove(option)\n              }), null, 16, [\"option\", \"current-option\", \"disabled\", \"onClick\", \"onMouseenter\", \"onMousemove\"])\n            ])\n          ]),\n          _: 2\n        }, 1032, [\"items\", \"track-by\", \"wrapper-size\", \"onScroll:bottom\"])) : (openBlock(true), createElementBlock(Fragment, { key: 2 }, renderList(options, (option, index) => {\n          return renderSlot(_ctx.$slots, \"default\", normalizeProps(mergeProps({\n            key: _ctx.getTrackBy(option)\n          }, { option, index, selectOption: _ctx.selectOption })), () => [\n            createVNode(_component_va_select_option, mergeProps({\n              ref_for: true,\n              ref: _ctx.setItemRef(_ctx.getTrackBy(option)),\n              \"current-option\": _ctx.currentOptionComputed,\n              option,\n              disabled: _ctx.getDisabled(option)\n            }, _ctx.selectOptionProps, {\n              onClick: withModifiers(_ctx.selectHoveredOption, [\"stop\"]),\n              onMouseenter: ($event) => _ctx.handleMouseEnter(option),\n              onMousemove: ($event) => _ctx.handleMouseMove(option)\n            }), null, 16, [\"current-option\", \"option\", \"disabled\", \"onClick\", \"onMouseenter\", \"onMousemove\"])\n          ]);\n        }), 128))\n      ], 64);\n    }), 128)),\n    !_ctx.filteredOptions.length ? (openBlock(), createElementBlock(\"div\", _hoisted_3, toDisplayString(_ctx.noOptionsText), 1)) : createCommentVNode(\"\", true)\n  ], 40, _hoisted_1);\n}\nconst _VaSelectOptionList = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaSelectOptionList as _\n};\n//# sourceMappingURL=VaSelectOptionList.mjs.map\n",
+      "start": 1709717501812,
+      "end": 1709717502158,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502159,
+      "end": 1709717502159,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502159,
+      "end": 1709717502159,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502186,
+      "end": 1709717502186,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502187,
+      "end": 1709717502187,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502192,
+      "end": 1709717502193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502193,
+      "end": 1709717502195,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502195,
+      "end": 1709717502195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502195,
+      "end": 1709717502197,
+      "order": "normal"
+    }
+  ]
+}

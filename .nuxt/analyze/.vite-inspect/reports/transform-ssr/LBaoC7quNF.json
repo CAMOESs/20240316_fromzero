@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-tree-view/hooks/useTreeKeyboardNavigation.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const useTreeKeyboardNavigation = (props, methods) => {\n  const { emit, toggleNode, toggleCheckbox } = methods;\n  const isElementExpanded = (currentElement) => (currentElement == null ? void 0 : currentElement.getAttribute(\"aria-expanded\")) === \"true\";\n  const getParentElement = (currentElement) => {\n    var _a;\n    return ((_a = currentElement == null ? void 0 : currentElement.parentElement) == null ? void 0 : _a.closest(\".va-tree-node\")) || null;\n  };\n  const getPreviousElement = (currentElement) => currentElement == null ? void 0 : currentElement.previousElementSibling;\n  const findPreviousElement = (currentElement) => {\n    if (!currentElement) {\n      return null;\n    }\n    let previousElement = getPreviousElement(currentElement);\n    let lastChildElement = isElementExpanded(previousElement) && getLastChildElement(previousElement);\n    if (lastChildElement) {\n      do {\n        if (isElementExpanded(lastChildElement)) {\n          lastChildElement = getLastChildElement(lastChildElement);\n          if (lastChildElement) {\n            continue;\n          } else {\n            break;\n          }\n        } else {\n          previousElement = lastChildElement;\n          break;\n        }\n      } while (true);\n    }\n    if (!previousElement) {\n      return getParentElement(currentElement);\n    }\n    return previousElement;\n  };\n  const getNextElement = (currentElement) => currentElement == null ? void 0 : currentElement.nextElementSibling;\n  const findNextElement = (currentElement) => {\n    if (!currentElement) {\n      return null;\n    }\n    let nextElement = getNextElement(currentElement);\n    const isCurrentExpanded = isElementExpanded(currentElement);\n    if (!nextElement) {\n      let parentElement = getParentElement(currentElement);\n      do {\n        if (!getNextElement(parentElement)) {\n          parentElement = getParentElement(parentElement);\n          if (!parentElement) {\n            break;\n          } else {\n            continue;\n          }\n        } else {\n          nextElement = getNextElement(parentElement);\n          break;\n        }\n      } while (true);\n    }\n    if (isCurrentExpanded) {\n      return getFirstChildElement(currentElement);\n    }\n    return nextElement;\n  };\n  const getFirstChildElement = (currentElement) => {\n    var _a;\n    return ((_a = currentElement == null ? void 0 : currentElement.querySelector(\".va-tree-node-children\")) == null ? void 0 : _a.firstElementChild) || null;\n  };\n  const getLastChildElement = (currentElement) => {\n    var _a;\n    return ((_a = currentElement == null ? void 0 : currentElement.querySelector(\".va-tree-node-children\")) == null ? void 0 : _a.lastElementChild) || null;\n  };\n  const onHorizontalMove = (currentElement, dir, node) => {\n    var _a, _b;\n    const isCurrentElementExpanded = isElementExpanded(currentElement);\n    if (dir === \"left\") {\n      if (isCurrentElementExpanded) {\n        toggleNode(node);\n      } else {\n        (_a = getParentElement(currentElement)) == null ? void 0 : _a.focus();\n      }\n    } else {\n      if (!isCurrentElementExpanded) {\n        toggleNode(node);\n      } else {\n        (_b = getFirstChildElement(currentElement)) == null ? void 0 : _b.focus();\n      }\n    }\n  };\n  const onVerticalMove = (currentElement, dir) => {\n    var _a, _b;\n    if (dir === \"up\") {\n      (_a = findPreviousElement(currentElement)) == null ? void 0 : _a.focus();\n    } else {\n      (_b = findNextElement(currentElement)) == null ? void 0 : _b.focus();\n    }\n  };\n  const handleKeyboardNavigation = (event, node) => {\n    const currentElement = event.target;\n    switch (event.code) {\n      case \"ArrowUp\":\n        onVerticalMove(currentElement, \"up\");\n        break;\n      case \"ArrowRight\":\n        onHorizontalMove(currentElement, \"right\", node);\n        break;\n      case \"ArrowDown\":\n        onVerticalMove(currentElement, \"down\");\n        break;\n      case \"ArrowLeft\":\n        onHorizontalMove(currentElement, \"left\", node);\n        break;\n      case \"Space\":\n        if (props.selectable) {\n          const state = typeof node.checked !== \"undefined\" ? !node.checked : null;\n          toggleCheckbox(node, state);\n        } else {\n          emit(\"update:selected\", node);\n        }\n        break;\n      case \"Escape\":\n        if (!props.selectable) {\n          emit(\"update:selected\", null);\n        }\n        currentElement.blur();\n        break;\n      default:\n        currentElement.blur();\n    }\n  };\n  return { handleKeyboardNavigation };\n};\nconst useTreeKeyboardNavigation$1 = useTreeKeyboardNavigation;\nexport {\n  useTreeKeyboardNavigation$1 as u\n};\n//# sourceMappingURL=useTreeKeyboardNavigation.mjs.map\n",
+      "start": 1709717514271,
+      "end": 1709717514547,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514547,
+      "end": 1709717514547,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514548,
+      "end": 1709717514548,
+      "order": "normal"
+    }
+  ]
+}

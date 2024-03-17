@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-date-picker/components/VaMonthPicker/VaMonthPicker.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, toRefs, computed, watch } from \"vue\";\nimport { u as useGridKeyboardNavigation } from \"../../hooks/grid-keyboard-navigation.js\";\nimport { u as useDatePicker } from \"../../hooks/use-picker.js\";\nimport { V as VaDatePickerCell } from \"../VaDatePickerCell.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaMonthPicker\",\n  components: { VaDatePickerCell },\n  props: {\n    modelValue: { type: [Date, Array, Object] },\n    monthNames: { type: Array, required: true },\n    view: { type: Object, default: () => ({ type: \"month\" }) },\n    allowedMonths: { type: Function, default: void 0 },\n    highlightToday: { type: Boolean, default: true },\n    mode: { type: String, default: \"auto\" },\n    readonly: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" }\n  },\n  emits: [\"update:modelValue\", \"hover:month\", \"click:month\"],\n  setup(props, { emit }) {\n    const { view } = toRefs(props);\n    const months = computed(() => Array.from(Array(12).keys()).map((month) => new Date(view.value.year, month)));\n    const {\n      hoveredIndex,\n      onClick,\n      isToday,\n      isSelected,\n      isInRange\n    } = useDatePicker(\"month\", months, props, emit);\n    const isDisabled = (date) => props.allowedMonths === void 0 ? false : !props.allowedMonths(date);\n    const {\n      focusedCellIndex,\n      containerAttributes\n    } = useGridKeyboardNavigation({\n      rowSize: 3,\n      start: 0,\n      end: months.value.length,\n      onSelected: (selectedIndex) => onClick(months.value[selectedIndex])\n    });\n    watch(focusedCellIndex, (index) => {\n      hoveredIndex.value = index;\n    });\n    watch(hoveredIndex, (index) => {\n      focusedCellIndex.value = index;\n    });\n    return {\n      months,\n      hoveredIndex,\n      onClick,\n      isToday,\n      isSelected,\n      isInRange,\n      isDisabled,\n      containerAttributes,\n      focusedCellIndex\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaMonthPicker.css';\n//# sourceMappingURL=VaMonthPicker.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717428314,
+      "end": 1709717429213,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717429213,
+      "end": 1709717429213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717429213,
+      "end": 1709717429213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717429213,
+      "end": 1709717429213,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717429213,
+      "end": 1709717429213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717429213,
+      "end": 1709717429213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717429217,
+      "end": 1709717429217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717429217,
+      "end": 1709717429217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717429217,
+      "end": 1709717429217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717429218,
+      "end": 1709717429218,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717429218,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717429219,
+      "end": 1709717429219,
+      "order": "normal"
+    }
+  ]
+}

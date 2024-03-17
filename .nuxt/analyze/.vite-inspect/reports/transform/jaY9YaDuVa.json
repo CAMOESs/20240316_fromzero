@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-option-list/VaOptionList.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed, onMounted } from \"vue\";\nimport { p as pick } from \"../../../vendor.js\";\nimport { i as isDev } from \"../../utils/env.js\";\nimport { V as VaCheckbox } from \"../va-checkbox/index.js\";\nimport { V as VaRadio } from \"../va-radio/index.js\";\nimport { V as VaSwitch } from \"../va-switch/index.js\";\nimport { V as VaMessageListWrapper } from \"../va-message-list/VaMessageListWrapper.js\";\nimport { u as useArrayRefs } from \"../../composables/useArrayRefs.js\";\nimport { u as useStatefulEmits, a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.js\";\nimport { u as useValidationEmits, b as useValidationProps, a as useValidation } from \"../../composables/useValidation.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useSelectableListProps, a as useSelectableList } from \"../../composables/useSelectableList.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaOptionList\",\n  components: {\n    VaRadio,\n    VaCheckbox,\n    VaSwitch,\n    VaMessageListWrapper\n  },\n  emits: [...useStatefulEmits, ...useValidationEmits, \"clear\"],\n  props: {\n    ...useComponentPresetProp,\n    ...useSelectableListProps,\n    ...useValidationProps,\n    ...useStatefulProps,\n    type: {\n      type: String,\n      default: \"checkbox\",\n      validator: (type) => [\"radio\", \"checkbox\", \"switch\"].includes(type)\n    },\n    disabled: { type: Boolean, default: false },\n    readonly: { type: Boolean, default: false },\n    defaultValue: { type: [String, Number, Boolean, Object, Array] },\n    name: { type: String, default: \"\" },\n    color: { type: String, default: \"primary\" },\n    leftLabel: { type: Boolean, default: false },\n    modelValue: { type: [String, Number, Boolean, Object, Array] }\n  },\n  setup(props, { emit }) {\n    const { valueComputed } = useStateful(props, emit, \"modelValue\", { defaultValue: props.defaultValue });\n    const { getValue, getText, getTrackBy, getDisabled } = useSelectableList(props);\n    const { itemRefs, setItemRef } = useArrayRefs();\n    const isRadio = computed(() => props.type === \"radio\");\n    const selectedValue = computed({\n      get() {\n        const value = isRadio.value ? null : [];\n        return valueComputed.value || value;\n      },\n      set(value) {\n        if (props.readonly) {\n          return;\n        }\n        if (isRadio.value && !Array.isArray(value)) {\n          valueComputed.value = value ? getValue(value) : value;\n        } else {\n          valueComputed.value = Array.isArray(value) ? value.map(getValue) : [value ? getValue(value) : value];\n        }\n      }\n    });\n    const isDisabled = (option) => props.disabled || getDisabled(option);\n    const reset = () => withoutValidation(() => {\n      valueComputed.value = null;\n      emit(\"clear\");\n      resetValidation();\n    });\n    const focus = () => {\n      const firstActiveEl = Array.isArray(itemRefs.value) && itemRefs.value.find((el) => !el.disabled);\n      if (firstActiveEl && typeof firstActiveEl.focus === \"function\") {\n        firstActiveEl.focus();\n      }\n    };\n    const {\n      computedError,\n      computedErrorMessages,\n      withoutValidation,\n      resetValidation\n    } = useValidation(props, emit, { reset, focus, value: valueComputed });\n    const computedProps = computed(() => pick(props, [\"name\", \"color\", \"readonly\", \"leftLabel\"]));\n    onMounted(() => {\n      if (isDev && props.type !== \"radio\" && !Array.isArray(props.modelValue)) {\n        console.warn(`Prop 'modelValue = ${props.modelValue}' has not a proper type!\n For component property 'type = ${props.type}' it must be of type 'array'.`);\n      }\n    });\n    return {\n      selectedValue,\n      computedError,\n      computedErrorMessages,\n      getValue,\n      getText,\n      getTrackBy,\n      isDisabled,\n      reset,\n      focus,\n      setItemRef,\n      computedProps\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaOptionList.css';\n//# sourceMappingURL=VaOptionList.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717422987,
+      "end": 1709717423131,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423132,
+      "end": 1709717423132,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423132,
+      "end": 1709717423133,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423133,
+      "end": 1709717423133,
+      "order": "normal"
+    }
+  ]
+}

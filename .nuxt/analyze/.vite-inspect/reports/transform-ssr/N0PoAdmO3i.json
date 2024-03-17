@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-dropdown/VaDropdown.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed, ref, toRef, h, Teleport, Fragment, nextTick } from \"vue\";\nimport { p as pick, k as kebabCase } from \"../../../vendor.mjs\";\nimport { a as renderSlotNode } from \"../../utils/headless.mjs\";\nimport { u as useMouseNavigation, a as useKeyboardNavigation } from \"./hooks/useDropdownNavigation.mjs\";\nimport { u as useAnchorSelector } from \"./hooks/useAnchorSelector.mjs\";\nimport { u as useCursorAnchor } from \"./hooks/useCursorAnchor.mjs\";\nimport { u as useDropdown } from \"./hooks/useDropdown.mjs\";\nimport { w as warn } from \"../../utils/console.mjs\";\nimport { u as useFocusOutside } from \"../../composables/useFocusOutside.mjs\";\nimport { u as useTeleported } from \"../../composables/useTeleported.mjs\";\nimport { a as usePlacementAliasesProps } from \"../../composables/usePlacementAliases.mjs\";\nimport { c as createStatefulProps, u as useStatefulEmits, b as useStateful } from \"../../composables/useStateful.mjs\";\nimport { u as useHTMLElementSelector } from \"../../composables/useHTMLElementSelector.mjs\";\nimport { u as useBem } from \"../../composables/useBem.mjs\";\nimport { u as useDebounceFn } from \"../../composables/useDebounce.mjs\";\nimport { u as useClickOutside } from \"../../composables/useClickOutside.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nimport { u as useIsMounted } from \"../../composables/useIsMounted.mjs\";\nimport { u as useHTMLElement } from \"../../composables/useHTMLElement.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaDropdown\",\n  props: {\n    ...usePlacementAliasesProps,\n    ...createStatefulProps(true),\n    modelValue: { type: Boolean, default: false },\n    anchor: { type: [String, Object], default: void 0 },\n    anchorSelector: { type: String, default: \"\" },\n    innerAnchorSelector: { type: String, default: \"\" },\n    trigger: {\n      type: String,\n      default: \"click\",\n      validator: (value) => [\"click\", \"right-click\", \"hover\", \"dblclick\", \"none\"].includes(value)\n    },\n    disabled: { type: Boolean },\n    readonly: { type: Boolean },\n    closeOnClickOutside: { type: Boolean, default: true },\n    closeOnFocusOutside: { type: Boolean, default: true },\n    closeOnAnchorClick: { type: Boolean, default: true },\n    closeOnContentClick: { type: Boolean, default: true },\n    hoverOverTimeout: { type: Number, default: 30 },\n    hoverOutTimeout: { type: Number, default: 200 },\n    isContentHoverable: { type: Boolean, default: true },\n    offset: { type: [Array, Number], default: 0 },\n    keepAnchorWidth: { type: Boolean, default: false },\n    verticalScrollOnOverflow: { type: Boolean, default: true },\n    cursor: { type: [Boolean, Object], default: false },\n    autoPlacement: { type: Boolean, default: true },\n    stickToEdges: { type: Boolean, default: false },\n    /** Viewport where dropdown will be rendered. Autoplacement will be calculated relative to `target` */\n    target: { type: [String, Object], default: void 0 },\n    /** Element where dropdown content will be rendered. */\n    teleport: { type: [String, Object], default: void 0 },\n    /** Not reactive */\n    keyboardNavigation: { type: Boolean, default: false },\n    ariaLabel: { type: String, default: \"$t:toggleDropdown\" },\n    role: { type: String, default: \"button\" }\n  },\n  emits: [...useStatefulEmits, \"anchor-click\", \"anchor-right-click\", \"content-click\", \"click-outside\", \"focus-outside\", \"close\", \"open\", \"anchor-dblclick\"],\n  setup(props, { emit }) {\n    const { valueComputed: statefulVal } = useStateful(props, emit, \"modelValue\");\n    const valueComputed = computed({\n      get: () => statefulVal.value && !props.disabled && !props.readonly,\n      set(val) {\n        statefulVal.value = val;\n        if (val) {\n          emit(\"open\");\n        } else {\n          emit(\"close\");\n        }\n      }\n    });\n    const isMounted = useIsMounted();\n    const { anchorRef } = useAnchorSelector(props);\n    const cursorAnchor = useCursorAnchor(anchorRef, valueComputed);\n    const floating = useHTMLElement(\"floating\");\n    const body = useHTMLElementSelector(ref(\"body\"));\n    const target = useHTMLElementSelector(computed(() => props.target));\n    const teleport = useHTMLElementSelector(computed(() => props.teleport));\n    const anchorClass = useBem(\"va-dropdown\", () => pick(props, [\"disabled\"]));\n    const teleportTarget = computed(() => {\n      if (teleport.value) {\n        return teleport.value;\n      }\n      if (target.value) {\n        return target.value;\n      }\n      if (anchorRef.value) {\n        const root = anchorRef.value.getRootNode();\n        if (root instanceof ShadowRoot) {\n          const el = [...root.children].find((c) => c.tagName !== \"STYLE\");\n          if (el) {\n            return el;\n          }\n        }\n      }\n      return body.value;\n    });\n    const teleportDisabled = computed(() => {\n      return props.disabled;\n    });\n    const showFloating = computed(() => isMounted.value && valueComputed.value);\n    const { debounced: debounceHover, cancel: cancelHoverDebounce } = useDebounceFn(toRef(props, \"hoverOverTimeout\"));\n    const { debounced: debounceUnHover, cancel: cancelUnHoverDebounce } = useDebounceFn(toRef(props, \"hoverOutTimeout\"));\n    const onClick = (e) => {\n      if (props.trigger !== \"click\" && kebabCase(props.trigger) !== \"right-click\" || props.disabled) {\n        return;\n      }\n      if (valueComputed.value) {\n        emitAndClose(\"anchor-click\", props.closeOnAnchorClick, e);\n      } else {\n        if (props.trigger !== \"click\") {\n          return;\n        }\n        valueComputed.value = true;\n        emit(\"anchor-click\", e);\n      }\n    };\n    const onContextmenu = (e) => {\n      if (kebabCase(props.trigger) !== \"right-click\" || props.disabled) {\n        return;\n      }\n      e.preventDefault();\n      if (valueComputed.value) {\n        emitAndClose(\"anchor-right-click\", props.closeOnAnchorClick, e);\n        if (props.cursor) {\n          nextTick(() => {\n            valueComputed.value = true;\n          });\n        }\n      } else {\n        valueComputed.value = true;\n        emit(\"anchor-right-click\", e);\n      }\n    };\n    const onDblclick = (e) => {\n      if (kebabCase(props.trigger) !== \"dblclick\" || props.disabled) {\n        return;\n      }\n      e.preventDefault();\n      if (valueComputed.value) {\n        emitAndClose(\"anchor-dblclick\", props.closeOnAnchorClick, e);\n        if (props.cursor) {\n          nextTick(() => {\n            valueComputed.value = true;\n          });\n        }\n      } else {\n        valueComputed.value = true;\n        emit(\"anchor-dblclick\", e);\n      }\n    };\n    const onMouseenter = () => {\n      if (props.trigger !== \"hover\" || props.disabled) {\n        return;\n      }\n      debounceHover(() => {\n        valueComputed.value = true;\n      });\n      cancelUnHoverDebounce();\n    };\n    const onMouseleave = () => {\n      if (props.trigger !== \"hover\" || props.disabled) {\n        return;\n      }\n      if (props.isContentHoverable) {\n        debounceUnHover(() => {\n          valueComputed.value = false;\n        });\n      } else {\n        valueComputed.value = false;\n      }\n      cancelHoverDebounce();\n    };\n    useMouseNavigation(anchorRef, {\n      click: onClick,\n      contextmenu: onContextmenu,\n      dblclick: onDblclick,\n      mouseenter: onMouseenter,\n      mouseleave: onMouseleave\n    });\n    if (props.keyboardNavigation) {\n      useKeyboardNavigation(anchorRef, valueComputed);\n    }\n    const emitAndClose = (eventName, close, e) => {\n      emit(eventName, e);\n      if (close) {\n        valueComputed.value = false;\n      }\n    };\n    const floatingListeners = {\n      onMouseover: () => props.isContentHoverable && onMouseenter(),\n      onMouseout: () => onMouseleave(),\n      onClick: () => emitAndClose(\"content-click\", props.closeOnContentClick)\n    };\n    useClickOutside([anchorRef, floating], () => {\n      if (props.closeOnClickOutside && valueComputed.value) {\n        emitAndClose(\"click-outside\", props.closeOnClickOutside);\n      }\n    });\n    useFocusOutside([floating], () => {\n      if (props.closeOnFocusOutside && valueComputed.value) {\n        emitAndClose(\"focus-outside\", props.closeOnFocusOutside);\n      }\n    }, { onlyKeyboard: true });\n    const anchorComputed = computed(() => {\n      if (typeof props.cursor === \"object\") {\n        return props.cursor;\n      }\n      return props.cursor ? cursorAnchor.value : anchorRef.value;\n    });\n    const { floatingStyles } = useDropdown(\n      anchorComputed,\n      floating,\n      target,\n      computed(() => ({\n        placement: props.placement,\n        offset: props.offset,\n        autoPlacement: props.autoPlacement,\n        stickToEdges: props.stickToEdges,\n        keepAnchorWidth: props.keepAnchorWidth,\n        verticalScrollOnOverflow: props.verticalScrollOnOverflow\n      }))\n    );\n    const hide = () => {\n      valueComputed.value = false;\n    };\n    const show = () => {\n      valueComputed.value = true;\n    };\n    return {\n      ...useTranslation(),\n      ...useTeleported(),\n      anchorRef,\n      anchorClass,\n      floating,\n      floatingStyles,\n      teleportDisabled,\n      showFloating,\n      teleportTarget,\n      floatingListeners,\n      isMounted,\n      valueComputed,\n      hide,\n      show\n    };\n  },\n  render() {\n    const slotBind = {\n      isOpened: this.valueComputed,\n      hide: this.hide,\n      show: this.show,\n      toggle: () => this.valueComputed ? this.hide() : this.show(),\n      getAnchorWidth: () => {\n        var _a;\n        return ((_a = this.anchorRef) == null ? void 0 : _a.offsetWidth) + \"px\";\n      },\n      getAnchorHeight: () => {\n        var _a;\n        return ((_a = this.anchorRef) == null ? void 0 : _a.offsetHeight) + \"px\";\n      }\n    };\n    const floatingSlotNode = this.showFloating && renderSlotNode(this.$slots.default, slotBind, {\n      ref: \"floating\",\n      class: \"va-dropdown__content-wrapper\",\n      style: this.floatingStyles,\n      ...this.teleportedAttrs,\n      ...this.floatingListeners\n    });\n    const anchorSlotVNode = renderSlotNode(this.$slots.anchor, slotBind, {\n      ref: \"anchorRef\",\n      role: this.$props.role,\n      class: [\"va-dropdown\", ...this.anchorClass.asArray.value],\n      style: { position: \"relative\" },\n      \"aria-label\": this.tp(this.$props.ariaLabel),\n      \"aria-disabled\": this.$props.disabled,\n      \"aria-expanded\": this.$props.role && this.$props.role !== \"none\" ? !!this.showFloating : void 0,\n      ...this.teleportFromAttrs,\n      ...this.$attrs\n    });\n    if (typeof this.$props.cursor === \"object\" && floatingSlotNode) {\n      return h(\n        Teleport,\n        {\n          to: this.teleportTarget,\n          disabled: this.teleportDisabled\n        },\n        [floatingSlotNode]\n      );\n    }\n    if (!this.$props.anchorSelector && !anchorSlotVNode) {\n      warn(\"VaDropdown: #anchor slot is missing\");\n      return;\n    }\n    if (this.showFloating && !floatingSlotNode) {\n      warn(\"VaDropdown: default slot is missing\");\n      return;\n    }\n    return h(Fragment, {}, [\n      anchorSlotVNode,\n      floatingSlotNode && h(\n        Teleport,\n        {\n          to: this.teleportTarget,\n          disabled: this.teleportDisabled\n        },\n        [floatingSlotNode]\n      )\n    ]);\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaDropdown.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717501509,
+      "end": 1709717501700,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717501700,
+      "end": 1709717501700,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717501700,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717501701,
+      "end": 1709717501701,
+      "order": "normal"
+    }
+  ]
+}

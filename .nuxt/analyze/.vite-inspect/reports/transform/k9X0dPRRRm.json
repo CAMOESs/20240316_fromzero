@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-virtual-scroller/useVirtualScrollerSizes.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { shallowRef, computed, ref, getCurrentInstance, onMounted, watch } from \"vue\";\nimport { w as warn } from \"../../utils/console.js\";\nimport { u as useEvent } from \"../../composables/useEvent.js\";\nimport { u as useParsableMeasure } from \"../../composables/useParsableMeasure.js\";\nconst { isParsablePositiveMeasure, parseSizeValue } = useParsableMeasure();\nconst validateSizeProp = (v, propName) => {\n  const isProperValue = isParsablePositiveMeasure(v);\n  !isProperValue && warn(`[va-virtual-scroller] ${propName} should be number or parsable int greater or equal to 0. Provided: ${v}.`);\n  return isProperValue;\n};\nconst useVirtualScrollerSizesProps = {\n  horizontal: { type: Boolean, default: false },\n  itemSize: {\n    type: [Number, String],\n    default: 0,\n    validator: (v) => {\n      return validateSizeProp(v, \"itemSize\");\n    }\n  },\n  wrapperSize: {\n    type: [Number, String],\n    default: 100,\n    validator: (v) => {\n      return v === \"auto\" || validateSizeProp(v, \"wrapperSize\");\n    }\n  }\n};\nconst useVirtualScrollerSizes = (props, scrollPosition) => {\n  const list = shallowRef();\n  const wrapper = shallowRef();\n  const clientSizeMeasure = computed(() => props.horizontal ? \"clientWidth\" : \"clientHeight\");\n  const wrapperSize = computed(() => {\n    var _a;\n    if (props.wrapperSize === \"auto\") {\n      return ((_a = wrapper.value) == null ? void 0 : _a[clientSizeMeasure.value]) || 0;\n    }\n    return parseSizeValue(props.wrapperSize, pageFontSize);\n  });\n  const pageFontSize = ref(16);\n  const handleWindowResize = () => {\n    pageFontSize.value = parseFloat(getComputedStyle(document.documentElement).fontSize);\n    calcAverageItemsSize();\n  };\n  useEvent(\"resize\", handleWindowResize, true);\n  const itemSizeCalculated = ref(0);\n  const calcAverageItemsSize = () => {\n    if (!list.value) {\n      return;\n    }\n    const sizes = [];\n    const itemsList = list.value.children;\n    const itemsAmount = itemsList.length;\n    for (let i = 0; i < itemsAmount; i++) {\n      const currentChild = list.value.children.item(i);\n      currentChild && sizes.push(currentChild[clientSizeMeasure.value]);\n    }\n    itemSizeCalculated.value = itemsAmount ? Math.trunc(sizes.reduce((acc, el) => acc + el, 0) / (itemsAmount - 1)) : 0;\n  };\n  const instance = getCurrentInstance();\n  onMounted(() => {\n    var _a, _b;\n    if (!list.value) {\n      list.value = (_b = (_a = instance == null ? void 0 : instance.parent) == null ? void 0 : _a.refs) == null ? void 0 : _b.list;\n    }\n    calcAverageItemsSize();\n  });\n  watch(scrollPosition, calcAverageItemsSize);\n  watch(wrapperSize, calcAverageItemsSize);\n  let oldItemSize = 0;\n  const itemSize = computed(() => {\n    const sizeParsed = parseSizeValue(props.itemSize, pageFontSize);\n    const result = Math.max(sizeParsed, itemSizeCalculated.value, 1);\n    const diff = Math.abs(oldItemSize / result * 100 - 100);\n    if (diff > 5 || oldItemSize === 0) {\n      oldItemSize = result;\n      return result;\n    }\n    return oldItemSize;\n  });\n  return { list, wrapper, itemSize, wrapperSize };\n};\nexport {\n  useVirtualScrollerSizes as a,\n  useVirtualScrollerSizesProps as u\n};\n//# sourceMappingURL=useVirtualScrollerSizes.js.map\n",
+      "start": 1709717427723,
+      "end": 1709717427939,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427940,
+      "end": 1709717427940,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427940,
+      "end": 1709717427941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427941,
+      "end": 1709717427941,
+      "order": "normal"
+    }
+  ]
+}

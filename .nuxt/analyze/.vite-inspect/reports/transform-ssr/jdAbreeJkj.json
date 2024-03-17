@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/services/vue-plugin/components.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { V as VaAccordion } from \"../../components/va-accordion/index.mjs\";\nimport { V as VaAffix } from \"../../components/va-affix/index.mjs\";\nimport { V as VaAlert } from \"../../components/va-alert/index.mjs\";\nimport { V as VaAppBar } from \"../../components/va-app-bar/index.mjs\";\nimport { V as VaAspectRatio } from \"../../components/va-aspect-ratio/index.mjs\";\nimport { V as VaAvatar } from \"../../components/va-avatar/index.mjs\";\nimport { V as VaAvatarGroup } from \"../../components/va-avatar-group/index.mjs\";\nimport { V as VaBacktop } from \"../../components/va-backtop/index.mjs\";\nimport { V as VaBadge } from \"../../components/va-badge/index.mjs\";\nimport { a as VaBreadcrumbs, V as VaBreadcrumbsItem } from \"../../components/va-breadcrumbs/index.mjs\";\nimport { V as VaButton } from \"../../components/va-button/index.mjs\";\nimport { V as VaButtonDropdown } from \"../../components/va-button-dropdown/index.mjs\";\nimport { V as VaButtonGroup } from \"../../components/va-button-group/index.mjs\";\nimport { V as VaButtonToggle } from \"../../components/va-button-toggle/index.mjs\";\nimport { d as VaCard, b as VaCardActions, c as VaCardBlock, V as VaCardContent, a as VaCardTitle } from \"../../components/va-card/index.mjs\";\nimport { V as VaCarousel } from \"../../components/va-carousel/index.mjs\";\nimport { V as VaCheckbox } from \"../../components/va-checkbox/index.mjs\";\nimport { V as VaChip } from \"../../components/va-chip/index.mjs\";\nimport { V as VaCollapse } from \"../../components/va-collapse/index.mjs\";\nimport { V as VaColorIndicator } from \"../../components/va-color-indicator/index.mjs\";\nimport { V as VaColorInput } from \"../../components/va-color-input/index.mjs\";\nimport { V as VaColorPalette } from \"../../components/va-color-palette/index.mjs\";\nimport { V as VaConfig } from \"../../components/va-config/VaConfig.mjs\";\nimport { V as VaContent } from \"../../components/va-content/index.mjs\";\nimport { V as VaCounter } from \"../../components/va-counter/index.mjs\";\nimport { V as VaDataTable } from \"../../components/va-data-table/index.mjs\";\nimport { V as VaDateInput } from \"../../components/va-date-input/index.mjs\";\nimport { V as VaDatePicker } from \"../../components/va-date-picker/index.mjs\";\nimport { V as VaDivider } from \"../../components/va-divider/index.mjs\";\nimport { V as VaDropdown } from \"../../components/va-dropdown/index.mjs\";\nimport { V as VaDropdownContent } from \"../../components/va-dropdown/components/VaDropdownContent/index.mjs\";\nimport { V as VaFallback } from \"../../components/va-fallback/index.mjs\";\nimport { V as VaFileUpload } from \"../../components/va-file-upload/index.mjs\";\nimport { V as VaForm } from \"../../components/va-form/index.mjs\";\nimport { V as VaHover } from \"../../components/va-hover/index.mjs\";\nimport { V as VaIcon } from \"../../components/va-icon/index.mjs\";\nimport { V as VaImage } from \"../../components/va-image/index.mjs\";\nimport { V as VaInfiniteScroll } from \"../../components/va-infinite-scroll/index.mjs\";\nimport { V as VaInnerLoading } from \"../../components/va-inner-loading/index.mjs\";\nimport { V as VaInput } from \"../../components/va-input/index.mjs\";\nimport { V as VaLayout } from \"../../components/va-layout/index.mjs\";\nimport { V as VaInputWrapper } from \"../../components/va-input-wrapper/index.mjs\";\nimport { b as VaList, V as VaListItem, d as VaListItemLabel, a as VaListItemSection, c as VaListLabel, e as VaListSeparator } from \"../../components/va-list/index.mjs\";\nimport { V as VaMessageList } from \"../../components/va-message-list/VaMessageList.mjs\";\nimport { V as VaModal } from \"../../components/va-modal/VaModal.mjs\";\nimport { V as VaNavbar, a as VaNavbarItem } from \"../../components/va-navbar/index.mjs\";\nimport { V as VaOptionList } from \"../../components/va-option-list/index.mjs\";\nimport { V as VaPagination } from \"../../components/va-pagination/index.mjs\";\nimport { V as VaParallax } from \"../../components/va-parallax/index.mjs\";\nimport { V as VaPopover } from \"../../components/va-popover/index.mjs\";\nimport { V as VaProgressBar } from \"../../components/va-progress-bar/index.mjs\";\nimport { V as VaProgressCircle } from \"../../components/va-progress-circle/index.mjs\";\nimport { V as VaRadio } from \"../../components/va-radio/index.mjs\";\nimport { V as VaRating } from \"../../components/va-rating/index.mjs\";\nimport { V as VaSelect } from \"../../components/va-select/index.mjs\";\nimport { V as VaSeparator } from \"../../components/va-separator/VaSeparator.mjs\";\nimport { V as VaSkeleton, a as VaSkeletonGroup } from \"../../components/va-skeleton/index.mjs\";\nimport { V as VaSidebar } from \"../../components/va-sidebar/index.mjs\";\nimport { V as VaSidebarItem, a as VaSidebarItemContent, b as VaSidebarItemTitle } from \"../../components/va-sidebar/VaSidebarItem/index.mjs\";\nimport { V as VaSlider } from \"../../components/va-slider/index.mjs\";\nimport { V as VaSpacer } from \"../../components/va-spacer/VaSpacer.mjs\";\nimport { V as VaSplit } from \"../../components/va-split/index.mjs\";\nimport { V as VaSwitch } from \"../../components/va-switch/index.mjs\";\nimport { V as VaTabs } from \"../../components/va-tabs/index.mjs\";\nimport { V as VaTab } from \"../../components/va-tabs/components/VaTab/index.mjs\";\nimport { V as VaStepper } from \"../../components/va-stepper/index.mjs\";\nimport { V as VaTimeInput } from \"../../components/va-time-input/index.mjs\";\nimport { V as VaTimeline } from \"../../components/va-timeline/index.mjs\";\nimport { V as VaTimelineItem } from \"../../components/va-timeline/VaTimelineItem/index.mjs\";\nimport { V as VaTimePicker } from \"../../components/va-time-picker/index.mjs\";\nimport { V as VaToast } from \"../../components/va-toast/index.mjs\";\nimport { V as VaTreeView } from \"../../components/va-tree-view/index.mjs\";\nimport { V as VaScrollContainer } from \"../../components/va-scroll-container/index.mjs\";\nimport { V as VaViewer } from \"../../components/va-viewer/index.mjs\";\nimport { V as VaValue } from \"../../components/va-value/index.mjs\";\nimport { V as VaVirtualScroller } from \"../../components/va-virtual-scroller/index.mjs\";\nimport { V as VaTextarea } from \"../../components/va-textarea/index.mjs\";\nimport { V as VaMenu } from \"../../components/va-menu/va-menu.mjs\";\nimport { b as VaMenuGroup, a as VaMenuItem, V as VaMenuList } from \"../../components/va-menu-list/index.mjs\";\nconst vuesticComponents = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({\n  __proto__: null,\n  VaAccordion,\n  VaAffix,\n  VaAlert,\n  VaAppBar,\n  VaAspectRatio,\n  VaAvatar,\n  VaAvatarGroup,\n  VaBacktop,\n  VaBadge,\n  VaBreadcrumbs,\n  VaBreadcrumbsItem,\n  VaButton,\n  VaButtonDropdown,\n  VaButtonGroup,\n  VaButtonToggle,\n  VaCard,\n  VaCardActions,\n  VaCardBlock,\n  VaCardContent,\n  VaCardTitle,\n  VaCarousel,\n  VaCheckbox,\n  VaChip,\n  VaCollapse,\n  VaColorIndicator,\n  VaColorInput,\n  VaColorPalette,\n  VaConfig,\n  VaContent,\n  VaCounter,\n  VaDataTable,\n  VaDateInput,\n  VaDatePicker,\n  VaDivider,\n  VaDropdown,\n  VaDropdownContent,\n  VaFallback,\n  VaFileUpload,\n  VaForm,\n  VaHover,\n  VaIcon,\n  VaImage,\n  VaInfiniteScroll,\n  VaInnerLoading,\n  VaInput,\n  VaInputWrapper,\n  VaLayout,\n  VaList,\n  VaListItem,\n  VaListItemLabel,\n  VaListItemSection,\n  VaListLabel,\n  VaListSeparator,\n  VaMenu,\n  VaMenuGroup,\n  VaMenuItem,\n  VaMenuList,\n  VaMessageList,\n  VaModal,\n  VaNavbar,\n  VaNavbarItem,\n  VaOptionList,\n  VaPagination,\n  VaParallax,\n  VaPopover,\n  VaProgressBar,\n  VaProgressCircle,\n  VaRadio,\n  VaRating,\n  VaScrollContainer,\n  VaSelect,\n  VaSeparator,\n  VaSidebar,\n  VaSidebarItem,\n  VaSidebarItemContent,\n  VaSidebarItemTitle,\n  VaSkeleton,\n  VaSkeletonGroup,\n  VaSlider,\n  VaSpacer,\n  VaSplit,\n  VaStepper,\n  VaSwitch,\n  VaTab,\n  VaTabs,\n  VaTextarea,\n  VaTimeInput,\n  VaTimePicker,\n  VaTimeline,\n  VaTimelineItem,\n  VaToast,\n  VaTreeView,\n  VaValue,\n  VaViewer,\n  VaVirtualScroller\n}, Symbol.toStringTag, { value: \"Module\" }));\nexport {\n  vuesticComponents as v\n};\n//# sourceMappingURL=components.mjs.map\n",
+      "start": 1709717500401,
+      "end": 1709717500767,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717500768,
+      "end": 1709717500768,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717500768,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717500768,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717500769,
+      "end": 1709717500769,
+      "order": "normal"
+    }
+  ]
+}

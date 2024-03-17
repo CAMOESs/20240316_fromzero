@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-data-table/components/VaDataTableThRow.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaDataTableThRow.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createElementBlock, createBlock, createCommentVNode, Fragment, renderList, mergeProps, withModifiers, withKeys, createElementVNode, renderSlot, normalizeProps, guardReactiveProps, toDisplayString, normalizeClass } from \"vue\";\nimport { _ as _export_sfc } from \"../../../../plugin-vue_export-helper.js\";\nconst VaDataTableThRow_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = { class: \"va-data-table__table-tr\" };\nconst _hoisted_2 = {\n  key: 0,\n  scope: \"col\",\n  class: \"va-data-table__table-th va-data-table__table-cell-select\"\n};\nconst _hoisted_3 = [\"title\", \"onClick\", \"onKeydown\"];\nconst _hoisted_4 = { class: \"va-data-table__table-th-wrapper\" };\nconst _hoisted_5 = { key: 0 };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_checkbox = resolveComponent(\"va-checkbox\");\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  return openBlock(), createElementBlock(\"tr\", _hoisted_1, [\n    _ctx.$props.selectable ? (openBlock(), createElementBlock(\"th\", _hoisted_2, [\n      _ctx.multiplySelectAvailable ? (openBlock(), createBlock(_component_va_checkbox, {\n        key: 0,\n        class: \"va-data-table__table-cell-checkbox\",\n        \"model-value\": _ctx.$props.severalRowsSelected ? \"idl\" : _ctx.$props.allRowsSelected,\n        \"aria-label\": _ctx.tp(_ctx.$props.ariaSelectAllRowsLabel),\n        \"true-value\": true,\n        \"false-value\": false,\n        color: _ctx.$props.selectedColor,\n        \"indeterminate-value\": \"idl\",\n        indeterminate: \"\",\n        \"onUpdate:modelValue\": _ctx.toggleBulkSelection\n      }, null, 8, [\"model-value\", \"aria-label\", \"color\", \"onUpdate:modelValue\"])) : createCommentVNode(\"\", true)\n    ])) : createCommentVNode(\"\", true),\n    (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.columns, (column) => {\n      return openBlock(), createElementBlock(\"th\", mergeProps({\n        key: column.name,\n        scope: \"col\",\n        class: [\"va-data-table__table-th\", _ctx.getClass(column.thClass)],\n        title: column.thTitle,\n        style: _ctx.getColumnStyles(column)\n      }, _ctx.getAriaAttributes(column), {\n        onClick: withModifiers(($event) => _ctx.sortByColumn(column), [\"exact\"]),\n        onKeydown: withKeys(withModifiers(($event) => _ctx.sortByColumn(column), [\"stop\"]), [\"enter\"])\n      }), [\n        createElementVNode(\"div\", _hoisted_4, [\n          `${_ctx.slotNameComputed}(${column.name})` in _ctx.$slots ? (openBlock(), createElementBlock(\"span\", _hoisted_5, [\n            renderSlot(_ctx.$slots, `${_ctx.slotNameComputed}(${column.name})`, normalizeProps(guardReactiveProps({ label: column.label, key: column.key })))\n          ])) : renderSlot(_ctx.$slots, _ctx.slotNameComputed, normalizeProps(mergeProps({ key: 1 }, { label: column.label, key: column.key })), () => [\n            createElementVNode(\"span\", null, toDisplayString(column.label), 1)\n          ]),\n          column.sortable ? (openBlock(), createBlock(_component_va_icon, {\n            key: 2,\n            class: normalizeClass([\"va-data-table__table-th-sorting-icon\", { active: _ctx.sortBySync === column.name && _ctx.sortingOrderSync !== null }]),\n            size: \"small\",\n            role: column.sortable ? \"button\" : void 0,\n            tabindex: column.sortable ? 0 : -1,\n            name: _ctx.sortingOrderIconName,\n            onSelectstart: _cache[0] || (_cache[0] = withModifiers(() => {\n            }, [\"prevent\"]))\n          }, null, 8, [\"class\", \"role\", \"tabindex\", \"name\"])) : createCommentVNode(\"\", true)\n        ])\n      ], 16, _hoisted_3);\n    }), 128))\n  ]);\n}\nconst _VaDataTableThRow = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaDataTableThRow as _\n};\n\nimport '../../../../VaDataTableThRow.css';\n//# sourceMappingURL=VaDataTableThRow.js.map\n",
+      "start": 1709717428263,
+      "end": 1709717429059,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717429059,
+      "end": 1709717429059,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717429060,
+      "end": 1709717429060,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717429060,
+      "end": 1709717429063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717429064,
+      "end": 1709717429064,
+      "order": "normal"
+    }
+  ]
+}

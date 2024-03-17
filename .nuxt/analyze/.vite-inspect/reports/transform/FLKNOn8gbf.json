@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/middleware/maintenance.global.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n   const { status, signOut } = useSession();\n /*   let response = await useFetch(\"/api/systeme/maintenance\"); \n   let maintenance = response.data.value;\n   console.log(response);\n  if (maintenance?.status === true) {\n    if (status.value == \"authenticated\") {\n      let res = await useFetch(`/api/can/`, {\n        method: \"post\",\n        body: [\"Mettre en maintenance\"],\n      });\n      if (Array.isArray(res.data.value) && !res.data.value[0]) {\n        await signOut({ redirect: false, callbackUrl: '/maintenance' });\n        if (to.path != '/maintenance')\n          if (to.path != '/connexion')\n            return navigateTo('/maintenance')\n        //return redirect('/maintenance');\n      }\n    } else {\n      if (to.path != '/maintenance') {\n        if (to.path != '/connexion')\n          return navigateTo('/maintenance')\n      }\n    }\n  }  */\n});\n\n",
+      "start": 1709717397711,
+      "end": 1709717399047,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717399047,
+      "end": 1709717399047,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717399047,
+      "end": 1709717399047,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717399047,
+      "end": 1709717399047,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717399047,
+      "end": 1709717399047,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut } = useSession();\n});\n",
+      "start": 1709717399047,
+      "end": 1709717400528,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/middleware/maintenance.global.ts"
+        ],
+        "sourcesContent": [
+          "\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n   const { status, signOut } = useSession();\n /*   let response = await useFetch(\"/api/systeme/maintenance\"); \n   let maintenance = response.data.value;\n   console.log(response);\n  if (maintenance?.status === true) {\n    if (status.value == \"authenticated\") {\n      let res = await useFetch(`/api/can/`, {\n        method: \"post\",\n        body: [\"Mettre en maintenance\"],\n      });\n      if (Array.isArray(res.data.value) && !res.data.value[0]) {\n        await signOut({ redirect: false, callbackUrl: '/maintenance' });\n        if (to.path != '/maintenance')\n          if (to.path != '/connexion')\n            return navigateTo('/maintenance')\n        //return redirect('/maintenance');\n      }\n    } else {\n      if (to.path != '/maintenance') {\n        if (to.path != '/connexion')\n          return navigateTo('/maintenance')\n      }\n    }\n  }  */\n});\n\n"
+        ],
+        "mappings": "AACA,eAAe,0BAA0B,OAAO,IAAI,aAAa;AAC9D,QAAM,EAAE,QAAQ,QAAQ,IAAI,WAAW;AAwB1C,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717400528,
+      "end": 1709717400528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717400528,
+      "end": 1709717400528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717400528,
+      "end": 1709717400528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717400529,
+      "end": 1709717400529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717400529,
+      "end": 1709717400530,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware } from '#app/composables/router';\nimport useSession from '/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/@sidebase/nuxt-auth/dist/runtime/composables/useSession.mjs';\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut } = useSession();\n});\n",
+      "start": 1709717400530,
+      "end": 1709717400530,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717400530,
+      "end": 1709717400531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717400531,
+      "end": 1709717400531,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-switch/VaSwitch.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, computed } from \"vue\";\nimport { p as pick } from \"../../../vendor.mjs\";\nimport { g as generateUniqueId } from \"../../utils/uuid.mjs\";\nimport { V as VaProgressCircle } from \"../va-progress-circle/index.mjs\";\nimport { V as VaMessageListWrapper } from \"../va-message-list/VaMessageListWrapper.mjs\";\nimport { u as useSelectableEmits, a as useSelectableProps, b as useSelectable } from \"../../composables/useSelectable.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { u as useKeyboardOnlyFocus } from \"../../composables/useKeyboardOnlyFocus.mjs\";\nimport { u as useTextColor } from \"../../composables/useTextColor.mjs\";\nimport { u as useBem } from \"../../composables/useBem.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaSwitch\",\n  components: { VaProgressCircle, VaMessageListWrapper },\n  emits: [\n    ...useSelectableEmits,\n    \"focus\",\n    \"blur\",\n    \"update:modelValue\"\n  ],\n  props: {\n    ...useSelectableProps,\n    ...useComponentPresetProp,\n    id: { type: String, default: \"\" },\n    name: { type: String, default: \"\" },\n    modelValue: {\n      type: [Number, Boolean, Array, String, Object],\n      default: false\n    },\n    trueLabel: { type: String, default: null },\n    falseLabel: { type: String, default: null },\n    trueInnerLabel: { type: String, default: null },\n    falseInnerLabel: { type: String, default: null },\n    ariaLabel: { type: String, default: \"$t:switch\" },\n    color: { type: String, default: \"primary\" },\n    offColor: { type: String, default: \"background-element\" },\n    size: {\n      type: String,\n      default: \"medium\",\n      validator: (value) => [\"medium\", \"small\", \"large\"].includes(value)\n    }\n  },\n  setup(props, { emit, slots }) {\n    const elements = {\n      container: shallowRef(),\n      input: shallowRef(),\n      label: shallowRef()\n    };\n    const { getColor } = useColors();\n    const { hasKeyboardFocus, keyboardFocusListeners } = useKeyboardOnlyFocus();\n    const {\n      isChecked,\n      computedError,\n      isIndeterminate,\n      computedErrorMessages,\n      validationAriaAttributes,\n      toggleSelection,\n      onBlur,\n      onFocus,\n      reset,\n      focus\n    } = useSelectable(props, emit, elements);\n    const computedBackground = computed(() => getColor(isChecked.value ? props.color : props.offColor));\n    const { textColorComputed } = useTextColor(computedBackground);\n    const computedInnerLabel = computed(() => {\n      if (props.trueInnerLabel && isChecked.value) {\n        return props.trueInnerLabel;\n      }\n      if (props.falseInnerLabel && !isChecked.value) {\n        return props.falseInnerLabel;\n      }\n      return \"\";\n    });\n    const computedLabel = computed(() => {\n      if (props.trueLabel && isChecked.value) {\n        return props.trueLabel;\n      }\n      if (props.falseLabel && !isChecked.value) {\n        return props.falseLabel;\n      }\n      return props.label;\n    });\n    const computedClass = useBem(\"va-switch\", () => ({\n      ...pick(props, [\"readonly\", \"disabled\", \"leftLabel\"]),\n      checked: isChecked.value,\n      indeterminate: isIndeterminate.value,\n      small: props.size === \"small\",\n      large: props.size === \"large\",\n      error: computedError.value,\n      keyboardFocus: hasKeyboardFocus.value\n    }));\n    const styleComputed = computed(() => ({\n      lineHeight: computedErrorMessages.value.length ? 1 : 0\n    }));\n    const progressCircleSize = computed(() => {\n      const size = { small: \"15px\", medium: \"20px\", large: \"25px\" };\n      return size[props.size];\n    });\n    const trackStyle = computed(() => ({\n      borderColor: computedError.value ? getColor(\"danger\") : \"\",\n      backgroundColor: computedBackground.value\n    }));\n    const labelStyle = computed(() => ({\n      color: computedError.value ? getColor(\"danger\") : \"\"\n    }));\n    const trackLabelStyle = computed(() => ({\n      color: textColorComputed.value,\n      \"text-align\": isChecked.value ? \"left\" : \"right\"\n    }));\n    const ariaLabelIdComputed = computed(() => `aria-label-id-${generateUniqueId()}`);\n    const inputAttributesComputed = computed(() => ({\n      id: props.id || void 0,\n      name: props.name || void 0,\n      disabled: props.disabled,\n      readonly: props.readonly,\n      \"aria-disabled\": props.disabled,\n      \"aria-readonly\": props.readonly,\n      \"aria-checked\": !!props.modelValue,\n      \"aria-label\": !slots.default ? props.ariaLabel : void 0,\n      \"aria-labelledby\": computedLabel.value || slots.default ? ariaLabelIdComputed.value : void 0,\n      tabindex: props.disabled ? -1 : 0,\n      checked: isChecked.value,\n      ...validationAriaAttributes.value\n    }));\n    const onEnterKeyPress = () => {\n      var _a;\n      (_a = elements.input.value) == null ? void 0 : _a.click();\n    };\n    return {\n      onEnterKeyPress,\n      toggleSelection,\n      onBlur,\n      onFocus,\n      reset,\n      focus,\n      input: elements.input,\n      computedErrorMessages,\n      isChecked,\n      computedError,\n      isIndeterminate,\n      keyboardFocusListeners,\n      computedInnerLabel,\n      computedLabel,\n      computedClass,\n      styleComputed,\n      progressCircleSize,\n      trackStyle,\n      labelStyle,\n      trackLabelStyle,\n      ariaLabelIdComputed,\n      inputAttributesComputed\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaSwitch.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717508142,
+      "end": 1709717508369,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508369,
+      "end": 1709717508369,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508369,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508369,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508370,
+      "end": 1709717508370,
+      "order": "normal"
+    }
+  ]
+}

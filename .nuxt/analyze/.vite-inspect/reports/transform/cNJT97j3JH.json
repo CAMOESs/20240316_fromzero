@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-slider/VaSlider.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaSlider.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createElementBlock, mergeProps, renderSlot, createCommentVNode, normalizeStyle, createTextVNode, toDisplayString, createVNode, createElementVNode, Fragment, renderList, normalizeClass, normalizeProps, guardReactiveProps } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.js\";\nconst VaSlider_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = {\n  key: 0,\n  class: \"va-slider__input-wrapper\",\n  \"aria-hidden\": \"true\"\n};\nconst _hoisted_2 = [\"id\"];\nconst _hoisted_3 = {\n  key: 2,\n  class: \"va-input__label\",\n  \"aria-hidden\": \"true\"\n};\nconst _hoisted_4 = [\"tabindex\", \"onFocus\"];\nconst _hoisted_5 = [\"tabindex\"];\nconst _hoisted_6 = {\n  key: 3,\n  class: \"va-input__label--inverse\",\n  \"aria-hidden\": \"true\"\n};\nconst _hoisted_7 = [\"id\"];\nconst _hoisted_8 = {\n  key: 5,\n  class: \"va-slider__input-wrapper\"\n};\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  return openBlock(), createElementBlock(\"div\", mergeProps({\n    class: [\"va-slider\", _ctx.sliderClass]\n  }, _ctx.ariaAttributesComputed), [\n    (_ctx.vertical ? _ctx.$slots.append : _ctx.$slots.prepend) ? (openBlock(), createElementBlock(\"div\", _hoisted_1, [\n      renderSlot(_ctx.$slots, _ctx.vertical ? \"append\" : \"prepend\")\n    ])) : createCommentVNode(\"\", true),\n    (_ctx.$slots.label || _ctx.label) && !_ctx.invertLabel ? (openBlock(), createElementBlock(\"span\", {\n      key: 1,\n      class: \"va-input__label\",\n      id: _ctx.ariaLabelIdComputed,\n      style: normalizeStyle(_ctx.labelStyles)\n    }, [\n      renderSlot(_ctx.$slots, \"label\", {}, () => [\n        createTextVNode(toDisplayString(_ctx.label), 1)\n      ])\n    ], 12, _hoisted_2)) : createCommentVNode(\"\", true),\n    (_ctx.vertical ? _ctx.iconAppend : _ctx.iconPrepend) ? (openBlock(), createElementBlock(\"span\", _hoisted_3, [\n      createVNode(_component_va_icon, {\n        name: _ctx.vertical ? _ctx.iconAppend : _ctx.iconPrepend,\n        color: _ctx.getColor(_ctx.$props.color),\n        size: 16\n      }, null, 8, [\"name\", \"color\"])\n    ])) : createCommentVNode(\"\", true),\n    createElementVNode(\"div\", {\n      ref: \"sliderContainer\",\n      class: \"va-slider__container\",\n      onMousedown: _cache[3] || (_cache[3] = (...args) => _ctx.clickOnContainer && _ctx.clickOnContainer(...args)),\n      onTouchstart: _cache[4] || (_cache[4] = (...args) => _ctx.clickOnContainer && _ctx.clickOnContainer(...args))\n    }, [\n      createElementVNode(\"div\", {\n        class: \"va-slider__track\",\n        \"aria-hidden\": \"true\",\n        style: normalizeStyle(_ctx.trackStyles)\n      }, null, 4),\n      _ctx.pins ? (openBlock(true), createElementBlock(Fragment, { key: 0 }, renderList(_ctx.pinsCol, (pin, i) => {\n        return openBlock(), createElementBlock(\"div\", {\n          key: i,\n          class: normalizeClass([\"va-slider__mark\", { \"va-slider__mark--active\": _ctx.checkActivePin(pin) }]),\n          style: normalizeStyle(_ctx.getPinStyles(pin))\n        }, null, 6);\n      }), 128)) : createCommentVNode(\"\", true),\n      _ctx.$props.range ? (openBlock(), createElementBlock(Fragment, { key: 1 }, [\n        createElementVNode(\"div\", {\n          ref: \"process\",\n          class: normalizeClass([\"va-slider__track va-slider__track--selected\", { \"va-slider__track--active\": _ctx.isFocused }]),\n          \"aria-hidden\": \"true\",\n          style: normalizeStyle(_ctx.processedStyles)\n        }, null, 6),\n        (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.orders, (order) => {\n          return openBlock(), createElementBlock(\"div\", {\n            key: \"dot\" + order,\n            ref_for: true,\n            ref: _ctx.setItemRefByIndex(order),\n            class: normalizeClass([\"va-slider__handler\", _ctx.dotClass]),\n            style: normalizeStyle(_ctx.getDottedStyles(order)),\n            tabindex: _ctx.disabled || _ctx.readonly ? void 0 : 0,\n            onFocus: ($event) => (_ctx.isFocused = true, _ctx.currentSliderDotIndex = order),\n            onBlur: _cache[0] || (_cache[0] = ($event) => _ctx.isFocused = false)\n          }, [\n            _ctx.isActiveDot(order) ? (openBlock(), createElementBlock(\"div\", {\n              key: 0,\n              style: normalizeStyle({ backgroundColor: _ctx.getColor(_ctx.$props.color) }),\n              class: \"va-slider__handler__dot--focus\"\n            }, null, 4)) : createCommentVNode(\"\", true),\n            _ctx.trackLabelVisible ? (openBlock(), createElementBlock(\"div\", {\n              key: 1,\n              style: normalizeStyle(_ctx.labelStyles),\n              class: \"va-slider__handler__dot--value\"\n            }, [\n              renderSlot(_ctx.$slots, \"trackLabel\", normalizeProps(guardReactiveProps({ value: _ctx.getValueByOrder(order), order })), () => [\n                createTextVNode(toDisplayString(_ctx.getTrackLabel(_ctx.getValueByOrder(order), order)), 1)\n              ])\n            ], 4)) : createCommentVNode(\"\", true)\n          ], 46, _hoisted_4);\n        }), 128))\n      ], 64)) : (openBlock(), createElementBlock(Fragment, { key: 2 }, [\n        createElementVNode(\"div\", {\n          ref: \"process\",\n          \"aria-hidden\": \"true\",\n          class: normalizeClass([\"va-slider__track va-slider__track--selected\", { \"va-slider__track--active\": _ctx.isFocused }]),\n          style: normalizeStyle(_ctx.processedStyles)\n        }, null, 6),\n        createElementVNode(\"div\", {\n          ref: \"dot\",\n          class: normalizeClass([\"va-slider__handler\", _ctx.dotClass]),\n          style: normalizeStyle(_ctx.dottedStyles),\n          tabindex: _ctx.$props.disabled || _ctx.$props.readonly ? void 0 : 0,\n          onFocus: _cache[1] || (_cache[1] = ($event) => _ctx.isFocused = true),\n          onBlur: _cache[2] || (_cache[2] = ($event) => _ctx.isFocused = false)\n        }, [\n          _ctx.isActiveDot(0) ? (openBlock(), createElementBlock(\"div\", {\n            key: 0,\n            class: \"va-slider__handler__dot--focus\",\n            style: normalizeStyle({ backgroundColor: _ctx.getColor(_ctx.$props.color) })\n          }, null, 4)) : createCommentVNode(\"\", true),\n          _ctx.trackLabelVisible ? (openBlock(), createElementBlock(\"div\", {\n            key: 1,\n            class: \"va-slider__handler__dot--value\",\n            style: normalizeStyle(_ctx.labelStyles)\n          }, [\n            renderSlot(_ctx.$slots, \"trackLabel\", normalizeProps(guardReactiveProps({ value: _ctx.getValueByOrder() })), () => [\n              createTextVNode(toDisplayString(_ctx.getTrackLabel(_ctx.getValueByOrder())), 1)\n            ])\n          ], 4)) : createCommentVNode(\"\", true)\n        ], 46, _hoisted_5)\n      ], 64))\n    ], 544),\n    (_ctx.vertical ? _ctx.iconPrepend : _ctx.iconAppend) ? (openBlock(), createElementBlock(\"span\", _hoisted_6, [\n      createVNode(_component_va_icon, {\n        name: _ctx.vertical ? _ctx.iconPrepend : _ctx.iconAppend,\n        color: _ctx.getColor(_ctx.$props.color),\n        size: 16\n      }, null, 8, [\"name\", \"color\"])\n    ])) : createCommentVNode(\"\", true),\n    (_ctx.$slots.label || _ctx.label) && _ctx.invertLabel ? (openBlock(), createElementBlock(\"span\", {\n      key: 4,\n      class: \"va-input__label va-input__label--inverse\",\n      style: normalizeStyle(_ctx.labelStyles),\n      id: _ctx.ariaLabelIdComputed\n    }, [\n      renderSlot(_ctx.$slots, \"label\", {}, () => [\n        createTextVNode(toDisplayString(_ctx.label), 1)\n      ])\n    ], 12, _hoisted_7)) : createCommentVNode(\"\", true),\n    (_ctx.vertical ? _ctx.$slots.prepend : _ctx.$slots.append) ? (openBlock(), createElementBlock(\"div\", _hoisted_8, [\n      renderSlot(_ctx.$slots, _ctx.vertical ? \"prepend\" : \"append\")\n    ])) : createCommentVNode(\"\", true)\n  ], 16);\n}\nconst _VaSlider = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaSlider as _\n};\n\nimport '../../../VaSlider.css';\n//# sourceMappingURL=VaSlider.js.map\n",
+      "start": 1709717418031,
+      "end": 1709717418160,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717418160,
+      "end": 1709717418160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717418160,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717418161,
+      "end": 1709717418161,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717418162,
+      "end": 1709717418162,
+      "order": "normal"
+    }
+  ]
+}

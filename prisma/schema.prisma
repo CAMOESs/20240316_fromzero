@@ -1,0 +1,329 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Sex {
+  M
+  F
+}
+
+model User {
+  id                 Int       @id @default(autoincrement())
+  created_at         DateTime  @default(now()) @db.DateTime(0)
+  updated_at         DateTime  @default(now()) @updatedAt @db.DateTime(0)
+  username           String    @unique @db.VarChar(50)
+  email              String?   @unique @db.VarChar(50)
+  password           String
+  is_change_password Boolean   @default(false)
+  can_auth           Boolean   @default(false)
+  login_at           DateTime?
+  people_id          Int?      @unique
+  user_id            Int?      @unique
+
+  // Association
+  People   People?     @relation(fields: [people_id], references: [id], onUpdate: Cascade, onDelete: SetNull)
+  Roles    role_user[]
+  // Session  Session[]
+  // Candidat Candidat[]
+
+  @@map("users")
+}
+
+model Role {
+  id          Int      @id @default(autoincrement())
+  created_at  DateTime @default(now()) @db.DateTime(0)
+  updated_at  DateTime @default(now()) @updatedAt @db.DateTime(0)
+  name        String   @db.VarChar(50)
+  slug        String   @unique @db.VarChar(50)
+  description String?  @db.VarChar(200)
+  user_id     Int?
+
+  // Association
+
+  // User                 user?             @relation(fields: [user_id], references: [id]) 
+  Users       role_user[]
+  Permissions permission_role[]
+  ParentRoles role_role[]       @relation("ParentRoles")
+  Roles       role_role[]       @relation("Roles")
+
+  @@index([user_id], map: "role_user")
+  @@map("roles")
+}
+
+model People {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.DateTime(0)
+  updated_at DateTime @default(now()) @updatedAt @db.DateTime(0)
+
+  lastname       String    @db.VarChar(50)
+  firstname      String    @db.VarChar(50)
+  sex            Sex?
+  date_of_birth  DateTime? @db.Date
+  place_of_birth String?   @db.VarChar(50)
+  nationality    String?   @db.VarChar(50)
+  phone_number   String?   @db.VarChar(30)
+  user_id        Int?
+
+  // Association
+
+  User User?
+
+  @@map("peoples")
+}
+
+model Permission {
+  id          Int      @id @default(autoincrement())
+  created_at  DateTime @default(now()) @db.DateTime(0)
+  updated_at  DateTime @default(now()) @updatedAt @db.DateTime(0)
+  name        String?  @db.VarChar(190)
+  slug        String?  @unique @db.VarChar(190)
+  description String?  @db.MediumText
+
+  // Association
+  Roles permission_role[]
+
+  @@map("permissions")
+}
+
+model role_user {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.DateTime(0)
+  updated_at DateTime @default(now()) @updatedAt @db.DateTime(0)
+  slug       String   @db.VarChar(50)
+  username   String   @db.VarChar(50)
+
+  // Association 
+
+  User User @relation(fields: [username], references: [username], onUpdate: Cascade, onDelete: Cascade)
+  Role Role @relation(fields: [slug], references: [slug], onUpdate: Cascade, onDelete: Cascade)
+
+  @@map("role_user")
+}
+
+model permission_role {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.DateTime(0)
+  updated_at DateTime @default(now()) @updatedAt @db.DateTime(0)
+
+  permission_slug String      @db.VarChar(190)
+  role_slug       String      @db.VarChar(50)
+  Permission      Permission? @relation(fields: [permission_slug], references: [slug], onUpdate: Cascade, onDelete: Cascade)
+  Role            Role?       @relation(fields: [role_slug], references: [slug], onUpdate: Cascade, onDelete: Cascade)
+
+  @@map("permission_role")
+}
+
+model role_role {
+  id             Int      @id @default(autoincrement())
+  created_at     DateTime @default(now()) @db.DateTime(0)
+  updated_at     DateTime @default(now()) @updatedAt @db.DateTime(0)
+  parent_role_id Int?
+  role_id        Int?
+  user_id        Int?
+
+  // Association 
+  ParentRole Role? @relation("ParentRoles", fields: [parent_role_id], references: [id], map: "role_role_parent_role_id", onUpdate: Cascade, onDelete: Cascade)
+  Role       Role? @relation("Roles", fields: [role_id], references: [id], map: "role_role_role_id", onUpdate: Cascade, onDelete: Cascade)
+
+  @@unique([parent_role_id, role_id], map: "parent_role_idRole_id")
+  @@index([role_id], map: "role_id")
+  @@map("role_role")
+}
+
+// model Department {
+//   id           Int            @id @default(autoincrement())
+//   created_at   DateTime       @default(now()) @db.DateTime(0)
+//   updated_at   DateTime       @default(now()) @updatedAt @db.DateTime(0)
+//   order        Int
+//   name         String         @db.VarChar(50)
+//   code         String         @db.VarChar(4)
+//   student_code BigInt
+//   Municipality Municipality[]
+
+//   // Association
+//   @@map("departments")
+// }
+
+// model Municipality {
+//   id         Int      @id @default(autoincrement())
+//   created_at DateTime @default(now()) @db.DateTime(0)
+//   updated_at DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   name       String   @db.VarChar(50)
+//   num        String   @db.VarChar(20)
+//   code       String   @db.VarChar(20)
+//   // Association
+
+//   department_id Int?
+//   Department    Department? @relation(fields: [department_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+//   District      District[]
+
+//   @@map("municipalities")
+// }
+
+// model District {
+//   id              Int           @id @default(autoincrement())
+//   created_at      DateTime      @default(now()) @db.DateTime(0)
+//   updated_at      DateTime      @default(now()) @updatedAt @db.DateTime(0)
+//   name            String        @db.VarChar(50)
+//   code            String        @db.VarChar(20)
+//   num             String        @db.VarChar(20)
+//   // Association
+//   Villages        Village[]
+//   municipality_id Int?
+//   Municipality    Municipality? @relation(fields: [municipality_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+//   region_id Int?
+
+//   @@map("districts")
+// }
+
+// model Village {
+//   id         Int      @id @default(autoincrement())
+//   created_at DateTime @default(now()) @db.DateTime(0)
+//   updated_at DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   name       String   @db.VarChar(50)
+//   code       String?  @db.VarChar(20)
+//   num        String?  @db.VarChar(20)
+//   // Association
+
+//   district_id Int?
+//   District    District? @relation(fields: [district_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+//   @@map("villages")
+// }
+
+// model Session {
+//   id          Int        @id @default(autoincrement())
+//   created_at  DateTime   @default(now()) @db.DateTime(0)
+//   updated_at  DateTime   @default(now()) @updatedAt @db.DateTime(0)
+//   month       String     @db.VarChar(10)
+//   year        Int
+//   reference   String?
+//   description String?
+//   date_of_pv  DateTime?  @db.Date()
+//   user_id     Int
+//   User        User       @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+//   Month       Month      @relation(fields: [month], references: [slug], onUpdate: Cascade, onDelete: Restrict)
+//   Candidat    Candidat[]
+
+//   @@unique([year, month])
+//   @@map("sessions")
+// }
+
+// model Month {
+//   id         Int       @id @default(autoincrement())
+//   created_at DateTime  @default(now()) @db.DateTime(0)
+//   updated_at DateTime  @default(now()) @updatedAt @db.DateTime(0)
+//   name       String    @db.VarChar(10)
+//   slug       String    @unique @db.VarChar(10)
+//   order      Int
+//   Session    Session[]
+
+//   @@map("months")
+// }
+
+// model Candidat {
+//   id             Int      @id @default(autoincrement())
+//   created_at     DateTime @default(now()) @db.DateTime(0)
+//   updated_at     DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   lastname       String   @db.VarChar(50)
+//   firstname      String   @db.VarChar(50)
+//   sex            Sex
+//   date_of_birth  DateTime @db.Date()
+//   place_of_birth String   @db.VarChar(50)
+//   session_id     Int?
+//   Session        Session? @relation(fields: [session_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+//   branch         String?  @db.VarChar(100)
+//   corps          String?  @db.VarChar(100)
+//   metier         String?  @db.VarChar(100)
+//   centre         String?  @db.VarChar(100)
+//   municipality   String?  @db.VarChar(50)
+//   department     String?  @db.VarChar(30)
+
+//   user_id Int
+//   User    User @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+//   @@map("candidats")
+// }
+
+// model Branch {
+//   id          Int      @id @default(autoincrement())
+//   created_at  DateTime @default(now()) @db.DateTime(0)
+//   updated_at  DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   name        String
+//   slug        String
+//   description String?
+//   Coprs       Coprs[]
+
+//   user_id Int
+//   User    User @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+//   @@map("branch")
+// }
+
+// model Coprs {
+//   id          Int      @id @default(autoincrement())
+//   created_at  DateTime @default(now()) @db.DateTime(0)
+//   updated_at  DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   name        String
+//   slug        String
+//   description String?
+//   branch_id   Int
+//   Branch      Branch   @relation(fields: [branch_id], references: [id])
+//   Metier      Metier[]
+//   user_id     Int
+//   User        User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+//   @@map("corps")
+// }
+
+// model Metier {
+//   id          Int      @id @default(autoincrement())
+//   created_at  DateTime @default(now()) @db.DateTime(0)
+//   updated_at  DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   name        String
+//   slug        String
+//   description String?
+//   coprs_id    Int
+//   Coprs       Coprs    @relation(fields: [coprs_id], references: [id])
+//   user_id     Int
+//   User        User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+//   @@map("metiers")
+// }
+
+// model Center {
+//   id              Int      @id @default(autoincrement())
+//   created_at      DateTime @default(now()) @db.DateTime(0)
+//   updated_at      DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   name            String
+//   municipality_id Int
+//   user_id         Int
+//   User            User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+//   @@map("centers")
+// }
+
+// model CandidatSession {
+//   id          Int      @id @default(autoincrement())
+//   created_at  DateTime @default(now()) @db.DateTime(0)
+//   updated_at  DateTime @default(now()) @updatedAt @db.DateTime(0)
+//   candidat_id Int
+//   session_id  Int
+//   user_id     Int
+//   User        User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+//   @@map("candidat_session")
+// }
+
+// QUestion 
+//  Dimension de la photo
+// Quel date est mentionné sur le diplôme
+// Chaque session à une seule référence ?
+// Les communes, departement sont pour les centres ou pour le lieu de  provenance  des candidats
+// Un candidat peut passé plusieurs session ?

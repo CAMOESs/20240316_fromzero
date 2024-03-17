@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/u/Snackbar.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"text-center\">\n    <v-snackbar\n      v-model=\"snackbar.status\"\n      location=\"top\"\n      :color=\"snackbar.type\"\n      :timeout=\"snackbar.timeout\"\n    >\n      <!-- <v-icon>{{ icon }} </v-icon> -->\n      {{ snackbar.text }}\n      <template v-slot:actions>\n        <v-btn class=\"text-white bg-black\" @click=\"snackbar.close()\">\n          Fermer\n        </v-btn>\n      </template>\n    </v-snackbar>\n  </div>\n</template>\n<script setup>\nimport { useSnackbar } from \"@/store/snackbar\";\n\nlet snackbar = useSnackbar();\n</script>\n\n<style></style>\n",
+      "start": 1709717418451,
+      "end": 1709717418943,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717418943,
+      "end": 1709717418943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"text-center\" }\n\nimport { useSnackbar } from \"@/store/snackbar\";\n\n\nconst _sfc_main = {\n  __name: 'Snackbar',\n  setup(__props) {\n\nlet snackbar = useSnackbar();\n\nreturn (_ctx, _cache) => {\n  const _component_v_btn = _resolveComponent(\"v-btn\")\n  const _component_v_snackbar = _resolveComponent(\"v-snackbar\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_v_snackbar, {\n      modelValue: _unref(snackbar).status,\n      \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_unref(snackbar).status) = $event)),\n      location: \"top\",\n      color: _unref(snackbar).type,\n      timeout: _unref(snackbar).timeout\n    }, {\n      actions: _withCtx(() => [\n        _createVNode(_component_v_btn, {\n          class: \"text-white bg-black\",\n          onClick: _cache[0] || (_cache[0] = $event => (_unref(snackbar).close()))\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" Fermer \")\n          ]),\n          _: 1\n        })\n      ]),\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_unref(snackbar).text) + \" \", 1)\n      ]),\n      _: 1\n    }, 8, [\"modelValue\", \"color\", \"timeout\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1709717418943,
+      "end": 1709717418946,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717418946,
+      "end": 1709717418946,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418946,
+      "end": 1709717418946,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717418946,
+      "end": 1709717418946,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717418946,
+      "end": 1709717418946,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717418946,
+      "end": 1709717418946,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418946,
+      "end": 1709717418946,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717418947,
+      "end": 1709717418947,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717418947,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717418948,
+      "end": 1709717418948,
+      "order": "normal"
+    }
+  ]
+}

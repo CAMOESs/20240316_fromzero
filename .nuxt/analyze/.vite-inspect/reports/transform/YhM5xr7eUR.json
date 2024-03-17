@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-counter/hooks/useCounterPropsValidation.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { watch } from \"vue\";\nimport { w as warn } from \"../../../utils/console.js\";\nfunction useCounterPropsValidation(props) {\n  const validateCounterProps = () => {\n    const val = Number(props.modelValue);\n    if (Number.isNaN(val)) {\n      warn(\"The value is not a number or cannot be reduced to a number.\");\n      return;\n    }\n    if (props.min && props.max && props.min > props.max) {\n      warn(`The maximum value (${props.max}) can not be less than the minimum value (${props.min}).`);\n    }\n    if (props.min && val < props.min) {\n      warn(`The value of the counter (${val}) can not be less than the minimum value (${props.min}).`);\n    }\n    if (props.max && val > props.max) {\n      warn(`The value of the counter (${val}) can not be greater than the maximum value (${props.max}).`);\n    }\n    if (props.min && props.max && props.step > props.max - props.min) {\n      warn(`The value of the step (${props.step}) can not be greater than the difference (${props.max - props.min}) between maximum value (${props.max}) and minimum value (${props.min}).`);\n    }\n  };\n  watch(\n    [\n      () => props.step,\n      () => props.min,\n      () => props.max\n    ],\n    validateCounterProps,\n    { immediate: true }\n  );\n}\nexport {\n  useCounterPropsValidation as u\n};\n//# sourceMappingURL=useCounterPropsValidation.js.map\n",
+      "start": 1709717427135,
+      "end": 1709717427285,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427285,
+      "end": 1709717427285,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427285,
+      "end": 1709717427285,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427285,
+      "end": 1709717427285,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427286,
+      "end": 1709717427286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427287,
+      "end": 1709717427287,
+      "order": "normal"
+    }
+  ]
+}

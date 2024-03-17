@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/composables/useSelectable.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed } from \"vue\";\nimport { a as useStatefulProps, b as useStateful } from \"./useStateful.js\";\nimport { u as useLoadingProps } from \"./useLoading.js\";\nimport { b as useValidationProps, u as useValidationEmits, a as useValidation } from \"./useValidation.js\";\nimport { u as useFocus } from \"./useFocus.js\";\nimport { u as unwrapEl } from \"../utils/unwrapEl.js\";\nconst useSelectableProps = {\n  ...useStatefulProps,\n  ...useLoadingProps,\n  ...useValidationProps,\n  arrayValue: { type: [String, Boolean, Object, Number], default: void 0 },\n  label: { type: String, default: \"\" },\n  leftLabel: { type: Boolean, default: false },\n  trueValue: { type: null, default: true },\n  falseValue: { type: null, default: false },\n  indeterminate: { type: Boolean, default: false },\n  indeterminateValue: { type: null, default: null },\n  disabled: { type: Boolean, default: false },\n  readonly: { type: Boolean, default: false }\n};\nconst useSelectableEmits = [...useValidationEmits, \"update:modelValue\", \"focus\", \"blur\"];\nconst checkDuplicates = (props) => {\n  const values = [props.falseValue, props.trueValue];\n  if (props.indeterminate) {\n    values.push(props.indeterminateValue);\n  }\n  const hasDuplicates = new Set(values).size !== values.length;\n  if (hasDuplicates) {\n    throw new Error(\"falseValue, trueValue, indeterminateValue props should have strictly different values, which is not the case.\");\n  }\n};\nconst useSelectable = (props, emit, { input, label, container }) => {\n  checkDuplicates(props);\n  const reset = () => withoutValidation(() => {\n    emit(\"update:modelValue\", false);\n    resetValidation();\n  });\n  const focus = () => {\n    var _a;\n    (_a = unwrapEl(input.value)) == null ? void 0 : _a.focus();\n  };\n  const { valueComputed } = useStateful(props, emit);\n  const {\n    computedError,\n    computedErrorMessages,\n    validate,\n    validationAriaAttributes,\n    withoutValidation,\n    resetValidation\n  } = useValidation(props, emit, { reset, focus, value: valueComputed });\n  const { isFocused } = useFocus();\n  const isElementRelated = (element) => {\n    return !!element && [unwrapEl(label.value), unwrapEl(container.value)].includes(element);\n  };\n  const onBlur = (event) => {\n    if (input.value === event.target && !isElementRelated(event.relatedTarget)) {\n      isFocused.value = false;\n      validate();\n      emit(\"blur\", event);\n    }\n  };\n  const onFocus = (event) => {\n    isFocused.value = true;\n    emit(\"focus\", event);\n  };\n  const isIndeterminate = computed(() => props.indeterminate && valueComputed.value === props.indeterminateValue);\n  const modelIsArray = computed(() => props.arrayValue !== void 0 && props.arrayValue !== null);\n  const isChecked = computed(() => {\n    var _a;\n    if (modelIsArray.value) {\n      return (_a = props.modelValue) == null ? void 0 : _a.includes(props.arrayValue);\n    }\n    return valueComputed.value === props.trueValue;\n  });\n  const toggleSelection = () => {\n    if (props.readonly || props.disabled || props.loading) {\n      return;\n    }\n    if (modelIsArray.value) {\n      if (!props.modelValue) {\n        emit(\"update:modelValue\", [props.arrayValue]);\n      } else if (!Array.isArray(props.modelValue)) {\n        emit(\"update:modelValue\", props.modelValue === props.arrayValue ? [] : [props.modelValue, props.arrayValue]);\n      } else if (props.modelValue.includes(props.arrayValue)) {\n        emit(\"update:modelValue\", props.modelValue.filter((option) => option !== props.arrayValue));\n      } else {\n        emit(\"update:modelValue\", props.modelValue.concat(props.arrayValue));\n      }\n      return;\n    }\n    if (props.indeterminate) {\n      if (isIndeterminate.value) {\n        valueComputed.value = props.trueValue;\n      } else if (isChecked.value) {\n        valueComputed.value = props.falseValue;\n      } else {\n        valueComputed.value = props.indeterminateValue;\n      }\n      return;\n    }\n    if (isChecked.value) {\n      valueComputed.value = props.falseValue;\n    } else {\n      valueComputed.value = props.trueValue;\n    }\n  };\n  return {\n    isChecked,\n    isIndeterminate,\n    onBlur,\n    onFocus,\n    toggleSelection,\n    reset,\n    focus,\n    computedError,\n    computedErrorMessages,\n    validationAriaAttributes\n  };\n};\nexport {\n  useSelectableProps as a,\n  useSelectable as b,\n  useSelectableEmits as u\n};\n//# sourceMappingURL=useSelectable.js.map\n",
+      "start": 1709717426922,
+      "end": 1709717427085,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427085,
+      "end": 1709717427085,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427085,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427086,
+      "end": 1709717427086,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427086,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427087,
+      "end": 1709717427087,
+      "order": "normal"
+    }
+  ]
+}

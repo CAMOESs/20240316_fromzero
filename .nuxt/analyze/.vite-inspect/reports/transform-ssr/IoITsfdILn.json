@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-data-table/VaDataTable.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaDataTable.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, mergeProps, withCtx, createVNode, normalizeStyle, createElementBlock, createCommentVNode, createElementVNode, renderSlot, normalizeProps, guardReactiveProps, normalizeClass, createSlots, renderList, TransitionGroup, Fragment, withModifiers, toDisplayString, createTextVNode } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaDataTable_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = {\n  key: 0,\n  ref: \"topTrigger\",\n  class: \"va-data-table__scroll-trigger\"\n};\nconst _hoisted_2 = { key: 0 };\nconst _hoisted_3 = {\n  ref: \"list\",\n  class: \"va-data-table__table-tbody\"\n};\nconst _hoisted_4 = {\n  key: \"showNoDataHtml\",\n  class: \"va-data-table__table-tr\"\n};\nconst _hoisted_5 = [\"colspan\", \"innerHTML\"];\nconst _hoisted_6 = {\n  key: \"showNoDataFilteredHtml\",\n  class: \"va-data-table__table-tr\"\n};\nconst _hoisted_7 = [\"colspan\", \"innerHTML\"];\nconst _hoisted_8 = [\"onClick\", \"onDblclick\", \"onContextmenu\"];\nconst _hoisted_9 = {\n  key: 0,\n  class: \"va-data-table__grid-column-header\"\n};\nconst _hoisted_10 = {\n  key: 0,\n  class: \"va-data-table__table-expanded-content\",\n  colspan: \"99999\"\n};\nconst _hoisted_11 = {\n  key: 1,\n  ref: \"bottomTrigger\",\n  class: \"va-data-table__scroll-trigger\"\n};\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_data_table_th_row = resolveComponent(\"va-data-table-th-row\");\n  const _component_va_checkbox = resolveComponent(\"va-checkbox\");\n  const _component_va_inner_loading = resolveComponent(\"va-inner-loading\");\n  const _component_va_virtual_scroller = resolveComponent(\"va-virtual-scroller\");\n  return openBlock(), createBlock(_component_va_virtual_scroller, mergeProps({ class: \"va-data-table\" }, _ctx.computedAttributes, {\n    ref: \"scrollContainer\",\n    style: `--va-css-variables-selected-color: ${String(_ctx.CSSVariables.selectedColor)};--va-css-variables-hover-color: ${String(_ctx.CSSVariables.hoverColor)};--va-css-variables-table-height: ${String(_ctx.CSSVariables.tableHeight)};--va-css-variables-thead-bg: ${String(_ctx.CSSVariables.theadBg)};--va-css-variables-tfoot-bg: ${String(_ctx.CSSVariables.tfootBg)};--va-grid-columns-count: ${String(_ctx.gridColumnsCount)}`\n  }), {\n    content: withCtx(({\n      uniqueKey,\n      renderBuffer,\n      currentListOffset,\n      listStyleComputed,\n      containerStyleComputed\n    }) => [\n      createVNode(_component_va_inner_loading, {\n        \"aria-live\": \"polite\",\n        style: normalizeStyle(containerStyleComputed),\n        loading: _ctx.loading,\n        color: _ctx.loadingColor\n      }, {\n        default: withCtx(() => [\n          _ctx.doRenderTopTrigger ? (openBlock(), createElementBlock(\"div\", _hoisted_1, null, 512)) : createCommentVNode(\"\", true),\n          createElementVNode(\"table\", mergeProps({\n            class: \"va-data-table__table\",\n            style: listStyleComputed\n          }, _ctx.computedTableAttributes), [\n            \"colgroup\" in _ctx.$slots ? (openBlock(), createElementBlock(\"colgroup\", _hoisted_2, [\n              renderSlot(_ctx.$slots, \"colgroup\", normalizeProps(guardReactiveProps(_ctx.columnsComputed)))\n            ])) : createCommentVNode(\"\", true),\n            createElementVNode(\"thead\", {\n              class: normalizeClass([\"va-data-table__table-thead\", { \"va-data-table__table-thead--sticky\": _ctx.$props.stickyHeader }]),\n              style: normalizeStyle({ top: _ctx.isVirtualScroll && _ctx.$props.stickyHeader ? `-${currentListOffset}px` : void 0 })\n            }, [\n              renderSlot(_ctx.$slots, \"headerPrepend\"),\n              renderSlot(_ctx.$slots, \"header\", {}, () => [\n                !_ctx.hideDefaultHeader ? (openBlock(), createBlock(_component_va_data_table_th_row, mergeProps({ key: 0 }, _ctx.thAttributesComputed, {\n                  onToggleBulkSelection: _ctx.toggleBulkSelection,\n                  onToggleSorting: _ctx.toggleSorting\n                }), createSlots({ _: 2 }, [\n                  renderList(_ctx.$slots, (_, slot) => {\n                    return {\n                      name: slot,\n                      fn: withCtx((scope) => [\n                        renderSlot(_ctx.$slots, slot, normalizeProps(guardReactiveProps(scope)))\n                      ])\n                    };\n                  })\n                ]), 1040, [\"onToggleBulkSelection\", \"onToggleSorting\"])) : createCommentVNode(\"\", true)\n              ]),\n              renderSlot(_ctx.$slots, \"headerAppend\")\n            ], 6),\n            createElementVNode(\"tbody\", _hoisted_3, [\n              renderSlot(_ctx.$slots, \"bodyPrepend\"),\n              createVNode(TransitionGroup, {\n                name: _ctx.isVirtualScroll ? \"\" : _ctx.animationName,\n                css: !_ctx.$props.virtualScroller,\n                appear: !_ctx.$props.virtualScroller\n              }, {\n                default: withCtx(() => [\n                  _ctx.showNoDataHtml ? (openBlock(), createElementBlock(\"tr\", _hoisted_4, [\n                    createElementVNode(\"td\", {\n                      class: \"va-data-table__table-td no-data\",\n                      colspan: _ctx.columnsComputed.length + (_ctx.selectable ? 1 : 0),\n                      innerHTML: _ctx.noDataHtml\n                    }, null, 8, _hoisted_5)\n                  ])) : _ctx.showNoDataFilteredHtml ? (openBlock(), createElementBlock(\"tr\", _hoisted_6, [\n                    createElementVNode(\"td\", {\n                      class: \"va-data-table__table-td no-data\",\n                      colspan: _ctx.columnsComputed.length + (_ctx.selectable ? 1 : 0),\n                      innerHTML: _ctx.noDataFilteredHtml\n                    }, null, 8, _hoisted_7)\n                  ])) : createCommentVNode(\"\", true),\n                  (openBlock(true), createElementBlock(Fragment, null, renderList(renderBuffer, (row, index) => {\n                    return openBlock(), createElementBlock(Fragment, {\n                      key: `table-row_${uniqueKey(row, index)}`\n                    }, [\n                      createElementVNode(\"tr\", mergeProps({\n                        class: [\"va-data-table__table-tr\", [{ selected: _ctx.isRowSelected(row), \"va-data-table__table-tr--expanded\": row.isExpandableRowVisible }]]\n                      }, _ctx.getRowBind(row), {\n                        onClick: ($event) => _ctx.onRowClickHandler(\"row:click\", $event, row),\n                        onDblclick: ($event) => _ctx.onRowClickHandler(\"row:dblclick\", $event, row),\n                        onContextmenu: ($event) => _ctx.onRowClickHandler(\"row:contextmenu\", $event, row)\n                      }), [\n                        _ctx.selectable && !_ctx.$props.grid ? (openBlock(), createElementBlock(\"td\", {\n                          class: \"va-data-table__table-td va-data-table__table-cell-select\",\n                          key: `selectable_${uniqueKey(row, index)}`,\n                          onSelectstart: _cache[0] || (_cache[0] = withModifiers(() => {\n                          }, [\"prevent\"]))\n                        }, [\n                          createVNode(_component_va_checkbox, {\n                            class: \"va-data-table__table-cell-checkbox\",\n                            \"model-value\": _ctx.isRowSelected(row),\n                            color: _ctx.selectedColor,\n                            \"aria-label\": _ctx.tp(_ctx.$props.ariaSelectRowLabel, { index: row.initialIndex }),\n                            onClick: [\n                              withModifiers(($event) => _ctx.shiftSelectRows(row), [\"shift\", \"exact\", \"stop\"]),\n                              withModifiers(($event) => _ctx.ctrlSelectRow(row), [\"ctrl\", \"exact\", \"stop\"]),\n                              withModifiers(($event) => _ctx.ctrlSelectRow(row), [\"exact\", \"stop\"])\n                            ]\n                          }, null, 8, [\"model-value\", \"color\", \"aria-label\", \"onClick\"])\n                        ], 32)) : createCommentVNode(\"\", true),\n                        (openBlock(true), createElementBlock(Fragment, null, renderList(row.cells, (cell, cellIndex) => {\n                          return openBlock(), createElementBlock(\"td\", mergeProps({\n                            key: `table-cell_${cell.column.name + cell.rowIndex}`,\n                            class: [\"va-data-table__table-td\", _ctx.getClass(cell.column.tdClass)],\n                            style: [\n                              cell.column.width ? { minWidth: cell.column.width, maxWidth: cell.column.width } : {},\n                              _ctx.getCellCSSVariables(cell),\n                              _ctx.getStyle(cell.column.tdStyle)\n                            ]\n                          }, _ctx.getCellBind(cell, row)), [\n                            `cell(${cell.column.name})` in _ctx.$slots ? renderSlot(_ctx.$slots, `cell(${cell.column.name})`, normalizeProps(mergeProps({ key: 0 }, { ...cell, row, isExpanded: row.isExpandableRowVisible }))) : renderSlot(_ctx.$slots, \"cell\", normalizeProps(mergeProps({ key: 1 }, { cell, row })), () => [\n                              _ctx.$props.grid ? (openBlock(), createElementBlock(\"span\", _hoisted_9, toDisplayString(_ctx.columnsComputed[cellIndex].label), 1)) : createCommentVNode(\"\", true),\n                              createTextVNode(\" \" + toDisplayString(cell.value), 1)\n                            ])\n                          ], 16);\n                        }), 128))\n                      ], 16, _hoisted_8),\n                      row.isExpandableRowVisible ? (openBlock(), createElementBlock(\"td\", _hoisted_10, [\n                        renderSlot(_ctx.$slots, \"expandableRow\", normalizeProps(guardReactiveProps(row)))\n                      ])) : createCommentVNode(\"\", true)\n                    ], 64);\n                  }), 128))\n                ]),\n                _: 2\n              }, 1032, [\"name\", \"css\", \"appear\"]),\n              renderSlot(_ctx.$slots, \"bodyAppend\")\n            ], 512),\n            _ctx.$slots.footer || _ctx.footerClone && !_ctx.$props.grid ? (openBlock(), createElementBlock(\"tfoot\", {\n              key: 1,\n              class: normalizeClass([\"va-data-table__table-tfoot\", { \"va-data-table__table-tfoot--sticky\": _ctx.$props.stickyFooter }]),\n              style: normalizeStyle({ bottom: _ctx.isVirtualScroll && _ctx.$props.stickyFooter ? `${currentListOffset}px` : void 0 })\n            }, [\n              renderSlot(_ctx.$slots, \"footerPrepend\"),\n              renderSlot(_ctx.$slots, \"footer\", {}, () => [\n                !_ctx.hideDefaultHeader ? (openBlock(), createBlock(_component_va_data_table_th_row, mergeProps({ key: 0 }, _ctx.thAttributesComputed, {\n                  \"is-footer\": \"\",\n                  onToggleBulkSelection: _ctx.toggleBulkSelection,\n                  onToggleSorting: _ctx.toggleSorting\n                }), createSlots({ _: 2 }, [\n                  renderList(_ctx.$slots, (_, slot) => {\n                    return {\n                      name: slot,\n                      fn: withCtx((scope) => [\n                        renderSlot(_ctx.$slots, slot, normalizeProps(guardReactiveProps(scope)))\n                      ])\n                    };\n                  })\n                ]), 1040, [\"onToggleBulkSelection\", \"onToggleSorting\"])) : createCommentVNode(\"\", true)\n              ]),\n              renderSlot(_ctx.$slots, \"footerAppend\")\n            ], 6)) : createCommentVNode(\"\", true)\n          ], 16),\n          _ctx.doRenderBottomTrigger ? (openBlock(), createElementBlock(\"div\", _hoisted_11, null, 512)) : createCommentVNode(\"\", true)\n        ]),\n        _: 2\n      }, 1032, [\"style\", \"loading\", \"color\"])\n    ]),\n    _: 3\n  }, 16, [\"style\"]);\n}\nconst _VaDataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaDataTable as _\n};\n//# sourceMappingURL=VaDataTable.mjs.map\n",
+      "start": 1709717501422,
+      "end": 1709717501655,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717501655,
+      "end": 1709717501655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717501656,
+      "end": 1709717501656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717501656,
+      "end": 1709717501657,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717501657,
+      "end": 1709717501657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717501657,
+      "end": 1709717501657,
+      "order": "normal"
+    }
+  ]
+}

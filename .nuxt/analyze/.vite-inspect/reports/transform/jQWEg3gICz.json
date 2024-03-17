@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-date-picker/components/VaDayPicker/VaDayPicker.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, toRefs, computed, watch } from \"vue\";\nimport { u as useGridKeyboardNavigation } from \"../../hooks/grid-keyboard-navigation.js\";\nimport { u as useDatePicker } from \"../../hooks/use-picker.js\";\nimport { u as useVaDatePickerCalendar } from \"./va-date-picker-calendar-hook.js\";\nimport { V as VaDatePickerCell } from \"../VaDatePickerCell.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaDayPicker\",\n  components: { VaDatePickerCell },\n  props: {\n    monthNames: { type: Array, required: true },\n    weekdayNames: { type: Array, required: true },\n    firstWeekday: { type: String, default: \"Sunday\" },\n    hideWeekDays: { type: Boolean, default: false },\n    view: { type: Object, default: () => ({ type: \"day\" }) },\n    modelValue: { type: [Date, Array, Object] },\n    mode: { type: String, default: \"auto\" },\n    showOtherMonths: { type: Boolean, default: false },\n    allowedDays: { type: Function },\n    weekends: { type: Function },\n    highlightWeekend: { type: Boolean, default: false },\n    highlightToday: { type: Boolean, default: false },\n    readonly: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" }\n  },\n  emits: [\"update:modelValue\", \"hover:day\", \"click:day\"],\n  setup(props, { emit }) {\n    const { firstWeekday, weekdayNames, view } = toRefs(props);\n    const { calendarDates, currentMonthStartIndex, currentMonthEndIndex } = useVaDatePickerCalendar(view, { firstWeekday });\n    const weekdayNamesComputed = computed(() => {\n      return firstWeekday.value === \"Sunday\" ? weekdayNames.value : [...weekdayNames.value.slice(1), weekdayNames.value[0]];\n    });\n    const {\n      hoveredIndex,\n      onClick,\n      isToday,\n      isSelected,\n      isInRange\n    } = useDatePicker(\"day\", calendarDates, props, emit);\n    const gridStartIndex = computed(() => props.showOtherMonths ? 0 : currentMonthStartIndex.value);\n    const gridEndIndex = computed(() => props.showOtherMonths ? calendarDates.value.length : currentMonthEndIndex.value);\n    const {\n      focusedCellIndex,\n      containerAttributes\n    } = useGridKeyboardNavigation({\n      rowSize: 7,\n      start: gridStartIndex,\n      end: gridEndIndex,\n      onSelected: (selectedValue) => onClick(calendarDates.value[selectedValue])\n    });\n    watch(focusedCellIndex, (index) => {\n      hoveredIndex.value = index;\n    });\n    watch(hoveredIndex, (index) => {\n      focusedCellIndex.value = index;\n    });\n    const isOtherMonth = (date) => props.view.month !== date.getMonth();\n    const isDateDisabled = (date) => props.allowedDays === void 0 ? false : !props.allowedDays(date);\n    const isDateWeekend = (date) => {\n      if (props.weekends === void 0) {\n        return date.getDay() === 6 || date.getDay() === 0;\n      }\n      return props.weekends(date);\n    };\n    return {\n      hoveredIndex,\n      calendarDates,\n      onClick,\n      isToday,\n      isSelected,\n      isInRange,\n      isOtherMonth,\n      isDateDisabled,\n      isDateWeekend,\n      containerAttributes,\n      weekdayNamesComputed,\n      focusedCellIndex\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaDayPicker.css';\n//# sourceMappingURL=VaDayPicker.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717428282,
+      "end": 1709717429074,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717429074,
+      "end": 1709717429074,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717429074,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717429075,
+      "end": 1709717429075,
+      "order": "normal"
+    }
+  ]
+}

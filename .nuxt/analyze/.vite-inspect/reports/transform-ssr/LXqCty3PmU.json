@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-textarea/VaTextarea.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaTextarea.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, mergeProps, withCtx, createElementVNode, normalizeClass, withDirectives, vModelText } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaTextarea_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = [\"rows\", \"loading\", \"ariaLabel\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_VaInputWrapper = resolveComponent(\"VaInputWrapper\");\n  return openBlock(), createBlock(_component_VaInputWrapper, mergeProps({ class: \"va-textarea\" }, _ctx.vaInputWrapperProps, {\n    error: _ctx.computedError,\n    \"error-messages\": _ctx.computedErrorMessages\n  }), {\n    default: withCtx(() => [\n      createElementVNode(\"div\", {\n        class: normalizeClass([\"va-textarea__resize-wrapper\", {\n          \"va-textarea__resize-wrapper--resizable\": _ctx.isResizable\n        }])\n      }, [\n        withDirectives(createElementVNode(\"textarea\", mergeProps({\n          \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _ctx.valueComputed = $event)\n        }, { ..._ctx.computedProps, ..._ctx.listeners, ..._ctx.validationAriaAttributes }, {\n          style: _ctx.computedStyle,\n          rows: _ctx.computedRowsCount,\n          loading: _ctx.isLoading,\n          ref: \"textarea\",\n          ariaLabel: _ctx.$props.label,\n          class: \"va-textarea__textarea\",\n          onFocus: _cache[1] || (_cache[1] = (...args) => _ctx.validationListeners.onFocus && _ctx.validationListeners.onFocus(...args)),\n          onBlur: _cache[2] || (_cache[2] = (...args) => _ctx.validationListeners.onBlur && _ctx.validationListeners.onBlur(...args))\n        }), null, 16, _hoisted_1), [\n          [vModelText, _ctx.valueComputed]\n        ])\n      ], 2)\n    ]),\n    _: 1\n  }, 16, [\"error\", \"error-messages\"]);\n}\nconst _VaTextarea = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaTextarea as _\n};\n//# sourceMappingURL=VaTextarea.mjs.map\n",
+      "start": 1709717502427,
+      "end": 1709717502715,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502715,
+      "end": 1709717502715,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502716,
+      "end": 1709717502716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502717,
+      "end": 1709717502717,
+      "order": "normal"
+    }
+  ]
+}

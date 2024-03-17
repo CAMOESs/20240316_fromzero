@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-collapse/VaCollapse.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, computed, watch } from \"vue\";\nimport { p as pick } from \"../../../vendor.js\";\nimport { a as useAccordionItem } from \"../va-accordion/hooks/useAccordion.js\";\nimport { g as generateUniqueId } from \"../../utils/uuid.js\";\nimport { V as VaIcon } from \"../va-icon/index.js\";\nimport { u as useSelectableEmits } from \"../../composables/useSelectable.js\";\nimport { u as useResizeObserver } from \"../../composables/useResizeObserver.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaCollapse\",\n  components: {\n    VaIcon\n  },\n  props: {\n    ...useComponentPresetProp,\n    ...useStatefulProps,\n    modelValue: { type: Boolean, default: false },\n    disabled: { type: Boolean, default: false },\n    header: { type: String, default: \"\" },\n    icon: { type: String, default: \"\" },\n    color: { type: String, default: void 0 },\n    bodyColor: { type: String, default: void 0 },\n    textColor: { type: String, default: \"\" },\n    bodyTextColor: { type: String, default: \"\" },\n    iconColor: { type: String, default: \"secondary\" },\n    colorAll: { type: Boolean, default: false },\n    stateful: { type: Boolean, default: true }\n  },\n  emits: [\"update:modelValue\", ...useSelectableEmits],\n  setup(props, { emit }) {\n    const body = shallowRef();\n    const { valueComputed } = useStateful(props, emit, \"modelValue\");\n    const { getColor, getTextColor, setHSLAColor } = useColors();\n    const { accordionProps, valueProxy: computedModelValue = valueComputed } = useAccordionItem();\n    const bodyHeight = ref();\n    useResizeObserver([body], () => {\n      var _a;\n      bodyHeight.value = ((_a = body.value) == null ? void 0 : _a.clientHeight) ?? 0;\n    });\n    const height = computed(() => computedModelValue.value ? bodyHeight.value : 0);\n    const getTransition = () => {\n      const duration = height.value / 1e3 * 0.2;\n      return `${duration > 0.2 ? duration : 0.2}s`;\n    };\n    const contentBackground = computed(() => {\n      if (props.bodyColor) {\n        return getColor(props.bodyColor);\n      }\n      return props.color && props.colorAll ? setHSLAColor(getColor(props.color), { a: 0.07 }) : void 0;\n    });\n    const headerBackground = computed(() => {\n      return props.color ? getColor(props.color) : void 0;\n    });\n    const uniqueId = computed(generateUniqueId);\n    const headerIdComputed = computed(() => `header-${uniqueId.value}`);\n    const panelIdComputed = computed(() => `panel-${uniqueId.value}`);\n    const tabIndexComputed = computed(() => props.disabled ? -1 : 0);\n    const headerAttributes = computed(() => ({\n      id: headerIdComputed.value,\n      tabindex: tabIndexComputed.value,\n      \"aria-controls\": panelIdComputed.value,\n      \"aria-expanded\": computedModelValue.value,\n      \"aria-disabled\": props.disabled,\n      role: \"button\"\n    }));\n    const isHeightChanging = ref(false);\n    watch(height, (newValue, oldValue) => {\n      if (oldValue === void 0) {\n        return;\n      }\n      isHeightChanging.value = true;\n    });\n    const onTransitionEnd = (e) => {\n      if (e.propertyName === \"height\" && e.target === e.currentTarget) {\n        isHeightChanging.value = false;\n      }\n    };\n    const computedClasses = useBem(\"va-collapse\", () => ({\n      ...pick(props, [\"disabled\"]),\n      expanded: computedModelValue.value,\n      active: computedModelValue.value,\n      popout: !!(accordionProps.value.popout && computedModelValue.value),\n      inset: !!(accordionProps.value.inset && computedModelValue.value),\n      \"height-changing\": isHeightChanging.value,\n      \"colored-body\": Boolean(contentBackground.value),\n      \"colored-header\": Boolean(headerBackground.value)\n    }));\n    const toggle = () => {\n      if (props.disabled) {\n        return;\n      }\n      computedModelValue.value = !computedModelValue.value;\n    };\n    const { textColorComputed } = useTextColor(headerBackground);\n    const headerStyle = computed(() => ({\n      color: textColorComputed.value,\n      backgroundColor: headerBackground.value\n    }));\n    const contentStyle = computed(() => {\n      return {\n        visibility: bodyHeight.value > 0 ? \"visible\" : \"hidden\",\n        height: `${height.value}px`,\n        transitionDuration: getTransition(),\n        background: computedModelValue.value ? contentBackground.value : \"\",\n        color: props.bodyTextColor ? getColor(props.bodyTextColor) : contentBackground.value ? getColor(getTextColor(contentBackground.value)) : \"currentColor\"\n      };\n    });\n    return {\n      onTransitionEnd,\n      body,\n      height,\n      toggle,\n      computedModelValue,\n      headerIdComputed,\n      headerAttributes,\n      panelIdComputed,\n      tabIndexComputed,\n      computedClasses,\n      headerStyle,\n      contentStyle\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaCollapse.css';\n//# sourceMappingURL=VaCollapse.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717421206,
+      "end": 1709717421702,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717421702,
+      "end": 1709717421702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717421703,
+      "end": 1709717421703,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717421703,
+      "end": 1709717421704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717421704,
+      "end": 1709717421704,
+      "order": "normal"
+    }
+  ]
+}

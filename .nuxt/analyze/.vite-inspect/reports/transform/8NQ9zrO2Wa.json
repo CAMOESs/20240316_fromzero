@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-backtop/VaBacktop.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, ref, computed, onMounted, onBeforeUnmount } from \"vue\";\nimport { V as VaButton } from \"../va-button/index.js\";\nimport { i as isServer } from \"../../utils/ssr.js\";\nimport { w as warn } from \"../../utils/console.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaBacktop\",\n  components: { VaButton },\n  props: {\n    ...useComponentPresetProp,\n    target: {\n      type: [Object, String],\n      default: void 0\n    },\n    visibilityHeight: { type: Number, default: 300 },\n    speed: { type: Number, default: 50 },\n    verticalOffset: { type: String, default: \"1rem\" },\n    horizontalOffset: { type: String, default: \"1rem\" },\n    color: { type: String, default: \"\" },\n    horizontalPosition: {\n      type: String,\n      default: \"right\",\n      validator: (value) => [\"right\", \"left\"].includes(value)\n    },\n    verticalPosition: {\n      type: String,\n      default: \"bottom\",\n      validator: (value) => [\"bottom\", \"top\"].includes(value)\n    },\n    ariaLabel: { type: String, default: \"$t:backToTop\" }\n  },\n  setup(props) {\n    const targetScrollValue = ref(0);\n    const computedStyle = computed(() => ({\n      [props.verticalPosition]: props.verticalOffset,\n      [props.horizontalPosition]: props.horizontalOffset\n    }));\n    let targetElement;\n    const getTargetElement = () => {\n      if (!props.target) {\n        return window;\n      }\n      if (typeof props.target === \"string\") {\n        const target = document.querySelector(props.target);\n        if (!target) {\n          warn(`Target element [${props.target}] is not found, falling back to window.`);\n          return window;\n        }\n        return target;\n      }\n      return props.target;\n    };\n    const scrolled = ref(false);\n    const interval = ref(0);\n    const scrollToTop = () => {\n      if (scrolled.value) {\n        return;\n      }\n      scrolled.value = true;\n      if (targetElement instanceof Window) {\n        window.scrollTo({\n          top: 0,\n          behavior: \"smooth\"\n        });\n        return;\n      }\n      interval.value = window.setInterval(() => {\n        if (targetElement instanceof Element) {\n          if (targetElement.scrollTop === 0) {\n            clearInterval(interval.value);\n            scrolled.value = false;\n          } else {\n            const next = Math.floor(targetElement.scrollTop - props.speed);\n            targetElement.scrollTo(0, next);\n          }\n        }\n      }, 15);\n    };\n    const handleScroll = () => {\n      targetScrollValue.value = targetElement instanceof Window ? targetElement.scrollY : targetElement.scrollTop;\n    };\n    const server = isServer();\n    const visible = computed(() => {\n      if (server) {\n        return false;\n      }\n      return targetScrollValue.value > props.visibilityHeight;\n    });\n    if (!server) {\n      onMounted(() => {\n        targetElement = getTargetElement();\n        targetElement.addEventListener(\"scroll\", handleScroll, true);\n      });\n      onBeforeUnmount(() => targetElement == null ? void 0 : targetElement.removeEventListener(\"scroll\", handleScroll));\n    }\n    return {\n      computedStyle,\n      visible,\n      scrollToTop,\n      ...useTranslation()\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaBacktop.css';\n//# sourceMappingURL=VaBacktop.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717421781,
+      "end": 1709717422011,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422011,
+      "end": 1709717422011,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422012,
+      "end": 1709717422012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422012,
+      "end": 1709717422013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422013,
+      "end": 1709717422013,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422013,
+      "end": 1709717422013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422013,
+      "end": 1709717422013,
+      "order": "normal"
+    }
+  ]
+}

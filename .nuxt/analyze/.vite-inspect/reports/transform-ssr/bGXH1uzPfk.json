@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-select/VaSelect.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaSelect.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, mergeProps, withCtx, createVNode, withKeys, withModifiers, createSlots, createCommentVNode, renderList, renderSlot, normalizeProps, guardReactiveProps, normalizeStyle } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaSelect_vue_vue_type_style_index_0_lang = \"\";\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  const _component_va_select_content = resolveComponent(\"va-select-content\");\n  const _component_va_input_wrapper = resolveComponent(\"va-input-wrapper\");\n  const _component_va_select_option_list = resolveComponent(\"va-select-option-list\");\n  const _component_va_dropdown_content = resolveComponent(\"va-dropdown-content\");\n  const _component_va_dropdown = resolveComponent(\"va-dropdown\");\n  return openBlock(), createBlock(_component_va_dropdown, mergeProps({\n    ref: \"dropdown\",\n    modelValue: _ctx.showDropdownContentComputed,\n    \"onUpdate:modelValue\": _cache[4] || (_cache[4] = ($event) => _ctx.showDropdownContentComputed = $event),\n    class: \"va-select va-select__dropdown va-select-dropdown\"\n  }, _ctx.dropdownPropsComputed, {\n    role: \"combobox\",\n    \"inner-anchor-selector\": \".va-input-wrapper__field\"\n  }), {\n    anchor: withCtx(() => [\n      createVNode(_component_va_input_wrapper, mergeProps(_ctx.inputWrapperPropsComputed, {\n        ref: \"input\",\n        class: [\"va-select__anchor va-select-anchor__input\", _ctx.inputWrapperClassComputed],\n        \"aria-haspopup\": \"listbox\",\n        \"model-value\": _ctx.valueString,\n        readonly: true,\n        \"aria-label\": _ctx.$props.ariaLabel,\n        \"aria-controls\": _ctx.popupId,\n        \"aria-owns\": _ctx.popupId,\n        onFocus: _ctx.onInputFocus,\n        onBlur: _ctx.onInputBlur,\n        onKeydown: [\n          withKeys(_ctx.toggleDropdown, [\"enter\"]),\n          withKeys(withModifiers(_ctx.toggleDropdown, [\"stop\", \"prevent\"]), [\"space\"])\n        ]\n      }), createSlots({\n        icon: withCtx(() => [\n          _ctx.showClearIcon ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n            key: 0,\n            role: \"button\",\n            \"aria-label\": _ctx.tp(_ctx.$props.ariaClearLabel)\n          }, _ctx.clearIconProps, {\n            onClick: withModifiers(_ctx.reset, [\"stop\"]),\n            onKeydown: [\n              withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"enter\"]),\n              withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"space\"])\n            ]\n          }), null, 16, [\"aria-label\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true)\n        ]),\n        appendInner: withCtx(() => [\n          createVNode(_component_va_icon, {\n            color: _ctx.toggleIconColor,\n            name: _ctx.toggleIcon,\n            class: \"va-select__toggle-icon\",\n            role: \"button\",\n            tabindex: _ctx.openSelectButtonTabIndexComputed,\n            \"aria-expanded\": _ctx.showDropdownContentComputed\n          }, null, 8, [\"color\", \"name\", \"tabindex\", \"aria-expanded\"])\n        ]),\n        default: withCtx(({ ariaAttributes }) => [\n          createVNode(_component_va_select_content, mergeProps(_ctx.selectContentPropsComputed, {\n            ariaAttributes,\n            onToggleHidden: _ctx.toggleHiddenOptionsState,\n            onAutocompleteInput: _ctx.setAutocompleteValue,\n            onFocusPrev: _ctx.focusPreviousOption,\n            onFocusNext: _ctx.focusNextOption,\n            onSelectOption: _ctx.selectOrAddOption,\n            onDeleteLastSelected: _ctx.deleteLastSelected\n          }), createSlots({ _: 2 }, [\n            renderList(_ctx.$slots, (_, name) => {\n              return {\n                name,\n                fn: withCtx((slotScope) => [\n                  renderSlot(_ctx.$slots, name, normalizeProps(guardReactiveProps(slotScope)))\n                ])\n              };\n            })\n          ]), 1040, [\"ariaAttributes\", \"onToggleHidden\", \"onAutocompleteInput\", \"onFocusPrev\", \"onFocusNext\", \"onSelectOption\", \"onDeleteLastSelected\"])\n        ]),\n        _: 2\n      }, [\n        renderList(_ctx.$slots, (_, name) => {\n          return {\n            name,\n            fn: withCtx((slotScope) => [\n              renderSlot(_ctx.$slots, name, normalizeProps(guardReactiveProps(slotScope)))\n            ])\n          };\n        })\n      ]), 1040, [\"class\", \"model-value\", \"aria-label\", \"aria-controls\", \"aria-owns\", \"onFocus\", \"onBlur\", \"onKeydown\"])\n    ]),\n    default: withCtx(() => [\n      createVNode(_component_va_dropdown_content, {\n        class: \"va-select-dropdown__content\",\n        style: normalizeStyle({ width: _ctx.$props.width }),\n        onKeydown: withKeys(_ctx.hideAndFocus, [\"esc\"]),\n        role: \"dialog\"\n      }, {\n        default: withCtx(() => [\n          _ctx.showSearchInput ? (openBlock(), createBlock(_component_va_input_wrapper, {\n            key: 0,\n            ref: \"searchBar\",\n            class: \"va-select-dropdown__content-search-input\",\n            modelValue: _ctx.searchInput,\n            \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _ctx.searchInput = $event),\n            \"aria-label\": _ctx.tp(_ctx.$props.ariaSearchLabel),\n            tabindex: _ctx.tabIndexComputed,\n            placeholder: _ctx.tp(_ctx.$props.searchPlaceholderText),\n            preset: \"bordered\",\n            onKeydown: [\n              withKeys(withModifiers(_ctx.focusPreviousOption, [\"stop\", \"prevent\"]), [\"up\"]),\n              withKeys(withModifiers(_ctx.focusPreviousOption, [\"stop\", \"prevent\"]), [\"left\"]),\n              withKeys(withModifiers(_ctx.focusNextOption, [\"stop\", \"prevent\"]), [\"down\"]),\n              withKeys(withModifiers(_ctx.focusNextOption, [\"stop\", \"prevent\"]), [\"right\"]),\n              withKeys(withModifiers(_ctx.selectOrAddOption, [\"prevent\"]), [\"enter\"])\n            ],\n            onFocus: _cache[1] || (_cache[1] = ($event) => _ctx.hoveredOption = null)\n          }, null, 8, [\"modelValue\", \"aria-label\", \"tabindex\", \"placeholder\", \"onKeydown\"])) : createCommentVNode(\"\", true),\n          createVNode(_component_va_select_option_list, mergeProps({\n            ref: \"optionList\",\n            class: \"va-select-dropdown__options-wrapper\",\n            hoveredOption: _ctx.hoveredOption,\n            \"onUpdate:hoveredOption\": _cache[2] || (_cache[2] = ($event) => _ctx.hoveredOption = $event),\n            style: { maxHeight: _ctx.$props.maxHeight },\n            id: _ctx.popupId\n          }, _ctx.optionsListPropsComputed, {\n            onSelectOption: _ctx.selectHoveredOption,\n            onNoPreviousOptionToHover: _ctx.focusSearchBar,\n            onKeydown: [\n              _cache[3] || (_cache[3] = withKeys(withModifiers(($event) => _ctx.searchBar && _ctx.searchBar.focus(), [\"stop\", \"prevent\"]), [\"tab\"])),\n              _ctx.onHintedSearch\n            ],\n            onScrollBottom: _ctx.onScrollBottom\n          }), {\n            default: withCtx((slotData) => [\n              renderSlot(_ctx.$slots, \"option\", normalizeProps(guardReactiveProps(slotData || {})))\n            ]),\n            _: 3\n          }, 16, [\"hoveredOption\", \"style\", \"id\", \"onSelectOption\", \"onNoPreviousOptionToHover\", \"onKeydown\", \"onScrollBottom\"])\n        ]),\n        _: 3\n      }, 8, [\"style\", \"onKeydown\"])\n    ]),\n    _: 3\n  }, 16, [\"modelValue\"]);\n}\nconst _VaSelect = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaSelect as _\n};\n//# sourceMappingURL=VaSelect.mjs.map\n",
+      "start": 1709717501834,
+      "end": 1709717502232,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502232,
+      "end": 1709717502232,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502232,
+      "end": 1709717502232,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502232,
+      "end": 1709717502232,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502232,
+      "end": 1709717502232,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502232,
+      "end": 1709717502232,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717502232,
+      "end": 1709717502232,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502239,
+      "end": 1709717502239,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502239,
+      "end": 1709717502240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502240,
+      "end": 1709717502240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717502240,
+      "end": 1709717502240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502240,
+      "end": 1709717502240,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502240,
+      "end": 1709717502240,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502240,
+      "end": 1709717502240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502240,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502240,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502241,
+      "end": 1709717502241,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502241,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502241,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502242,
+      "end": 1709717502242,
+      "order": "normal"
+    }
+  ]
+}

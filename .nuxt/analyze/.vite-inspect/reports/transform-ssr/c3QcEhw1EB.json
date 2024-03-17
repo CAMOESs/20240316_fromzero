@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-date-input/VaDateInput.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaDateInput.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, mergeProps, withCtx, renderSlot, normalizeProps, guardReactiveProps, createVNode, toHandlers, withModifiers, createSlots, withKeys, createCommentVNode, renderList } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaDateInput_vue_vue_type_style_index_0_lang = \"\";\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  const _component_va_input_wrapper = resolveComponent(\"va-input-wrapper\");\n  const _component_va_date_picker = resolveComponent(\"va-date-picker\");\n  const _component_va_dropdown_content = resolveComponent(\"va-dropdown-content\");\n  const _component_va_dropdown = resolveComponent(\"va-dropdown\");\n  return openBlock(), createBlock(_component_va_dropdown, mergeProps({\n    modelValue: _ctx.isOpenSync,\n    \"onUpdate:modelValue\": _cache[9] || (_cache[9] = ($event) => _ctx.isOpenSync = $event),\n    class: [\"va-date-input\", _ctx.$attrs.class],\n    style: _ctx.$attrs.style\n  }, _ctx.dropdownPropsComputed, {\n    onOpen: _ctx.focusDatePicker,\n    role: \"none\"\n  }), {\n    anchor: withCtx(() => [\n      renderSlot(_ctx.$slots, \"input\", normalizeProps(guardReactiveProps({ valueText: _ctx.valueText, inputAttributes: _ctx.inputAttributesComputed, inputWrapperProps: _ctx.inputWrapperProps, inputListeners: _ctx.inputListeners })), () => [\n        createVNode(_component_va_input_wrapper, mergeProps({\n          class: \"va-date-input__anchor\",\n          style: _ctx.cursorStyleComputed\n        }, _ctx.inputWrapperProps, toHandlers(_ctx.inputListeners), {\n          \"model-value\": _ctx.valueText,\n          onClick: withModifiers(_ctx.toggleDropdown, [\"stop\"]),\n          onChange: _ctx.onInputTextChanged\n        }), createSlots({\n          icon: withCtx(() => [\n            _ctx.canBeCleared ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n              key: 0,\n              \"aria-label\": _ctx.tp(_ctx.$props.ariaResetLabel)\n            }, { ..._ctx.iconProps, ..._ctx.clearIconProps }, {\n              onClick: withModifiers(_ctx.reset, [\"stop\"]),\n              onKeydown: [\n                withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"enter\"]),\n                withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"space\"])\n              ]\n            }), null, 16, [\"aria-label\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true),\n            !_ctx.$props.leftIcon && _ctx.$props.icon ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n              key: 1,\n              \"aria-label\": _ctx.tp(_ctx.$props.ariaToggleDropdownLabel)\n            }, _ctx.iconProps, {\n              onClick: withModifiers(_ctx.showDropdown, [\"stop\"]),\n              onKeydown: [\n                withKeys(withModifiers(_ctx.showDropdown, [\"stop\"]), [\"enter\"]),\n                withKeys(withModifiers(_ctx.showDropdown, [\"stop\"]), [\"space\"])\n              ]\n            }), null, 16, [\"aria-label\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true)\n          ]),\n          _: 2\n        }, [\n          renderList(_ctx.filterSlots, (name) => {\n            return {\n              name,\n              fn: withCtx((slotScope) => [\n                renderSlot(_ctx.$slots, name, normalizeProps(guardReactiveProps(slotScope)))\n              ])\n            };\n          }),\n          _ctx.$slots.prependInner || _ctx.$props.leftIcon ? {\n            name: \"prependInner\",\n            fn: withCtx((slotScope) => [\n              renderSlot(_ctx.$slots, \"prependInner\", normalizeProps(guardReactiveProps(slotScope))),\n              _ctx.$props.leftIcon ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n                key: 0,\n                \"aria-label\": _ctx.tp(_ctx.$props.ariaToggleDropdownLabel)\n              }, _ctx.iconProps, {\n                onClick: withModifiers(_ctx.showDropdown, [\"stop\"]),\n                onKeydown: [\n                  withKeys(withModifiers(_ctx.showDropdown, [\"stop\"]), [\"enter\"]),\n                  withKeys(withModifiers(_ctx.showDropdown, [\"stop\"]), [\"space\"])\n                ]\n              }), null, 16, [\"aria-label\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true)\n            ]),\n            key: \"0\"\n          } : void 0\n        ]), 1040, [\"style\", \"model-value\", \"onClick\", \"onChange\"])\n      ])\n    ]),\n    default: withCtx(() => [\n      createVNode(_component_va_dropdown_content, {\n        class: \"va-date-input__dropdown-content\",\n        onKeydown: _cache[8] || (_cache[8] = withKeys(($event) => _ctx.focus(), [\"esc\"])),\n        role: \"dialog\"\n      }, {\n        default: withCtx(() => [\n          createVNode(_component_va_date_picker, mergeProps({ ref: \"datePicker\" }, _ctx.datePickerProps, {\n            modelValue: _ctx.valueWithoutText,\n            \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _ctx.valueWithoutText = $event),\n            \"onClick:day\": _cache[1] || (_cache[1] = ($event) => _ctx.$emit(\"click:day\", $event)),\n            \"onClick:month\": _cache[2] || (_cache[2] = ($event) => _ctx.$emit(\"click:month\", $event)),\n            \"onClick:year\": _cache[3] || (_cache[3] = ($event) => _ctx.$emit(\"click:year\", $event)),\n            \"onHover:day\": _cache[4] || (_cache[4] = ($event) => _ctx.$emit(\"hover:day\", $event)),\n            \"onHover:month\": _cache[5] || (_cache[5] = ($event) => _ctx.$emit(\"hover:month\", $event)),\n            \"onHover:year\": _cache[6] || (_cache[6] = ($event) => _ctx.$emit(\"hover:year\", $event)),\n            \"onUpdate:view\": _cache[7] || (_cache[7] = ($event) => {\n              _ctx.$nextTick(() => _ctx.trapFocus());\n              _ctx.$emit(\"update:view\", $event);\n            })\n          }), createSlots({ _: 2 }, [\n            renderList(_ctx.$slots, (_, name) => {\n              return {\n                name,\n                fn: withCtx((bind) => [\n                  renderSlot(_ctx.$slots, name, normalizeProps(guardReactiveProps(bind)))\n                ])\n              };\n            })\n          ]), 1040, [\"modelValue\"])\n        ]),\n        _: 3\n      })\n    ]),\n    _: 3\n  }, 16, [\"modelValue\", \"class\", \"style\", \"onOpen\"]);\n}\nconst _VaDateInput = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaDateInput as _\n};\n//# sourceMappingURL=VaDateInput.mjs.map\n",
+      "start": 1709717501465,
+      "end": 1709717501684,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717501684,
+      "end": 1709717501684,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717501685,
+      "end": 1709717501685,
+      "order": "normal"
+    }
+  ]
+}

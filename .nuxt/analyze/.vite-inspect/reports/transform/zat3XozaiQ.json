@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-split/VaSplit.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, onMounted, computed, watch } from \"vue\";\nimport { b as clamp, e as isNumber, f as isString } from \"../../../vendor.js\";\nimport { u as useSplitDraggerProps, a as useSplitDragger } from \"./useSplitDragger.js\";\nimport { w as warn } from \"../../utils/console.js\";\nimport { V as VaDivider } from \"../va-divider/index.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { a as useStatefulProps, u as useStatefulEmits, b as useStateful } from \"../../composables/useStateful.js\";\nimport { u as useResizeObserver } from \"../../composables/useResizeObserver.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaSplit\",\n  components: { VaDivider },\n  props: {\n    ...useComponentPresetProp,\n    ...useSplitDraggerProps,\n    ...useStatefulProps,\n    modelValue: {\n      type: Number,\n      default: 50,\n      validator: (v) => v <= 100\n    },\n    maximization: { type: Boolean, default: false },\n    maximizeStart: { type: Boolean, default: false },\n    limits: {\n      type: Array,\n      default: () => [0, 0]\n    },\n    snapping: {\n      type: Array,\n      default: void 0\n    },\n    snappingRange: { type: [Number, String], default: 4 },\n    ariaLabel: { type: String, default: \"$t:splitPanels\" }\n  },\n  emits: [...useStatefulEmits],\n  setup: (props, { emit }) => {\n    const splitPanelsContainer = shallowRef();\n    const { valueComputed } = useStateful(props, emit);\n    const containerSize = ref();\n    const bodyFontSize = ref(16);\n    const handleContainerResize = () => {\n      var _a;\n      const { width, height } = ((_a = splitPanelsContainer.value) == null ? void 0 : _a.getBoundingClientRect()) || { width: 0, height: 0 };\n      containerSize.value = props.vertical ? height : width;\n      bodyFontSize.value = parseFloat(getComputedStyle(document.documentElement).fontSize);\n    };\n    onMounted(handleContainerResize);\n    useResizeObserver([splitPanelsContainer], handleContainerResize);\n    const convertToPercents = (v, type) => {\n      let numberValue = \"\";\n      let measureValue = \"\";\n      if (isNumber(v)) {\n        return v;\n      }\n      v.split(\"\").filter((char) => char && char !== \" \").forEach((char) => {\n        !isNaN(+char) ? numberValue += char : measureValue += char;\n      });\n      switch (measureValue) {\n        case \"%\":\n          return +numberValue;\n        case \"px\":\n          return +numberValue / containerSize.value * 100;\n        case \"rem\":\n          return +numberValue * bodyFontSize.value / containerSize.value * 100;\n        case \"any\":\n          return [\"min\", \"snapping\"].includes(type) ? 0 : 100;\n        case \"\":\n          return 100;\n        default:\n          warn(\"Invalid limits measure!\");\n          return 0;\n      }\n    };\n    const getPanelMinMax = (v) => {\n      if (v === \"undefined\" || !containerSize.value) {\n        return;\n      }\n      let minPercents = 0;\n      let maxPercents = 100;\n      if (isString(v) || isNumber(v)) {\n        minPercents = convertToPercents(v, \"min\");\n      }\n      if (Array.isArray(v)) {\n        minPercents = convertToPercents(v[0], \"min\");\n        maxPercents = convertToPercents(v[1], \"max\");\n      }\n      if (minPercents > maxPercents) {\n        warn(`Min panels size can not be larger than max one! Passed limit: ${v}.`);\n        maxPercents = minPercents;\n      }\n      return { min: minPercents ?? 0, max: maxPercents ?? 100 };\n    };\n    const startPanelMinMax = computed(() => getPanelMinMax(props.limits[0]) ?? { min: 0, max: 100 });\n    const endPanelMinMax = computed(() => getPanelMinMax(props.limits[1]) ?? { min: 0, max: 100 });\n    const endPanelMinChecked = computed(() => {\n      const passedCheck = !(startPanelMinMax.value.min + endPanelMinMax.value.min > 100);\n      if (!passedCheck) {\n        warn(\"The sum of different panels min sizes should be lesser or equal to 100% of the container size!\");\n      }\n      return !passedCheck ? 100 - startPanelMinMax.value.min : endPanelMinMax.value.min;\n    });\n    const panelsMinMax = computed(() => {\n      if (Math.ceil(endPanelMinMax.value.max + startPanelMinMax.value.max) < 100) {\n        warn(\"The sum of different panels max sizes should be equal to 100% of the container size!\");\n      }\n      return {\n        start: {\n          min: startPanelMinMax.value.min,\n          max: Math.min(startPanelMinMax.value.max, 100 - endPanelMinChecked.value)\n        },\n        end: {\n          min: endPanelMinChecked.value,\n          max: Math.min(endPanelMinMax.value.max, 100 - startPanelMinMax.value.min)\n        }\n      };\n    });\n    const checkSnappingLimitsCondition = (el) => el >= panelsMinMax.value.start.min && el >= panelsMinMax.value.end.min && el <= panelsMinMax.value.start.max && el <= panelsMinMax.value.end.max;\n    const snappingMarksPosition = computed(() => {\n      if (!Array.isArray(props.snapping) || !containerSize.value) {\n        return;\n      }\n      let result = props.snapping.map((el) => convertToPercents(el, \"snapping\"));\n      if (!result.every(checkSnappingLimitsCondition)) {\n        const filteredMarks = result.filter(checkSnappingLimitsCondition);\n        warn(`Some of the snapping marks (${result}) are not in allowed range (${Object.values(panelsMinMax.value.start).join(\"-\")} / ${Object.values(panelsMinMax.value.end).join(\"-\")}) and will be removed (${filteredMarks})!`);\n        result = filteredMarks;\n      }\n      const checkSnappingRange = () => {\n        return result.every((el, index, array) => {\n          if (!array[index + 1]) {\n            return true;\n          }\n          return Math.abs(el - array[index + 1]) > Number(props.snappingRange);\n        });\n      };\n      if (!checkSnappingRange()) {\n        warn(\"Distance between some snapping marks is lesser than snapping range!\");\n      }\n      return result;\n    });\n    const snappingRangeParsed = computed(() => convertToPercents(props.snappingRange, \"snapping\"));\n    const splitterPosition = ref(valueComputed.value);\n    const splitterPositionComputed = computed(() => {\n      if (snappingMarksPosition.value) {\n        const nearestSnappingMark = snappingMarksPosition.value.find((el) => {\n          return splitterPosition.value + snappingRangeParsed.value > el && splitterPosition.value - snappingRangeParsed.value < el;\n        });\n        if (nearestSnappingMark) {\n          return nearestSnappingMark;\n        }\n      }\n      return clamp(\n        splitterPosition.value,\n        Math.max(panelsMinMax.value.start.min, 100 - panelsMinMax.value.end.max),\n        Math.min(panelsMinMax.value.start.max, 100 - panelsMinMax.value.end.min)\n      );\n    });\n    const {\n      isDragging,\n      startDragging,\n      currentSplitterPosition\n    } = useSplitDragger(containerSize, splitterPositionComputed, props);\n    const maximizePanel = () => {\n      if (!props.maximization || props.disabled) {\n        return;\n      }\n      splitterPosition.value = props.maximizeStart ? panelsMinMax.value.start.max : 100 - panelsMinMax.value.end.max;\n    };\n    watch(valueComputed, (v) => {\n      if (v < panelsMinMax.value.start.min || v > 100 - panelsMinMax.value.end.min) {\n        warn(\"Incorrect `modelValue`. Check current `limits` prop value.\");\n      }\n      splitterPosition.value = v;\n    }, { immediate: true });\n    watch(currentSplitterPosition, (v) => {\n      splitterPosition.value = v;\n    });\n    watch(isDragging, (v) => {\n      if (!v) {\n        valueComputed.value = splitterPositionComputed.value;\n      }\n      document.documentElement.style.cursor = v ? \"var(--va-split-dragging-cursor)\" : \"\";\n    });\n    const sizePropertyComputed = computed(() => props.vertical ? \"height\" : \"width\");\n    const getPanelStyle = (position) => {\n      let sizeValue = position === \"start\" ? splitterPositionComputed.value : 100 - splitterPositionComputed.value;\n      if (sizeValue < 0) {\n        sizeValue = 0;\n      }\n      if (sizeValue > 100) {\n        sizeValue = 100;\n      }\n      return { [sizePropertyComputed.value]: `${sizeValue}%` };\n    };\n    const draggerStyleComputed = computed(() => {\n      if (props.disabled) {\n        return {};\n      }\n      if (isDragging.value) {\n        return { cursor: \"var(--va-split-dragging-cursor)\" };\n      }\n      return { cursor: props.vertical ? \"var(--va-split-vertical-dragger-cursor)\" : \"var(--va-split-horizontal-dragger-cursor)\" };\n    });\n    const classComputed = useBem(\"va-split\", () => ({\n      horizontal: !props.vertical,\n      vertical: props.vertical,\n      dragging: isDragging.value\n    }));\n    return {\n      ...useTranslation(),\n      splitPanelsContainer,\n      containerSize,\n      startDragging,\n      getPanelStyle,\n      maximizePanel,\n      classComputed,\n      draggerStyleComputed\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaSplit.css';\n//# sourceMappingURL=VaSplit.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423218,
+      "end": 1709717423458,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423458,
+      "end": 1709717423458,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423458,
+      "end": 1709717423459,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423459,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423460,
+      "end": 1709717423460,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423460,
+      "end": 1709717423461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423462,
+      "end": 1709717423462,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423464,
+      "end": 1709717423464,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423464,
+      "end": 1709717423464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423464,
+      "end": 1709717423464,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423464,
+      "end": 1709717423464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423464,
+      "end": 1709717423464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423464,
+      "end": 1709717423464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423464,
+      "end": 1709717423465,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423465,
+      "end": 1709717423465,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423465,
+      "end": 1709717423465,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423465,
+      "end": 1709717423465,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423465,
+      "end": 1709717423465,
+      "order": "normal"
+    }
+  ]
+}

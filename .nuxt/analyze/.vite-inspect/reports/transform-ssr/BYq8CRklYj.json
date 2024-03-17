@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-carousel/VaCarousel.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaCarousel.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createElementBlock, normalizeClass, normalizeStyle, Fragment, withKeys, withModifiers, renderSlot, createVNode, withCtx, createCommentVNode, renderList, mergeProps, normalizeProps, guardReactiveProps, createTextVNode, toDisplayString, createElementVNode } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaCarousel_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = [\"aria-label\"];\nconst _hoisted_2 = {\n  key: 1,\n  class: \"va-carousel__indicators\"\n};\nconst _hoisted_3 = { class: \"va-carousel__content\" };\nconst _hoisted_4 = [\"aria-hidden\", \"aria-current\", \"aria-label\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_button = resolveComponent(\"va-button\");\n  const _component_va_hover = resolveComponent(\"va-hover\");\n  const _component_va_image = resolveComponent(\"va-image\");\n  return openBlock(), createElementBlock(\"div\", {\n    class: normalizeClass([\"va-carousel\", {\n      \"va-carousel--vertical\": _ctx.$props.vertical,\n      [`va-carousel--${_ctx.$props.effect}`]: true\n    }]),\n    style: normalizeStyle({ height: _ctx.ratio ? \"auto\" : _ctx.height }),\n    role: \"region\",\n    \"aria-label\": _ctx.tp(_ctx.$props.ariaLabel)\n  }, [\n    _ctx.$props.arrows && _ctx.doShowDirectionButtons ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [\n      _ctx.doShowPrevButton ? (openBlock(), createElementBlock(\"div\", {\n        key: 0,\n        class: \"va-carousel__arrow va-carousel__arrow--left\",\n        onClick: _cache[0] || (_cache[0] = (...args) => _ctx.prevWithPause && _ctx.prevWithPause(...args)),\n        onKeydown: _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => _ctx.prevWithPause && _ctx.prevWithPause(...args), [\"stop\"]), [\"enter\"]))\n      }, [\n        renderSlot(_ctx.$slots, \"prev-arrow\", {}, () => [\n          createVNode(_component_va_hover, { stateful: \"\" }, {\n            default: withCtx(({ hover }) => [\n              createVNode(_component_va_button, {\n                color: hover ? _ctx.computedHoverColor : _ctx.computedColor,\n                icon: _ctx.vertical ? \"va-arrow-up\" : \"va-arrow-left\",\n                \"aria-label\": _ctx.tp(_ctx.$props.ariaPreviousLabel)\n              }, null, 8, [\"color\", \"icon\", \"aria-label\"])\n            ]),\n            _: 1\n          })\n        ])\n      ], 32)) : createCommentVNode(\"\", true),\n      _ctx.doShowNextButton ? (openBlock(), createElementBlock(\"div\", {\n        key: 1,\n        class: \"va-carousel__arrow va-carousel__arrow--right\",\n        onClick: _cache[2] || (_cache[2] = (...args) => _ctx.nextWithPause && _ctx.nextWithPause(...args)),\n        onKeydown: _cache[3] || (_cache[3] = withKeys(withModifiers((...args) => _ctx.nextWithPause && _ctx.nextWithPause(...args), [\"stop\"]), [\"enter\"]))\n      }, [\n        renderSlot(_ctx.$slots, \"next-arrow\", {}, () => [\n          createVNode(_component_va_hover, { stateful: \"\" }, {\n            default: withCtx(({ hover }) => [\n              createVNode(_component_va_button, {\n                color: hover ? _ctx.computedHoverColor : _ctx.computedColor,\n                icon: _ctx.vertical ? \"va-arrow-down\" : \"va-arrow-right\",\n                \"aria-label\": _ctx.tp(_ctx.$props.ariaNextLabel)\n              }, null, 8, [\"color\", \"icon\", \"aria-label\"])\n            ]),\n            _: 1\n          })\n        ])\n      ], 32)) : createCommentVNode(\"\", true)\n    ], 64)) : createCommentVNode(\"\", true),\n    _ctx.$props.indicators ? (openBlock(), createElementBlock(\"div\", _hoisted_2, [\n      (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.$props.items, (item, index) => {\n        return openBlock(), createElementBlock(\"div\", mergeProps({\n          class: [\"va-carousel__indicator\", { \"va-carousel__indicator--active\": index === _ctx.modelValue }],\n          key: index\n        }, _ctx.getIndicatorEvents(index)), [\n          renderSlot(_ctx.$slots, \"indicator\", normalizeProps(guardReactiveProps({ item, index, goTo: _ctx.goToWithPause, isActive: _ctx.isCurrentSlide(index) })), () => [\n            createVNode(_component_va_hover, { stateful: \"\" }, {\n              default: withCtx(({ hover }) => [\n                createVNode(_component_va_button, {\n                  \"aria-label\": _ctx.tp(_ctx.$props.ariaGoToSlideLabel, { index: index + 1 }),\n                  round: \"\",\n                  color: _ctx.isCurrentSlide(index) ? _ctx.computedActiveColor : hover ? _ctx.computedHoverColor : _ctx.computedColor\n                }, {\n                  default: withCtx(() => [\n                    createTextVNode(toDisplayString(index + 1), 1)\n                  ]),\n                  _: 2\n                }, 1032, [\"aria-label\", \"color\"])\n              ]),\n              _: 2\n            }, 1024)\n          ])\n        ], 16);\n      }), 128))\n    ])) : createCommentVNode(\"\", true),\n    createElementVNode(\"div\", _hoisted_3, [\n      createElementVNode(\"div\", {\n        ref: \"slidesContainer\",\n        class: \"va-carousel__slides\",\n        style: normalizeStyle(_ctx.computedSlidesStyle),\n        role: \"list\"\n      }, [\n        (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.slides, (item, index) => {\n          return openBlock(), createElementBlock(\"div\", {\n            key: item,\n            role: \"listitem\",\n            class: \"va-carousel__slide\",\n            style: normalizeStyle(_ctx.slideStyleComputed),\n            \"aria-hidden\": !_ctx.isCurrentSlide(index),\n            \"aria-current\": _ctx.isCurrentSlide(index),\n            \"aria-label\": _ctx.tp(_ctx.$props.ariaSlideOfLabel, { index: index + 1, length: _ctx.slides.length })\n          }, [\n            renderSlot(_ctx.$slots, \"default\", normalizeProps(guardReactiveProps({ item, index, goTo: _ctx.goToWithPause, isActive: _ctx.isCurrentSlide(index) })), () => [\n              createVNode(_component_va_image, mergeProps(_ctx.vaImageProps, {\n                src: _ctx.isObjectSlides ? item.src : item,\n                alt: _ctx.isObjectSlides ? item.alt : \"\",\n                draggable: false\n              }), null, 16, [\"src\", \"alt\"])\n            ])\n          ], 12, _hoisted_4);\n        }), 128))\n      ], 4)\n    ])\n  ], 14, _hoisted_1);\n}\nconst _VaCarousel = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaCarousel as _\n};\n//# sourceMappingURL=VaCarousel.mjs.map\n",
+      "start": 1709717501214,
+      "end": 1709717501560,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501560,
+      "end": 1709717501560,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501560,
+      "end": 1709717501560,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501560,
+      "end": 1709717501561,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501560,
+      "end": 1709717501561,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717501561,
+      "end": 1709717501561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717501561,
+      "end": 1709717501562,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717501562,
+      "end": 1709717501562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717501562,
+      "end": 1709717501562,
+      "order": "normal"
+    }
+  ]
+}

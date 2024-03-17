@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <v-container class=\"\">\n      <v-container>\n        <!-- <v-row justify=\"center\"> -->\n        <v-card>\n        <div>\n          <div\n            class=\"d-flex flex-column\"\n            style=\"padding-top: 2em; justify-content: center\"\n          >\n            <div\n              style=\"\n                font-size: 24px;\n                color: red;\n                font-weight: bold;\n                margin-left: 2em;\n                margin-right: 4em;\n                width: 90%;\n              \"\n              text\n            >\n              <span>Prérequis nécessaires à l'utilisation de la plateforme</span>\n            </div>\n            <ul>\n              <ol style=\"text-align: justify; margin-left: 2em;\" class=\"mt-2\">\n                <span style=\"color: rgb(0, 131, 143)\"><strong></strong></span>\n                <v-icon style=\"color: rgb(0, 131, 143)\" class=\"mr-4\"\n                  >mdi-comment-text-multiple-outline</v-icon\n                >\n                Savoir Lire\n              </ol>\n              <ol style=\"text-align: justify; margin-left: 2em;\" class=\"mt-2\">\n                <span style=\"color: rgb(0, 131, 143)\"><strong></strong></span>\n                <v-icon style=\"color: rgb(0, 131, 143)\" class=\"mr-4\"\n                  >mdi-pencil</v-icon\n                >\n                Savoir écrire\n              </ol>\n              <br />\n            </ul>\n  \n            <div\n              class=\"container\"\n              style=\"\n                justify-content: justify;\n                margin-left: 2em;\n                margin-right: 4em;\n                width: 90%;\n                background-color: #d1ecf1 !important;\n              \"\n            >\n              <div style=\"margin-bottom: 4px\">\n                <v-icon style=\"color: black; margin-right: 2px\"\n                  >mdi-check-all</v-icon\n                >\n                Sans ces deux prérequis, vous aurez certainement besoin d’une\n                assistance pour l’utilisation de la plateforme.\n              </div>\n              <v-divider></v-divider>\n              <div class=\"\">\n                <div style=\"color:black;text-align:justify\">\n                  <v-icon\n                    style=\"color: black; margin-right: 2px; margin-bottom: 6px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Aucune connaissance/compétence en informatique, quoique cela\n                  puisse être un atout, n'est nécessaire pour l'utilisation de la\n                  plateforme.\n                </div>\n                <br />\n                <div style=\"text-align: justify\">\n                  <v-icon\n                    style=\"color: black; margin-right: 2px; margin-bottom: 6px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Les menus sont intuitifs et laissez agir votre bon sens : Chaque\n                  fois que cela est nécessaire vous disposez d'une aide\n                  contextuelle avec un \"LISEZ-MOI SVP\" que nous vous conseillons\n                  fortement de bien lire avant de continuer.\n                </div>\n                <br />\n                <div style=\"color: red; text-align: justify\">\n                  <v-icon style=\"color: red; margin-right: 2px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Si vous êtes un établissement, la plus grave erreur à commettre pour ne\n                  pas réussir le renseignement de vos données est de confier la\n                  tâche à un \"informaticien\" dépourvu de connaissances en\n                  administration scolaire ! Les différentes tâches ont besoin des\n                  connaissances du système scolaire, pas de connaissances en\n                  informatique !\n                </div>\n              </div>\n            </div>\n            <br />\n          </div>\n        </div>\n        </v-card>\n        <!-- </v-row> -->\n      </v-container>\n    </v-container>\n  </template>\n  \n  <script setup>\n  \n  \n  /* const title = \"Tableau de bord\";\n  export default {\n    head: {\n      title: title,\n    },\n    data() {\n      return {\n        expansion: null,\n      };\n    },\n  };\n   */\n   </script>    ",
+      "start": 1709717397246,
+      "end": 1709717398130,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717398131,
+      "end": 1709717398131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717398131,
+      "end": 1709717398131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717398131,
+      "end": 1709717398132,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717398132,
+      "end": 1709717398132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717398132,
+      "end": 1709717398132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717398132,
+      "end": 1709717398132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717398132,
+      "end": 1709717398132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"d-flex flex-column\",\n  style: {\"padding-top\":\"2em\",\"justify-content\":\"center\"}\n}\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"div\", {\n  style: {\"font-size\":\"24px\",\"color\":\"red\",\"font-weight\":\"bold\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\"},\n  text: \"\"\n}, [\n  /*#__PURE__*/_createElementVNode(\"span\", null, \"Prérequis nécessaires à l'utilisation de la plateforme\")\n], -1)\nconst _hoisted_3 = {\n  style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n  class: \"mt-2\"\n}\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n  /*#__PURE__*/_createElementVNode(\"strong\")\n], -1)\nconst _hoisted_5 = {\n  style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n  class: \"mt-2\"\n}\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n  /*#__PURE__*/_createElementVNode(\"strong\")\n], -1)\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_8 = {\n  class: \"container\",\n  style: {\"justify-content\":\"justify\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\",\"background-color\":\"#d1ecf1 !important\"}\n}\nconst _hoisted_9 = { style: {\"margin-bottom\":\"4px\"} }\nconst _hoisted_10 = { class: \"\" }\nconst _hoisted_11 = { style: {\"color\":\"black\",\"text-align\":\"justify\"} }\nconst _hoisted_12 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_13 = { style: {\"text-align\":\"justify\"} }\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_15 = { style: {\"color\":\"red\",\"text-align\":\"justify\"} }\nconst _hoisted_16 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\n  \n  \n  /* const title = \"Tableau de bord\";\n  export default {\n    head: {\n      title: title,\n    },\n    data() {\n      return {\n        expansion: null,\n      };\n    },\n  };\n   */\n   \nreturn (_ctx, _cache) => {\n  const _component_v_icon = _resolveComponent(\"v-icon\")\n  const _component_v_divider = _resolveComponent(\"v-divider\")\n  const _component_v_card = _resolveComponent(\"v-card\")\n  const _component_v_container = _resolveComponent(\"v-container\")\n\n  return (_openBlock(), _createBlock(_component_v_container, { class: \"\" }, {\n    default: _withCtx(() => [\n      _createVNode(_component_v_container, null, {\n        default: _withCtx(() => [\n          _createVNode(_component_v_card, null, {\n            default: _withCtx(() => [\n              _createElementVNode(\"div\", null, [\n                _createElementVNode(\"div\", _hoisted_1, [\n                  _hoisted_2,\n                  _createElementVNode(\"ul\", null, [\n                    _createElementVNode(\"ol\", _hoisted_3, [\n                      _hoisted_4,\n                      _createVNode(_component_v_icon, {\n                        style: {\"color\":\"rgb(0, 131, 143)\"},\n                        class: \"mr-4\"\n                      }, {\n                        default: _withCtx(() => [\n                          _createTextVNode(\"mdi-comment-text-multiple-outline\")\n                        ]),\n                        _: 1\n                      }),\n                      _createTextVNode(\" Savoir Lire \")\n                    ]),\n                    _createElementVNode(\"ol\", _hoisted_5, [\n                      _hoisted_6,\n                      _createVNode(_component_v_icon, {\n                        style: {\"color\":\"rgb(0, 131, 143)\"},\n                        class: \"mr-4\"\n                      }, {\n                        default: _withCtx(() => [\n                          _createTextVNode(\"mdi-pencil\")\n                        ]),\n                        _: 1\n                      }),\n                      _createTextVNode(\" Savoir écrire \")\n                    ]),\n                    _hoisted_7\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createElementVNode(\"div\", _hoisted_9, [\n                      _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\"} }, {\n                        default: _withCtx(() => [\n                          _createTextVNode(\"mdi-check-all\")\n                        ]),\n                        _: 1\n                      }),\n                      _createTextVNode(\" Sans ces deux prérequis, vous aurez certainement besoin d’une assistance pour l’utilisation de la plateforme. \")\n                    ]),\n                    _createVNode(_component_v_divider),\n                    _createElementVNode(\"div\", _hoisted_10, [\n                      _createElementVNode(\"div\", _hoisted_11, [\n                        _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                          default: _withCtx(() => [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]),\n                          _: 1\n                        }),\n                        _createTextVNode(\" Aucune connaissance/compétence en informatique, quoique cela puisse être un atout, n'est nécessaire pour l'utilisation de la plateforme. \")\n                      ]),\n                      _hoisted_12,\n                      _createElementVNode(\"div\", _hoisted_13, [\n                        _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                          default: _withCtx(() => [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]),\n                          _: 1\n                        }),\n                        _createTextVNode(\" Les menus sont intuitifs et laissez agir votre bon sens : Chaque fois que cela est nécessaire vous disposez d'une aide contextuelle avec un \\\"LISEZ-MOI SVP\\\" que nous vous conseillons fortement de bien lire avant de continuer. \")\n                      ]),\n                      _hoisted_14,\n                      _createElementVNode(\"div\", _hoisted_15, [\n                        _createVNode(_component_v_icon, { style: {\"color\":\"red\",\"margin-right\":\"2px\"} }, {\n                          default: _withCtx(() => [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]),\n                          _: 1\n                        }),\n                        _createTextVNode(\" Si vous êtes un établissement, la plus grave erreur à commettre pour ne pas réussir le renseignement de vos données est de confier la tâche à un \\\"informaticien\\\" dépourvu de connaissances en administration scolaire ! Les différentes tâches ont besoin des connaissances du système scolaire, pas de connaissances en informatique ! \")\n                      ])\n                    ])\n                  ]),\n                  _hoisted_16\n                ])\n              ])\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      })\n    ]),\n    _: 1\n  }))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1709717398132,
+      "end": 1709717398135,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717398135,
+      "end": 1709717398135,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717398136,
+      "end": 1709717398136,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717398136,
+      "end": 1709717398136,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717398137,
+      "end": 1709717398137,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717398137,
+      "end": 1709717398137,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717398137,
+      "end": 1709717398137,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717398137,
+      "end": 1709717398137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717398138,
+      "end": 1709717398138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717398138,
+      "end": 1709717398139,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717398139,
+      "end": 1709717398139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717398139,
+      "end": 1709717398139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717398139,
+      "end": 1709717398139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717398139,
+      "end": 1709717398139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717398139,
+      "end": 1709717398139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717398140,
+      "end": 1709717398140,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717398140,
+      "end": 1709717398140,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717398140,
+      "end": 1709717398140,
+      "order": "normal"
+    }
+  ]
+}

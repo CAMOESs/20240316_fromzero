@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-input/hooks/useCleave.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, onMounted, onBeforeUnmount, watch, computed } from \"vue\";\nimport Cleave from \"cleave.js\";\nconst DEFAULT_MASK_TOKENS = {\n  creditCard: {\n    creditCard: true\n  },\n  date: {\n    date: true,\n    datePattern: [\"d\", \"m\", \"Y\"]\n  },\n  time: {\n    time: true,\n    timePattern: [\"h\", \"m\"],\n    timeFormat: \"24\"\n  },\n  numeral: {\n    numeral: true,\n    numeralThousandsGroupStyle: \"thousand\"\n  }\n};\nconst useCleaveProps = {\n  mask: { type: [String, Object], default: \"\" },\n  returnRaw: { type: Boolean, default: true }\n};\nconst useCleave = (element, props, syncValue) => {\n  const cleave = ref();\n  const getMask = (mask) => {\n    if (typeof mask === \"string\") {\n      return DEFAULT_MASK_TOKENS[mask] ? { ...DEFAULT_MASK_TOKENS[mask] } : {};\n    }\n    return { ...mask };\n  };\n  const destroyCleave = () => {\n    if (cleave.value) {\n      cleave.value.destroy();\n    }\n  };\n  const initCleave = () => {\n    destroyCleave();\n    if (!element.value) {\n      return;\n    }\n    cleave.value = new Cleave(element.value, getMask(props.mask));\n  };\n  onMounted(() => {\n    initCleave();\n  });\n  onBeforeUnmount(() => {\n    destroyCleave();\n  });\n  watch(() => [element.value, props.mask], () => {\n    initCleave();\n  });\n  const computedValue = computed(() => {\n    if (cleave.value) {\n      if (props.returnRaw && syncValue.value === cleave.value.getRawValue()) {\n        return cleave.value.getFormattedValue();\n      }\n    }\n    return syncValue.value;\n  });\n  const onInput = (event) => {\n    const value = event.target.value;\n    if (props.mask !== \"string\" && !Object.keys(props.mask).length) {\n      syncValue.value = value;\n      return;\n    }\n    if (cleave.value) {\n      cleave.value.setRawValue(value);\n      if (props.returnRaw) {\n        syncValue.value = cleave.value.getRawValue();\n        return;\n      }\n      syncValue.value = cleave.value.getFormattedValue();\n      return;\n    }\n    syncValue.value = value;\n  };\n  return {\n    cleave,\n    computedValue,\n    onInput\n  };\n};\nexport {\n  useCleave as a,\n  useCleaveProps as u\n};\n//# sourceMappingURL=useCleave.js.map\n",
+      "start": 1709717426656,
+      "end": 1709717426931,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717426931,
+      "end": 1709717426931,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717426931,
+      "end": 1709717426931,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717426931,
+      "end": 1709717426931,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717426931,
+      "end": 1709717426931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717426932,
+      "end": 1709717426932,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717426932,
+      "end": 1709717426935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717426935,
+      "end": 1709717426935,
+      "order": "normal"
+    }
+  ]
+}

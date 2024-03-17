@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-date-picker/hooks/use-picker.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed, watch } from \"vue\";\nimport { d as isDatesMonthEqual, e as isDatesDayEqual, f as isDatesYearEqual, a as isSingleDate, i as isDates, b as isRange } from \"../utils/date-utils.mjs\";\nimport { u as useDatePickerModelValue } from \"./model-value-helper.mjs\";\nconst getDateEqualFunction = (type) => {\n  return {\n    month: isDatesMonthEqual,\n    day: isDatesDayEqual,\n    year: isDatesYearEqual\n  }[type];\n};\nconst useDatePicker = (type, dates, props, emit) => {\n  const datesEqual = getDateEqualFunction(type);\n  const isAllowedDate = props.allowedDays || props.allowedMonths || props.allowedYears;\n  const isDateDisabled = (date) => isAllowedDate === void 0 ? false : !isAllowedDate(date);\n  const hoveredIndex = ref(-1);\n  const hoveredValue = computed(() => dates.value[hoveredIndex.value]);\n  const { updateModelValue } = useDatePickerModelValue(\n    props,\n    emit,\n    datesEqual\n  );\n  const onClick = (date) => {\n    if (props.readonly || isDateDisabled(date)) {\n      return;\n    }\n    updateModelValue(date);\n    emit(`click:${type}`, date);\n  };\n  const isToday = (date) => {\n    const today = /* @__PURE__ */ new Date();\n    return datesEqual(today, date);\n  };\n  const isSelected = (date) => {\n    if (!props.modelValue) {\n      return false;\n    }\n    if (isSingleDate(props.modelValue)) {\n      return datesEqual(props.modelValue, date);\n    } else if (isDates(props.modelValue)) {\n      return !!props.modelValue.find((d) => datesEqual(d, date));\n    } else if (isRange(props.modelValue)) {\n      return datesEqual(props.modelValue.start, date) || datesEqual(props.modelValue.end, date);\n    }\n    return false;\n  };\n  const isInRange = (date) => {\n    if (!props.modelValue) {\n      return false;\n    }\n    if (!isRange(props.modelValue)) {\n      return false;\n    }\n    if (props.modelValue.start && props.modelValue.end) {\n      return props.modelValue.start < date && props.modelValue.end > date;\n    }\n    const selectedDate = props.modelValue.start || props.modelValue.end;\n    if (selectedDate) {\n      if (!hoveredValue.value) {\n        return false;\n      }\n      return selectedDate < date ? hoveredValue.value >= date : hoveredValue.value <= date;\n    }\n    return false;\n  };\n  watch(hoveredValue, (date) => {\n    emit(`hover:${type}`, date);\n  });\n  return {\n    hoveredIndex,\n    hoveredValue,\n    onClick,\n    isToday,\n    isSelected,\n    isInRange\n  };\n};\nexport {\n  useDatePicker as u\n};\n//# sourceMappingURL=use-picker.mjs.map\n",
+      "start": 1709717514400,
+      "end": 1709717514598,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514598,
+      "end": 1709717514598,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514598,
+      "end": 1709717514598,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514598,
+      "end": 1709717514598,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514598,
+      "end": 1709717514598,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514600,
+      "end": 1709717514600,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514600,
+      "end": 1709717514601,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514601,
+      "end": 1709717514602,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514602,
+      "end": 1709717514603,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514604,
+      "end": 1709717514604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514604,
+      "end": 1709717514604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717514604,
+      "end": 1709717514604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514604,
+      "end": 1709717514604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514604,
+      "end": 1709717514604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514604,
+      "end": 1709717514604,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514605,
+      "end": 1709717514605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514605,
+      "end": 1709717514605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514605,
+      "end": 1709717514605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514605,
+      "end": 1709717514606,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514605,
+      "end": 1709717514606,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514606,
+      "end": 1709717514608,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514606,
+      "end": 1709717514608,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514609,
+      "end": 1709717514609,
+      "order": "normal"
+    }
+  ]
+}

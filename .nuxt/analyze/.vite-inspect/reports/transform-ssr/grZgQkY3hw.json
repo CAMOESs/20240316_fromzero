@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-date-input/VaDateInput.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, toRefs, watch, computed, nextTick } from \"vue\";\nimport { o as omit } from \"../../../vendor.mjs\";\nimport { u as useRangeModelValueGuard } from \"./hooks/range-model-value-guard.mjs\";\nimport { u as useDateParser } from \"./hooks/input-text-parser.mjs\";\nimport { i as isDates, a as isSingleDate, b as isRange } from \"../va-date-picker/utils/date-utils.mjs\";\nimport { _ as _VaDatePicker } from \"../va-date-picker/VaDatePicker.mjs\";\nimport { V as VaDropdown } from \"../va-dropdown/index.mjs\";\nimport { V as VaInputWrapper } from \"../va-input-wrapper/index.mjs\";\nimport { V as VaIcon } from \"../va-icon/index.mjs\";\nimport { u as unwrapEl } from \"../../utils/unwrapEl.mjs\";\nimport { V as VaDropdownContent } from \"../va-dropdown/components/VaDropdownContent/index.mjs\";\nimport { u as useDropdownableProps, a as useDropdownableEmits, b as useDropdownable } from \"../../composables/useDropdownable.mjs\";\nimport { u as useParsable } from \"../../composables/useParsable.mjs\";\nimport { e as extractComponentProps, a as extractComponentEmits } from \"../../utils/component-options/extract-component-options.mjs\";\nimport { u as useClearableProps, a as useClearableEmits, b as useClearable } from \"../../composables/useClearable.mjs\";\nimport { b as useValidationProps, u as useValidationEmits, a as useValidation } from \"../../composables/useValidation.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { a as useFocusEmits, u as useFocus } from \"../../composables/useFocus.mjs\";\nimport { u as useStatefulEmits, b as useStateful } from \"../../composables/useStateful.mjs\";\nimport { u as useTrapFocus } from \"../../composables/useTrapFocus.mjs\";\nimport { u as useFocusDeep } from \"../../composables/useFocusDeep.mjs\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nconst VaInputWrapperProps = extractComponentProps(VaInputWrapper, [\"focused\", \"maxLength\", \"counterValue\"]);\nconst VaDatePickerProps = extractComponentProps(_VaDatePicker);\nextractComponentProps(\n  VaDropdown,\n  [\"innerAnchorSelector\", \"stateful\", \"keyboardNavigation\", \"modelValue\", \"trigger\"]\n);\nconst _sfc_main = defineComponent({\n  name: \"VaDateInput\",\n  components: {\n    VaDropdown,\n    VaDropdownContent,\n    VaDatePicker: _VaDatePicker,\n    VaInputWrapper,\n    VaIcon\n  },\n  props: {\n    ...useDropdownableProps,\n    ...useClearableProps,\n    ...VaInputWrapperProps,\n    ...VaDatePickerProps,\n    ...useValidationProps,\n    ...useComponentPresetProp,\n    clearValue: { type: Date, default: void 0 },\n    modelValue: { type: [Date, Array, Object, String, Number] },\n    resetOnClose: { type: Boolean, default: true },\n    closeOnContentClick: { type: Boolean, default: false },\n    offset: { ...useDropdownableProps.offset, default: () => [2, 0] },\n    format: { type: Function },\n    formatDate: { type: Function, default: (d) => d.toLocaleDateString() },\n    parse: { type: Function },\n    parseDate: { type: Function },\n    parseValue: { type: Function },\n    delimiter: { type: String, default: \", \" },\n    rangeDelimiter: { type: String, default: \" ~ \" },\n    manualInput: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" },\n    leftIcon: { type: Boolean, default: false },\n    icon: { type: String, default: \"va-calendar\" },\n    ariaToggleDropdownLabel: { type: String, default: \"$t:toggleDropdown\" },\n    ariaResetLabel: { type: String, default: \"$t:resetDate\" },\n    ariaSelectedDateLabel: { type: String, default: \"$t:selectedDate\" }\n  },\n  emits: [\n    ...useFocusEmits,\n    ...extractComponentEmits(_VaDatePicker),\n    ...useClearableEmits,\n    ...useValidationEmits,\n    ...useStatefulEmits,\n    ...useDropdownableEmits,\n    \"update:text\"\n  ],\n  inheritAttrs: false,\n  setup(props, { emit, slots, attrs }) {\n    const input = shallowRef();\n    const datePicker = ref();\n    const { resetOnClose } = toRefs(props);\n    const { trapFocusIn, freeFocus } = useTrapFocus();\n    const trapFocus = () => {\n      const el = unwrapEl(datePicker.value);\n      if (!el) {\n        freeFocus();\n        return;\n      }\n      trapFocusIn(el);\n    };\n    watch([datePicker], () => {\n      trapFocus();\n    });\n    const { valueComputed: statefulValue } = useStateful(props, emit);\n    const { isOpenSync, dropdownProps } = useDropdownable(props, emit, {\n      defaultCloseOnValueUpdate: computed(() => !Array.isArray(statefulValue.value))\n    });\n    const { isFocused: isInputFocused, focus, blur, onFocus: focusListener, onBlur: blurListener } = useFocus(input);\n    const isPickerFocused = useFocusDeep(datePicker);\n    const isRangeModelValueGuardDisabled = computed(() => !resetOnClose.value);\n    const {\n      valueComputed,\n      reset: resetInvalidRange\n    } = useRangeModelValueGuard(statefulValue, isRangeModelValueGuardDisabled, props.parseValue);\n    watch(isOpenSync, (isOpened) => {\n      if (!isOpened && !isRangeModelValueGuardDisabled.value) {\n        resetInvalidRange();\n      }\n    });\n    const dateOrNothing = (date) => date ? props.formatDate(date) : \"...\";\n    const { parseDateInputValue, isValid } = useDateParser(props);\n    watch(valueComputed, () => {\n      isValid.value = true;\n    });\n    const modelValueToString = (value) => {\n      if (props.format) {\n        return props.format(valueComputed.value);\n      }\n      if (isDates(value)) {\n        return value.map((d) => props.formatDate(d)).join(props.delimiter);\n      }\n      if (isSingleDate(value)) {\n        return props.formatDate(value);\n      }\n      if (isRange(value)) {\n        return dateOrNothing(value.start) + props.rangeDelimiter + dateOrNothing(value.end);\n      }\n      throw new Error(\"VaDatePicker: Invalid model value. Value should be Date, Date[] or { start: Date, end: Date | null }\");\n    };\n    const {\n      text,\n      value: valueWithoutText\n    } = useParsable(valueComputed, parseDateInputValue, modelValueToString);\n    const valueText = computed(() => {\n      if (!isValid.value) {\n        return \"\";\n      }\n      if (!valueComputed.value) {\n        if (!props.clearValue) {\n          return \"\";\n        }\n        return modelValueToString(props.clearValue);\n      }\n      return text.value;\n    });\n    const onInputTextChanged = ({ target }) => {\n      if (props.disabled) {\n        return;\n      }\n      const parsedValue = parseDateInputValue(target.value);\n      if (isValid.value) {\n        valueComputed.value = parsedValue;\n      }\n    };\n    const reset = () => withoutValidation(() => {\n      statefulValue.value = props.clearValue;\n      emit(\"clear\");\n      resetValidation();\n    });\n    const hideAndFocus = () => {\n      isOpenSync.value = false;\n      focus();\n    };\n    const focusDatePicker = () => {\n      nextTick(() => {\n        var _a;\n        return (_a = datePicker.value) == null ? void 0 : _a.focusCurrentPicker();\n      });\n    };\n    const focusInputOrPicker = () => {\n      isOpenSync.value ? focusDatePicker() : focus();\n    };\n    const checkProhibitedDropdownOpening = (e) => {\n      if (isOpenSync.value) {\n        return false;\n      }\n      if (props.disabled || props.readonly) {\n        return true;\n      }\n      return props.manualInput && (e == null ? void 0 : e.code) !== \"Space\";\n    };\n    const toggleDropdown = (event) => {\n      if (checkProhibitedDropdownOpening(event instanceof KeyboardEvent ? event : void 0)) {\n        return;\n      }\n      isOpenSync.value = !isOpenSync.value;\n      nextTick(focusInputOrPicker);\n    };\n    const showDropdown = () => {\n      if (props.disabled || props.readonly) {\n        return;\n      }\n      isOpenSync.value = true;\n      nextTick(focusDatePicker);\n    };\n    const {\n      computedError,\n      computedErrorMessages,\n      listeners,\n      validationAriaAttributes,\n      withoutValidation,\n      resetValidation\n    } = useValidation(props, emit, { reset, focus, value: valueComputed });\n    const hasError = computed(() => !isValid.value && valueComputed.value !== props.clearValue || computedError.value);\n    const filterSlots = computed(() => {\n      const slotsWithIcons = [\n        props.leftIcon && \"prependInner\",\n        (!props.leftIcon || props.clearable) && \"icon\"\n      ];\n      return Object.keys(slots).filter((slot) => !slotsWithIcons.includes(slot));\n    });\n    const {\n      canBeCleared,\n      clearIconProps,\n      onFocus,\n      onBlur\n    } = useClearable(props, valueComputed);\n    const cursorStyleComputed = computed(() => {\n      if (props.disabled) {\n        return {};\n      }\n      if (props.manualInput) {\n        return { cursor: \"text\" };\n      }\n      return { cursor: \"pointer\" };\n    });\n    const iconTabindexComputed = computed(() => {\n      if (!props.manualInput) {\n        return -1;\n      }\n      return props.disabled || props.readonly ? -1 : 0;\n    });\n    const iconProps = computed(() => ({\n      role: iconTabindexComputed.value === 0 ? \"button\" : \"none\",\n      ariaHidden: iconTabindexComputed.value === -1,\n      name: props.icon,\n      color: \"secondary\",\n      tabindex: iconTabindexComputed.value\n    }));\n    const filteredWrapperProps = filterComponentProps(VaInputWrapperProps);\n    const computedInputWrapperProps = computed(() => ({\n      ...filteredWrapperProps.value,\n      focused: isInputFocused.value || isPickerFocused.value,\n      error: hasError.value,\n      errorMessages: computedErrorMessages.value,\n      readonly: props.readonly || !props.manualInput\n    }));\n    const computedInputListeners = computed(() => ({\n      focus: () => {\n        if (props.disabled) {\n          return;\n        }\n        focusListener();\n        if (props.readonly) {\n          return;\n        }\n        onFocus();\n        listeners.onFocus();\n      },\n      blur: () => {\n        if (props.disabled) {\n          return;\n        }\n        blurListener();\n        if (props.readonly) {\n          return;\n        }\n        onBlur();\n        listeners.onBlur();\n      }\n    }));\n    const { tp } = useTranslation();\n    const inputAttributesComputed = computed(() => ({\n      readonly: props.readonly || !props.manualInput,\n      disabled: props.disabled,\n      tabindex: props.disabled ? -1 : 0,\n      placeholder: props.placeholder,\n      value: valueText.value,\n      ariaLabel: props.label || tp(props.ariaSelectedDateLabel),\n      ariaRequired: props.requiredMark,\n      ariaDisabled: props.disabled,\n      ariaReadOnly: props.readonly,\n      ...validationAriaAttributes.value,\n      ...omit(attrs, [\"class\", \"style\"])\n    }));\n    const dropdownPropsComputed = computed(() => ({\n      ...dropdownProps.value,\n      stateful: false,\n      closeOnAnchorClick: false,\n      keyboardNavigation: true,\n      innerAnchorSelector: \".va-input-wrapper__field\",\n      trigger: \"none\"\n    }));\n    return {\n      tp,\n      datePicker,\n      valueText,\n      valueWithoutText,\n      valueComputed,\n      isOpenSync,\n      onInputTextChanged,\n      trapFocus,\n      isInputFocused,\n      isPickerFocused,\n      input,\n      inputWrapperProps: computedInputWrapperProps,\n      inputListeners: computedInputListeners,\n      inputAttributesComputed,\n      datePickerProps: filterComponentProps(VaDatePickerProps),\n      dropdownPropsComputed,\n      filterSlots,\n      canBeCleared,\n      clearIconProps,\n      iconProps,\n      cursorStyleComputed,\n      hideAndFocus,\n      toggleDropdown,\n      showDropdown,\n      focusInputOrPicker,\n      focusDatePicker,\n      reset,\n      focus,\n      blur\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaDateInput.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717507202,
+      "end": 1709717507563,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717507563,
+      "end": 1709717507563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717507564,
+      "end": 1709717507564,
+      "order": "normal"
+    }
+  ]
+}

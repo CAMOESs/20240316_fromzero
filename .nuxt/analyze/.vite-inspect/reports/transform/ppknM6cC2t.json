@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-tabs/components/VaTab/VaTab.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, computed, inject, onMounted, onBeforeUnmount } from \"vue\";\nimport { T as TabsViewKey } from \"../../types.js\";\nimport { V as VaIcon } from \"../../../va-icon/index.js\";\nimport { u as useRouterLinkProps, a as useRouterLink } from \"../../../../composables/useRouterLink.js\";\nimport { u as useComponentPresetProp } from \"../../../../composables/useComponentPreset.js\";\nimport { u as useKeyboardOnlyFocus } from \"../../../../composables/useKeyboardOnlyFocus.js\";\nimport { u as useColors } from \"../../../../composables/useColors.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaTab\",\n  components: { VaIcon },\n  emits: [\"click\", \"keydown-enter\", \"focus\"],\n  props: {\n    ...useRouterLinkProps,\n    ...useComponentPresetProp,\n    selected: { type: Boolean, default: false },\n    color: { type: String, default: \"\" },\n    icon: { type: String, default: \"\" },\n    label: { type: String, default: \"\" },\n    disabled: { type: Boolean },\n    name: { type: [String, Number] },\n    tag: { type: String, default: \"div\" }\n  },\n  setup: (props, { emit }) => {\n    const tabElement = shallowRef();\n    const isActive = ref(false);\n    const hoverState = ref(false);\n    const rightSidePosition = ref(0);\n    const leftSidePosition = ref(0);\n    const { keyboardFocusListeners, hasKeyboardFocus } = useKeyboardOnlyFocus();\n    const { tagComputed, hrefComputed, isActiveRouterLink } = useRouterLink(props);\n    const classComputed = computed(() => ({ \"va-tab--disabled\": props.disabled }));\n    const {\n      parentDisabled,\n      selectTab,\n      moveToTab,\n      registerTab,\n      unregisterTab\n    } = inject(TabsViewKey, {\n      parentDisabled: false,\n      tabsList: [],\n      selectTab: (tab) => tab,\n      moveToTab: (tab) => tab,\n      registerTab: (tab) => tab,\n      unregisterTab: (tab) => tab\n    });\n    const tabIndexComputed = computed(() => props.disabled || parentDisabled ? -1 : 0);\n    const { getColor } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const computedStyle = computed(() => ({\n      color: hoverState.value || isActive.value ? colorComputed.value : \"inherit\"\n    }));\n    const updateHoverState = (isHover) => {\n      hoverState.value = isHover;\n    };\n    const updateSidePositions = () => {\n      var _a, _b;\n      const componentOffsetLeft = ((_a = tabElement.value) == null ? void 0 : _a.offsetLeft) || 0;\n      const componentOffsetWidth = ((_b = tabElement.value) == null ? void 0 : _b.offsetWidth) || 0;\n      rightSidePosition.value = componentOffsetLeft + componentOffsetWidth;\n      leftSidePosition.value = componentOffsetLeft;\n    };\n    const onTabClick = () => {\n      selectTab(tabComponent);\n      emit(\"click\");\n    };\n    const onTabKeydown = () => {\n      selectTab(tabComponent);\n      emit(\"keydown-enter\");\n    };\n    const onFocus = () => {\n      if (hasKeyboardFocus.value) {\n        moveToTab(tabComponent);\n      }\n      emit(\"focus\");\n    };\n    const tabComponent = {\n      name: computed(() => props.name),\n      id: null,\n      tabElement,\n      isActive,\n      tabIndexComputed,\n      isActiveRouterLink,\n      rightSidePosition,\n      leftSidePosition,\n      onTabClick,\n      onTabKeydown,\n      onFocus,\n      updateSidePositions\n    };\n    onMounted(() => {\n      registerTab(tabComponent);\n    });\n    onBeforeUnmount(() => {\n      unregisterTab(tabComponent);\n    });\n    return {\n      tabElement,\n      parentDisabled,\n      isActive,\n      hoverState,\n      tagComputed,\n      hrefComputed,\n      isActiveRouterLink,\n      colorComputed,\n      classComputed,\n      computedStyle,\n      tabIndexComputed,\n      rightSidePosition,\n      leftSidePosition,\n      updateHoverState,\n      updateSidePositions,\n      onTabClick,\n      onTabKeydown,\n      onFocus,\n      keyboardFocusListeners\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaTab.css';\n//# sourceMappingURL=VaTab.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423273,
+      "end": 1709717423543,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423543,
+      "end": 1709717423543,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423543,
+      "end": 1709717423545,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423546,
+      "end": 1709717423546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423547,
+      "end": 1709717423547,
+      "order": "normal"
+    }
+  ]
+}

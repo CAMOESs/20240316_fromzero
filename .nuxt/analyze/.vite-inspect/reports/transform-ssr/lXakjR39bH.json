@@ -1,0 +1,264 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <v-container class=\"\">\n      <v-container>\n        <!-- <v-row justify=\"center\"> -->\n        <v-card>\n        <div>\n          <div\n            class=\"d-flex flex-column\"\n            style=\"padding-top: 2em; justify-content: center\"\n          >\n            <div\n              style=\"\n                font-size: 24px;\n                color: red;\n                font-weight: bold;\n                margin-left: 2em;\n                margin-right: 4em;\n                width: 90%;\n              \"\n              text\n            >\n              <span>Prérequis nécessaires à l'utilisation de la plateforme</span>\n            </div>\n            <ul>\n              <ol style=\"text-align: justify; margin-left: 2em;\" class=\"mt-2\">\n                <span style=\"color: rgb(0, 131, 143)\"><strong></strong></span>\n                <v-icon style=\"color: rgb(0, 131, 143)\" class=\"mr-4\"\n                  >mdi-comment-text-multiple-outline</v-icon\n                >\n                Savoir Lire\n              </ol>\n              <ol style=\"text-align: justify; margin-left: 2em;\" class=\"mt-2\">\n                <span style=\"color: rgb(0, 131, 143)\"><strong></strong></span>\n                <v-icon style=\"color: rgb(0, 131, 143)\" class=\"mr-4\"\n                  >mdi-pencil</v-icon\n                >\n                Savoir écrire\n              </ol>\n              <br />\n            </ul>\n  \n            <div\n              class=\"container\"\n              style=\"\n                justify-content: justify;\n                margin-left: 2em;\n                margin-right: 4em;\n                width: 90%;\n                background-color: #d1ecf1 !important;\n              \"\n            >\n              <div style=\"margin-bottom: 4px\">\n                <v-icon style=\"color: black; margin-right: 2px\"\n                  >mdi-check-all</v-icon\n                >\n                Sans ces deux prérequis, vous aurez certainement besoin d’une\n                assistance pour l’utilisation de la plateforme.\n              </div>\n              <v-divider></v-divider>\n              <div class=\"\">\n                <div style=\"color:black;text-align:justify\">\n                  <v-icon\n                    style=\"color: black; margin-right: 2px; margin-bottom: 6px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Aucune connaissance/compétence en informatique, quoique cela\n                  puisse être un atout, n'est nécessaire pour l'utilisation de la\n                  plateforme.\n                </div>\n                <br />\n                <div style=\"text-align: justify\">\n                  <v-icon\n                    style=\"color: black; margin-right: 2px; margin-bottom: 6px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Les menus sont intuitifs et laissez agir votre bon sens : Chaque\n                  fois que cela est nécessaire vous disposez d'une aide\n                  contextuelle avec un \"LISEZ-MOI SVP\" que nous vous conseillons\n                  fortement de bien lire avant de continuer.\n                </div>\n                <br />\n                <div style=\"color: red; text-align: justify\">\n                  <v-icon style=\"color: red; margin-right: 2px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Si vous êtes un établissement, la plus grave erreur à commettre pour ne\n                  pas réussir le renseignement de vos données est de confier la\n                  tâche à un \"informaticien\" dépourvu de connaissances en\n                  administration scolaire ! Les différentes tâches ont besoin des\n                  connaissances du système scolaire, pas de connaissances en\n                  informatique !\n                </div>\n              </div>\n            </div>\n            <br />\n          </div>\n        </div>\n        </v-card>\n        <!-- </v-row> -->\n      </v-container>\n    </v-container>\n  </template>\n  \n  <script setup>\n  \n  \n  /* const title = \"Tableau de bord\";\n  export default {\n    head: {\n      title: title,\n    },\n    data() {\n      return {\n        expansion: null,\n      };\n    },\n  };\n   */\n   </script>    ",
+      "start": 1709717476081,
+      "end": 1709717488326,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\n  \n  \n  /* const title = \"Tableau de bord\";\n  export default {\n    head: {\n      title: title,\n    },\n    data() {\n      return {\n        expansion: null,\n      };\n    },\n  };\n   */\n   \nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_v_container = _resolveComponent(\"v-container\")\n  const _component_v_card = _resolveComponent(\"v-card\")\n  const _component_v_icon = _resolveComponent(\"v-icon\")\n  const _component_v_divider = _resolveComponent(\"v-divider\")\n\n  _push(_ssrRenderComponent(_component_v_container, _mergeProps({ class: \"\" }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_v_container, null, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_v_card, null, {\n                default: _withCtx((_, _push, _parent, _scopeId) => {\n                  if (_push) {\n                    _push(`<div${\n                      _scopeId\n                    }><div class=\"d-flex flex-column\" style=\"${\n                      _ssrRenderStyle({\"padding-top\":\"2em\",\"justify-content\":\"center\"})\n                    }\"${\n                      _scopeId\n                    }><div style=\"${\n                      _ssrRenderStyle({\"font-size\":\"24px\",\"color\":\"red\",\"font-weight\":\"bold\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\"})\n                    }\" text${\n                      _scopeId\n                    }><span${\n                      _scopeId\n                    }>Prérequis nécessaires à l&#39;utilisation de la plateforme</span></div><ul${\n                      _scopeId\n                    }><ol style=\"${\n                      _ssrRenderStyle({\"text-align\":\"justify\",\"margin-left\":\"2em\"})\n                    }\" class=\"mt-2\"${\n                      _scopeId\n                    }><span style=\"${\n                      _ssrRenderStyle({\"color\":\"rgb(0, 131, 143)\"})\n                    }\"${\n                      _scopeId\n                    }><strong${\n                      _scopeId\n                    }></strong></span>`)\n                    _push(_ssrRenderComponent(_component_v_icon, {\n                      style: {\"color\":\"rgb(0, 131, 143)\"},\n                      class: \"mr-4\"\n                    }, {\n                      default: _withCtx((_, _push, _parent, _scopeId) => {\n                        if (_push) {\n                          _push(`mdi-comment-text-multiple-outline`)\n                        } else {\n                          return [\n                            _createTextVNode(\"mdi-comment-text-multiple-outline\")\n                          ]\n                        }\n                      }),\n                      _: 1\n                    }, _parent, _scopeId))\n                    _push(` Savoir Lire </ol><ol style=\"${\n                      _ssrRenderStyle({\"text-align\":\"justify\",\"margin-left\":\"2em\"})\n                    }\" class=\"mt-2\"${\n                      _scopeId\n                    }><span style=\"${\n                      _ssrRenderStyle({\"color\":\"rgb(0, 131, 143)\"})\n                    }\"${\n                      _scopeId\n                    }><strong${\n                      _scopeId\n                    }></strong></span>`)\n                    _push(_ssrRenderComponent(_component_v_icon, {\n                      style: {\"color\":\"rgb(0, 131, 143)\"},\n                      class: \"mr-4\"\n                    }, {\n                      default: _withCtx((_, _push, _parent, _scopeId) => {\n                        if (_push) {\n                          _push(`mdi-pencil`)\n                        } else {\n                          return [\n                            _createTextVNode(\"mdi-pencil\")\n                          ]\n                        }\n                      }),\n                      _: 1\n                    }, _parent, _scopeId))\n                    _push(` Savoir écrire </ol><br${\n                      _scopeId\n                    }></ul><div class=\"container\" style=\"${\n                      _ssrRenderStyle({\"justify-content\":\"justify\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\",\"background-color\":\"#d1ecf1 !important\"})\n                    }\"${\n                      _scopeId\n                    }><div style=\"${\n                      _ssrRenderStyle({\"margin-bottom\":\"4px\"})\n                    }\"${\n                      _scopeId\n                    }>`)\n                    _push(_ssrRenderComponent(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\"} }, {\n                      default: _withCtx((_, _push, _parent, _scopeId) => {\n                        if (_push) {\n                          _push(`mdi-check-all`)\n                        } else {\n                          return [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]\n                        }\n                      }),\n                      _: 1\n                    }, _parent, _scopeId))\n                    _push(` Sans ces deux prérequis, vous aurez certainement besoin d’une assistance pour l’utilisation de la plateforme. </div>`)\n                    _push(_ssrRenderComponent(_component_v_divider, null, null, _parent, _scopeId))\n                    _push(`<div class=\"\"${\n                      _scopeId\n                    }><div style=\"${\n                      _ssrRenderStyle({\"color\":\"black\",\"text-align\":\"justify\"})\n                    }\"${\n                      _scopeId\n                    }>`)\n                    _push(_ssrRenderComponent(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                      default: _withCtx((_, _push, _parent, _scopeId) => {\n                        if (_push) {\n                          _push(`mdi-check-all`)\n                        } else {\n                          return [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]\n                        }\n                      }),\n                      _: 1\n                    }, _parent, _scopeId))\n                    _push(` Aucune connaissance/compétence en informatique, quoique cela puisse être un atout, n&#39;est nécessaire pour l&#39;utilisation de la plateforme. </div><br${\n                      _scopeId\n                    }><div style=\"${\n                      _ssrRenderStyle({\"text-align\":\"justify\"})\n                    }\"${\n                      _scopeId\n                    }>`)\n                    _push(_ssrRenderComponent(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                      default: _withCtx((_, _push, _parent, _scopeId) => {\n                        if (_push) {\n                          _push(`mdi-check-all`)\n                        } else {\n                          return [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]\n                        }\n                      }),\n                      _: 1\n                    }, _parent, _scopeId))\n                    _push(` Les menus sont intuitifs et laissez agir votre bon sens : Chaque fois que cela est nécessaire vous disposez d&#39;une aide contextuelle avec un &quot;LISEZ-MOI SVP&quot; que nous vous conseillons fortement de bien lire avant de continuer. </div><br${\n                      _scopeId\n                    }><div style=\"${\n                      _ssrRenderStyle({\"color\":\"red\",\"text-align\":\"justify\"})\n                    }\"${\n                      _scopeId\n                    }>`)\n                    _push(_ssrRenderComponent(_component_v_icon, { style: {\"color\":\"red\",\"margin-right\":\"2px\"} }, {\n                      default: _withCtx((_, _push, _parent, _scopeId) => {\n                        if (_push) {\n                          _push(`mdi-check-all`)\n                        } else {\n                          return [\n                            _createTextVNode(\"mdi-check-all\")\n                          ]\n                        }\n                      }),\n                      _: 1\n                    }, _parent, _scopeId))\n                    _push(` Si vous êtes un établissement, la plus grave erreur à commettre pour ne pas réussir le renseignement de vos données est de confier la tâche à un &quot;informaticien&quot; dépourvu de connaissances en administration scolaire ! Les différentes tâches ont besoin des connaissances du système scolaire, pas de connaissances en informatique ! </div></div></div><br${_scopeId}></div></div>`)\n                  } else {\n                    return [\n                      _createVNode(\"div\", null, [\n                        _createVNode(\"div\", {\n                          class: \"d-flex flex-column\",\n                          style: {\"padding-top\":\"2em\",\"justify-content\":\"center\"}\n                        }, [\n                          _createVNode(\"div\", {\n                            style: {\"font-size\":\"24px\",\"color\":\"red\",\"font-weight\":\"bold\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\"},\n                            text: \"\"\n                          }, [\n                            _createVNode(\"span\", null, \"Prérequis nécessaires à l'utilisation de la plateforme\")\n                          ]),\n                          _createVNode(\"ul\", null, [\n                            _createVNode(\"ol\", {\n                              style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n                              class: \"mt-2\"\n                            }, [\n                              _createVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n                                _createVNode(\"strong\")\n                              ]),\n                              _createVNode(_component_v_icon, {\n                                style: {\"color\":\"rgb(0, 131, 143)\"},\n                                class: \"mr-4\"\n                              }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(\"mdi-comment-text-multiple-outline\")\n                                ]),\n                                _: 1\n                              }),\n                              _createTextVNode(\" Savoir Lire \")\n                            ]),\n                            _createVNode(\"ol\", {\n                              style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n                              class: \"mt-2\"\n                            }, [\n                              _createVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n                                _createVNode(\"strong\")\n                              ]),\n                              _createVNode(_component_v_icon, {\n                                style: {\"color\":\"rgb(0, 131, 143)\"},\n                                class: \"mr-4\"\n                              }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(\"mdi-pencil\")\n                                ]),\n                                _: 1\n                              }),\n                              _createTextVNode(\" Savoir écrire \")\n                            ]),\n                            _createVNode(\"br\")\n                          ]),\n                          _createVNode(\"div\", {\n                            class: \"container\",\n                            style: {\"justify-content\":\"justify\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\",\"background-color\":\"#d1ecf1 !important\"}\n                          }, [\n                            _createVNode(\"div\", { style: {\"margin-bottom\":\"4px\"} }, [\n                              _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\"} }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(\"mdi-check-all\")\n                                ]),\n                                _: 1\n                              }),\n                              _createTextVNode(\" Sans ces deux prérequis, vous aurez certainement besoin d’une assistance pour l’utilisation de la plateforme. \")\n                            ]),\n                            _createVNode(_component_v_divider),\n                            _createVNode(\"div\", { class: \"\" }, [\n                              _createVNode(\"div\", { style: {\"color\":\"black\",\"text-align\":\"justify\"} }, [\n                                _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                                  default: _withCtx(() => [\n                                    _createTextVNode(\"mdi-check-all\")\n                                  ]),\n                                  _: 1\n                                }),\n                                _createTextVNode(\" Aucune connaissance/compétence en informatique, quoique cela puisse être un atout, n'est nécessaire pour l'utilisation de la plateforme. \")\n                              ]),\n                              _createVNode(\"br\"),\n                              _createVNode(\"div\", { style: {\"text-align\":\"justify\"} }, [\n                                _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                                  default: _withCtx(() => [\n                                    _createTextVNode(\"mdi-check-all\")\n                                  ]),\n                                  _: 1\n                                }),\n                                _createTextVNode(\" Les menus sont intuitifs et laissez agir votre bon sens : Chaque fois que cela est nécessaire vous disposez d'une aide contextuelle avec un \\\"LISEZ-MOI SVP\\\" que nous vous conseillons fortement de bien lire avant de continuer. \")\n                              ]),\n                              _createVNode(\"br\"),\n                              _createVNode(\"div\", { style: {\"color\":\"red\",\"text-align\":\"justify\"} }, [\n                                _createVNode(_component_v_icon, { style: {\"color\":\"red\",\"margin-right\":\"2px\"} }, {\n                                  default: _withCtx(() => [\n                                    _createTextVNode(\"mdi-check-all\")\n                                  ]),\n                                  _: 1\n                                }),\n                                _createTextVNode(\" Si vous êtes un établissement, la plus grave erreur à commettre pour ne pas réussir le renseignement de vos données est de confier la tâche à un \\\"informaticien\\\" dépourvu de connaissances en administration scolaire ! Les différentes tâches ont besoin des connaissances du système scolaire, pas de connaissances en informatique ! \")\n                              ])\n                            ])\n                          ]),\n                          _createVNode(\"br\")\n                        ])\n                      ])\n                    ]\n                  }\n                }),\n                _: 1\n              }, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_v_card, null, {\n                  default: _withCtx(() => [\n                    _createVNode(\"div\", null, [\n                      _createVNode(\"div\", {\n                        class: \"d-flex flex-column\",\n                        style: {\"padding-top\":\"2em\",\"justify-content\":\"center\"}\n                      }, [\n                        _createVNode(\"div\", {\n                          style: {\"font-size\":\"24px\",\"color\":\"red\",\"font-weight\":\"bold\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\"},\n                          text: \"\"\n                        }, [\n                          _createVNode(\"span\", null, \"Prérequis nécessaires à l'utilisation de la plateforme\")\n                        ]),\n                        _createVNode(\"ul\", null, [\n                          _createVNode(\"ol\", {\n                            style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n                            class: \"mt-2\"\n                          }, [\n                            _createVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n                              _createVNode(\"strong\")\n                            ]),\n                            _createVNode(_component_v_icon, {\n                              style: {\"color\":\"rgb(0, 131, 143)\"},\n                              class: \"mr-4\"\n                            }, {\n                              default: _withCtx(() => [\n                                _createTextVNode(\"mdi-comment-text-multiple-outline\")\n                              ]),\n                              _: 1\n                            }),\n                            _createTextVNode(\" Savoir Lire \")\n                          ]),\n                          _createVNode(\"ol\", {\n                            style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n                            class: \"mt-2\"\n                          }, [\n                            _createVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n                              _createVNode(\"strong\")\n                            ]),\n                            _createVNode(_component_v_icon, {\n                              style: {\"color\":\"rgb(0, 131, 143)\"},\n                              class: \"mr-4\"\n                            }, {\n                              default: _withCtx(() => [\n                                _createTextVNode(\"mdi-pencil\")\n                              ]),\n                              _: 1\n                            }),\n                            _createTextVNode(\" Savoir écrire \")\n                          ]),\n                          _createVNode(\"br\")\n                        ]),\n                        _createVNode(\"div\", {\n                          class: \"container\",\n                          style: {\"justify-content\":\"justify\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\",\"background-color\":\"#d1ecf1 !important\"}\n                        }, [\n                          _createVNode(\"div\", { style: {\"margin-bottom\":\"4px\"} }, [\n                            _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\"} }, {\n                              default: _withCtx(() => [\n                                _createTextVNode(\"mdi-check-all\")\n                              ]),\n                              _: 1\n                            }),\n                            _createTextVNode(\" Sans ces deux prérequis, vous aurez certainement besoin d’une assistance pour l’utilisation de la plateforme. \")\n                          ]),\n                          _createVNode(_component_v_divider),\n                          _createVNode(\"div\", { class: \"\" }, [\n                            _createVNode(\"div\", { style: {\"color\":\"black\",\"text-align\":\"justify\"} }, [\n                              _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(\"mdi-check-all\")\n                                ]),\n                                _: 1\n                              }),\n                              _createTextVNode(\" Aucune connaissance/compétence en informatique, quoique cela puisse être un atout, n'est nécessaire pour l'utilisation de la plateforme. \")\n                            ]),\n                            _createVNode(\"br\"),\n                            _createVNode(\"div\", { style: {\"text-align\":\"justify\"} }, [\n                              _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(\"mdi-check-all\")\n                                ]),\n                                _: 1\n                              }),\n                              _createTextVNode(\" Les menus sont intuitifs et laissez agir votre bon sens : Chaque fois que cela est nécessaire vous disposez d'une aide contextuelle avec un \\\"LISEZ-MOI SVP\\\" que nous vous conseillons fortement de bien lire avant de continuer. \")\n                            ]),\n                            _createVNode(\"br\"),\n                            _createVNode(\"div\", { style: {\"color\":\"red\",\"text-align\":\"justify\"} }, [\n                              _createVNode(_component_v_icon, { style: {\"color\":\"red\",\"margin-right\":\"2px\"} }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(\"mdi-check-all\")\n                                ]),\n                                _: 1\n                              }),\n                              _createTextVNode(\" Si vous êtes un établissement, la plus grave erreur à commettre pour ne pas réussir le renseignement de vos données est de confier la tâche à un \\\"informaticien\\\" dépourvu de connaissances en administration scolaire ! Les différentes tâches ont besoin des connaissances du système scolaire, pas de connaissances en informatique ! \")\n                            ])\n                          ])\n                        ]),\n                        _createVNode(\"br\")\n                      ])\n                    ])\n                  ]),\n                  _: 1\n                })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_v_container, null, {\n            default: _withCtx(() => [\n              _createVNode(_component_v_card, null, {\n                default: _withCtx(() => [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"div\", {\n                      class: \"d-flex flex-column\",\n                      style: {\"padding-top\":\"2em\",\"justify-content\":\"center\"}\n                    }, [\n                      _createVNode(\"div\", {\n                        style: {\"font-size\":\"24px\",\"color\":\"red\",\"font-weight\":\"bold\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\"},\n                        text: \"\"\n                      }, [\n                        _createVNode(\"span\", null, \"Prérequis nécessaires à l'utilisation de la plateforme\")\n                      ]),\n                      _createVNode(\"ul\", null, [\n                        _createVNode(\"ol\", {\n                          style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n                          class: \"mt-2\"\n                        }, [\n                          _createVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n                            _createVNode(\"strong\")\n                          ]),\n                          _createVNode(_component_v_icon, {\n                            style: {\"color\":\"rgb(0, 131, 143)\"},\n                            class: \"mr-4\"\n                          }, {\n                            default: _withCtx(() => [\n                              _createTextVNode(\"mdi-comment-text-multiple-outline\")\n                            ]),\n                            _: 1\n                          }),\n                          _createTextVNode(\" Savoir Lire \")\n                        ]),\n                        _createVNode(\"ol\", {\n                          style: {\"text-align\":\"justify\",\"margin-left\":\"2em\"},\n                          class: \"mt-2\"\n                        }, [\n                          _createVNode(\"span\", { style: {\"color\":\"rgb(0, 131, 143)\"} }, [\n                            _createVNode(\"strong\")\n                          ]),\n                          _createVNode(_component_v_icon, {\n                            style: {\"color\":\"rgb(0, 131, 143)\"},\n                            class: \"mr-4\"\n                          }, {\n                            default: _withCtx(() => [\n                              _createTextVNode(\"mdi-pencil\")\n                            ]),\n                            _: 1\n                          }),\n                          _createTextVNode(\" Savoir écrire \")\n                        ]),\n                        _createVNode(\"br\")\n                      ]),\n                      _createVNode(\"div\", {\n                        class: \"container\",\n                        style: {\"justify-content\":\"justify\",\"margin-left\":\"2em\",\"margin-right\":\"4em\",\"width\":\"90%\",\"background-color\":\"#d1ecf1 !important\"}\n                      }, [\n                        _createVNode(\"div\", { style: {\"margin-bottom\":\"4px\"} }, [\n                          _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\"} }, {\n                            default: _withCtx(() => [\n                              _createTextVNode(\"mdi-check-all\")\n                            ]),\n                            _: 1\n                          }),\n                          _createTextVNode(\" Sans ces deux prérequis, vous aurez certainement besoin d’une assistance pour l’utilisation de la plateforme. \")\n                        ]),\n                        _createVNode(_component_v_divider),\n                        _createVNode(\"div\", { class: \"\" }, [\n                          _createVNode(\"div\", { style: {\"color\":\"black\",\"text-align\":\"justify\"} }, [\n                            _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                              default: _withCtx(() => [\n                                _createTextVNode(\"mdi-check-all\")\n                              ]),\n                              _: 1\n                            }),\n                            _createTextVNode(\" Aucune connaissance/compétence en informatique, quoique cela puisse être un atout, n'est nécessaire pour l'utilisation de la plateforme. \")\n                          ]),\n                          _createVNode(\"br\"),\n                          _createVNode(\"div\", { style: {\"text-align\":\"justify\"} }, [\n                            _createVNode(_component_v_icon, { style: {\"color\":\"black\",\"margin-right\":\"2px\",\"margin-bottom\":\"6px\"} }, {\n                              default: _withCtx(() => [\n                                _createTextVNode(\"mdi-check-all\")\n                              ]),\n                              _: 1\n                            }),\n                            _createTextVNode(\" Les menus sont intuitifs et laissez agir votre bon sens : Chaque fois que cela est nécessaire vous disposez d'une aide contextuelle avec un \\\"LISEZ-MOI SVP\\\" que nous vous conseillons fortement de bien lire avant de continuer. \")\n                          ]),\n                          _createVNode(\"br\"),\n                          _createVNode(\"div\", { style: {\"color\":\"red\",\"text-align\":\"justify\"} }, [\n                            _createVNode(_component_v_icon, { style: {\"color\":\"red\",\"margin-right\":\"2px\"} }, {\n                              default: _withCtx(() => [\n                                _createTextVNode(\"mdi-check-all\")\n                              ]),\n                              _: 1\n                            }),\n                            _createTextVNode(\" Si vous êtes un établissement, la plus grave erreur à commettre pour ne pas réussir le renseignement de vos données est de confier la tâche à un \\\"informaticien\\\" dépourvu de connaissances en administration scolaire ! Les différentes tâches ont besoin des connaissances du système scolaire, pas de connaissances en informatique ! \")\n                          ])\n                        ])\n                      ]),\n                      _createVNode(\"br\")\n                    ])\n                  ])\n                ]),\n                _: 1\n              })\n            ]),\n            _: 1\n          })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/tableau-de-bord/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/index.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n    <v-container class=\"\">\n      <v-container>\n        <!-- <v-row justify=\"center\"> -->\n        <v-card>\n        <div>\n          <div\n            class=\"d-flex flex-column\"\n            style=\"padding-top: 2em; justify-content: center\"\n          >\n            <div\n              style=\"\n                font-size: 24px;\n                color: red;\n                font-weight: bold;\n                margin-left: 2em;\n                margin-right: 4em;\n                width: 90%;\n              \"\n              text\n            >\n              <span>Prérequis nécessaires à l'utilisation de la plateforme</span>\n            </div>\n            <ul>\n              <ol style=\"text-align: justify; margin-left: 2em;\" class=\"mt-2\">\n                <span style=\"color: rgb(0, 131, 143)\"><strong></strong></span>\n                <v-icon style=\"color: rgb(0, 131, 143)\" class=\"mr-4\"\n                  >mdi-comment-text-multiple-outline</v-icon\n                >\n                Savoir Lire\n              </ol>\n              <ol style=\"text-align: justify; margin-left: 2em;\" class=\"mt-2\">\n                <span style=\"color: rgb(0, 131, 143)\"><strong></strong></span>\n                <v-icon style=\"color: rgb(0, 131, 143)\" class=\"mr-4\"\n                  >mdi-pencil</v-icon\n                >\n                Savoir écrire\n              </ol>\n              <br />\n            </ul>\n  \n            <div\n              class=\"container\"\n              style=\"\n                justify-content: justify;\n                margin-left: 2em;\n                margin-right: 4em;\n                width: 90%;\n                background-color: #d1ecf1 !important;\n              \"\n            >\n              <div style=\"margin-bottom: 4px\">\n                <v-icon style=\"color: black; margin-right: 2px\"\n                  >mdi-check-all</v-icon\n                >\n                Sans ces deux prérequis, vous aurez certainement besoin d’une\n                assistance pour l’utilisation de la plateforme.\n              </div>\n              <v-divider></v-divider>\n              <div class=\"\">\n                <div style=\"color:black;text-align:justify\">\n                  <v-icon\n                    style=\"color: black; margin-right: 2px; margin-bottom: 6px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Aucune connaissance/compétence en informatique, quoique cela\n                  puisse être un atout, n'est nécessaire pour l'utilisation de la\n                  plateforme.\n                </div>\n                <br />\n                <div style=\"text-align: justify\">\n                  <v-icon\n                    style=\"color: black; margin-right: 2px; margin-bottom: 6px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Les menus sont intuitifs et laissez agir votre bon sens : Chaque\n                  fois que cela est nécessaire vous disposez d'une aide\n                  contextuelle avec un \"LISEZ-MOI SVP\" que nous vous conseillons\n                  fortement de bien lire avant de continuer.\n                </div>\n                <br />\n                <div style=\"color: red; text-align: justify\">\n                  <v-icon style=\"color: red; margin-right: 2px\"\n                    >mdi-check-all</v-icon\n                  >\n                  Si vous êtes un établissement, la plus grave erreur à commettre pour ne\n                  pas réussir le renseignement de vos données est de confier la\n                  tâche à un \"informaticien\" dépourvu de connaissances en\n                  administration scolaire ! Les différentes tâches ont besoin des\n                  connaissances du système scolaire, pas de connaissances en\n                  informatique !\n                </div>\n              </div>\n            </div>\n            <br />\n          </div>\n        </div>\n        </v-card>\n        <!-- </v-row> -->\n      </v-container>\n    </v-container>\n  </template>\n  \n  <script setup>\n  \n  \n  /* const title = \"Tableau de bord\";\n  export default {\n    head: {\n      title: title,\n    },\n    data() {\n      return {\n        expansion: null,\n      };\n    },\n  };\n   */\n   </script>    "
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;AAuGgB;AAChB,CAAC,CAAC;AACF,CAAC,CAAC;AACF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717488326,
+      "end": 1709717488326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717488326,
+      "end": 1709717488327,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717488327,
+      "end": 1709717488327,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717488327,
+      "end": 1709717488327,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717488327,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717488332,
+      "end": 1709717488332,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717488332,
+      "end": 1709717488333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717488332,
+      "end": 1709717488333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717488333,
+      "end": 1709717488340,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717488333,
+      "end": 1709717488340,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717488340,
+      "end": 1709717488340,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717488340,
+      "end": 1709717488340,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717488340,
+      "end": 1709717488340,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717488340,
+      "end": 1709717488340,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717488340,
+      "end": 1709717488341,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717488341,
+      "end": 1709717488342,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717488342,
+      "end": 1709717488342,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717488342,
+      "end": 1709717488343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717488343,
+      "end": 1709717488343,
+      "order": "normal"
+    }
+  ]
+}

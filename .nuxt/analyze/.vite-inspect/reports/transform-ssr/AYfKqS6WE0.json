@@ -1,0 +1,264 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/homemaintenance.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n      <Header_maintenance />\n         <main style=\"margin-top: 40px;\">\n            <slot></slot>\n         </main>\n         <v-row justify=\"center\" no-gutters style=\"margin-top: 20px;\" class=\"footer\">\n      <v-col class=\"text-center mt-4\" cols=\"12\">\n        {{ new Date().getFullYear() }} <strong>:  EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par </strong> <a href=\"https://ticsmaster.bj/\" target=\"_blank\" style=\"text-decoration: none;\">TICS MASTER SARL </a>\n      </v-col>\n    </v-row>\n   </div>\n</template>\n<script setup>\n   import Header_maintenance from '~/components/Accueil/Header_maintenance.vue';\n   import TheFooter from '~/components/Accueil/Footer.vue';\n</script>\n<style lang=\"scss\">\n.footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 50px; /* ajustez la hauteur selon vos besoins */\n}\n#nav{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important ;\n  background-color: white\n} \n\n</style>\n",
+      "start": 1709717513660,
+      "end": 1709717513839,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717513839,
+      "end": 1709717513839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport Header_maintenance from '~/components/Accueil/Header_maintenance.vue';\n   import TheFooter from '~/components/Accueil/Footer.vue';\n\nconst _sfc_main = {\n  __name: 'homemaintenance',\n  __ssrInlineRender: true,\n  setup(__props) {\n\n   \nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_v_row = _resolveComponent(\"v-row\")\n  const _component_v_col = _resolveComponent(\"v-col\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(Header_maintenance, null, null, _parent))\n  _push(`<main style=\"${_ssrRenderStyle({\"margin-top\":\"40px\"})}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</main>`)\n  _push(_ssrRenderComponent(_component_v_row, {\n    justify: \"center\",\n    \"no-gutters\": \"\",\n    style: {\"margin-top\":\"20px\"},\n    class: \"footer\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_v_col, {\n          class: \"text-center mt-4\",\n          cols: \"12\"\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${\n                _ssrInterpolate(new Date().getFullYear())\n              } <strong${\n                _scopeId\n              }>: EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par </strong> <a href=\"https://ticsmaster.bj/\" target=\"_blank\" style=\"${\n                _ssrRenderStyle({\"text-decoration\":\"none\"})\n              }\"${\n                _scopeId\n              }>TICS MASTER SARL </a>`)\n            } else {\n              return [\n                _createTextVNode(_toDisplayString(new Date().getFullYear()) + \" \", 1),\n                _createVNode(\"strong\", null, \": EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par \"),\n                _createTextVNode(),\n                _createVNode(\"a\", {\n                  href: \"https://ticsmaster.bj/\",\n                  target: \"_blank\",\n                  style: {\"text-decoration\":\"none\"}\n                }, \"TICS MASTER SARL \")\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_v_col, {\n            class: \"text-center mt-4\",\n            cols: \"12\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(_toDisplayString(new Date().getFullYear()) + \" \", 1),\n              _createVNode(\"strong\", null, \": EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par \"),\n              _createTextVNode(),\n              _createVNode(\"a\", {\n                href: \"https://ticsmaster.bj/\",\n                target: \"_blank\",\n                style: {\"text-decoration\":\"none\"}\n              }, \"TICS MASTER SARL \")\n            ]),\n            _: 1\n          })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\nimport \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/homemaintenance.vue?vue&type=style&index=0&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"layouts/homemaintenance.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1709717513839,
+      "end": 1709717513842,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/homemaintenance.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n  <div>\n      <Header_maintenance />\n         <main style=\"margin-top: 40px;\">\n            <slot></slot>\n         </main>\n         <v-row justify=\"center\" no-gutters style=\"margin-top: 20px;\" class=\"footer\">\n      <v-col class=\"text-center mt-4\" cols=\"12\">\n        {{ new Date().getFullYear() }} <strong>:  EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par </strong> <a href=\"https://ticsmaster.bj/\" target=\"_blank\" style=\"text-decoration: none;\">TICS MASTER SARL </a>\n      </v-col>\n    </v-row>\n   </div>\n</template>\n<script setup>\n   import Header_maintenance from '~/components/Accueil/Header_maintenance.vue';\n   import TheFooter from '~/components/Accueil/Footer.vue';\n</script>\n<style lang=\"scss\">\n.footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 50px; /* ajustez la hauteur selon vos besoins */\n}\n#nav{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important ;\n  background-color: white\n} \n\n</style>\n"
+        ],
+        "names": [],
+        "mappings": ";;;AAcG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;AAF7C;AACd,CAAC,CAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513842,
+      "end": 1709717513842,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717513842,
+      "end": 1709717513844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513845,
+      "end": 1709717513845,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513845,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513845,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717513846,
+      "end": 1709717513846,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717513846,
+      "end": 1709717513847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717513847,
+      "end": 1709717513847,
+      "order": "normal"
+    }
+  ]
+}

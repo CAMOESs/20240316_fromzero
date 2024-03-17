@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+       @font-face {
+      font-family: "monteserrat";
+      src:
+        url("http://10.10.2.251:5070/PDF/font/montserrat/static/Montserrat-Light.ttf") format("truetype");
+    }
+  * {
+    border : solid 1px black;
+  } 
+      .text-bold {
+          font-weight: bold;
+      }
+
+      .text-center {
+          text-align: center;
+      }
+
+      .body {
+          background: url("http://10.10.2.251:5070/PDF/Images/diplomes/20240223_bg_diplome_cqm.png") no-repeat center center;
+          height: 95vh;
+          break-after: page;
+          font-family:  sans-serif;
+      }
+      h1{
+        font-size : 45px
+      } 
+      h2{
+        font-size : 20px
+      } 
+      .content {
+          width: 75%;
+          margin: auto;
+          padding-top: 30px;
+      }
+
+      .header {
+          display: flex;
+          text-transform: uppercase;
+
+      }
+
+      .header-first {
+          flex: 1;
+      }
+
+      .photo {
+          width: 3cm;
+          height: 3.5cm;
+          border: solid black 1px;
+          display: flex;
+          justify-content: center;
+          margin-left : 0.5cm;
+          align-items: center;
+      }
+      .header-first-iem-1 {
+          display: flex;
+      }
+
+      .drapeau {
+          width: 70px;
+          height : 50px
+      }
+
+      .benin {
+          flex: 1;
+          text-align: center;
+      }
+      .benin * {
+        
+            margin : 2px auto;
+        }
+
+      .benin hr {
+          width: 150px;
+          border: none;
+          border-top: 3px solid black;
+          height: 5px;
+      }
+
+      .header-first-iem-2 {
+          text-align: center;
+          
+          
+      }
+      .header-first-iem-2 * {
+        margin : 3px auto
+      } 
+      .main{
+        font-size : 18px;
+        line-height: 30px;
+      } 
+      .footer {
+          display: flex;
+          align-content: space-between;
+          margin: 10px 0px 0px 0px;
+      }
+
+      .footer-item {
+          flex: 1;
+          margin: 0px 10px;
+      }
+
+      .footer-item img {
+          height: 70px;
+          margin : auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="body">
+    <div class="content">
+    
+      <div class="header">
+        <div class="header-item-1">
+          <img src="${
+            process.env.AUTH_HOSTNAME
+          }/PDF/Images/diplomes/drapeaux-benin.png" alt="Drapeau benin" class="drapeau" />
+        </div>
+        <div class="header-item-2 benin">
+            <p class="text-bold" style="color : #ef412a;" >République du Bénin</p>
+            <p>
+              Ministere des enseignement secondaire <br />
+              technique et de la formation professionnelle
+            </p>
+            <!-- <img src="${
+              process.env.AUTH_HOSTNAME
+            }/PDF/Images/diplomes/drapeaux-benin.png" alt="amoirie" class="drapeau" /> -->
+        </div>
+        <div class="header-item-3">
+        
+        <img src="${
+          process.env.AUTH_HOSTNAME
+        }/PDF/Images/diplomes/armoiries.png" alt="Drapeau benin" class="drapeau" /> 
+        </div>
+      </div>
+    
+    </div>
+  </div>
+   
+  </body>
+</html>
+
+
+
+<!--  -->
+
+<!--  -->
+<!--  -->
+<div class="header" style="text-transform: uppercase;">
+  <div class="header-first ">
+    <div class="header-first-iem-1 ">
+      <img src="${
+        process.env.AUTH_HOSTNAME
+      }/PDF/Images/diplomes/drapeaux-benin.png" alt="Drapeau benin" class="drapeau" />
+      <div class="benin">
+        <p class="text-bold" style="color : #ef412a;" >République du Bénin</p>
+        <hr />
+        <p>
+          Ministere des enseignement secondaire <br />
+          technique et de la formation professionnelle
+        </p>
+        <hr />
+      </div>
+    </div>
+    <div class="header-first-iem-2">
+      <h1>Attestation du diplôme</h1>
+      <h2>Du certificat de qualification aux métiers (CQM)</h2>
+    </div>
+  </div>
+  <div class="photo">
+    <div>photo</div>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-virtual-scroller/VaVirtualScroller.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, ref, computed, watch } from \"vue\";\nimport { p as pick } from \"../../../vendor.js\";\nimport { u as useVirtualScrollerSizesProps, a as useVirtualScrollerSizes } from \"./useVirtualScrollerSizes.js\";\nimport { u as useTrackByProps, a as useTrackBy } from \"../../composables/useTrackBy.js\";\nimport { u as useEvent } from \"../../composables/useEvent.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaVirtualScroller\",\n  props: {\n    ...useTrackByProps,\n    ...useVirtualScrollerSizesProps,\n    items: { type: Array, default: () => [] },\n    bench: { type: Number, default: 10, validator: (v) => v >= 0 },\n    disabled: { type: Boolean, default: false },\n    table: { type: Boolean, default: false }\n  },\n  emits: [\"scroll:bottom\"],\n  setup: (props, { emit }) => {\n    const listScrollPosition = ref(0);\n    const scrollDirection = computed(() => props.horizontal ? \"scrollLeft\" : \"scrollTop\");\n    const handleScroll = () => {\n      if (!wrapper.value) {\n        return;\n      }\n      listScrollPosition.value = wrapper.value[scrollDirection.value];\n    };\n    if (!props.disabled) {\n      useEvent(\"scroll\", handleScroll, true);\n    }\n    const { list, wrapper, itemSize, wrapperSize } = useVirtualScrollerSizes(props, listScrollPosition);\n    const { getKey } = useTrackBy(props);\n    const uniqueKey = (item, index, defaultValue) => getKey(item, index, defaultValue);\n    watch(listScrollPosition, (newValue) => {\n      if (newValue + wrapperSize.value === containerSize.value) {\n        emit(\"scroll:bottom\");\n      }\n    });\n    const renderStartIndex = computed(() => {\n      return Math.max(0, Math.floor(listScrollPosition.value / itemSize.value) - props.bench);\n    });\n    const renderItemsAmount = computed(() => {\n      var _a;\n      if (!((_a = props.items) == null ? void 0 : _a.length)) {\n        return 0;\n      }\n      return props.disabled ? props.items.length : Math.min(props.items.length - renderStartIndex.value, Math.ceil(wrapperSize.value / itemSize.value) + props.bench * 2);\n    });\n    const renderEndIndex = computed(() => renderStartIndex.value + renderItemsAmount.value);\n    const renderBuffer = computed(() => {\n      var _a;\n      if (!((_a = props.items) == null ? void 0 : _a.length)) {\n        return [];\n      }\n      return props.items.slice(renderStartIndex.value, renderEndIndex.value);\n    });\n    const sizeAttribute = computed(() => props.horizontal ? \"width\" : \"height\");\n    const isDisabledVirtualTable = computed(() => props.table && props.disabled);\n    const wrapperStyleComputed = computed(() => ({\n      [sizeAttribute.value]: isDisabledVirtualTable.value || !wrapperSize.value ? void 0 : `${wrapperSize.value}px`\n    }));\n    const wrapperClassComputed = useBem(\"va-virtual-scroller\", () => ({\n      ...pick(props, [\"horizontal\"])\n    }));\n    const containerSize = computed(() => {\n      var _a;\n      return (((_a = props.items) == null ? void 0 : _a.length) ?? 0) * itemSize.value;\n    });\n    const containerStyleComputed = computed(() => ({\n      [sizeAttribute.value]: isDisabledVirtualTable.value ? void 0 : `${containerSize.value}px`\n    }));\n    const currentListOffset = computed(() => renderStartIndex.value * itemSize.value);\n    const listStyleComputed = computed(() => ({\n      transform: `translate${props.horizontal ? \"X\" : \"Y\"}(${currentListOffset.value}px)`\n    }));\n    const scrollToAttribute = computed(() => props.horizontal ? \"left\" : \"top\");\n    const virtualScrollTo = (index) => {\n      var _a;\n      if (!index && index !== 0) {\n        return;\n      }\n      (_a = wrapper.value) == null ? void 0 : _a.scrollTo({ [scrollToAttribute.value]: index * itemSize.value });\n    };\n    return {\n      containerStyleComputed,\n      wrapperStyleComputed,\n      wrapperClassComputed,\n      listStyleComputed,\n      currentListOffset,\n      renderStartIndex,\n      virtualScrollTo,\n      renderBuffer,\n      uniqueKey,\n      wrapper,\n      list\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaVirtualScroller.css';\n//# sourceMappingURL=VaVirtualScroller.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423543,
+      "end": 1709717423811,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423811,
+      "end": 1709717423811,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423812,
+      "end": 1709717423812,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423812,
+      "end": 1709717423813,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423813,
+      "end": 1709717423813,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423813,
+      "end": 1709717423813,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423813,
+      "end": 1709717423813,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423813,
+      "end": 1709717423813,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423813,
+      "end": 1709717423813,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423813,
+      "end": 1709717423813,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423814,
+      "end": 1709717423814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423814,
+      "end": 1709717423814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423814,
+      "end": 1709717423814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423814,
+      "end": 1709717423814,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423814,
+      "end": 1709717423814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423814,
+      "end": 1709717423814,
+      "order": "normal"
+    }
+  ]
+}

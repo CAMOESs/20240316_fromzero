@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/VaDatePicker.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": ":root,\n:host {\n  /* Font */\n  --va-date-picker-font-style: normal;\n  --va-date-picker-font-weight: 600;\n  --va-date-picker-font-size: 12px;\n  --va-date-picker-line-height: 1.25;\n  --va-date-picker-weekday-font-size: 9px;\n  /* Colors */\n  --va-date-picker-color: var(--va-primary);\n  --va-date-picker-text-color: inherit;\n  /* Sizes */\n  --va-date-picker-cell-size: 32px;\n  --va-date-picker-cell-gap: 2px;\n  --va-date-picker-cell-radius: 4px;\n  /* Selected cell */\n  --va-date-picker-selected-text: var(--va-text-inverted);\n  --va-date-picker-selected-background: var(--va-date-picker-color);\n  /* Today cell */\n  --va-date-picker-today-background: var(--va-date-picker-color);\n  --va-date-picker-today-background-opacity: 0.8;\n  /* Weekend */\n  --va-date-picker-weekends-color: var(--va-danger);\n  /* Focused */\n  --va-date-picker-focused-border-color: var(--va-date-picker-color);\n  /* Opacity */\n  --va-date-picker-cell-opacity: 0.5;\n  --va-date-picker-cell-background-opacity-hover: 0.1;\n  --va-date-picker-cell-background-opacity-in-range: 0.2;\n  --va-date-picker-cell-selected-background-opacity-hover: 0.8;\n}\n.va-date-picker {\n  --va-date-picker-content-height: calc(var(--va-date-picker-cell-size) * 7 + var(--va-date-picker-cell-gap) * 6);\n  width: calc(var(--va-date-picker-cell-size) * 7 + var(--va-date-picker-cell-gap) * 6);\n  font-family: var(--va-font-family);\n  font-style: var(--va-date-picker-font-style);\n  font-weight: var(--va-date-picker-font-weight);\n  font-size: var(--va-date-picker-font-size);\n  line-height: var(--va-date-picker-line-height);\n  color: currentColor;\n}\n.va-date-picker__picker-wrapper {\n  height: var(--va-date-picker-content-height);\n}\n.va-date-picker_without-week-days {\n  --va-date-picker-content-height: calc(var(--va-date-picker-cell-size) * 6 + var(--va-date-picker-cell-gap) * 6);\n}\n.va-date-picker_mobile .va-day-picker,\n.va-date-picker_mobile .va-month-picker,\n.va-date-picker_mobile .va-year-picker {\n  height: 100%;\n}\n.va-date-picker_disabled {\n  opacity: 0.4;\n  position: relative;\n}\n.va-date-picker_disabled::before {\n  content: \"\";\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n}\n.va-date-picker-header {\n  padding-bottom: 0.25rem;\n}",
+      "start": 1709717422107,
+      "end": 1709717422514,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422514,
+      "end": 1709717422514,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422514,
+      "end": 1709717422515,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422515,
+      "end": 1709717422515,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ":host,:root{--va-date-picker-font-style:normal;--va-date-picker-font-weight:600;--va-date-picker-font-size:12px;--va-date-picker-line-height:1.25;--va-date-picker-weekday-font-size:9px;--va-date-picker-color:var(--va-primary);--va-date-picker-text-color:inherit;--va-date-picker-cell-size:32px;--va-date-picker-cell-gap:2px;--va-date-picker-cell-radius:4px;--va-date-picker-selected-text:var(--va-text-inverted);--va-date-picker-selected-background:var(--va-date-picker-color);--va-date-picker-today-background:var(--va-date-picker-color);--va-date-picker-today-background-opacity:0.8;--va-date-picker-weekends-color:var(--va-danger);--va-date-picker-focused-border-color:var(--va-date-picker-color);--va-date-picker-cell-opacity:0.5;--va-date-picker-cell-background-opacity-hover:0.1;--va-date-picker-cell-background-opacity-in-range:0.2;--va-date-picker-cell-selected-background-opacity-hover:0.8}.va-date-picker{--va-date-picker-content-height:calc(var(--va-date-picker-cell-size)*7 + var(--va-date-picker-cell-gap)*6);color:currentColor;font-family:var(--va-font-family);font-size:var(--va-date-picker-font-size);font-style:var(--va-date-picker-font-style);font-weight:var(--va-date-picker-font-weight);line-height:var(--va-date-picker-line-height);width:calc(var(--va-date-picker-cell-size)*7 + var(--va-date-picker-cell-gap)*6)}.va-date-picker__picker-wrapper{height:var(--va-date-picker-content-height)}.va-date-picker_without-week-days{--va-date-picker-content-height:calc(var(--va-date-picker-cell-size)*6 + var(--va-date-picker-cell-gap)*6)}.va-date-picker_mobile .va-day-picker,.va-date-picker_mobile .va-month-picker,.va-date-picker_mobile .va-year-picker{height:100%}.va-date-picker_disabled{opacity:.4;position:relative}.va-date-picker_disabled:before{content:\"\";height:100%;position:absolute;width:100%;z-index:100}.va-date-picker-header{padding-bottom:.25rem}",
+      "start": 1709717422515,
+      "end": 1709717422531,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422531,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422532,
+      "end": 1709717422532,
+      "order": "normal"
+    }
+  ]
+}

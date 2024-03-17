@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-date-picker/hooks/model-value-helper.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { a as isSingleDate, b as isRange, i as isDates } from \"../utils/date-utils.mjs\";\nconst modeInitialValue = (date, mode) => {\n  if (mode === \"single\") {\n    return date;\n  } else if (mode === \"range\") {\n    return { start: date, end: null };\n  } else if (mode === \"multiple\") {\n    return [date];\n  } else if (mode === \"auto\") {\n    return date;\n  }\n  throw new Error(\"Unknown mode\");\n};\nconst throwIncorrectModelValueError = (modelValue, mode) => {\n  throw Error(`Incorrect modelValue for mode ${mode}. Got ${JSON.stringify(modelValue)}`);\n};\nconst modeFromModelValue = (modelValue) => {\n  if (isSingleDate(modelValue)) {\n    return \"single\";\n  } else if (isRange(modelValue)) {\n    return \"range\";\n  } else if (isDates(modelValue)) {\n    return \"multiple\";\n  }\n  return throwIncorrectModelValueError(modelValue, \"auto\");\n};\nconst sortRange = (modelValue) => {\n  if (modelValue.start && modelValue.end) {\n    if (modelValue.start > modelValue.end) {\n      return { start: modelValue.end, end: modelValue.start };\n    }\n  }\n  return modelValue;\n};\nconst useDatePickerModelValue = (props, emit, dateEqual) => {\n  const updateModelValue = (date) => {\n    if (!props.modelValue) {\n      emit(\"update:modelValue\", modeInitialValue(date, props.mode));\n      return;\n    }\n    const mode = props.mode === \"auto\" ? modeFromModelValue(props.modelValue) : props.mode;\n    if (mode === \"single\") {\n      if (!isSingleDate(props.modelValue)) {\n        return throwIncorrectModelValueError(props.modelValue, mode);\n      }\n      emit(\"update:modelValue\", date);\n    } else if (mode === \"range\") {\n      if (!isRange(props.modelValue)) {\n        return throwIncorrectModelValueError(props.modelValue, mode);\n      }\n      if (props.modelValue.end && dateEqual(props.modelValue.end, date)) {\n        return emit(\"update:modelValue\", { start: props.modelValue.start, end: null });\n      }\n      if (props.modelValue.start && dateEqual(props.modelValue.start, date)) {\n        return emit(\"update:modelValue\", { start: null, end: props.modelValue.end });\n      }\n      if (props.modelValue.end === null) {\n        return emit(\"update:modelValue\", sortRange({ start: props.modelValue.start, end: date }));\n      }\n      if (props.modelValue.start === null) {\n        return emit(\"update:modelValue\", sortRange({ end: props.modelValue.end, start: date }));\n      }\n      emit(\"update:modelValue\", { start: date, end: null });\n    } else if (mode === \"multiple\") {\n      if (!isDates(props.modelValue)) {\n        return throwIncorrectModelValueError(props.modelValue, mode);\n      }\n      const isDatesIncludesDate = !!props.modelValue.find((d) => dateEqual(d, date));\n      if (isDatesIncludesDate) {\n        emit(\"update:modelValue\", props.modelValue.filter((d) => !dateEqual(d, date)));\n      } else {\n        emit(\"update:modelValue\", [...props.modelValue, date].sort((a, b) => a.getTime() - b.getTime()));\n      }\n    }\n  };\n  return {\n    updateModelValue\n  };\n};\nexport {\n  useDatePickerModelValue as u\n};\n//# sourceMappingURL=model-value-helper.mjs.map\n",
+      "start": 1709717514612,
+      "end": 1709717514659,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514659,
+      "end": 1709717514659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514660,
+      "end": 1709717514660,
+      "order": "normal"
+    }
+  ]
+}

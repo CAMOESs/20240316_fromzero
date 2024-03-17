@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-button-toggle/VaButtonToggle.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { V as VaButton } from \"../va-button/index.mjs\";\nimport { V as VaButtonGroup } from \"../va-button-group/index.mjs\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { u as useSelectableListProps, a as useSelectableList } from \"../../composables/useSelectableList.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.mjs\";\nconst VaButtonGroupProps = extractComponentProps(VaButtonGroup);\nconst _sfc_main = defineComponent({\n  name: \"VaButtonToggle\",\n  components: {\n    VaButtonGroup,\n    VaButton\n  },\n  emits: [\"update:modelValue\"],\n  props: {\n    ...VaButtonGroupProps,\n    ...useComponentPresetProp,\n    ...useSelectableListProps,\n    modelValue: { type: [String, Number, Boolean], default: \"\" },\n    options: {\n      type: Array,\n      required: true\n    },\n    activeButtonTextColor: { type: String },\n    toggleColor: { type: String, default: \"\" },\n    textBy: { type: [String, Function], default: \"label\" },\n    valueBy: { type: [String, Function], default: \"value\" }\n  },\n  setup(props, { emit }) {\n    const { getText, getTrackBy } = useSelectableList(props);\n    const { getColor, shiftHSLAColor } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const isToggled = (value) => getTrackBy(value) === props.modelValue;\n    const activeButtonColor = computed(() => {\n      if (props.toggleColor) {\n        return getColor(props.toggleColor);\n      }\n      return shiftHSLAColor(colorComputed.value, { l: props.plain ? -16 : -6 });\n    });\n    const activeButtonBackgroundOpacityComputed = computed(() => {\n      if (!props.preset || props.preset === \"default\") {\n        return {};\n      }\n      return { backgroundOpacity: props.pressedOpacity };\n    });\n    const activeButtonPropsComputed = computed(() => ({\n      color: activeButtonColor.value,\n      textColor: props.activeButtonTextColor,\n      ...activeButtonBackgroundOpacityComputed.value\n    }));\n    const getButtonProps = (option = {}) => {\n      const iconsProps = { icon: option.icon, iconRight: option.iconRight };\n      if (!isToggled(option)) {\n        return iconsProps;\n      }\n      return {\n        ...isToggled(option) && activeButtonPropsComputed.value,\n        ...iconsProps\n      };\n    };\n    const buttonGroupPropsComputed = filterComponentProps(VaButtonGroupProps);\n    const changeValue = (value) => emit(\"update:modelValue\", getTrackBy(value));\n    return {\n      buttonGroupPropsComputed,\n      getButtonProps,\n      changeValue,\n      isToggled,\n      getText,\n      getTrackBy\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaButtonToggle.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717506846,
+      "end": 1709717507288,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717507325,
+      "end": 1709717507325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717507326,
+      "end": 1709717507326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717507326,
+      "end": 1709717507326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507326,
+      "end": 1709717507326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507326,
+      "end": 1709717507326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717507326,
+      "end": 1709717507326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717507326,
+      "end": 1709717507326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507335,
+      "end": 1709717507335,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717507335,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717507336,
+      "end": 1709717507336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717507348,
+      "end": 1709717507348,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717507348,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717507348,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717507349,
+      "end": 1709717507349,
+      "order": "normal"
+    }
+  ]
+}

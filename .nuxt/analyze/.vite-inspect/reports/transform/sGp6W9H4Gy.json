@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/composables/useTrapFocus.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { u as useDocument } from \"./useDocument.js\";\nimport { u as useWindow } from \"./useWindow.js\";\nconst FOCUSABLE_ELEMENTS_SELECTOR = \":where(a, button, input, textarea, select):not([disabled]), *[tabindex]\";\nlet trapInEl = null;\nconst useTrapFocus = () => {\n  const document = useDocument();\n  const window = useWindow();\n  let focusableElements = [];\n  let firstFocusableElement = null;\n  let lastFocusableElement = null;\n  let isFocusTrapped = false;\n  const focusFirstElement = () => {\n    firstFocusableElement == null ? void 0 : firstFocusableElement.focus();\n  };\n  const focusLastElement = () => {\n    lastFocusableElement == null ? void 0 : lastFocusableElement.focus();\n  };\n  const onKeydown = (evt) => {\n    var _a, _b;\n    const isTabPressed = evt.code === \"Tab\";\n    const isShiftPressed = evt.shiftKey;\n    if (!isTabPressed) {\n      return;\n    }\n    if (!isFocusTrapped) {\n      isFocusTrapped = true;\n      evt.preventDefault();\n      isShiftPressed ? focusLastElement() : focusFirstElement();\n      return;\n    }\n    if (((_a = document.value) == null ? void 0 : _a.activeElement) === lastFocusableElement && !isShiftPressed) {\n      evt.preventDefault();\n      focusFirstElement();\n      return;\n    }\n    if (((_b = document.value) == null ? void 0 : _b.activeElement) === firstFocusableElement && isShiftPressed) {\n      evt.preventDefault();\n      focusLastElement();\n    }\n  };\n  const trapFocusIn = (el) => {\n    trapInEl = el;\n    freeFocus();\n    trapFocus();\n  };\n  const trapFocus = () => {\n    var _a;\n    if (!trapInEl) {\n      return;\n    }\n    focusableElements = Array.from(trapInEl.querySelectorAll(FOCUSABLE_ELEMENTS_SELECTOR));\n    firstFocusableElement = focusableElements[0];\n    lastFocusableElement = focusableElements[focusableElements.length - 1];\n    (_a = window.value) == null ? void 0 : _a.addEventListener(\"keydown\", onKeydown);\n  };\n  const freeFocus = () => {\n    var _a;\n    focusableElements = [];\n    firstFocusableElement = null;\n    lastFocusableElement = null;\n    isFocusTrapped = false;\n    (_a = window.value) == null ? void 0 : _a.removeEventListener(\"keydown\", onKeydown);\n  };\n  return {\n    trapFocus,\n    freeFocus,\n    trapFocusIn\n  };\n};\nexport {\n  useTrapFocus as u\n};\n//# sourceMappingURL=useTrapFocus.js.map\n",
+      "start": 1709717422806,
+      "end": 1709717423055,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423055,
+      "end": 1709717423055,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423056,
+      "end": 1709717423056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423057,
+      "end": 1709717423057,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-radio/VaRadio.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, computed } from \"vue\";\nimport { g as generateUniqueId } from \"../../utils/uuid.mjs\";\nimport { V as VaMessageListWrapper } from \"../va-message-list/VaMessageListWrapper.mjs\";\nimport { u as useSelectableEmits, a as useSelectableProps, b as useSelectable } from \"../../composables/useSelectable.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { u as useSelectableListProps, a as useSelectableList } from \"../../composables/useSelectableList.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaRadio\",\n  components: { VaMessageListWrapper },\n  emits: useSelectableEmits,\n  props: {\n    ...useSelectableProps,\n    ...useComponentPresetProp,\n    ...useSelectableListProps,\n    modelValue: {\n      type: [Boolean, Array, String, Object, Number],\n      default: null\n    },\n    options: {\n      type: Array,\n      default: () => []\n    },\n    name: { type: String, default: \"\" },\n    label: { type: String, default: void 0 },\n    leftLabel: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" },\n    option: {\n      type: [Object, String, Number],\n      default: void 0\n    },\n    vertical: { type: Boolean, default: false }\n  },\n  setup(props, { emit }) {\n    const { getColor } = useColors();\n    const elements = {\n      container: shallowRef(),\n      input: shallowRef(),\n      label: shallowRef()\n    };\n    const {\n      computedError,\n      computedErrorMessages,\n      validationAriaAttributes,\n      onBlur,\n      onFocus\n    } = useSelectable(props, emit, elements);\n    const { getText: originalGetText, getDisabled: originalGetDisabled, getValue } = useSelectableList(props);\n    const getText = (option) => {\n      if (props.options.length > 0) {\n        return originalGetText(option);\n      }\n      return props.label ?? originalGetText(option);\n    };\n    const getDisabled = (option) => originalGetDisabled(option) || props.disabled;\n    const isNoOption = computed(() => props.options.length === 0 && !props.option);\n    const isChecked = (option) => {\n      if (isNoOption.value) {\n        return props.modelValue;\n      }\n      return props.modelValue === getValue(option);\n    };\n    const computedOptions = computed(() => {\n      if (isNoOption.value) {\n        return [{}];\n      }\n      if (props.option) {\n        return [props.option];\n      } else {\n        return props.options;\n      }\n    });\n    const radioClass = (option) => ({\n      \"va-radio--left-label\": props.leftLabel,\n      \"va-radio--selected\": isChecked(option),\n      \"va-radio--readonly\": props.readonly,\n      \"va-radio--disabled\": props.disabled,\n      \"va-radio--indeterminate\": props.indeterminate,\n      \"va-radio--error\": computedError.value,\n      \"va-radio--single-option\": isNoOption.value\n    });\n    const selectOption = (option, event) => {\n      var _a;\n      if (isNoOption.value) {\n        emit(\"update:modelValue\", ((_a = event == null ? void 0 : event.target) == null ? void 0 : _a.checked) || false);\n        return;\n      }\n      emit(\"update:modelValue\", option);\n    };\n    const labelStyle = computed(() => {\n      return {\n        color: computedError.value ? getColor(\"danger\") : \"\"\n      };\n    });\n    const inputStyle = computed(() => {\n      const style = {\n        background: getColor(props.color),\n        borderColor: getColor(props.color)\n      };\n      if (computedError.value) {\n        style.borderColor = getColor(\"danger\");\n      }\n      return style;\n    });\n    const iconBackgroundComputedStyles = computed(() => ({\n      backgroundColor: getColor(props.color)\n    }));\n    const iconDotComputedStyles = computed(() => {\n      return {\n        borderColor: computedError.value ? getColor(\"danger\") : getColor(props.color),\n        backgroundColor: getColor(props.color)\n      };\n    });\n    const iconComputedStyles = computed(() => {\n      return { borderColor: computedError.value ? getColor(\"danger\") : getColor(props.color) };\n    });\n    const computedName = computed(() => props.name || generateUniqueId());\n    const inputAttributesComputed = (option) => {\n      const disabled = getDisabled(option);\n      return {\n        name: computedName.value,\n        disabled,\n        readonly: props.readonly,\n        tabindex: disabled ? -1 : 0\n      };\n    };\n    const flexDirection = computed(() => props.vertical ? \"column\" : \"row\");\n    return {\n      flexDirection,\n      getDisabled,\n      isChecked,\n      computedOptions,\n      radioClass,\n      labelStyle,\n      inputStyle,\n      computedError,\n      computedErrorMessages,\n      iconBackgroundComputedStyles,\n      iconDotComputedStyles,\n      iconComputedStyles,\n      selectOption,\n      onFocus,\n      onBlur,\n      inputAttributesComputed,\n      computedName,\n      roleComputed: computed(() => {\n        var _a;\n        return ((_a = props.options) == null ? void 0 : _a.length) > 0 ? \"radiogroup\" : \"\";\n      }),\n      getText,\n      getValue\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaRadio.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717508012,
+      "end": 1709717508156,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508156,
+      "end": 1709717508156,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508156,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508157,
+      "end": 1709717508157,
+      "order": "normal"
+    }
+  ]
+}

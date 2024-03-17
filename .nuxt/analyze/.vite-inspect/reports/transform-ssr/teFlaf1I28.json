@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-time-input/VaTimeInput.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaTimeInput.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, mergeProps, withCtx, createVNode, withModifiers, createSlots, createElementVNode, toHandlers, withKeys, createCommentVNode, renderList, renderSlot, normalizeProps, guardReactiveProps } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaTimeInput_vue_vue_type_style_index_0_lang = \"\";\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  const _component_va_input_wrapper = resolveComponent(\"va-input-wrapper\");\n  const _component_va_time_picker = resolveComponent(\"va-time-picker\");\n  const _component_va_dropdown_content = resolveComponent(\"va-dropdown-content\");\n  const _component_va_dropdown = resolveComponent(\"va-dropdown\");\n  return openBlock(), createBlock(_component_va_dropdown, mergeProps({\n    modelValue: _ctx.doShowDropdown,\n    \"onUpdate:modelValue\": _cache[2] || (_cache[2] = ($event) => _ctx.doShowDropdown = $event),\n    class: [\"va-time-input\", _ctx.$attrs.class],\n    style: _ctx.$attrs.style\n  }, _ctx.dropdownPropsComputed), {\n    anchor: withCtx(() => [\n      createVNode(_component_va_input_wrapper, mergeProps({\n        class: \"va-time-input__anchor\",\n        style: _ctx.cursorStyleComputed\n      }, _ctx.computedInputWrapperProps, {\n        onClick: withModifiers(_ctx.toggleDropdown, [\"stop\"])\n      }), createSlots({\n        default: withCtx(() => [\n          createElementVNode(\"input\", mergeProps({\n            ref: \"input\",\n            class: \"va-time-input__input\"\n          }, _ctx.inputAttributesComputed, toHandlers(_ctx.computedInputListeners, true), {\n            onChange: _cache[0] || (_cache[0] = (...args) => _ctx.onInputTextChanged && _ctx.onInputTextChanged(...args))\n          }), null, 16)\n        ]),\n        icon: withCtx(() => [\n          _ctx.canBeClearedComputed ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n            key: 0,\n            class: \"va-time-input__clear-button\"\n          }, { ..._ctx.iconProps, ..._ctx.clearIconProps }, {\n            \"aria-label\": _ctx.tp(_ctx.$props.ariaResetLabel),\n            onClick: withModifiers(_ctx.reset, [\"stop\"]),\n            onKeydown: [\n              withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"enter\"]),\n              withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"space\"])\n            ]\n          }), null, 16, [\"aria-label\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true),\n          !_ctx.$props.leftIcon && _ctx.$props.icon ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n            key: 1,\n            class: \"va-time-input__right-button va-time-input__side-button\",\n            \"aria-label\": _ctx.tp(_ctx.$props.ariaToggleDropdownLabel)\n          }, _ctx.iconProps), null, 16, [\"aria-label\"])) : createCommentVNode(\"\", true)\n        ]),\n        _: 2\n      }, [\n        renderList(_ctx.filteredSlots, (name) => {\n          return {\n            name,\n            fn: withCtx((slotScope) => [\n              renderSlot(_ctx.$slots, name, normalizeProps(guardReactiveProps({ ...slotScope, toggleDropdown: _ctx.toggleDropdown, showDropdown: _ctx.showDropdown, hideDropdown: _ctx.hideDropdown, isOpen: _ctx.isOpenSync, focus: _ctx.focus })))\n            ])\n          };\n        }),\n        _ctx.$slots.prependInner || _ctx.$props.leftIcon ? {\n          name: \"prependInner\",\n          fn: withCtx((slotScope) => [\n            renderSlot(_ctx.$slots, \"prependInner\", normalizeProps(guardReactiveProps({ ...slotScope, toggleDropdown: _ctx.toggleDropdown, showDropdown: _ctx.showDropdown, hideDropdown: _ctx.hideDropdown, isOpen: _ctx.isOpenSync, focus: _ctx.focus }))),\n            _ctx.$props.leftIcon ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n              key: 0,\n              class: \"va-time-input__left-button va-time-input__side-button\",\n              \"aria-label\": _ctx.tp(_ctx.$props.ariaToggleDropdownLabel)\n            }, _ctx.iconProps), null, 16, [\"aria-label\"])) : createCommentVNode(\"\", true)\n          ]),\n          key: \"0\"\n        } : void 0\n      ]), 1040, [\"style\", \"onClick\"])\n    ]),\n    default: withCtx(() => [\n      createVNode(_component_va_dropdown_content, {\n        \"no-padding\": \"\",\n        onKeydown: [\n          withKeys(withModifiers(_ctx.hideDropdown, [\"prevent\"]), [\"esc\"]),\n          withKeys(withModifiers(_ctx.hideDropdown, [\"prevent\"]), [\"enter\"])\n        ]\n      }, {\n        default: withCtx(() => [\n          createVNode(_component_va_time_picker, mergeProps({ ref: \"timePicker\" }, _ctx.timePickerProps, {\n            modelValue: _ctx.valueComputed,\n            \"onUpdate:modelValue\": _cache[1] || (_cache[1] = ($event) => _ctx.valueComputed = $event)\n          }), null, 16, [\"modelValue\"])\n        ]),\n        _: 1\n      }, 8, [\"onKeydown\"])\n    ]),\n    _: 3\n  }, 16, [\"modelValue\", \"class\", \"style\"]);\n}\nconst _VaTimeInput = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaTimeInput as _\n};\n//# sourceMappingURL=VaTimeInput.mjs.map\n",
+      "start": 1709717502224,
+      "end": 1709717502450,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502450,
+      "end": 1709717502450,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502451,
+      "end": 1709717502451,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502452,
+      "end": 1709717502452,
+      "order": "normal"
+    }
+  ]
+}

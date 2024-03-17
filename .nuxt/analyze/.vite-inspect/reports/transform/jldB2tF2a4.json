@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/services/color/utils.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { k as kebabCase, j as camelCase } from \"../../../vendor.js\";\nimport { ColorTranslator } from \"colortranslator\";\nconst makeColor = (color) => {\n  try {\n    return new ColorTranslator(color);\n  } catch (e) {\n    throw new Error(`Color ${color} is not valid. Please, provide valid color.`, {\n      cause: e\n    });\n  }\n};\nconst isCSSVariable = (strColor) => /var\\(--.+\\)/.test(strColor);\nconst cssVariableName = (colorName) => `--va-${kebabCase(colorName)}`;\nconst normalizeColorName = (colorName) => camelCase(colorName);\nconst colorToRgba = (color, opacity) => {\n  return makeColor(color).setA(opacity).RGBA;\n};\nconst getColorLightness = (color) => {\n  const { R, G, B } = makeColor(color);\n  return Math.sqrt(R * R * 0.241 + G * G * 0.691 + B * B * 0.068);\n};\nconst getBoxShadowColor = (color, opacity = 0.4) => {\n  return makeColor(color).setA(opacity).RGBA;\n};\nconst getBoxShadowColorFromBg = (background, opacity = 0.4) => {\n  return makeColor(background).setA(opacity).RGBA;\n};\nconst getHoverColor = (color, opacity = 0.2) => {\n  return makeColor(color).setA(opacity).RGBA;\n};\nconst getFocusColor = (color, opacity = 0.3) => {\n  return makeColor(color).setA(opacity).RGBA;\n};\nconst shiftHSLAColor = (color, offset) => {\n  const result = makeColor(color);\n  if (offset.h) {\n    result.setH(result.H + offset.h);\n  }\n  if (offset.s) {\n    result.setS(result.S + offset.s);\n  }\n  if (offset.l) {\n    result.setL(result.L + offset.l);\n  }\n  if (offset.a) {\n    result.setA(result.A + offset.a);\n  }\n  return result.HSLA;\n};\nconst setHSLAColor = (color, newColor) => {\n  const result = makeColor(color);\n  if (newColor.h !== void 0) {\n    result.setH(newColor.h);\n  }\n  if (newColor.s !== void 0) {\n    result.setS(newColor.s);\n  }\n  if (newColor.l !== void 0) {\n    result.setL(newColor.l);\n  }\n  if (newColor.a !== void 0) {\n    result.setA(newColor.a);\n  }\n  return result.HSLA;\n};\nconst shiftGradientColor = (color) => {\n  const newColor = ColorTranslator.toHSLA(color, false);\n  if (newColor.s < 10) {\n    return shiftHSLAColor(newColor, { h: 2, s: 5, l: 10 });\n  }\n  if (newColor.s < 30) {\n    return shiftHSLAColor(newColor, { s: -14, l: 11 });\n  }\n  if (newColor.h >= 0 && newColor.h < 44 || newColor.h >= 285) {\n    return shiftHSLAColor(newColor, { h: 11, s: 27, l: 8 });\n  }\n  if (newColor.h >= 44 && newColor.h < 85) {\n    return shiftHSLAColor(newColor, { h: 3, l: 9 });\n  }\n  if (newColor.h >= 85 && newColor.h < 165) {\n    return shiftHSLAColor(newColor, { h: 16, l: 14 });\n  }\n  if (newColor.h >= 165 && newColor.h < 285) {\n    return shiftHSLAColor(newColor, { h: -15, s: 3, l: 2 });\n  }\n  throw new Error(\"This method should handle all colors. But it didn't for some reason.\");\n};\nconst getGradientBackground = (color) => {\n  const colorLeft = shiftGradientColor(color);\n  const colorRight = ColorTranslator.toHSLA(color);\n  return `linear-gradient(to right, ${colorLeft}, ${colorRight})`;\n};\nconst getStateMaskGradientBackground = (color, maskColor, maskOpacity) => {\n  const mask = colorToRgba(maskColor, maskOpacity);\n  return `linear-gradient(0deg, ${mask}, ${mask}), ${color}`;\n};\nconst isColor = (strColor) => {\n  const cssColorRegex = /^#([\\da-f]{3}){1,2}$|^#([\\da-f]{4}){1,2}$|(rgb|hsl)a?\\((\\s*-?\\d+%?\\s*,){2}(\\s*-?\\d+%?\\s*,?\\s*\\)?)(,\\s*(0?\\.\\d+)?|1)?\\)/;\n  return cssColorRegex.test(strColor.toLocaleLowerCase());\n};\nconst applyColors = (color1, color2) => {\n  const c1 = makeColor(color1);\n  const c2 = makeColor(color2);\n  const weight = c2.A;\n  if (weight === 1) {\n    return c2.RGBA;\n  }\n  if (weight === 0) {\n    return c1.RGBA;\n  }\n  c1.setR(Math.round(c1.R * (1 - weight) + c2.R * weight));\n  c1.setG(Math.round(c1.G * (1 - weight) + c2.G * weight));\n  c1.setB(Math.round(c1.B * (1 - weight) + c2.B * weight));\n  return c1.RGBA;\n};\nconst isColorTransparent = (color) => {\n  if (!color) {\n    return false;\n  }\n  if (color === \"transparent\") {\n    return true;\n  }\n  return makeColor(color).A <= 0.1;\n};\nexport {\n  getBoxShadowColor as a,\n  getFocusColor as b,\n  getHoverColor as c,\n  colorToRgba as d,\n  applyColors as e,\n  getBoxShadowColorFromBg as f,\n  getGradientBackground as g,\n  setHSLAColor as h,\n  getStateMaskGradientBackground as i,\n  cssVariableName as j,\n  isColor as k,\n  isCSSVariable as l,\n  getColorLightness as m,\n  normalizeColorName as n,\n  isColorTransparent as o,\n  shiftHSLAColor as s\n};\n//# sourceMappingURL=utils.js.map\n",
+      "start": 1709717415614,
+      "end": 1709717416330,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717416330,
+      "end": 1709717416330,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717416330,
+      "end": 1709717416330,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416331,
+      "end": 1709717416331,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717416332,
+      "end": 1709717416332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717416332,
+      "end": 1709717416332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717416332,
+      "end": 1709717416332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717416332,
+      "end": 1709717416332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717416332,
+      "end": 1709717416332,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717416332,
+      "end": 1709717416332,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717416332,
+      "end": 1709717416333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717416333,
+      "end": 1709717416333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717416333,
+      "end": 1709717416334,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717416334,
+      "end": 1709717416334,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717416334,
+      "end": 1709717416334,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/VaDivider.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": ":root,\n:host {\n  --va-divider-display: flex;\n  /* Margin around divider, not the same as CSS margin. Should be one value. */\n  --va-divider-margin: 0.5rem;\n  --va-divider-line-width: 1px;\n  --va-divider-border-style: solid;\n  --va-divider-text-font-size: 0.875rem;\n  --va-divider-text-line-height: 0;\n  --va-divider-text-height: 0;\n  --va-divider-text-vertical-align: middle;\n  --va-divider-text-transform: translateY(-50%);\n  /* This one adds offsets at the right and left for the given text orientation only for horizontal divider */\n  --va-divider-text-horizontal-offset: 1.25rem;\n  /* Vertical */\n  --va-divider-vertical-display: inline-flex;\n  /* Inset */\n  --va-divider-inset-horizontal-margin: 1rem;\n  --va-divider-inset-margin: 0.5rem var(--va-divider-inset-horizontal-margin);\n  /* Dashed */\n  --va-divider-dashed-border-top-style: dashed;\n}\n.va-divider {\n  display: var(--va-divider-display);\n  margin: var(--va-divider-margin) 0;\n  font-family: var(--va-font-family);\n}\n.va-divider--vertical {\n  margin: 0 var(--va-divider-margin);\n  border-top: 0;\n  border-right-width: var(--va-divider-line-width);\n  border-right-style: var(--va-divider-border-style);\n  border-right-color: var(--va-color-computed);\n  display: var(--va-divider-vertical-display);\n  vertical-align: top;\n}\n.va-divider--vertical.va-divider--dashed {\n  border-right-style: dashed;\n}\n.va-divider--inset {\n  margin: var(--va-divider-inset-margin);\n}\n.va-divider--inset.va-divider--vertical {\n  margin: var(--va-divider-inset-horizontal-margin) var(--va-divider-margin);\n}\n.va-divider::before, .va-divider::after {\n  content: \"\";\n  flex: 1;\n  border-top-width: var(--va-divider-line-width);\n  border-top-style: var(--va-divider-border-style);\n  border-top-color: var(--va-color-computed);\n}\n.va-divider--dashed::before, .va-divider--dashed::after {\n  border-top-style: var(--va-divider-dashed-border-top-style);\n}\n.va-divider--left::before {\n  flex: 0 var(--va-divider-text-horizontal-offset);\n}\n.va-divider--right::after {\n  flex: 0 var(--va-divider-text-horizontal-offset);\n}\n.va-divider__text {\n  font-size: var(--va-divider-text-font-size);\n  line-height: var(--va-divider-text-line-height);\n  height: var(--va-divider-text-height);\n  vertical-align: var(--va-divider-text-vertical-align);\n  transform: var(--va-divider-text-transform);\n}",
+      "start": 1709717422173,
+      "end": 1709717422591,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422591,
+      "end": 1709717422591,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422591,
+      "end": 1709717422591,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422591,
+      "end": 1709717422591,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ":host,:root{--va-divider-display:flex;--va-divider-margin:0.5rem;--va-divider-line-width:1px;--va-divider-border-style:solid;--va-divider-text-font-size:0.875rem;--va-divider-text-line-height:0;--va-divider-text-height:0;--va-divider-text-vertical-align:middle;--va-divider-text-transform:translateY(-50%);--va-divider-text-horizontal-offset:1.25rem;--va-divider-vertical-display:inline-flex;--va-divider-inset-horizontal-margin:1rem;--va-divider-inset-margin:0.5rem var(--va-divider-inset-horizontal-margin);--va-divider-dashed-border-top-style:dashed}.va-divider{display:var(--va-divider-display);font-family:var(--va-font-family);margin:var(--va-divider-margin) 0}.va-divider--vertical{border-right:var(--va-divider-line-width) var(--va-divider-border-style) var(--va-color-computed);border-top:0;display:var(--va-divider-vertical-display);margin:0 var(--va-divider-margin);vertical-align:top}.va-divider--vertical.va-divider--dashed{border-right-style:dashed}.va-divider--inset{margin:var(--va-divider-inset-margin)}.va-divider--inset.va-divider--vertical{margin:var(--va-divider-inset-horizontal-margin) var(--va-divider-margin)}.va-divider:after,.va-divider:before{border-top:var(--va-divider-line-width) var(--va-divider-border-style) var(--va-color-computed);content:\"\";flex:1}.va-divider--dashed:after,.va-divider--dashed:before{border-top-style:var(--va-divider-dashed-border-top-style)}.va-divider--left:before,.va-divider--right:after{flex:0 var(--va-divider-text-horizontal-offset)}.va-divider__text{font-size:var(--va-divider-text-font-size);height:var(--va-divider-text-height);line-height:var(--va-divider-text-line-height);transform:var(--va-divider-text-transform);vertical-align:var(--va-divider-text-vertical-align)}",
+      "start": 1709717422591,
+      "end": 1709717422597,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422597,
+      "end": 1709717422597,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422600,
+      "end": 1709717422600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422601,
+      "end": 1709717422601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422601,
+      "end": 1709717422601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422601,
+      "end": 1709717422601,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422601,
+      "end": 1709717422601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422601,
+      "end": 1709717422601,
+      "order": "normal"
+    }
+  ]
+}

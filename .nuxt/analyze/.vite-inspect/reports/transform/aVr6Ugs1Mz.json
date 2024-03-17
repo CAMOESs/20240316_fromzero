@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-date-picker/components/VaDatePickerHeader/VaDatePickerHeader.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaDatePickerHeader.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createElementBlock, renderSlot, normalizeProps, guardReactiveProps, createVNode, createElementVNode, withCtx, createTextVNode, toDisplayString, mergeProps, createCommentVNode } from \"vue\";\nimport { _ as _export_sfc } from \"../../../../../plugin-vue_export-helper.js\";\nconst VaDatePickerHeader_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = {\n  key: 0,\n  class: \"va-date-picker-header va-date-picker__header\"\n};\nconst _hoisted_2 = { class: \"va-date-picker__header__text\" };\nconst _hoisted_3 = { class: \"va-date-picker__header__month\" };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_button = resolveComponent(\"va-button\");\n  return _ctx.syncView.type !== \"year\" ? (openBlock(), createElementBlock(\"div\", _hoisted_1, [\n    renderSlot(_ctx.$slots, \"buttonPrev\", normalizeProps(guardReactiveProps({ onClick: _ctx.prev })), () => [\n      createVNode(_component_va_button, {\n        disabled: _ctx.$props.disabled,\n        icon: \"va-arrow-left\",\n        preset: \"plain\",\n        size: \"small\",\n        color: _ctx.color,\n        textColor: _ctx.currentColor,\n        \"aria-label\": _ctx.tp(_ctx.$props.ariaPreviousPeriodLabel),\n        round: \"\",\n        onClick: _ctx.prev\n      }, null, 8, [\"disabled\", \"color\", \"textColor\", \"aria-label\", \"onClick\"])\n    ]),\n    createElementVNode(\"div\", _hoisted_2, [\n      renderSlot(_ctx.$slots, \"header\", normalizeProps(guardReactiveProps({ year: _ctx.syncView.year, month: _ctx.syncView.month, monthNames: _ctx.monthNames, view: _ctx.syncView, changeView: _ctx.changeView, switchView: _ctx.switchView })), () => [\n        createVNode(_component_va_button, {\n          disabled: _ctx.$props.disabled,\n          preset: \"plain\",\n          size: \"small\",\n          color: _ctx.color,\n          textColor: _ctx.currentColor,\n          \"aria-label\": _ctx.tp(_ctx.$props.ariaSwitchViewLabel),\n          onClick: _ctx.switchView\n        }, {\n          default: withCtx(() => [\n            renderSlot(_ctx.$slots, \"year\", normalizeProps(guardReactiveProps({ year: _ctx.syncView.year })), () => [\n              createTextVNode(toDisplayString(_ctx.syncView.year), 1)\n            ]),\n            _ctx.syncView.type === \"day\" ? renderSlot(_ctx.$slots, \"month\", normalizeProps(mergeProps({ key: 0 }, { month: _ctx.syncView.month })), () => [\n              createElementVNode(\"span\", _hoisted_3, toDisplayString(_ctx.monthNames[_ctx.syncView.month]), 1)\n            ]) : createCommentVNode(\"\", true)\n          ]),\n          _: 3\n        }, 8, [\"disabled\", \"color\", \"textColor\", \"aria-label\", \"onClick\"])\n      ])\n    ]),\n    renderSlot(_ctx.$slots, \"buttonNext\", normalizeProps(guardReactiveProps({ onClick: _ctx.next })), () => [\n      createVNode(_component_va_button, {\n        disabled: _ctx.$props.disabled,\n        icon: \"va-arrow-right\",\n        preset: \"plain\",\n        size: \"small\",\n        color: _ctx.color,\n        textColor: _ctx.currentColor,\n        \"aria-label\": _ctx.tp(_ctx.$props.ariaNextPeriodLabel),\n        onClick: _ctx.next,\n        round: \"\"\n      }, null, 8, [\"disabled\", \"color\", \"textColor\", \"aria-label\", \"onClick\"])\n    ])\n  ])) : createCommentVNode(\"\", true);\n}\nconst VaDatePickerHeader = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  VaDatePickerHeader as V\n};\n\nimport '../../../../../VaDatePickerHeader.css';\n//# sourceMappingURL=VaDatePickerHeader.js.map\n",
+      "start": 1709717427270,
+      "end": 1709717427444,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427444,
+      "end": 1709717427444,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427444,
+      "end": 1709717427444,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427444,
+      "end": 1709717427449,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427449,
+      "end": 1709717427449,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427450,
+      "end": 1709717427450,
+      "order": "normal"
+    }
+  ]
+}

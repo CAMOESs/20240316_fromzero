@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-select/components/VaSelectOption/VaSelectOption.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { V as VaIcon } from \"../../../va-icon/index.js\";\nimport { i as isNilValue } from \"../../../../utils/isNilValue.js\";\nimport { a as useColorProps, u as useColors } from \"../../../../composables/useColors.js\";\nimport { u as useBem } from \"../../../../composables/useBem.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaSelectOption\",\n  components: { VaIcon },\n  props: {\n    ...useColorProps,\n    disabled: { type: Boolean, default: false },\n    option: { type: [Number, String, Boolean, Object], default: () => ({}) },\n    getText: { type: Function, required: true },\n    getTrackBy: { type: Function, required: true },\n    currentOption: { type: [String, Number, Boolean, Object], default: null },\n    getSelectedState: { type: Function, required: true },\n    search: { type: String, default: \"\" },\n    highlightMatchedText: { type: Boolean, default: true },\n    inputFocused: { type: Boolean, default: false },\n    minSearchChars: { type: Number, default: 0 }\n  },\n  setup(props) {\n    const { getColor, getHoverColor } = useColors();\n    const optionIcon = computed(() => typeof props.option === \"object\" ? props.option.icon : void 0);\n    const optionIconColor = computed(() => getColor(props.color));\n    const optionText = computed(() => props.getText(props.option));\n    const optionTextSplitted = computed(() => {\n      const defaultSplit = { start: optionText.value, searchedSubString: \"\", end: \"\" };\n      if (!optionText.value || !props.search || !props.highlightMatchedText || props.search.length < props.minSearchChars) {\n        return defaultSplit;\n      }\n      const substringStartIndex = optionText.value.toLowerCase().indexOf(props.search.toLowerCase());\n      if (substringStartIndex < 0) {\n        return defaultSplit;\n      }\n      const start = optionText.value.slice(0, substringStartIndex);\n      const searchedSubString = optionText.value.slice(substringStartIndex, substringStartIndex + props.search.length);\n      const end = optionText.value.slice(substringStartIndex + props.search.length);\n      return { start, searchedSubString, end };\n    });\n    const isSelected = computed(() => props.getSelectedState(props.option));\n    const isFocused = computed(() => {\n      if (isNilValue(props.currentOption)) {\n        return false;\n      }\n      if (typeof props.option === \"string\") {\n        return props.option === props.currentOption;\n      }\n      return props.getTrackBy(props.currentOption) === props.getTrackBy(props.option);\n    });\n    const optionClass = useBem(\"va-select-option\", () => ({\n      selected: isSelected.value\n    }));\n    const optionStyle = computed(() => ({\n      color: isSelected.value ? getColor(props.color) : \"inherit\",\n      backgroundColor: isFocused.value ? getHoverColor(getColor(props.color)) : \"transparent\",\n      cursor: props.disabled ? \"default\" : void 0,\n      opacity: props.disabled ? \"var(--va-select-option-list-option-disabled-opacity)\" : void 0\n    }));\n    return {\n      getColor,\n      optionIcon,\n      isSelected,\n      optionStyle,\n      optionClass,\n      optionIconColor,\n      optionTextSplitted\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaSelectOption.css';\n//# sourceMappingURL=VaSelectOption.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423078,
+      "end": 1709717423205,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423205,
+      "end": 1709717423205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423206,
+      "end": 1709717423206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423206,
+      "end": 1709717423207,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423207,
+      "end": 1709717423207,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423207,
+      "end": 1709717423207,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423207,
+      "end": 1709717423207,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423207,
+      "end": 1709717423207,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423207,
+      "end": 1709717423207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423207,
+      "end": 1709717423207,
+      "order": "normal"
+    }
+  ]
+}

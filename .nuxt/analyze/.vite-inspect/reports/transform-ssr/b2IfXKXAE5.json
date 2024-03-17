@@ -1,0 +1,294 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue?vue&type=style&index=0&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.table-example--pagination {\n  display: flex;\n  justify-content: center;\n}\n\n.va-data-table__table,\n.va-data-table__table-th,\n.va-data-table__table-td {\n  border: 1px solid #efe3e3f2 !important;\n  border-collapse: collapse !important;\n}\n.va-data-table__table-thead {\n  background-color: #093e73;\n  color: white !important;\n}\n.va-data-table__table-th {\n  /* color: white !important; */\n  font-weight: bold;\n  text-align: center !important;\n}\ntable,\nth,\ntd {\n  border: 1px solid #1e1a1af2 !important;\n  border-collapse: collapse !important;\n}\n.va-checkbox .va-checkbox__square {\n  border: 1px solid grey;\n}\n",
+      "start": 1709717508380,
+      "end": 1709717508380,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue"
+        ],
+        "names": [],
+        "mappings": ";AAifA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACzB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACvB,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;EAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B;AACA,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC;AACF,CAAC,EAAE;EACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;AACxB",
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<!-- @format -->\n\n<template>\n  <input\n    v-show=\"false\"\n    :value=\"columns\"\n    @input=\"$emit('update:columns', $event.target.value)\"\n  />\n  <slot\n    name=\"top_form\"\n    :items=\"items\"\n    :selected_object=\"selected_object\"\n    :selected=\"selected\"\n    :items_object=\"items_object\"\n    :object_display_table=\"object_display_table\"\n  >\n  </slot>\n\n  <v-card class=\"mx-2 my-2\" v-if=\"display_table\">\n    <v-card-text>\n      <v-row>\n        <!-- Ajouter, modifier, enregistrer-->\n\n        <v-col cols=\"12\" style=\"text-align: left\">\n          <!-- Ajouter -->\n          <ButtonDialog\n          :selected=\"selected\"\n            :name_of_button=\"name_of_button_add?name_of_button_add:'Ajouter'\"\n            :disabled=\"func_controle_disabled_add_button?func_controle_disabled_add_button(selected):selected.length !== 0\"\n            v-if=\"add\"\n            :icon_of_button=\"'mdi mdi-plus-outline'\"\n            :click_come_to_acess_update=\"click_come_to_acess_update\"\n          >\n            <template #button_text=\"props\">\n              <slot name=\"save_replacement\" :item=\"props.item\"> </slot>\n            </template>\n            <template #button_button=\"props\">\n              <v-btn\n                color=\"black white--text\"\n                @click=\"valid_add_function(props)\"\n              >\n                Enregistrer\n              </v-btn>\n            </template>\n          </ButtonDialog>\n\n          <!-- Modifier -->\n\n          <ButtonDialog\n            :selected=\"selected\"\n            v-if=\"update\"\n            :disabled=\"func_controle_disabled_update_button?func_controle_disabled_update_button(selected):selected.length !== 1\"\n            :name_of_button=\"name_of_button_edit?name_of_button_edit:'Modifier'\"\n            :icon_of_button=\"'mdi mdi-circle-edit-outline'\"\n            :click_come_to_acess_update=\"click_come_to_acess_update\"\n          >\n            <template #button_text=\"props\">\n              <input id=\"id\" v-model.number=\"props.item.id\" type=\"hidden\" />\n              <slot name=\"edit_replacement\" :item=\"props.item\"> </slot>\n            </template>\n            <template #button_button=\"props\">\n              <v-btn\n                color=\"black white--text\"\n                @click=\"valid_update_function(props)\"\n              >\n                Enregistrer\n              </v-btn>\n            </template>\n          </ButtonDialog>\n\n          <!-- Supprimer -->\n          <v-dialog transition=\"dialog-bottom-transition\" width=\"auto\">\n            <template v-slot:activator=\"{ props }\">\n              <v-btn\n                v-bind=\"props\"\n                class=\"mr-1\"\n                style=\"color: white\"\n                color=\"#093e73\"\n                v-if=\"destroy\"\n                :disabled=\"func_controle_disabled_delete_button?func_controle_disabled_delete_button(selected):!selected.length\"\n              >\n                <v-tooltip activator=\"parent\" location=\"top\"\n                  >{{name_of_button_delete?name_of_button_delete:'Supprimer'}}</v-tooltip\n                >\n                <v-icon> mdi mdi-delete-outline </v-icon\n                ><span class=\"d-none d-xs-none d-sm-block\">{{name_of_button_delete?name_of_button_delete:'Supprimer'}}</span>\n              </v-btn>\n            </template>\n            <template v-slot:default=\"{ isActive }\">\n              <v-card width=\"350\">\n                <v-card-text class=\"text-center\">\n                  Êtes-vous sûr ? <br />\n                  Vous ne pourrez pas revenir en arrière ! </v-card-text\n                ><br />\n                <v-card-actions class=\"justify-center\">\n                  <!-- <v-spacer></v-spacer> -->\n                  <v-btn variant=\"text\" @click=\"isActive.value = false\"\n                    >Retour</v-btn\n                  >\n                  <v-btn\n                    @click=\"\n                      destroy_();\n                      isActive.value = false;\n                    \"\n                    style=\"color: white; background-color: red !important\"\n                    >{{text_of_validation_on_pop_up_confirm_delete?text_of_validation_on_pop_up_confirm_delete:'OUI, SUPPRIMER!'}} \n                  </v-btn>\n                </v-card-actions>\n              </v-card>\n            </template>\n          </v-dialog>\n        </v-col>\n\n        <!--Boutons complémentaires-->\n        <v-col cols=\"12\" class=\"pa-0\">\n          <slot\n            name=\"table_buttons\"\n            :items=\"items\"\n            :selected_object=\"selected_object\"\n            :selected=\"selected\"\n            :items_object=\"items_object\"\n            :object_display_table=\"object_display_table\"\n          >\n          </slot>\n        </v-col>\n\n        <!--titre-->\n        <v-col cols=\"12\">\n          <div>\n            {{ title }}\n          </div>\n        </v-col>\n      </v-row>\n    </v-card-text>\n\n    <!--Rechercher-->\n    <div class=\"row mx-3\">\n      <v-row>\n        <v-col cols=\"12\" class=\"pb-0\">\n          <v-text-field\n            v-model=\"search_text\"\n            label=\"Rechercher\"\n            class=\"\"\n            variant=\"outlined\"\n          />\n        </v-col>\n        <v-col class=\"d-flex justify-center pt-1 mb-5\" cols=\"12\">\n          <v-btn color=\"#093e73\" class=\"text-white\" @click=\"search\"\n            >Rechercher</v-btn\n          >\n        </v-col>\n      </v-row>\n    </div>\n\n    <!--table-->\n    <!-- selectable=\"true\" -->\n    <!-- sticky-header -->\n    <!--     <va-data-table v-model=\"selected\" :columns=\"columns\" :items=\"items\"\n      selectable :filter=\"filter\" @filtered=\"filtered = $event.items\" class=\"mx-2\"\n      striped no-data-label=\"Aucune donnée disponible!\" style=\"height:auto;\"  > -->\n    <!--  <va-data-table\n      v-model=\"selected\"\n      :columns=\"columns\"\n      :items=\"items\"\n      selectable\n      :filter=\"filter\"\n      class=\"mx-2\"\n      striped\n      no-data-label=\"Aucune donnée disponible!\"\n      style=\"height: auto\"\n      no-data-html=\"Aucun élément trouvé.\"\n      no-data-filtered-html=\"Aucun élément correspondant.\"\n    > -->\n    <!-- <template #cell:can_auth=\"{ row }\">\n      </template> -->\n    <!-- <template v-for=\"element in columns_\" #[`header(${element.key})`]>\n        <slot :name=\"`header(${element.key})`\">\n          {{ element.text }}\n        </slot>\n      </template>\n      <template\n        v-for=\"element in columns_\"\n        #[`cell(${element.active_modif_column?element.key:defaultSlot})`]=\"{\n          value,\n        }\"\n      >\n        <slot :name=\"`cell(${element.key})`\" \n        :value=\"value\" \n        :items_object=\"items_object\" \n        :selected_object=\"selected_object\"\n        :object_display_table=\"object_display_table\"\n        > </slot>\n      </template>\n    </va-data-table> -->\n    <MaTable\n      :with_selected=\"with_selected==false?false:true\"\n      v-model:selected=\"selected\"\n      v-model:items=\"items\"\n      :header=\"columns\"\n      v-model:filter=\"filter\"\n      no_data=\"Aucun élément trouvé.\"\n      no_data_to_search=\"Aucun élément correspondant.\"\n    >\n      <template v-for=\"element in columns_\" #[`header(${element.key})`]>\n        <slot :name=\"`header(${element.key})`\"> </slot>\n      </template>\n      <template\n        v-for=\"element in columns_\"\n        #[`item(${element.active_modif_column?element.key:defaultSlot})`]=\"{item,elt_item}\"\n      >\n        <slot\n          :name=\"`cell(${element.key})`\"\n          :items_object=\"items_object\"\n          :value=\"item\"\n          :elt_item=\"elt_item\"\n          :selected_object=\"selected_object\"\n          :object_display_table=\"object_display_table\"\n        >\n        </slot>\n      </template>\n    </MaTable>\n  </v-card>\n</template>\n\n<script setup>\n//import message from \"./popup-message\";\nimport { useSnackbar } from \"@/store/snackbar\";\nimport ButtonDialog from \"./ButtonDialog.vue\";\n\nconst headers = useRequestHeaders([\"cookie\"]);\ndefineEmits(['update:columns'])\nconst props = defineProps([\n  \"title\",\n  \"api\",\n  \"columns\",\n  \"update\",\n  \"add\",\n  \"destroy\",\n  \"destroy_route\",\n  \"add_function\",\n  \"update_function\",\n  \"item_will_be_send\",\n  \"click_come_to_acess_update\",\n  \"destroy_function\",\n  \"id_demande_conge\",\n  \"name_of_button_add\",\n  \"name_of_button_edit\",\n  \"name_of_button_delete\",\n  \"func_controle_disabled_add_button\",\n  \"func_controle_disabled_delete_button\",\n  \"func_controle_disabled_update_button\",\n  \"text_of_validation_on_pop_up_confirm_delete\",\n  \"with_selected\"\n\n]);\nconst columns_ = ref([{}]);\nconst defaultSlot = \"\";\nconst showModal = ref(false);\nconst dialog = ref(false); /* item = ref({}), */\nconst perPage = ref(10);\nconst currentPage = ref(1);\nconst selected = ref([]);\nconst selected_object = ref({ selected: selected });\nlet items = ref([]);\nlet display_table = ref(true);\nlet object_display_table = ref({ display_table: display_table });\n//initialisation\nlet sn = useSnackbar();\nlet data;\n\n//search\nconst search_text = ref(\"\");\nconst filter = ref(\"\");\n//console.log(items);\n\n\n\nif (props.item_will_be_send) {\n  display_table.value = false;\n  items.value = [];\n} else {\n  display_table.value = true;\n  data = await useFetch(props.api);\n  // console.log(\"data\");\n  // console.log(data.data.value);\n  items.value = Array.isArray(data.data.value) ? data.data.value : [];\n}\n\nif(!isNaN(parseInt(props.id_demande_conge?.year_id))){\n  display_table.value = true;\n  selected.value = []\n  let req_params = props.id_demande_conge;\n  let req_params_ = props.id_demande_conge.year_id;\n  let params\n  try {\n    // console.log(\"req_params\")\n    // console.log(req_params)\n    let res = await useFetch(\"/api/mes_conges_permissions/\", {\n      params: req_params,\n    });\n    // console.log(\"resres\")\n    // console.log(res)\n    if (res.error.value) throw new Error(res.error.value);\n      items.value = res.data.value.map((valu) => {\n       return {\n         ...valu,\n       };\n     });\n    //  let ret = await useFetch(\"/api/demande-conge/personal-schools\", {\n    //               params: req_params,\n    //              });\n    //             if (ret.error.value) throw new Error(ret.error.value);\n\n    //             else personal_schools.value = ret.data.value\n\n  } catch (error) {\n    // console.log(error)\n    items.value = [];\n  }\n}\n\n\n//search function\nfunction search() {\n  filter.value = search_text.value;\n}\nonMounted(async () => {\n  columns_.value = props.columns;\n  // items.value = [{id:1, email:\"mamadoubahmbs4@gmail.com\", firstname:\"Mamadou\", profil:\"SuperClient\"},\n  // {id:2, email:\"carlos@gmail.com\", firstname:\"Carlos\", profil: \"SuperClient1\"},\n  // {id:3, email:\"habib@gmail.com\", firstname:\"Habib\",profil: \"SuperClient2\"},\n  // {id:4, email:\"jules@gmail.com\", b:[1,2],profil: \"SuperClient3\"}]\n\n});\n\nlet snackbar = ref({\n  status: false,\n  type: \"\",\n  text: \"\",\n  timeout: -1,\n});\n\nconst items_object = ref({ items: items });\nasync function valid_add_function(v) {\n  // console.log(\"Fonction d'ajout. Avant test des données\");\n  if ((await v.form.validate()).valid) {\n    // console.log(\"items_object 1\");\n    // console.log(items_object);\n    //console.log(\"Fonction d'ajout.  test des données réussis.\")\n    if (typeof props.add_function == \"function\")\n      await props.add_function(v.item, items_object,selected_object);\n    else await default_add_function(v.item, items_object, selected_object);\n    // console.log(\"item_object\")\n    // console.log(v.item_object.item_object)\n    v.item_object.item_object = {};\n    v.dialog.d = false;\n  }\n}\n\nasync function valid_update_function(v) {\n  // console.log(\"Fonction de modification. Avant test des données\");\n  // console.log(v);\n  console.log(\"selected_object\")\n  console.log(selected_object)\n  if ((await v.form.validate()).valid) {\n    // console.log(\"items_object 1\");\n    // console.log(items_object);\n    // console.log(\"Fonction de modification.  test des données réussis.\");\n    if (typeof props.add_function == \"function\")\n      await props.update_function(v.item, items_object);\n    else await default_update_function(v.item, items_object,{item_object:v.item_object});\n    for(const iterator in items_object.value.items){\n      if(items_object.value.items[iterator].id == v.item_object.item_object.id ){\n        selected.value = [items_object.value.items[iterator]];\n      }\n    }\n\n    v.item_object.item_object = {};\n    v.dialog.d = false;\n  }\n}\nasync function default_add_function(value, A /** correspond a items */) {\n  let res_error;\n  let data ;\n  try {\n    data =  await useFetch(props.api, {\n      method: \"POST\",\n      body: value,\n    });\n\n\n    console.log(\"data.data.value.error ==>>>\")\n    console.log(data.data.value.error)\n    if (data.error.value  ) {\n      res_error = data.error.value;\n      throw \"\";\n    }\n\n    if(data.data.value.error) throw \"\";\n    items_object.value.items.push(data.data.value);\n    sn.success(\"Enregistrement réussi\");\n    value = {};\n  } catch (error) {\n    if (res_error) {\n      // console.log(\"res_error\");\n      // console.log(\"res_error\");\n      // console.log(res_error);\n    }\n\n    console.error(error);\n    if(data.data.value.error)\n      sn.error(data.data.value.error)\n    else\n      sn.error(\"Nous n'avons pas pu effectuer l'opération demandée. Veuillez actualiser la page et réessayer.\");\n  }\n}\n\nasync function default_update_function(value, A /** correspond a items */) {\n  let res_error;\n  try {\n    let data = await useFetch(props.api, {\n      method: \"POST\",\n      body: value,\n    });\n    if (data.error.value) {\n      res_error = data.error.value;\n      throw \"\";\n    }\n    for (const iterator in items_object.value.items) {\n      if (items_object.value.items[iterator].id == value.id) {\n        items_object.value.items[iterator] = value;\n      }\n    }\n    sn.success(\"Enregistrement réussi\");\n    value = {};\n  } catch (error) {\n    if (res_error) {\n      // console.log(\"res_error\");\n      // console.log(\"res_error\");\n      // console.log(res_error);\n    }\n\n    console.error(error);\n    sn.error(\"Nous n'avons pas pu effectuer l'opération demandée. Veuillez actualiser la page et réessayer.\");\n  }\n}\nasync function destroy_() {\n  if(!props.destroy_function){\n    // console.log(\"aselected\");\n    const selected_ = selected.value.map((v) => v.id);\n    // console.log(selected_);\n    let ret_value\n    try {\n      // console.log(\"abdfsd\");\n      // console.log(props.destroy_route + \"k\");\n      ret_value = await useFetch(props.destroy_route, {\n        method: \"DELETE\",\n        body: selected_,\n      });\n\n      if(ret_value.data.value.error) throw \"\"\n      if (!ret_value.error.value) {\n          let tab = items.value.filter((v) => {\n            return !selected_.includes(v.id);\n          });\n          items.value = tab;\n          // console.log(\"items1\");\n          selected.value = [];\n          sn.success(\"Réussite de la suppression ! \");\n      } else {\n        if(ret_value.error.value?.data?.message===\"Access interdit !\"){\n          sn.error(\"Vous n'avez pas le droit d'éffectuer cette suppression !\")\n        } else if(ret_value.error.value?.data?.message.startsWith(\"Authentification requise !\")){\n          sn.error(\"Votre session est expirée, veuillez réactualiser la page !\")\n        }\n      }\n      // console.log(\"items2\");\n    } catch (error) {\n      // console.log(error);\n      selected.value = [];\n      if(ret_value.data.value.error) sn.error(ret_value.data.value.error)\n      else\n      sn.error();\n    }\n\n    // useRouter().push(props.index_route);\n    // await navigateTo(props.index_route);\n    // this.$router.replace(\"/dashboard\");\n    //this.$forceUpdate();\n  } else{\n    props.destroy_function(items_object, selected_object);\n  }\n\n}\n</script>\n\n<style>\n.table-example--pagination {\n  display: flex;\n  justify-content: center;\n}\n\n.va-data-table__table,\n.va-data-table__table-th,\n.va-data-table__table-td {\n  border: 1px solid #efe3e3f2 !important;\n  border-collapse: collapse !important;\n}\n.va-data-table__table-thead {\n  background-color: #093e73;\n  color: white !important;\n}\n.va-data-table__table-th {\n  /* color: white !important; */\n  font-weight: bold;\n  text-align: center !important;\n}\ntable,\nth,\ntd {\n  border: 1px solid #1e1a1af2 !important;\n  border-collapse: collapse !important;\n}\n.va-checkbox .va-checkbox__square {\n  border: 1px solid grey;\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508380,
+      "end": 1709717508380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508380,
+      "end": 1709717508380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508380,
+      "end": 1709717508380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508380,
+      "end": 1709717508380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508380,
+      "end": 1709717508380,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".table-example--pagination{display:flex;justify-content:center}.va-data-table__table,.va-data-table__table-td,.va-data-table__table-th{border:1px solid #efe3e3f2!important;border-collapse:collapse!important}.va-data-table__table-thead{background-color:#093e73;color:#fff!important}.va-data-table__table-th{font-weight:700;text-align:center!important}table,td,th{border:1px solid #1e1a1af2!important;border-collapse:collapse!important}.va-checkbox .va-checkbox__square{border:1px solid grey}",
+      "start": 1709717508380,
+      "end": 1709717508427,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue",
+        "mappings": "AACA,2BACE,YAAa,CACb,sBACF,CAEA,wEAGE,oCAAsC,CACtC,kCACF,CACA,4BACE,wBAAyB,CACzB,oBACF,CACA,yBAEE,eAAiB,CACjB,2BACF,CACA,YAGE,oCAAsC,CACtC,kCACF,CACA,kCACE,qBACF",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue"
+        ],
+        "sourcesContent": [
+          "\n.table-example--pagination {\n  display: flex;\n  justify-content: center;\n}\n\n.va-data-table__table,\n.va-data-table__table-th,\n.va-data-table__table-td {\n  border: 1px solid #efe3e3f2 !important;\n  border-collapse: collapse !important;\n}\n.va-data-table__table-thead {\n  background-color: #093e73;\n  color: white !important;\n}\n.va-data-table__table-th {\n  /* color: white !important; */\n  font-weight: bold;\n  text-align: center !important;\n}\ntable,\nth,\ntd {\n  border: 1px solid #1e1a1af2 !important;\n  border-collapse: collapse !important;\n}\n.va-checkbox .va-checkbox__square {\n  border: 1px solid grey;\n}\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508427,
+      "end": 1709717508427,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508427,
+      "end": 1709717508427,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508427,
+      "end": 1709717508428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".table-example--pagination{display:flex;justify-content:center}.va-data-table__table,.va-data-table__table-td,.va-data-table__table-th{border:1px solid #efe3e3f2!important;border-collapse:collapse!important}.va-data-table__table-thead{background-color:#093e73;color:#fff!important}.va-data-table__table-th{font-weight:700;text-align:center!important}table,td,th{border:1px solid #1e1a1af2!important;border-collapse:collapse!important}.va-checkbox .va-checkbox__square{border:1px solid grey}",
+      "start": 1709717508428,
+      "end": 1709717508429,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue",
+        "mappings": "AAAA,2BAA2B,YAAY,CAAC,sBAAsB,CAAC,wEAAwE,oCAAoC,CAAC,kCAAkC,CAAC,4BAA4B,wBAAwB,CAAC,oBAAoB,CAAC,yBAAyB,eAAe,CAAC,2BAA2B,CAAC,YAAY,oCAAoC,CAAC,kCAAkC,CAAC,kCAAkC,qBAAqB",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Table/index.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508429,
+      "end": 1709717508429,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508430,
+      "end": 1709717508430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508430,
+      "end": 1709717508430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717508430,
+      "end": 1709717508430,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508430,
+      "end": 1709717508430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508431,
+      "end": 1709717508431,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508431,
+      "end": 1709717508431,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508431,
+      "end": 1709717508431,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508443,
+      "end": 1709717508443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508444,
+      "end": 1709717508444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508445,
+      "end": 1709717508445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508446,
+      "end": 1709717508446,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508446,
+      "end": 1709717508446,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508446,
+      "end": 1709717508446,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508446,
+      "end": 1709717508446,
+      "order": "normal"
+    }
+  ]
+}

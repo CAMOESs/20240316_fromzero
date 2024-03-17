@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-file-upload/VaFileUpload.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, computed, onMounted, provide, toRef } from \"vue\";\nimport { V as VaFileUploadKey } from \"./types.js\";\nimport { V as VaFileUploadList } from \"./VaFileUploadList/index.js\";\nimport { V as VaModal } from \"../va-modal/VaModal.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { V as VaButton } from \"../va-button/index.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nconst VaFileUploadListProps = extractComponentProps(VaFileUploadList);\nconst _sfc_main = defineComponent({\n  name: \"VaFileUpload\",\n  components: {\n    VaModal,\n    VaButton,\n    VaFileUploadList\n  },\n  props: {\n    ...useComponentPresetProp,\n    ...VaFileUploadListProps,\n    fileTypes: { type: String, default: \"\" },\n    dropzone: { type: Boolean, default: false },\n    hideFileList: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" },\n    disabled: { type: Boolean, default: false },\n    undo: { type: Boolean, default: false },\n    undoDuration: { type: Number, default: 3e3 },\n    undoButtonText: { type: String, default: \"$t:undo\" },\n    dropZoneText: { type: String, default: \"$t:dropzone\" },\n    uploadButtonText: { type: String, default: \"$t:uploadFile\" },\n    deletedFileMessage: { type: String, default: \"$t:fileDeleted\" },\n    modelValue: {\n      type: [Object, Array],\n      default: () => []\n    },\n    type: {\n      type: String,\n      default: \"list\",\n      validator: (value) => [\"list\", \"gallery\", \"single\"].includes(value)\n    }\n  },\n  emits: [\"update:modelValue\", \"file-removed\", \"file-added\"],\n  setup(props, { emit }) {\n    const fileInputRef = shallowRef();\n    const modal = ref(false);\n    const dropzoneHighlight = ref(false);\n    const { getColor, shiftHSLAColor } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const computedStyle = computed(() => ({\n      backgroundColor: props.dropzone ? shiftHSLAColor(colorComputed.value, { a: dropzoneHighlight.value ? -0.82 : -0.92 }) : \"transparent\"\n    }));\n    const computedClasses = useBem(\"va-file-upload\", () => ({\n      dropzone: props.dropzone,\n      disabled: props.disabled\n    }));\n    const files = computed({\n      get() {\n        return Array.isArray(props.modelValue) ? props.modelValue : [props.modelValue];\n      },\n      set(files2) {\n        if (props.type === \"single\") {\n          emit(\"update:modelValue\", files2[0]);\n        } else {\n          emit(\"update:modelValue\", files2);\n        }\n      }\n    });\n    const filterInvalidFiles = (files2) => files2.filter((file) => {\n      const fileName = file.name || file.url;\n      if (!fileName) {\n        return false;\n      }\n      if (file.url) {\n        return true;\n      }\n      const MIMETypes = [\"audio/*\", \"video/*\", \"image/*\"];\n      const isContainedMIMEType = MIMETypes.find((t) => props.fileTypes.includes(t));\n      if (isContainedMIMEType) {\n        return true;\n      }\n      const extension = fileName.substring(fileName.lastIndexOf(\".\") + 1).toLowerCase();\n      const isCorrectExt = props.fileTypes.includes(extension);\n      if (!isCorrectExt) {\n        modal.value = true;\n      }\n      return isCorrectExt;\n    });\n    const uploadFile = (e) => {\n      var _a, _b;\n      const f = ((_a = e.target) == null ? void 0 : _a.files) || ((_b = e.dataTransfer) == null ? void 0 : _b.files);\n      if (!f) {\n        return;\n      }\n      const validatedFiles = props.fileTypes ? filterInvalidFiles(Array.from(f)) : f;\n      files.value = props.type === \"single\" ? validatedFiles : [...files.value, ...validatedFiles];\n      emit(\"file-added\", validatedFiles);\n    };\n    const changeFieldValue = (e) => {\n      uploadFile(e);\n      if (fileInputRef.value) {\n        fileInputRef.value.value = \"\";\n      }\n    };\n    const removeFile = (index) => {\n      if (index in files.value) {\n        const removedFile = files.value[index];\n        files.value = files.value.filter((item, idx) => idx !== index);\n        emit(\"file-removed\", removedFile);\n      }\n    };\n    const removeSingleFile = () => {\n      if (files.value.length > 0) {\n        const removedFile = files.value[0];\n        files.value = [];\n        emit(\"file-removed\", removedFile);\n      }\n    };\n    const callFileDialogue = () => {\n      if (fileInputRef.value) {\n        fileInputRef.value.click();\n      }\n    };\n    onMounted(() => {\n      if (Array.isArray(files.value)) {\n        const filteredFiles = filterInvalidFiles(files.value);\n        if (filteredFiles.length !== files.value.length) {\n          files.value = filteredFiles;\n        }\n      }\n    });\n    const { tp } = useTranslation();\n    provide(VaFileUploadKey, {\n      undo: toRef(props, \"undo\"),\n      disabled: toRef(props, \"disabled\"),\n      undoDuration: toRef(props, \"undoDuration\"),\n      undoButtonText: computed(() => tp(props.undoButtonText)),\n      deletedFileMessage: computed(() => tp(props.deletedFileMessage))\n    });\n    return {\n      fileUploadListProps: filterComponentProps(VaFileUploadListProps),\n      modal,\n      dropzoneHighlight,\n      fileInputRef,\n      colorComputed,\n      computedStyle,\n      computedClasses,\n      files,\n      tp,\n      uploadFile,\n      changeFieldValue,\n      removeFile,\n      removeSingleFile,\n      callFileDialogue\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaFileUpload.css';\n//# sourceMappingURL=VaFileUpload.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423729,
+      "end": 1709717424008,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717424008,
+      "end": 1709717424008,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717424008,
+      "end": 1709717424008,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717424009,
+      "end": 1709717424009,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717424009,
+      "end": 1709717424010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717424010,
+      "end": 1709717424010,
+      "order": "normal"
+    }
+  ]
+}

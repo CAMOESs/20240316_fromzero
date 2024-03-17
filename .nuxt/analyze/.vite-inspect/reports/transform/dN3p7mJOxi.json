@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-data-table/hooks/useSortable.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed, watch } from \"vue\";\nimport { u as useThrottleProps, b as useThrottleFunction } from \"../../../composables/useThrottle.js\";\nconst useSortableProps = {\n  ...useThrottleProps,\n  sortBy: { type: String },\n  columnSorted: { type: Object },\n  sortingOrder: { type: [String, null] },\n  disableClientSideSorting: { type: Boolean, default: false }\n};\nconst useSortable = (columns, filteredRows, props, emit) => {\n  const sortByFallback = ref(\"\");\n  const sortBySync = computed({\n    get() {\n      if (props.sortBy === void 0) {\n        return sortByFallback.value;\n      } else {\n        return props.sortBy;\n      }\n    },\n    set(value) {\n      if (props.sortBy === void 0) {\n        sortByFallback.value = value;\n      }\n      emit(\"update:sortBy\", value);\n    }\n  });\n  const sortingOrderFallback = ref(null);\n  const sortingOrderSync = computed({\n    get() {\n      if (props.sortingOrder === void 0) {\n        return sortingOrderFallback.value;\n      } else {\n        return props.sortingOrder;\n      }\n    },\n    set(value) {\n      if (props.sortingOrder === void 0) {\n        sortingOrderFallback.value = value;\n      }\n      emit(\"update:sortingOrder\", value);\n    }\n  });\n  const sortedRows = computed(() => {\n    if (props.disableClientSideSorting) {\n      return filteredRows.value;\n    }\n    if (filteredRows.value.length <= 1) {\n      return filteredRows.value;\n    }\n    const columnIndex = columns.value.findIndex(\n      ({ name, sortable }) => sortBySync.value === name && sortable\n    );\n    const column = columns.value[columnIndex];\n    if (!column) {\n      return filteredRows.value;\n    }\n    const sortingOrderRatio = sortingOrderSync.value === \"desc\" ? -1 : 1;\n    return [...filteredRows.value].sort((a, b) => {\n      if (sortingOrderSync.value === null) {\n        return a.initialIndex - b.initialIndex;\n      } else {\n        const firstValue = a.cells[columnIndex].value;\n        const secondValue = b.cells[columnIndex].value;\n        const firstSource = a.cells[columnIndex].source;\n        const secondSource = b.cells[columnIndex].source;\n        return sortingOrderRatio * (typeof column.sortingFn === \"function\" ? column.sortingFn(firstSource, secondSource) : firstValue.localeCompare(secondValue));\n      }\n    });\n  });\n  watch(sortedRows, () => {\n    emit(\"sorted\", {\n      sortBy: sortBySync.value,\n      sortingOrder: sortingOrderSync.value,\n      items: sortedRows.value.map((row) => row.source),\n      itemsIndexes: sortedRows.value.map((row) => row.initialIndex)\n    });\n  });\n  const getNextSortingOptionsValue = (value, options) => {\n    const index = options.findIndex((sortingValue) => sortingValue === value);\n    return index !== -1 ? options[(index + 1) % options.length] : options[0];\n  };\n  function toggleSorting(column) {\n    let value;\n    if (column.name === sortBySync.value) {\n      value = getNextSortingOptionsValue(sortingOrderSync.value, column.sortingOptions);\n    } else {\n      sortBySync.value = column.name;\n      value = column.sortingOptions[0];\n    }\n    sortingOrderSync.value = value;\n    emit(\"columnSorted\", { columnName: column.name, value, column });\n  }\n  const toggleSortingThrottled = useThrottleFunction(toggleSorting, props);\n  const sortingOrderIconName = computed(() => {\n    return sortingOrderSync.value === \"asc\" ? \"va-arrow-up\" : sortingOrderSync.value === \"desc\" ? \"va-arrow-down\" : \"unfold_more\";\n  });\n  return {\n    sortBySync,\n    sortingOrderSync,\n    toggleSorting: toggleSortingThrottled,\n    sortedRows,\n    sortingOrderIconName\n  };\n};\nexport {\n  useSortable as a,\n  useSortableProps as u\n};\n//# sourceMappingURL=useSortable.js.map\n",
+      "start": 1709717427213,
+      "end": 1709717427358,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427359,
+      "end": 1709717427359,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427359,
+      "end": 1709717427360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427360,
+      "end": 1709717427360,
+      "order": "normal"
+    }
+  ]
+}

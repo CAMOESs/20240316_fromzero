@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/composables/useSwipe.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, reactive, watchEffect, watch } from \"vue\";\nimport { u as useEvent } from \"./useEvent.mjs\";\nconst mouseEvents = [\"mousedown\", \"mousemove\"];\nconst touchEvents = [\"touchstart\", \"touchmove\"];\nconst commonAllowedDirections = {\n  vertical: [\"\", \"all\", \"vertical\"],\n  horizontal: [\"\", \"all\", \"horizontal\"]\n};\nconst verticalSpecificAllowedDirections = [...commonAllowedDirections.vertical, \"up\", \"down\"];\nconst horizontalSpecificAllowedDirections = [...commonAllowedDirections.horizontal, \"left\", \"right\"];\nconst useSwipeProps = {\n  swipable: { type: Boolean, default: false },\n  swipeDistance: { type: Number, default: 75 },\n  swipeDirection: { type: String, default: \"all\" }\n};\nconst useSwipe = (props, container, cb) => {\n  const swipeStarted = ref(false);\n  const swipePath = reactive({\n    start: { x: 0, y: 0 },\n    end: { x: 0, y: 0 }\n  });\n  const swipeDuration = reactive({\n    start: 0,\n    end: 0\n  });\n  const setState = (e, type) => {\n    let event;\n    if (mouseEvents.includes(e.type)) {\n      event = e;\n    }\n    if (touchEvents.includes(e.type)) {\n      const touchEvent = e;\n      event = touchEvent.changedTouches[touchEvent.changedTouches.length - 1];\n    }\n    if (!event) {\n      return;\n    }\n    swipePath[type].x = event.pageX;\n    swipePath[type].y = event.pageY;\n    swipeDuration[type] = (/* @__PURE__ */ new Date()).getTime();\n  };\n  const onSwipeStart = (e) => {\n    if (!props.swipable || swipeStarted.value) {\n      return;\n    }\n    swipeStarted.value = true;\n    setState(e, \"start\");\n  };\n  const onSwipeMove = (e) => {\n    if (!swipeStarted.value) {\n      return;\n    }\n    setState(e, \"end\");\n  };\n  const resetSwipe = () => {\n    [\"start\", \"end\"].forEach((type) => {\n      swipePath[type].x = 0;\n      swipePath[type].y = 0;\n      swipeDuration[type] = 0;\n    });\n    swipeStarted.value = false;\n  };\n  const isSwipeAllowed = reactive({\n    vertical: false,\n    horizontal: false\n  });\n  watchEffect(() => {\n    isSwipeAllowed.horizontal = horizontalSpecificAllowedDirections.includes(props.swipeDirection);\n    isSwipeAllowed.vertical = verticalSpecificAllowedDirections.includes(props.swipeDirection);\n  });\n  const calcDistance = (axis) => {\n    return isSwipeAllowed[axis === \"x\" ? \"horizontal\" : \"vertical\"] && swipePath.start[axis] && swipePath.end[axis] ? Math.trunc(swipePath.start[axis] - swipePath.end[axis]) : 0;\n  };\n  const getAcceptableValue = (direction, result) => {\n    return result === props.swipeDirection || commonAllowedDirections[direction].includes(props.swipeDirection) ? result : \"\";\n  };\n  const swipeState = reactive({ direction: \"\", duration: 0 });\n  watch(swipePath, () => {\n    const xDistance = calcDistance(\"x\");\n    const yDistance = calcDistance(\"y\");\n    if ((xDistance || yDistance) && [xDistance, yDistance].some((el) => Math.abs(el) >= props.swipeDistance)) {\n      if (Math.abs(xDistance) >= Math.abs(yDistance) && isSwipeAllowed.horizontal) {\n        const result = xDistance > 0 ? \"left\" : \"right\";\n        swipeState.direction = getAcceptableValue(\"horizontal\", result);\n      } else if (Math.abs(xDistance) < Math.abs(yDistance) && isSwipeAllowed.vertical) {\n        const result = yDistance > 0 ? \"down\" : \"up\";\n        swipeState.direction = getAcceptableValue(\"vertical\", result);\n      }\n      swipeState.duration = swipeDuration.end - swipeDuration.start;\n      resetSwipe();\n    }\n  }, { deep: true });\n  watch(swipeState, () => cb(swipeState), { deep: true });\n  if (props.swipable) {\n    useEvent([\"touchstart\", \"mousedown\"], onSwipeStart, container);\n    useEvent([\"touchmove\", \"mousemove\"], onSwipeMove, container);\n    useEvent([\"touchcancel\", \"mouseup\", \"touchend\", \"mouseleave\"], resetSwipe, container);\n  }\n  return { swipeState };\n};\nexport {\n  useSwipe as a,\n  useSwipeProps as u\n};\n//# sourceMappingURL=useSwipe.mjs.map\n",
+      "start": 1709717513197,
+      "end": 1709717513363,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513363,
+      "end": 1709717513363,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717513365,
+      "end": 1709717513365,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513365,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513365,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717513366,
+      "end": 1709717513366,
+      "order": "normal"
+    }
+  ]
+}

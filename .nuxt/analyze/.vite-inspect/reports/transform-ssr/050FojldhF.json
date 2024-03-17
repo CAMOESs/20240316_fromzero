@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-stepper/VaStepper.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, watch, computed } from \"vue\";\nimport { V as VaStepperControls } from \"./VaStepperControls.mjs\";\nimport { V as VaStepperStepButton } from \"./VaStepperStepButton.mjs\";\nimport { u as unFunction } from \"../../utils/un-function.mjs\";\nimport { a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaStepper\",\n  components: { VaStepperControls, VaStepperStepButton },\n  props: {\n    ...useStatefulProps,\n    modelValue: { type: Number, default: 0 },\n    steps: {\n      type: Array,\n      default: () => [],\n      required: true\n    },\n    color: { type: String, default: \"primary\" },\n    vertical: { type: Boolean, default: false },\n    navigationDisabled: { type: Boolean, default: false },\n    controlsHidden: { type: Boolean, default: false },\n    nextDisabled: { type: Boolean, default: false },\n    finishButtonHidden: { type: Boolean, default: false },\n    ariaLabel: { type: String, default: \"$t:progress\" },\n    linear: { type: Boolean, default: false }\n  },\n  emits: [\"update:modelValue\", \"finish\", \"update:steps\"],\n  setup(props, { emit }) {\n    const stepperNavigation = shallowRef();\n    const { valueComputed: modelValue } = useStateful(props, emit, \"modelValue\");\n    const focusedStep = ref({ trigger: false, stepIndex: props.navigationDisabled ? -1 : props.modelValue });\n    const { getColor } = useColors();\n    const isNextStepDisabled = (index) => props.nextDisabled && index > modelValue.value;\n    const findFirstNonDisabled = (from, direction) => {\n      while (from >= 0 && from < props.steps.length) {\n        from += direction;\n        const step = props.steps[from];\n        if (!step) {\n          return;\n        }\n        if (!step.disabled) {\n          return step;\n        }\n      }\n    };\n    const findFirstWithErrorIndex = (from, direction) => {\n      while (from >= 0 && from < props.steps.length) {\n        from += direction;\n        const step = props.steps[from];\n        if (!step) {\n          return;\n        }\n        if (step.hasError === true) {\n          return from;\n        }\n      }\n    };\n    const validateMovingToStep = (stepIndex) => {\n      var _a;\n      const newStep = props.steps[stepIndex];\n      const currentStep = props.steps[modelValue.value];\n      const beforeNewStep = findFirstNonDisabled(stepIndex, -1);\n      if (newStep.disabled) {\n        return false;\n      }\n      if (props.linear && stepIndex < modelValue.value) {\n        return true;\n      }\n      const nextNonError = findFirstWithErrorIndex(modelValue.value, 1);\n      if (props.linear && nextNonError !== void 0 && nextNonError < stepIndex) {\n        return false;\n      }\n      if (((_a = currentStep.beforeLeave) == null ? void 0 : _a.call(currentStep, currentStep, newStep)) === false) {\n        return false;\n      }\n      if (currentStep.completed === void 0) {\n        currentStep.completed = true;\n      }\n      if (props.linear && beforeNewStep && !beforeNewStep.completed) {\n        return false;\n      }\n      if (props.linear && unFunction(currentStep.hasError, currentStep)) {\n        return false;\n      }\n      return true;\n    };\n    const setStep = (index) => {\n      if (!validateMovingToStep(index)) {\n        return;\n      }\n      emit(\"update:modelValue\", index);\n    };\n    const setFocus = (direction) => {\n      if (props.navigationDisabled) {\n        return;\n      }\n      if (direction === \"next\") {\n        setFocusNextStep(1);\n      } else {\n        setFocusPrevStep(1);\n      }\n    };\n    const setFocusNextStep = (idx) => {\n      const newValue = focusedStep.value.stepIndex + idx;\n      if (isNextStepDisabled(newValue)) {\n        return;\n      }\n      if (newValue < props.steps.length) {\n        if (props.steps[newValue].disabled) {\n          setFocusNextStep(idx + 1);\n          return;\n        }\n        focusedStep.value.stepIndex = newValue;\n        focusedStep.value.trigger = true;\n      } else {\n        for (let availableIdx = 0; availableIdx < props.steps.length; availableIdx++) {\n          if (!props.steps[availableIdx].disabled) {\n            focusedStep.value.stepIndex = availableIdx;\n            focusedStep.value.trigger = true;\n            break;\n          }\n        }\n      }\n    };\n    const setFocusPrevStep = (idx) => {\n      const newValue = focusedStep.value.stepIndex - idx;\n      if (newValue >= 0) {\n        if (props.steps[newValue].disabled) {\n          setFocusPrevStep(idx + 1);\n          return;\n        }\n        focusedStep.value.stepIndex = newValue;\n        focusedStep.value.trigger = true;\n      } else {\n        for (let availableIdx = props.steps.length - 1; availableIdx >= 0; availableIdx--) {\n          if (!props.steps[availableIdx].disabled && !isNextStepDisabled(availableIdx)) {\n            focusedStep.value.stepIndex = availableIdx;\n            focusedStep.value.trigger = true;\n            break;\n          }\n        }\n      }\n    };\n    const resetFocus = () => {\n      requestAnimationFrame(() => {\n        var _a;\n        if (!((_a = stepperNavigation.value) == null ? void 0 : _a.contains(document.activeElement))) {\n          focusedStep.value.stepIndex = props.modelValue;\n          focusedStep.value.trigger = false;\n        }\n      });\n    };\n    watch(() => props.modelValue, () => {\n      focusedStep.value.stepIndex = props.modelValue;\n      focusedStep.value.trigger = false;\n    });\n    const nextStep = (stepsToSkip = 0) => {\n      const targetIndex = modelValue.value + 1 + stepsToSkip;\n      if (!props.steps[targetIndex]) {\n        return;\n      }\n      if (props.steps[targetIndex].disabled) {\n        nextStep(stepsToSkip + 1);\n      }\n      setStep(targetIndex);\n    };\n    const prevStep = (stepsToSkip = 0) => {\n      const targetIndex = modelValue.value - 1 - stepsToSkip;\n      if (!props.steps[targetIndex]) {\n        return;\n      }\n      if (props.steps[targetIndex].disabled) {\n        prevStep(stepsToSkip + 1);\n      }\n      setStep(targetIndex);\n    };\n    const stepControls = { setStep, nextStep, prevStep };\n    const getIterableSlotData = (step, index) => ({\n      ...stepControls,\n      focus: focusedStep,\n      isActive: props.modelValue === index,\n      isCompleted: props.modelValue > index,\n      isLastStep: props.steps.length - 1 === index,\n      isNextStepDisabled: isNextStepDisabled(index),\n      index,\n      step\n    });\n    const { tp } = useTranslation();\n    return {\n      stepperNavigation,\n      resetFocus,\n      focusedStep,\n      isNextStepDisabled,\n      getColor,\n      stepControls,\n      getIterableSlotData,\n      onArrowKeyPress: (direction) => {\n        setFocus(direction);\n      },\n      onValueChange: () => {\n        focusedStep.value.stepIndex = props.modelValue;\n        focusedStep.value.trigger = true;\n      },\n      ariaAttributesComputed: computed(() => ({\n        role: \"group\",\n        \"aria-label\": tp(props.ariaLabel),\n        \"aria-orientation\": props.vertical ? \"vertical\" : \"horizontal\"\n      })),\n      getStepperButtonColor(index) {\n        var _a;\n        return ((_a = props.steps[index]) == null ? void 0 : _a.hasError) ? \"danger\" : getColor(props.color);\n      },\n      completeStep: (shouldCompleteStep) => {\n        const steps = { ...props.steps };\n        if (shouldCompleteStep === true) {\n          steps[props.modelValue].hasError = false;\n        }\n        steps[props.modelValue].completed = shouldCompleteStep ?? true;\n        emit(\"update:steps\", steps);\n      },\n      setError: (shouldSetError) => {\n        const steps = { ...props.steps };\n        steps[props.modelValue].hasError = shouldSetError ?? true;\n        steps[props.modelValue].completed = !shouldSetError;\n        emit(\"update:steps\", steps);\n      }\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaStepper.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717508122,
+      "end": 1709717508355,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508355,
+      "end": 1709717508355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508355,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508355,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508356,
+      "end": 1709717508356,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508357,
+      "end": 1709717508357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508357,
+      "end": 1709717508357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508357,
+      "end": 1709717508357,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508358,
+      "end": 1709717508358,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508359,
+      "end": 1709717508359,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508359,
+      "end": 1709717508359,
+      "order": "normal"
+    }
+  ]
+}

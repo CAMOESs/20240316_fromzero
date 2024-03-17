@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-modal/VaModal.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, h, Transition, shallowRef, toRef, computed, watchEffect, watch, onMounted, nextTick } from \"vue\";\nimport { V as VaButton } from \"../va-button/index.js\";\nimport { V as VaIcon } from \"../va-icon/index.js\";\nimport { u as useBlur } from \"./hooks/useBlur.js\";\nimport { u as useStatefulEmits, a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.js\";\nimport { u as useTrapFocus } from \"../../composables/useTrapFocus.js\";\nimport { u as useModalLevel } from \"../../composables/useModalLevel.js\";\nimport { u as useWindow } from \"../../composables/useWindow.js\";\nimport { u as useTeleported } from \"../../composables/useTeleported.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nimport { u as useClickOutside } from \"../../composables/useClickOutside.js\";\nimport { u as useDocument } from \"../../composables/useDocument.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nconst WithTransition = defineComponent({\n  name: \"ModalElement\",\n  inheritAttrs: false,\n  props: {\n    ...useComponentPresetProp,\n    isTransition: { type: Boolean, default: true }\n  },\n  setup: (props, { slots, attrs }) => () => {\n    var _a;\n    return props.isTransition ? h(Transition, { ...attrs }, slots) : (_a = slots.default) == null ? void 0 : _a.call(slots, attrs);\n  }\n});\nconst _sfc_main = defineComponent({\n  name: \"VaModal\",\n  inheritAttrs: false,\n  components: { VaButton, VaIcon, WithTransition },\n  emits: [\n    ...useStatefulEmits,\n    \"cancel\",\n    \"ok\",\n    \"before-open\",\n    \"open\",\n    \"before-close\",\n    \"close\",\n    \"click-outside\"\n  ],\n  props: {\n    ...useStatefulProps,\n    modelValue: { type: Boolean, default: false },\n    attachElement: { type: String, default: \"body\" },\n    allowBodyScroll: { type: Boolean, default: false },\n    disableAttachment: { type: Boolean, default: false },\n    title: { type: String, default: \"\" },\n    message: { type: String, default: \"\" },\n    okText: { type: String, default: \"$t:ok\" },\n    cancelText: { type: String, default: \"$t:cancel\" },\n    hideDefaultActions: { type: Boolean, default: false },\n    fullscreen: { type: Boolean, default: false },\n    closeButton: { type: Boolean, default: false },\n    mobileFullscreen: { type: Boolean, default: true },\n    noDismiss: { type: Boolean, default: false },\n    noOutsideDismiss: { type: Boolean, default: false },\n    noEscDismiss: { type: Boolean, default: false },\n    maxWidth: { type: String, default: \"\" },\n    maxHeight: { type: String, default: \"\" },\n    anchorClass: { type: String },\n    size: {\n      type: String,\n      default: \"medium\",\n      validator: (value) => [\"medium\", \"small\", \"large\"].includes(value)\n    },\n    fixedLayout: { type: Boolean, default: false },\n    withoutTransitions: { type: Boolean, default: false },\n    overlay: { type: Boolean, default: true },\n    overlayOpacity: { type: [Number, String], default: 0.6 },\n    showNestedOverlay: { type: Boolean, default: false },\n    blur: { type: Boolean, default: false },\n    zIndex: { type: [Number, String], default: void 0 },\n    backgroundColor: { type: String, default: \"background-secondary\" },\n    noPadding: { type: Boolean, default: false },\n    beforeClose: { type: Function },\n    beforeOk: { type: Function },\n    beforeCancel: { type: Function },\n    ariaCloseLabel: { type: String, default: \"$t:close\" }\n  },\n  setup(props, { emit }) {\n    const rootElement = shallowRef();\n    const modalDialog = shallowRef();\n    const { trapFocusIn, freeFocus } = useTrapFocus();\n    const {\n      registerModal,\n      unregisterModal,\n      isTopLevelModal,\n      isLowestLevelModal\n    } = useModalLevel();\n    const { getColor } = useColors();\n    const { textColorComputed } = useTextColor(toRef(props, \"backgroundColor\"));\n    const { valueComputed } = useStateful(props, emit);\n    const computedClass = computed(() => ({\n      \"va-modal--fullscreen\": props.fullscreen,\n      \"va-modal--mobile-fullscreen\": props.mobileFullscreen,\n      \"va-modal--fixed-layout\": props.fixedLayout,\n      \"va-modal--no-padding\": props.noPadding,\n      [`va-modal--size-${props.size}`]: props.size !== \"medium\"\n    }));\n    const computedModalContainerStyle = computed(() => ({ \"z-index\": props.zIndex }));\n    const computedDialogStyle = computed(() => ({\n      maxWidth: props.maxWidth,\n      maxHeight: props.maxHeight,\n      color: textColorComputed.value,\n      background: getColor(props.backgroundColor)\n    }));\n    const computedOverlayClass = computed(() => ({\n      \"va-modal__overlay--lowest\": isLowestLevelModal.value,\n      \"va-modal__overlay--top\": isTopLevelModal.value\n    }));\n    const getOverlayOpacity = () => {\n      if (props.showNestedOverlay && !isLowestLevelModal.value) {\n        return \"var(--va-modal-overlay-nested-opacity)\";\n      }\n      return \"var(--va-modal-overlay-opacity)\";\n    };\n    const computedOverlayStyles = computed(() => {\n      if (!props.overlay) {\n        return;\n      }\n      if (isTopLevelModal.value || props.showNestedOverlay) {\n        return {\n          \"background-color\": \"var(--va-modal-overlay-color)\",\n          opacity: getOverlayOpacity(),\n          \"z-index\": props.zIndex && Number(props.zIndex) - 1\n        };\n      }\n      return \"\";\n    });\n    const show = () => {\n      valueComputed.value = true;\n    };\n    const hide = (cb) => {\n      const _hide = () => {\n        valueComputed.value = false;\n        cb == null ? void 0 : cb();\n      };\n      props.beforeClose ? props.beforeClose(_hide) : _hide();\n    };\n    const toggle = () => {\n      valueComputed.value = !valueComputed.value;\n    };\n    const cancel = () => {\n      const _hide = () => {\n        hide(() => emit(\"cancel\"));\n      };\n      props.beforeCancel ? props.beforeCancel(_hide) : _hide();\n    };\n    const ok = () => {\n      const _hide = () => {\n        hide(() => emit(\"ok\"));\n      };\n      props.beforeOk ? props.beforeOk(_hide) : _hide();\n    };\n    const trapFocusInModal = () => {\n      nextTick(() => {\n        if (modalDialog.value) {\n          trapFocusIn(modalDialog.value);\n        }\n      });\n    };\n    const onBeforeEnterTransition = (el) => emit(\"before-open\", el);\n    const onAfterEnterTransition = (el) => emit(\"open\", el);\n    const onBeforeLeaveTransition = (el) => emit(\"before-close\", el);\n    const onAfterLeaveTransition = (el) => emit(\"close\", el);\n    const listenKeyUp = (e) => {\n      const hideModal = () => {\n        if (e.code === \"Escape\" && !props.noEscDismiss && !props.noDismiss && isTopLevelModal.value) {\n          cancel();\n        }\n      };\n      setTimeout(hideModal);\n    };\n    useClickOutside([modalDialog], () => {\n      if (!valueComputed.value || props.noOutsideDismiss || props.noDismiss || !isTopLevelModal.value) {\n        return;\n      }\n      emit(\"click-outside\");\n      cancel();\n    });\n    const window = useWindow();\n    watchEffect(() => {\n      var _a, _b;\n      if (valueComputed.value) {\n        (_a = window.value) == null ? void 0 : _a.addEventListener(\"keyup\", listenKeyUp);\n      } else {\n        (_b = window.value) == null ? void 0 : _b.removeEventListener(\"keyup\", listenKeyUp);\n      }\n    });\n    useBlur(toRef(props, \"blur\"), valueComputed);\n    const documentRef = useDocument();\n    const setBodyOverflow = (overflow) => {\n      if (!documentRef.value || props.allowBodyScroll) {\n        return;\n      }\n      documentRef.value.body.style.overflow = overflow;\n    };\n    watch(valueComputed, (newValueComputed) => {\n      if (newValueComputed) {\n        registerModal();\n        setBodyOverflow(\"hidden\");\n        return;\n      }\n      if (isLowestLevelModal.value) {\n        freeFocus();\n        setBodyOverflow(\"\");\n      }\n      unregisterModal();\n    });\n    watch(isTopLevelModal, (newIsTopLevelModal) => {\n      if (newIsTopLevelModal) {\n        trapFocusInModal();\n      }\n    });\n    onMounted(() => {\n      if (valueComputed.value) {\n        registerModal();\n      }\n    });\n    const { tp, t } = useTranslation();\n    const {\n      teleportFromAttrs,\n      teleportedAttrs,\n      findTeleportedFrom\n    } = useTeleported();\n    const slotBind = { show, hide, toggle, cancel, ok };\n    return {\n      tp,\n      t,\n      isLowestLevelModal,\n      isTopLevelModal,\n      computedOverlayClass,\n      getColor,\n      rootElement,\n      modalDialog,\n      valueComputed,\n      computedClass,\n      computedDialogStyle,\n      computedModalContainerStyle,\n      computedOverlayStyles,\n      slotBind,\n      teleportFromAttrs,\n      teleportedAttrs,\n      findTeleportedFrom,\n      show,\n      hide,\n      toggle,\n      cancel,\n      ok,\n      onBeforeEnterTransition,\n      onAfterEnterTransition,\n      onBeforeLeaveTransition,\n      onAfterLeaveTransition,\n      listenKeyUp\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaModal.css';\n//# sourceMappingURL=VaModal.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717417450,
+      "end": 1709717417790,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717417790,
+      "end": 1709717417790,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717417790,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717417791,
+      "end": 1709717417791,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717417791,
+      "end": 1709717417792,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717417792,
+      "end": 1709717417792,
+      "order": "normal"
+    }
+  ]
+}

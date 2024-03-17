@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-menu-list/VaMenuList.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, ref, computed, Fragment } from \"vue\";\nimport { _ as _VaMenuItem } from \"./components/VaMenuItem.mjs\";\nimport { _ as _VaMenuGroup } from \"./components/VaMenuGroup.mjs\";\nimport { u as useMenuKeyboardNavigation, m as makeMenuContainerAttributes } from \"./composables/useMenuKeyboardNavigation.mjs\";\nimport { u as useSelectableListProps, a as useSelectableList } from \"../../composables/useSelectableList.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaMenuList\",\n  components: { VaMenuItem: _VaMenuItem, VaMenuGroup: _VaMenuGroup },\n  props: {\n    ...useSelectableListProps,\n    options: { type: Array, default: () => [] }\n  },\n  emits: [\"selected\"],\n  setup(props) {\n    const container = ref();\n    useMenuKeyboardNavigation(container);\n    const { getText, getValue, getDisabled, getGroupBy, getTrackBy } = useSelectableList(props);\n    const optionGroups = computed(() => props.options.reduce((groups, option) => {\n      const groupBy = getGroupBy(option);\n      if (!groupBy) {\n        groups._noGroup.push(option);\n      } else {\n        if (!groups[groupBy]) {\n          groups[groupBy] = [];\n        }\n        groups[groupBy].push(option);\n      }\n      return groups;\n    }, { _noGroup: [] }));\n    const getUnSlottedVNodes = (nodes) => {\n      if (Array.isArray(nodes) && nodes[0].type === Fragment) {\n        return nodes[0].children;\n      }\n      return nodes;\n    };\n    const getVNodeComponentName = (node) => {\n      if (typeof node.type === \"object\" && \"name\" in node.type && typeof node.type.name === \"string\") {\n        return node.type.name;\n      }\n      return \"\";\n    };\n    const getVNodeKey = (node) => {\n      if (typeof node.type === \"string\") {\n        return node.type;\n      }\n      if (typeof node.type === \"object\" && \"name\" in node.type && typeof node.type.name === \"string\") {\n        return node.type.name;\n      }\n      return String(node.key);\n    };\n    return {\n      container,\n      optionGroups,\n      makeMenuContainerAttributes,\n      getVNodeComponentName,\n      getUnSlottedVNodes,\n      getVNodeKey,\n      getText,\n      getValue,\n      getDisabled,\n      getTrackBy\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaMenuList.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717506592,
+      "end": 1709717506846,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506846,
+      "end": 1709717506846,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717506846,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717506847,
+      "end": 1709717506847,
+      "order": "normal"
+    }
+  ]
+}

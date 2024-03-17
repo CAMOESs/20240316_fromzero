@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-modal/hooks/useModal.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { getCurrentInstance } from \"vue\";\nimport { c as createModalInstance } from \"../modal.js\";\nconst useModal = () => {\n  var _a;\n  const appContext = (_a = getCurrentInstance()) == null ? void 0 : _a.appContext;\n  if (!appContext) {\n    throw new Error(\"useModal can be used only in setup function. You can use app.config.globalProperties.$vaModal outside setup function\");\n  }\n  const init = (options) => {\n    return createModalInstance(options, appContext);\n  };\n  const confirm = (options) => {\n    if (typeof options === \"string\") {\n      return new Promise((resolve, reject) => {\n        createModalInstance({\n          message: options,\n          onOk() {\n            resolve(true);\n          },\n          onCancel() {\n            resolve(false);\n          }\n        }, appContext);\n      });\n    }\n    return new Promise((resolve, reject) => {\n      createModalInstance({\n        ...options,\n        onOk() {\n          var _a2;\n          (_a2 = options == null ? void 0 : options.onOk) == null ? void 0 : _a2.call(options);\n          resolve(true);\n        },\n        onCancel() {\n          var _a2;\n          (_a2 = options == null ? void 0 : options.onCancel) == null ? void 0 : _a2.call(options);\n          resolve(false);\n        }\n      }, appContext);\n    });\n  };\n  return { init, confirm };\n};\nexport {\n  useModal as u\n};\n//# sourceMappingURL=useModal.js.map\n",
+      "start": 1709717402487,
+      "end": 1709717413382,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717413382,
+      "end": 1709717413382,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717413382,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717413383,
+      "end": 1709717413383,
+      "order": "normal"
+    }
+  ]
+}

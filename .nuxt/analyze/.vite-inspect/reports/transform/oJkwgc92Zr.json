@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/plugins/normalizer.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineNuxtPlugin(({}) => {\n  return {\n    provide: {\n      capitilize_text: (text: string | undefined | null): string | null => {\n        //   const data = await useFetch(\"/api\"+ url);\n        //   return data.data.value;\n        if (!text) return null;\n\n        return text\n          .split(\" \")\n          .map((e) => e && e[0].toUpperCase() + e.slice(1).toLowerCase())\n          .join(\" \")\n          .trim();\n      },\n      remove_accent: (text: string | undefined | null): string | null => {\n        if (!text) return null;\n        return text\n          .toUpperCase()\n          .replaceAll(\"É\", \"E\")\n          .replaceAll(\"È\", \"E\")\n          .replaceAll(\"Ê\", \"E\")\n          .replaceAll(\"Ë\", \"E\")\n          .replaceAll(\"Î\", \"I\")\n          .replaceAll(\"Ï\", \"I\")\n          .replaceAll(\"Ô\", \"O\")\n          .replaceAll(\"Ö\", \"O\")\n          .replaceAll(\"Œ\", \"OE\")\n          .replaceAll(\"Æ\", \"AE\")\n          .replaceAll(\"À\", \"A\")\n          .replaceAll(\"Ç\", \"C\")\n          .replaceAll(\"Ü\", \"U\")\n          .replaceAll(\"Ù\", \"U\")\n          .trim();\n      },\n    },\n  };\n});\n",
+      "start": 1709717376523,
+      "end": 1709717377589,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717377589,
+      "end": 1709717377589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717377590,
+      "end": 1709717377590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717377590,
+      "end": 1709717377590,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717377590,
+      "end": 1709717377590,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineNuxtPlugin(({}) => {\n  return {\n    provide: {\n      capitilize_text: (text) => {\n        if (!text)\n          return null;\n        return text.split(\" \").map((e) => e && e[0].toUpperCase() + e.slice(1).toLowerCase()).join(\" \").trim();\n      },\n      remove_accent: (text) => {\n        if (!text)\n          return null;\n        return text.toUpperCase().replaceAll(\"É\", \"E\").replaceAll(\"È\", \"E\").replaceAll(\"Ê\", \"E\").replaceAll(\"Ë\", \"E\").replaceAll(\"Î\", \"I\").replaceAll(\"Ï\", \"I\").replaceAll(\"Ô\", \"O\").replaceAll(\"Ö\", \"O\").replaceAll(\"Œ\", \"OE\").replaceAll(\"Æ\", \"AE\").replaceAll(\"À\", \"A\").replaceAll(\"Ç\", \"C\").replaceAll(\"Ü\", \"U\").replaceAll(\"Ù\", \"U\").trim();\n      }\n    }\n  };\n});\n",
+      "start": 1709717377590,
+      "end": 1709717378199,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/plugins/normalizer.ts"
+        ],
+        "sourcesContent": [
+          "export default defineNuxtPlugin(({}) => {\n  return {\n    provide: {\n      capitilize_text: (text: string | undefined | null): string | null => {\n        //   const data = await useFetch(\"/api\"+ url);\n        //   return data.data.value;\n        if (!text) return null;\n\n        return text\n          .split(\" \")\n          .map((e) => e && e[0].toUpperCase() + e.slice(1).toLowerCase())\n          .join(\" \")\n          .trim();\n      },\n      remove_accent: (text: string | undefined | null): string | null => {\n        if (!text) return null;\n        return text\n          .toUpperCase()\n          .replaceAll(\"É\", \"E\")\n          .replaceAll(\"È\", \"E\")\n          .replaceAll(\"Ê\", \"E\")\n          .replaceAll(\"Ë\", \"E\")\n          .replaceAll(\"Î\", \"I\")\n          .replaceAll(\"Ï\", \"I\")\n          .replaceAll(\"Ô\", \"O\")\n          .replaceAll(\"Ö\", \"O\")\n          .replaceAll(\"Œ\", \"OE\")\n          .replaceAll(\"Æ\", \"AE\")\n          .replaceAll(\"À\", \"A\")\n          .replaceAll(\"Ç\", \"C\")\n          .replaceAll(\"Ü\", \"U\")\n          .replaceAll(\"Ù\", \"U\")\n          .trim();\n      },\n    },\n  };\n});\n"
+        ],
+        "mappings": "AAAA,eAAe,iBAAiB,CAAC,CAAC,MAAM;AACtC,SAAO;AAAA,IACL,SAAS;AAAA,MACP,iBAAiB,CAAC,SAAmD;AAGnE,YAAI,CAAC;AAAM,iBAAO;AAElB,eAAO,KACJ,MAAM,GAAG,EACT,IAAI,CAAC,MAAM,KAAK,EAAE,CAAC,EAAE,YAAY,IAAI,EAAE,MAAM,CAAC,EAAE,YAAY,CAAC,EAC7D,KAAK,GAAG,EACR,KAAK;AAAA,MACV;AAAA,MACA,eAAe,CAAC,SAAmD;AACjE,YAAI,CAAC;AAAM,iBAAO;AAClB,eAAO,KACJ,YAAY,EACZ,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,IAAI,EACpB,WAAW,KAAK,IAAI,EACpB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,WAAW,KAAK,GAAG,EACnB,KAAK;AAAA,MACV;AAAA,IACF;AAAA,EACF;AACF,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717378199,
+      "end": 1709717378200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717378200,
+      "end": 1709717378200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717378206,
+      "end": 1709717378206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717378207,
+      "end": 1709717378207,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717378207,
+      "end": 1709717378207,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717378281,
+      "end": 1709717378345,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717378348,
+      "end": 1709717378348,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717378348,
+      "end": 1709717378348,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717378350,
+      "end": 1709717378350,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717378351,
+      "end": 1709717378351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717378351,
+      "end": 1709717378351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717378360,
+      "end": 1709717378360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717378361,
+      "end": 1709717378361,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717378361,
+      "end": 1709717378361,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717378361,
+      "end": 1709717378363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nexport default defineNuxtPlugin(({}) => {\n  return {\n    provide: {\n      capitilize_text: (text) => {\n        if (!text)\n          return null;\n        return text.split(\" \").map((e) => e && e[0].toUpperCase() + e.slice(1).toLowerCase()).join(\" \").trim();\n      },\n      remove_accent: (text) => {\n        if (!text)\n          return null;\n        return text.toUpperCase().replaceAll(\"É\", \"E\").replaceAll(\"È\", \"E\").replaceAll(\"Ê\", \"E\").replaceAll(\"Ë\", \"E\").replaceAll(\"Î\", \"I\").replaceAll(\"Ï\", \"I\").replaceAll(\"Ô\", \"O\").replaceAll(\"Ö\", \"O\").replaceAll(\"Œ\", \"OE\").replaceAll(\"Æ\", \"AE\").replaceAll(\"À\", \"A\").replaceAll(\"Ç\", \"C\").replaceAll(\"Ü\", \"U\").replaceAll(\"Ù\", \"U\").trim();\n      }\n    }\n  };\n});\n",
+      "start": 1709717378368,
+      "end": 1709717378407,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/G,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717378414,
+      "end": 1709717378475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717378476,
+      "end": 1709717378476,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717378477,
+      "end": 1709717378477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717378477,
+      "end": 1709717378477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717378478,
+      "end": 1709717378478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717378478,
+      "end": 1709717378479,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717378479,
+      "end": 1709717378480,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717378480,
+      "end": 1709717378480,
+      "order": "normal"
+    }
+  ]
+}

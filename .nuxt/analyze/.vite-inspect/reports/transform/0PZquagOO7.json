@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-time-picker/components/VaTimePickerColumn/VaTimePickerColumn.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { V as VaTimePickerColumnCell } from \"../VaTimePickerColumnCell.js\";\nimport { defineComponent, shallowRef, watch, onMounted, nextTick } from \"vue\";\nimport { d as debounce } from \"../../../../../vendor.js\";\nimport { a as useFocusEmits, u as useFocus } from \"../../../../composables/useFocus.js\";\nimport { u as useSyncProp } from \"../../../../composables/useSyncProp.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaTimePickerColumn\",\n  components: { VaTimePickerColumnCell },\n  props: {\n    items: { type: Array, default: () => [] },\n    activeItemIndex: { type: Number, default: 0 },\n    cellHeight: { type: Number, default: 30 }\n  },\n  emits: [\"item-selected\", \"update:activeItemIndex\", ...useFocusEmits],\n  setup(props, { emit }) {\n    const rootElement = shallowRef();\n    const { focus, blur } = useFocus(rootElement, emit);\n    const [syncActiveItemIndex] = useSyncProp(\"activeItemIndex\", props, emit);\n    watch(syncActiveItemIndex, (newVal) => {\n      scrollTo(newVal);\n    });\n    onMounted(() => scrollTo(syncActiveItemIndex.value, false));\n    const scrollTo = (index, animated = true) => {\n      nextTick(() => {\n        var _a, _b;\n        (_b = (_a = rootElement.value) == null ? void 0 : _a.scrollTo) == null ? void 0 : _b.call(_a, {\n          behavior: animated ? \"smooth\" : \"auto\",\n          top: index * props.cellHeight\n        });\n      });\n    };\n    const makeActiveByIndex = (index) => {\n      syncActiveItemIndex.value = index;\n      nextTick(() => scrollTo(syncActiveItemIndex.value));\n    };\n    const makeActiveNext = (times) => {\n      syncActiveItemIndex.value = (syncActiveItemIndex.value + (times || 1)) % props.items.length;\n      nextTick(() => scrollTo(syncActiveItemIndex.value));\n    };\n    const makeActivePrev = (times) => {\n      syncActiveItemIndex.value = (syncActiveItemIndex.value - (times || 1) + props.items.length) % props.items.length;\n      nextTick(() => scrollTo(syncActiveItemIndex.value));\n    };\n    const onCellClick = (index) => {\n      syncActiveItemIndex.value = index;\n    };\n    const formatCell = (n) => {\n      if (!Number.isInteger(n)) {\n        return n;\n      }\n      return Number(n) < 10 ? `0${n}` : `${n}`;\n    };\n    const getIndex = () => {\n      const scrollTop = rootElement.value.scrollTop;\n      const calculatedIndex = Math.max(\n        (scrollTop - scrollTop % props.cellHeight) / props.cellHeight,\n        scrollTop / props.cellHeight\n      );\n      if (calculatedIndex >= props.items.length) {\n        return props.items.length - 1;\n      }\n      if (calculatedIndex < 0) {\n        return 0;\n      }\n      if (syncActiveItemIndex.value * props.cellHeight < scrollTop) {\n        return Math.ceil(calculatedIndex);\n      } else if (syncActiveItemIndex.value * props.cellHeight > scrollTop) {\n        return Math.floor(calculatedIndex);\n      } else {\n        return Math.round(calculatedIndex);\n      }\n    };\n    const onScroll = debounce(() => {\n      if (rootElement.value && syncActiveItemIndex.value !== -1) {\n        syncActiveItemIndex.value = getIndex();\n      }\n    }, 200);\n    return {\n      syncActiveItemIndex,\n      rootElement,\n      makeActiveNext,\n      makeActivePrev,\n      makeActiveByIndex,\n      onScroll,\n      onCellClick,\n      formatCell,\n      focus,\n      blur\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaTimePickerColumn.css';\n//# sourceMappingURL=VaTimePickerColumn.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717429410,
+      "end": 1709717429655,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717429658,
+      "end": 1709717429658,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717429659,
+      "end": 1709717429659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717429659,
+      "end": 1709717429659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717429659,
+      "end": 1709717429659,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717429659,
+      "end": 1709717429662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717429662,
+      "end": 1709717429662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717429662,
+      "end": 1709717429662,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717429662,
+      "end": 1709717429662,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717429662,
+      "end": 1709717429662,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717429662,
+      "end": 1709717429662,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717429664,
+      "end": 1709717429664,
+      "order": "normal"
+    }
+  ]
+}

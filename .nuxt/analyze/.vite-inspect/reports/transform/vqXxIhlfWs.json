@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/composables/usePlacementAliases.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed } from \"vue\";\nconst verticalPlacement = [\"top\", \"bottom\"];\nconst horizontalPlacement = [\"left\", \"right\"];\nconst placementPosition = [...verticalPlacement, ...horizontalPlacement];\nconst placementAlignment = [\"start\", \"end\", \"center\"];\nconst placementsPositions = placementPosition.reduce((acc, position) => {\n  acc.push(position);\n  placementAlignment.forEach((alignment) => acc.push(`${position}-${alignment}`));\n  return acc;\n}, [\"auto\"]);\nconst placementAliasesPositions = verticalPlacement.reduce((acc, yPosition) => {\n  horizontalPlacement.forEach((xPosition) => {\n    acc.push(`${yPosition}-${xPosition}`);\n    acc.push(`${xPosition}-${yPosition}`);\n  });\n  return acc;\n}, []);\nconst placementsPositionsWithAliases = [...placementsPositions, ...placementAliasesPositions];\nconst aliasToPlacement = {\n  \"top-left\": \"top-start\",\n  \"left-top\": \"top-start\",\n  \"top-right\": \"top-end\",\n  \"right-top\": \"top-end\",\n  \"bottom-left\": \"bottom-start\",\n  \"left-bottom\": \"bottom-start\",\n  \"bottom-right\": \"bottom-end\",\n  \"right-bottom\": \"bottom-end\"\n};\nconst usePlacementAliasesProps = {\n  placement: {\n    type: String,\n    default: \"auto\",\n    validator: (position) => placementsPositionsWithAliases.includes(position)\n  }\n};\nconst usePlacementAliases = (props) => {\n  const placementArray = computed(() => {\n    const placement = aliasToPlacement[props.placement] || props.placement;\n    return placement.split(\"-\");\n  });\n  const position = computed(() => {\n    const position2 = placementArray.value[0];\n    return position2 === \"auto\" ? \"bottom\" : position2;\n  });\n  const align = computed(() => {\n    return placementArray.value[1] || \"center\";\n  });\n  return { position, align };\n};\nexport {\n  usePlacementAliasesProps as a,\n  placementsPositionsWithAliases as p,\n  usePlacementAliases as u\n};\n//# sourceMappingURL=usePlacementAliases.js.map\n",
+      "start": 1709717422319,
+      "end": 1709717422673,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422673,
+      "end": 1709717422673,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422673,
+      "end": 1709717422674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422674,
+      "end": 1709717422674,
+      "order": "normal"
+    }
+  ]
+}

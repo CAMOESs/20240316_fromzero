@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-radio/VaRadio.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaRadio.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, normalizeStyle, withCtx, createElementVNode, mergeProps, createElementBlock, Fragment, renderList, normalizeClass, renderSlot, normalizeProps, guardReactiveProps, createTextVNode, toDisplayString, createCommentVNode } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaRadio_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = [\"role\"];\nconst _hoisted_2 = [\"value\", \"checked\", \"aria-checked\", \"onChange\"];\nconst _hoisted_3 = /* @__PURE__ */ createElementVNode(\"span\", {\n  \"aria-hidden\": \"true\",\n  class: \"va-radio__icon\"\n}, [\n  /* @__PURE__ */ createElementVNode(\"span\", { class: \"va-radio__icon__background\" }),\n  /* @__PURE__ */ createElementVNode(\"span\", { class: \"va-radio__icon__dot\" })\n], -1);\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_VaMessageListWrapper = resolveComponent(\"VaMessageListWrapper\");\n  return openBlock(), createBlock(_component_VaMessageListWrapper, {\n    disabled: _ctx.disabled,\n    success: _ctx.success,\n    messages: _ctx.messages,\n    error: _ctx.computedError,\n    \"error-messages\": _ctx.computedErrorMessages,\n    \"error-count\": _ctx.errorCount,\n    onBlur: _ctx.onBlur,\n    style: normalizeStyle(`--va-flex-direction: ${String(_ctx.flexDirection)};--va-label-style-color: ${String(_ctx.labelStyle.color)};--va-icon-computed-styles-border-color: ${String(_ctx.iconComputedStyles.borderColor)};--va-icon-dot-computed-styles-border-color: ${String(_ctx.iconDotComputedStyles.borderColor)};--va-icon-dot-computed-styles-background-color: ${String(_ctx.iconDotComputedStyles.backgroundColor)};--va-icon-background-computed-styles-background-color: ${String(_ctx.iconBackgroundComputedStyles.backgroundColor)}`)\n  }, {\n    default: withCtx(({ ariaAttributes }) => [\n      createElementVNode(\"div\", mergeProps({\n        ref: \"container\",\n        class: \"va-radio\",\n        role: _ctx.roleComputed\n      }, ariaAttributes), [\n        (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.computedOptions, (option, index) => {\n          return openBlock(), createElementBlock(\"label\", {\n            key: index,\n            class: normalizeClass([_ctx.radioClass(option), \"va-radio__square\"])\n          }, [\n            createElementVNode(\"input\", mergeProps({\n              ref_for: true,\n              ref: \"input\",\n              class: \"va-radio__input\",\n              type: \"radio\",\n              role: \"radio\",\n              value: _ctx.isChecked(option),\n              checked: _ctx.isChecked(option),\n              \"aria-checked\": _ctx.isChecked(option)\n            }, { ..._ctx.inputAttributesComputed(option), ...ariaAttributes }, {\n              onChange: ($event) => _ctx.selectOption(_ctx.getValue(option), $event),\n              onFocus: _cache[0] || (_cache[0] = (...args) => _ctx.onFocus && _ctx.onFocus(...args)),\n              onBlur: _cache[1] || (_cache[1] = (...args) => _ctx.onBlur && _ctx.onBlur(...args))\n            }), null, 16, _hoisted_2),\n            renderSlot(_ctx.$slots, \"icon\", normalizeProps(guardReactiveProps({\n              value: _ctx.isChecked(option),\n              text: _ctx.getText(option),\n              disabled: _ctx.getDisabled(option),\n              index\n            })), () => [\n              _hoisted_3\n            ]),\n            _ctx.getText(option) || _ctx.$slots.default ? (openBlock(), createElementBlock(\"div\", {\n              key: 0,\n              ref_for: true,\n              ref: \"label\",\n              class: \"va-radio__text\"\n            }, [\n              renderSlot(_ctx.$slots, \"default\", normalizeProps(guardReactiveProps({\n                value: _ctx.isChecked(option),\n                text: _ctx.getText(option),\n                disabled: _ctx.getDisabled(option),\n                index\n              })), () => [\n                createTextVNode(toDisplayString(_ctx.getText(option)), 1)\n              ])\n            ], 512)) : createCommentVNode(\"\", true)\n          ], 2);\n        }), 128))\n      ], 16, _hoisted_1)\n    ]),\n    _: 3\n  }, 8, [\"disabled\", \"success\", \"messages\", \"error\", \"error-messages\", \"error-count\", \"onBlur\", \"style\"]);\n}\nconst _VaRadio = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaRadio as _\n};\n//# sourceMappingURL=VaRadio.mjs.map\n",
+      "start": 1709717501788,
+      "end": 1709717502038,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502039,
+      "end": 1709717502039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502039,
+      "end": 1709717502040,
+      "order": "normal"
+    }
+  ]
+}

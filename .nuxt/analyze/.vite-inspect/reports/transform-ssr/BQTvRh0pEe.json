@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-pagination/VaPagination.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, ref, computed, toRefs, watch, nextTick } from \"vue\";\nimport { b as clamp, p as pick } from \"../../../vendor.mjs\";\nimport { i as isDev } from \"../../utils/env.mjs\";\nimport { s as setPaginationRange } from \"./setPaginationRange.mjs\";\nimport { V as VaButton } from \"../va-button/index.mjs\";\nimport { u as useStatefulEmits, a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { u as useArrayRefs } from \"../../composables/useArrayRefs.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { u as useBem } from \"../../composables/useBem.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaPagination\",\n  components: { VaButton },\n  emits: [...useStatefulEmits],\n  props: {\n    ...useStatefulProps,\n    ...useComponentPresetProp,\n    modelValue: { type: Number, default: 1 },\n    visiblePages: { type: Number, default: 0 },\n    pages: { type: Number, default: 0 },\n    disabled: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" },\n    size: {\n      type: String,\n      default: \"medium\",\n      validator: (v) => [\"small\", \"medium\", \"large\"].includes(v)\n    },\n    boundaryLinks: { type: Boolean, default: true },\n    boundaryNumbers: { type: Boolean, default: false },\n    directionLinks: { type: Boolean, default: true },\n    input: { type: Boolean, default: false },\n    hideOnSinglePage: { type: Boolean, default: false },\n    total: { type: Number, default: null },\n    pageSize: { type: Number, default: null },\n    boundaryIconLeft: { type: String, default: \"va-arrow-first\" },\n    boundaryIconRight: { type: String, default: \"va-arrow-last\" },\n    directionIconLeft: { type: String, default: \"va-arrow-left\" },\n    directionIconRight: { type: String, default: \"va-arrow-right\" },\n    gapped: { type: Boolean, default: false },\n    borderColor: { type: String, default: \"\" },\n    rounded: { type: Boolean, default: false },\n    activePageColor: { type: String, default: \"\" },\n    buttonsPreset: { type: String, default: \"primary\" },\n    ariaLabel: { type: String, default: \"$t:pagination\" },\n    ariaGoToTheFirstPageLabel: { type: String, default: \"$t:goToTheFirstPage\" },\n    ariaGoToPreviousPageLabel: { type: String, default: \"$t:goToPreviousPage\" },\n    ariaGoToSpecificPageLabel: { type: String, default: \"$t:goToSpecificPage\" },\n    ariaGoToSpecificPageInputLabel: { type: String, default: \"$t:goToSpecificPageInput\" },\n    ariaGoToNextPageLabel: { type: String, default: \"$t:goNextPage\" },\n    ariaGoToLastPageLabel: { type: String, default: \"$t:goLastPage\" }\n  },\n  setup(props, { emit }) {\n    const htmlInput = shallowRef();\n    const inputValue = ref(\"\");\n    const usesTotal = computed(() => !!((props.total || props.total === 0) && props.pageSize));\n    const { valueComputed } = useStateful(props, emit);\n    const currentValue = computed({\n      get: () => usesTotal.value ? Math.ceil(valueComputed.value / props.pageSize) || 1 : valueComputed.value,\n      set: (value) => {\n        valueComputed.value = value;\n      }\n    });\n    const paginationRange = computed(() => {\n      const { visiblePages, total, pageSize, boundaryNumbers, pages } = props;\n      const value = currentValue.value || 1;\n      const totalPages = usesTotal.value ? Math.ceil(total / pageSize) : pages;\n      return setPaginationRange(value, visiblePages, totalPages, boundaryNumbers);\n    });\n    const lastPage = computed(() => usesTotal.value ? Math.ceil(props.total / props.pageSize) || 1 : +props.pages);\n    const isLastPageNotVisible = computed(() => !!props.visiblePages && lastPage.value > props.visiblePages || props.input);\n    const showBoundaryLinks = computed(() => {\n      const { boundaryLinks, boundaryNumbers } = props;\n      return isLastPageNotVisible.value && boundaryLinks && !boundaryNumbers;\n    });\n    const showDirectionLinks = computed(() => isLastPageNotVisible.value && props.directionLinks);\n    const showPagination = computed(() => lastPage.value > 1 || !props.hideOnSinglePage && lastPage.value <= 1);\n    const focusInput = () => {\n      inputValue.value = String(currentValue.value);\n      nextTick(() => {\n        var _a;\n        return (_a = htmlInput.value) == null ? void 0 : _a.setSelectionRange(0, htmlInput.value.value.length);\n      });\n    };\n    const { setItemRefByIndex, itemRefs } = useArrayRefs();\n    const onUserInput = (pageNum) => {\n      var _a;\n      if (pageNum === \"...\" || pageNum === currentValue.value) {\n        return;\n      }\n      const limitedPageNum = clamp(pageNum, 1, lastPage.value);\n      currentValue.value = usesTotal.value ? (limitedPageNum - 1) * props.pageSize + 1 : limitedPageNum;\n      (_a = itemRefs.value[pageNum - 1]) == null ? void 0 : _a.focus();\n    };\n    const resetInput = () => {\n      var _a;\n      inputValue.value = \"\";\n      (_a = htmlInput.value) == null ? void 0 : _a.blur();\n    };\n    const changeValue = () => {\n      if (+inputValue.value === currentValue.value) {\n        resetInput();\n      }\n      if (!inputValue.value.length) {\n        return;\n      }\n      let pageNum = Number.parseInt(inputValue.value);\n      switch (true) {\n        case pageNum < 1:\n          pageNum = 1;\n          break;\n        case pageNum > lastPage.value:\n          pageNum = lastPage.value;\n          break;\n        case isNaN(pageNum):\n          pageNum = currentValue.value;\n          break;\n      }\n      onUserInput(pageNum);\n      resetInput();\n    };\n    const { getColor, colorToRgba } = useColors();\n    const inputBorderColorComputed = computed(() => {\n      const { color, buttonsPreset } = toRefs(props);\n      if (!color.value) {\n        return \"transparent\";\n      }\n      switch (buttonsPreset.value) {\n        case \"default\":\n          return getColor(color.value);\n        case void 0:\n        case \"primary\":\n          return colorToRgba(getColor(color.value), 0.1);\n        default:\n          return \"transparent\";\n      }\n    });\n    const inputStyleComputed = computed(() => ({\n      cursor: \"default\",\n      color: getColor(props.color),\n      opacity: props.disabled ? 0.4 : 1,\n      borderColor: inputBorderColorComputed.value\n    }));\n    watch([usesTotal, () => props.pages], () => {\n      if (isDev && usesTotal.value && props.pages) {\n        throw new Error(\"Please, use either `total` and `page-size` props, or `pages`.\");\n      }\n    });\n    const inputAttributesComputed = computed(() => ({\n      disabled: props.disabled,\n      placeholder: `${currentValue.value}/${lastPage.value}`\n    }));\n    const buttonPropsComputed = computed(() => ({\n      size: props.size,\n      preset: props.buttonsPreset,\n      color: props.color,\n      borderColor: props.borderColor,\n      round: props.rounded\n    }));\n    const currentPageButtonProps = computed(() => ({\n      preset: props.buttonsPreset === \"default\" ? \"primary\" : \"default\",\n      color: props.activePageColor || props.color\n    }));\n    const getPageButtonProps = (n) => {\n      if (!isNaN(+n) && n === currentValue.value) {\n        return Object.assign({}, buttonPropsComputed.value, currentPageButtonProps.value);\n      }\n      return buttonPropsComputed.value;\n    };\n    const isStandAloneInput = computed(() => props.input && !props.boundaryLinks && !props.directionLinks);\n    const inputClassComputed = useBem(\"va-pagination__input\", () => ({\n      sm: props.size === \"small\" && isStandAloneInput.value,\n      md: props.size === \"medium\" && isStandAloneInput.value,\n      lg: props.size === \"large\" && isStandAloneInput.value,\n      auto: !isStandAloneInput.value\n    }));\n    const classComputed = useBem(\"va-pagination\", () => ({\n      ...pick(props, [\"gapped\", \"rounded\", \"disabled\"]),\n      bordered: !!props.borderColor\n    }));\n    const goNextPage = () => onUserInput(currentValue.value + 1);\n    const goPrevPage = () => onUserInput(currentValue.value - 1);\n    return {\n      ...useTranslation(),\n      getPageButtonProps,\n      inputClassComputed,\n      classComputed,\n      currentValue,\n      lastPage,\n      changeValue,\n      inputValue,\n      showPagination,\n      showBoundaryLinks,\n      onUserInput,\n      showDirectionLinks,\n      paginationRange,\n      focusInput,\n      inputStyleComputed,\n      inputAttributesComputed,\n      goNextPage,\n      goPrevPage,\n      buttonPropsComputed,\n      htmlInput,\n      setItemRefByIndex\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaPagination.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717507900,
+      "end": 1709717508141,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508141,
+      "end": 1709717508141,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508142,
+      "end": 1709717508142,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508142,
+      "end": 1709717508143,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508143,
+      "end": 1709717508143,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508143,
+      "end": 1709717508143,
+      "order": "normal"
+    }
+  ]
+}

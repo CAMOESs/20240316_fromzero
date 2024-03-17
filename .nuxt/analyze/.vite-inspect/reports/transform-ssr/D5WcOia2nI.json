@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-alert/VaAlert.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaAlert.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createBlock, Transition, withCtx, createElementVNode, normalizeStyle, normalizeClass, createElementBlock, renderSlot, createVNode, createCommentVNode, createTextVNode, toDisplayString, withKeys } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaAlert_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = {\n  key: 1,\n  class: \"va-alert__close\"\n};\nconst _hoisted_2 = [\"aria-label\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  return _ctx.valueComputed ? (openBlock(), createBlock(Transition, {\n    key: 0,\n    name: \"fade\"\n  }, {\n    default: withCtx(() => [\n      createElementVNode(\"div\", {\n        class: \"va-alert\",\n        style: normalizeStyle(_ctx.alertStyle),\n        role: \"alert\"\n      }, [\n        createElementVNode(\"div\", {\n          style: normalizeStyle(_ctx.borderStyle),\n          class: normalizeClass([_ctx.borderClass, \"va-alert__border\"])\n        }, null, 6),\n        _ctx.hasIcon ? (openBlock(), createElementBlock(\"div\", {\n          key: 0,\n          style: normalizeStyle(_ctx.contentStyle),\n          class: \"va-alert__icon\",\n          \"aria-hidden\": \"true\"\n        }, [\n          renderSlot(_ctx.$slots, \"icon\", {}, () => [\n            createVNode(_component_va_icon, { name: _ctx.icon }, null, 8, [\"name\"])\n          ])\n        ], 4)) : createCommentVNode(\"\", true),\n        createElementVNode(\"div\", {\n          style: normalizeStyle(_ctx.contentStyle),\n          class: \"va-alert__content\"\n        }, [\n          _ctx.hasTitle ? (openBlock(), createElementBlock(\"div\", {\n            key: 0,\n            style: normalizeStyle(_ctx.titleStyle),\n            class: \"va-alert__title\"\n          }, [\n            renderSlot(_ctx.$slots, \"title\", {}, () => [\n              createTextVNode(toDisplayString(_ctx.title), 1)\n            ])\n          ], 4)) : createCommentVNode(\"\", true),\n          createElementVNode(\"span\", null, [\n            renderSlot(_ctx.$slots, \"default\", {}, () => [\n              createTextVNode(toDisplayString(_ctx.$props.description), 1)\n            ])\n          ])\n        ], 4),\n        _ctx.closeable ? (openBlock(), createElementBlock(\"div\", _hoisted_1, [\n          createElementVNode(\"div\", {\n            role: \"button\",\n            class: \"va-alert__close--closeable\",\n            tabindex: \"0\",\n            \"aria-label\": _ctx.closeText || _ctx.t(\"closeAlert\"),\n            style: normalizeStyle(_ctx.contentStyle),\n            onClick: _cache[0] || (_cache[0] = (...args) => _ctx.hide && _ctx.hide(...args)),\n            onKeydown: [\n              _cache[1] || (_cache[1] = withKeys((...args) => _ctx.hide && _ctx.hide(...args), [\"space\"])),\n              _cache[2] || (_cache[2] = withKeys((...args) => _ctx.hide && _ctx.hide(...args), [\"enter\"]))\n            ]\n          }, [\n            renderSlot(_ctx.$slots, \"close\", {}, () => [\n              !_ctx.closeText ? (openBlock(), createBlock(_component_va_icon, {\n                key: 0,\n                name: _ctx.closeIcon\n              }, null, 8, [\"name\"])) : createCommentVNode(\"\", true),\n              createTextVNode(\" \" + toDisplayString(_ctx.closeText), 1)\n            ])\n          ], 44, _hoisted_2)\n        ])) : createCommentVNode(\"\", true)\n      ], 4)\n    ]),\n    _: 3\n  })) : createCommentVNode(\"\", true);\n}\nconst _VaAlert = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaAlert as _\n};\n//# sourceMappingURL=VaAlert.mjs.map\n",
+      "start": 1709717500810,
+      "end": 1709717501422,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717501422,
+      "end": 1709717501422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717501423,
+      "end": 1709717501423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717501425,
+      "end": 1709717501425,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717501425,
+      "end": 1709717501425,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717501425,
+      "end": 1709717501425,
+      "order": "normal"
+    }
+  ]
+}

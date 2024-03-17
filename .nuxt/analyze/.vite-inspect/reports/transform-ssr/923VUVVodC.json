@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/composables/useForm/useFormParent.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { provide, computed, unref, ref } from \"vue\";\nimport { F as FormServiceKey } from \"./consts.mjs\";\nimport { u as useFormChild } from \"./useFormChild.mjs\";\nconst createFormContext = (options) => {\n  const fields = ref(/* @__PURE__ */ new Map());\n  return {\n    // Vue unwrap ref automatically, but types are not for some reason\n    immediate: computed(() => options.immediate),\n    fields: computed(() => [...fields.value.values()]),\n    doShowError: computed(() => !options.hideErrors),\n    doShowErrorMessages: computed(() => !options.hideErrorMessages),\n    doShowLoading: computed(() => !options.hideLoading),\n    isFormDirty: ref(false),\n    registerField: (uid, field) => {\n      fields.value.set(uid, field);\n    },\n    unregisterField: (uid) => {\n      fields.value.delete(uid);\n    }\n  };\n};\nconst useFormParent = (options) => {\n  const formContext = createFormContext(options);\n  provide(FormServiceKey, formContext);\n  const { fields, isFormDirty } = formContext;\n  const fieldNames = computed(() => fields.value.map((field) => unref(field.name)).filter(Boolean));\n  const fieldsNamed = computed(() => fields.value.reduce((acc, field) => {\n    if (unref(field.name)) {\n      acc[unref(field.name)] = field;\n    }\n    return acc;\n  }, {}));\n  const formData = computed(() => fields.value.reduce((acc, field) => {\n    if (unref(field.name)) {\n      acc[unref(field.name)] = field.value;\n    }\n    return acc;\n  }, {}));\n  const isValid = computed(() => fields.value.every((field) => unref(field.isValid)));\n  const isLoading = computed(() => fields.value.some((field) => unref(field.isLoading)));\n  const isDirty = computed({\n    get() {\n      return fields.value.some((field) => unref(field.isLoading)) || isFormDirty.value;\n    },\n    set(v) {\n      isFormDirty.value = v;\n    }\n  });\n  const errorMessages = computed(() => fields.value.map((field) => unref(field.errorMessages)).flat());\n  const errorMessagesNamed = computed(() => fields.value.reduce((acc, field) => {\n    if (unref(field.name)) {\n      acc[unref(field.name)] = unref(field.errorMessages);\n    }\n    return acc;\n  }, {}));\n  const validate = () => {\n    isDirty.value = true;\n    return fields.value.reduce((acc, field) => {\n      return field.validate() && acc;\n    }, true);\n  };\n  const validateAsync = () => {\n    isDirty.value = true;\n    return Promise.all(fields.value.map((field) => field.validateAsync())).then((results) => {\n      return results.every(Boolean);\n    });\n  };\n  const reset = () => {\n    isDirty.value = false;\n    fields.value.forEach((field) => field.reset());\n  };\n  const resetValidation = () => {\n    isDirty.value = false;\n    fields.value.forEach((field) => field.resetValidation());\n  };\n  const focus = () => {\n    var _a;\n    (_a = fields.value[0]) == null ? void 0 : _a.focus();\n  };\n  const focusInvalidField = () => {\n    const invalidField = fields.value.find((field) => !field.isValid);\n    invalidField == null ? void 0 : invalidField.focus();\n  };\n  useFormChild({\n    name: ref(void 0),\n    isValid,\n    isLoading,\n    isDirty,\n    validate,\n    validateAsync,\n    reset,\n    resetValidation,\n    focus,\n    errorMessages\n  });\n  return {\n    immediate: computed(() => options.immediate),\n    isDirty,\n    formData,\n    fields,\n    fieldsNamed,\n    fieldNames,\n    isValid,\n    isLoading,\n    errorMessages,\n    errorMessagesNamed,\n    validate,\n    reset,\n    resetValidation,\n    focus,\n    focusInvalidField\n  };\n};\nexport {\n  useFormParent as u\n};\n//# sourceMappingURL=useFormParent.mjs.map\n",
+      "start": 1709717513400,
+      "end": 1709717513554,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513554,
+      "end": 1709717513554,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513554,
+      "end": 1709717513554,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513554,
+      "end": 1709717513554,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513554,
+      "end": 1709717513554,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717513554,
+      "end": 1709717513554,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717513554,
+      "end": 1709717513554,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717513554,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717513555,
+      "end": 1709717513555,
+      "order": "normal"
+    }
+  ]
+}

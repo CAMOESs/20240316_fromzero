@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/composables/useValidation.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed, watch, toRef, nextTick } from \"vue\";\nimport { h as flatten, f as isString, g as isFunction } from \"../../vendor.mjs\";\nimport { u as useSyncProp } from \"./useSyncProp.mjs\";\nimport { u as useFocus } from \"./useFocus.mjs\";\nimport { w as watchSetter } from \"../utils/watch-setter.mjs\";\nimport { u as useFormChild } from \"./useForm/useFormChild.mjs\";\nconst normalizeValidationRules = (rules = [], callArguments = null) => {\n  if (isString(rules)) {\n    rules = [rules];\n  }\n  return rules.map((rule) => isFunction(rule) ? rule(callArguments) : rule);\n};\nconst useValidationProps = {\n  name: { type: String, default: void 0 },\n  modelValue: { required: false },\n  dirty: { type: Boolean, default: false },\n  error: { type: Boolean, default: void 0 },\n  errorMessages: { type: [Array, String], default: void 0 },\n  errorCount: { type: [String, Number], default: 1 },\n  rules: { type: Array, default: () => [] },\n  success: { type: Boolean, default: false },\n  messages: { type: [Array, String], default: () => [] },\n  immediateValidation: { type: Boolean, default: false }\n};\nconst useValidationEmits = [\"update:error\", \"update:errorMessages\", \"update:dirty\"];\nconst isPromise = (value) => {\n  return typeof value === \"object\" && typeof value.then === \"function\";\n};\nconst useDirtyValue = (value, props, emit) => {\n  const isDirty = ref(false);\n  watchSetter(value, () => {\n    isDirty.value = true;\n    emit(\"update:dirty\", true);\n  });\n  watch(() => props.dirty, (newValue) => {\n    if (isDirty.value === newValue) {\n      return;\n    }\n    isDirty.value = newValue;\n  });\n  return { isDirty };\n};\nconst useValidation = (props, emit, options) => {\n  const { reset, focus } = options;\n  const { isFocused, onFocus, onBlur } = useFocus();\n  const [computedError] = useSyncProp(\"error\", props, emit, false);\n  const [computedErrorMessages] = useSyncProp(\"errorMessages\", props, emit, []);\n  const isLoading = ref(false);\n  const validationAriaAttributes = computed(() => ({\n    \"aria-invalid\": computedError.value,\n    \"aria-errormessage\": typeof computedErrorMessages.value === \"string\" ? computedErrorMessages.value : computedErrorMessages.value.join(\", \")\n  }));\n  const resetValidation = () => {\n    computedError.value = false;\n    computedErrorMessages.value = [];\n    isDirty.value = false;\n  };\n  const processResults = (results) => {\n    let error = false;\n    let errorMessages = [];\n    results.forEach((result) => {\n      if (isString(result)) {\n        errorMessages = [...errorMessages, result];\n        error = true;\n      } else if (result === false) {\n        error = true;\n      }\n    });\n    computedErrorMessages.value = errorMessages;\n    computedError.value = error;\n    return !error;\n  };\n  const validateAsync = async () => {\n    if (!props.rules || !props.rules.length) {\n      return true;\n    }\n    const results = normalizeValidationRules(flatten(props.rules), options.value.value);\n    const asyncPromiseResults = results.filter((result) => isPromise(result));\n    const syncRules = results.filter((result) => !isPromise(result));\n    if (!asyncPromiseResults.length) {\n      return processResults(syncRules);\n    }\n    isLoading.value = true;\n    return Promise.all(asyncPromiseResults).then((asyncResults) => {\n      isLoading.value = false;\n      return processResults([...syncRules, ...asyncResults]);\n    });\n  };\n  const validate = () => {\n    if (!props.rules || !props.rules.length) {\n      return true;\n    }\n    const rules = flatten(props.rules);\n    const results = normalizeValidationRules(rules, options.value.value);\n    const asyncPromiseResults = results.filter((result) => isPromise(result));\n    const syncRules = results.filter((result) => !isPromise(result));\n    const isSyncedError = syncRules.some((result) => isString(result) ? result : result === false);\n    if (asyncPromiseResults.length && !isSyncedError) {\n      isLoading.value = true;\n      Promise.all(asyncPromiseResults).then((asyncResults) => {\n        processResults([...syncRules, ...asyncResults]);\n        isLoading.value = false;\n      });\n      return isSyncedError;\n    }\n    return processResults(syncRules);\n  };\n  watch(isFocused, (newVal) => !newVal && validate());\n  const immediateValidation = computed(() => props.immediateValidation || isFormImmediate.value);\n  let canValidate = true;\n  const withoutValidation = (cb) => {\n    if (immediateValidation.value) {\n      return cb();\n    }\n    canValidate = false;\n    cb();\n    nextTick(() => {\n      canValidate = true;\n    });\n  };\n  watch(options.value, () => {\n    if (!canValidate) {\n      return;\n    }\n    return validate();\n  }, { immediate: true });\n  const { isDirty } = useDirtyValue(options.value, props, emit);\n  const {\n    doShowErrorMessages,\n    // Renamed to forceHideError because it's not clear what it does\n    doShowError,\n    doShowLoading,\n    isFormImmediate,\n    isFormDirty\n  } = useFormChild({\n    isDirty,\n    isValid: computed(() => !computedError.value),\n    isLoading,\n    errorMessages: computedErrorMessages,\n    validate,\n    validateAsync,\n    resetValidation,\n    focus,\n    reset: () => {\n      reset();\n      resetValidation();\n      isDirty.value = false;\n    },\n    value: computed(() => options.value || props.modelValue),\n    name: toRef(props, \"name\")\n  });\n  return {\n    isDirty,\n    computedError: computed(() => {\n      if (!isFormDirty.value) {\n        if (!immediateValidation.value && !isDirty.value) {\n          return false;\n        }\n      }\n      return doShowError.value ? computedError.value : false;\n    }),\n    computedErrorMessages: computed(() => doShowErrorMessages.value ? computedErrorMessages.value : []),\n    isLoading: computed(() => doShowLoading.value ? isLoading.value : false),\n    listeners: { onFocus, onBlur },\n    validate,\n    resetValidation,\n    withoutValidation,\n    validationAriaAttributes\n  };\n};\nexport {\n  useValidation as a,\n  useValidationProps as b,\n  useValidationEmits as u\n};\n//# sourceMappingURL=useValidation.mjs.map\n",
+      "start": 1709717506583,
+      "end": 1709717506762,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506762,
+      "end": 1709717506762,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506762,
+      "end": 1709717506762,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717506763,
+      "end": 1709717506763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717506764,
+      "end": 1709717506764,
+      "order": "normal"
+    }
+  ]
+}

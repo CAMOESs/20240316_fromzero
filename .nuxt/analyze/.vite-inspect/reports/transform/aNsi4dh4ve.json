@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/main.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { p } from \"./src/services/color/presets.js\";\nimport { d } from \"./src/services/breakpoint/index.js\";\nimport { d as d2 } from \"./src/services/global-config/types.js\";\nimport { u } from \"./src/composables/useGlobalConfig.js\";\nimport { u as u2 } from \"./src/composables/useColors.js\";\nimport { u as u3 } from \"./src/composables/useBreakpoint.js\";\nimport { u as u4 } from \"./src/composables/useI18n.js\";\nimport { u as u5 } from \"./src/composables/useIcon.js\";\nimport { u as u6 } from \"./src/composables/useForm/useForm.js\";\nimport { c } from \"./src/services/icon/create-icons-config.js\";\nimport { V } from \"./src/services/icon/presets/fonts.js\";\nimport { V as V2 } from \"./src/services/icon/presets/vuestic-aliases.js\";\nimport { G } from \"./src/services/global-config/plugin/index.js\";\nimport { C } from \"./src/services/color/plugin/index.js\";\nimport { B } from \"./src/services/breakpoint/plugin/index.js\";\nimport { V as V3 } from \"./src/components/va-toast/plugin/index.js\";\nimport { V as V4 } from \"./src/components/va-dropdown/plugin/index.js\";\nimport { V as V5 } from \"./src/components/va-modal/plugin/index.js\";\nimport { C as C2 } from \"./src/services/cache/plugin/index.js\";\nimport { C as C3 } from \"./src/services/colors-classes/plugin/index.js\";\nimport { c as c2 } from \"./src/services/vue-plugin/create-vuestic/create-vuestic.js\";\nimport { c as c3 } from \"./src/services/vue-plugin/create-vuestic/create-vuestic-essential.js\";\nimport { u as u7 } from \"./src/composables/useElementTextColor.js\";\nimport { r } from \"./src/services/web-components/register-vuestic-web-components.js\";\nimport { r as r2 } from \"./src/services/web-components/register-vuestic-web-components-essential.js\";\nimport { V as V6 } from \"./src/components/va-icon/index.js\";\nimport { V as V7 } from \"./src/components/va-message-list/VaMessageListWrapper.js\";\nimport { V as V8 } from \"./src/components/va-message-list/VaMessageList.js\";\nimport { V as V9 } from \"./src/components/va-input-wrapper/index.js\";\nimport { V as V10 } from \"./src/components/va-input/index.js\";\nimport { V as V11 } from \"./src/components/va-fallback/index.js\";\nimport { V as V12 } from \"./src/components/va-collapse/index.js\";\nimport { d as d3, b, c as c4, V as V13, a } from \"./src/components/va-card/index.js\";\nimport { V as V14 } from \"./src/components/va-button/index.js\";\nimport { b as b2, a as a2, V as V15 } from \"./src/components/va-menu-list/index.js\";\nimport { V as V16 } from \"./src/components/va-accordion/index.js\";\nimport { V as V17 } from \"./src/components/va-affix/index.js\";\nimport { V as V18 } from \"./src/components/va-alert/index.js\";\nimport { V as V19 } from \"./src/components/va-app-bar/index.js\";\nimport { V as V20 } from \"./src/components/va-aspect-ratio/index.js\";\nimport { V as V21 } from \"./src/components/va-avatar/index.js\";\nimport { V as V22 } from \"./src/components/va-avatar-group/index.js\";\nimport { V as V23 } from \"./src/components/va-backtop/index.js\";\nimport { V as V24 } from \"./src/components/va-badge/index.js\";\nimport { a as a3, V as V25 } from \"./src/components/va-breadcrumbs/index.js\";\nimport { V as V26 } from \"./src/components/va-button-dropdown/index.js\";\nimport { V as V27 } from \"./src/components/va-button-group/index.js\";\nimport { V as V28 } from \"./src/components/va-button-toggle/index.js\";\nimport { V as V29 } from \"./src/components/va-carousel/index.js\";\nimport { V as V30 } from \"./src/components/va-checkbox/index.js\";\nimport { V as V31 } from \"./src/components/va-chip/index.js\";\nimport { V as V32 } from \"./src/components/va-color-indicator/index.js\";\nimport { V as V33 } from \"./src/components/va-color-input/index.js\";\nimport { V as V34 } from \"./src/components/va-color-palette/index.js\";\nimport { V as V35 } from \"./src/components/va-config/VaConfig.js\";\nimport { V as V36 } from \"./src/components/va-content/index.js\";\nimport { V as V37 } from \"./src/components/va-counter/index.js\";\nimport { d as d4, a as a4 } from \"./src/components/va-data-table/fabrics.js\";\nimport { V as V38 } from \"./src/components/va-data-table/index.js\";\nimport { V as V39 } from \"./src/components/va-date-input/index.js\";\nimport { V as V40 } from \"./src/components/va-date-picker/index.js\";\nimport { V as V41 } from \"./src/components/va-divider/index.js\";\nimport { V as V42 } from \"./src/components/va-dropdown/components/VaDropdownContent/index.js\";\nimport { V as V43 } from \"./src/components/va-dropdown/index.js\";\nimport { V as V44 } from \"./src/components/va-form/index.js\";\nimport { V as V45 } from \"./src/components/va-hover/index.js\";\nimport { V as V46 } from \"./src/components/va-image/index.js\";\nimport { V as V47 } from \"./src/components/va-infinite-scroll/index.js\";\nimport { V as V48 } from \"./src/components/va-inner-loading/index.js\";\nimport { V as V49 } from \"./src/components/va-layout/index.js\";\nimport { b as b3, V as V50, d as d5, a as a5, c as c5, e } from \"./src/components/va-list/index.js\";\nimport { u as u8 } from \"./src/components/va-modal/hooks/useModal.js\";\nimport { V as V51 } from \"./src/components/va-modal/VaModal.js\";\nimport { V as V52, a as a6 } from \"./src/components/va-navbar/index.js\";\nimport { V as V53 } from \"./src/components/va-option-list/index.js\";\nimport { V as V54 } from \"./src/components/va-pagination/index.js\";\nimport { V as V55 } from \"./src/components/va-parallax/index.js\";\nimport { V as V56 } from \"./src/components/va-popover/index.js\";\nimport { V as V57 } from \"./src/components/va-progress-bar/index.js\";\nimport { V as V58 } from \"./src/components/va-progress-circle/index.js\";\nimport { V as V59 } from \"./src/components/va-radio/index.js\";\nimport { V as V60 } from \"./src/components/va-rating/components/VaRatingItem/index.js\";\nimport { V as V61 } from \"./src/components/va-rating/index.js\";\nimport { V as V62 } from \"./src/components/va-select/components/VaSelectOptionList/index.js\";\nimport { V as V63 } from \"./src/components/va-select/components/VaSelectOption/index.js\";\nimport { V as V64 } from \"./src/components/va-select/index.js\";\nimport { V as V65 } from \"./src/components/va-separator/VaSeparator.js\";\nimport { V as V66, a as a7 } from \"./src/components/va-skeleton/index.js\";\nimport { V as V67, a as a8, b as b4 } from \"./src/components/va-sidebar/VaSidebarItem/index.js\";\nimport { V as V68 } from \"./src/components/va-sidebar/index.js\";\nimport { V as V69 } from \"./src/components/va-slider/index.js\";\nimport { V as V70 } from \"./src/components/va-spacer/VaSpacer.js\";\nimport { V as V71 } from \"./src/components/va-split/index.js\";\nimport { V as V72, d as d6 } from \"./src/components/va-stepper/index.js\";\nimport { V as V73 } from \"./src/components/va-switch/index.js\";\nimport { u as u9 } from \"./src/components/va-toast/hooks/useToast.js\";\nimport { V as V74 } from \"./src/components/va-toast/index.js\";\nimport { V as V75 } from \"./src/components/va-tabs/components/VaTab/index.js\";\nimport { T } from \"./src/components/va-tabs/types.js\";\nimport { V as V76 } from \"./src/components/va-tabs/index.js\";\nimport { V as V77 } from \"./src/components/va-time-input/index.js\";\nimport { V as V78 } from \"./src/components/va-time-picker/index.js\";\nimport { V as V79 } from \"./src/components/va-timeline/VaTimelineItem/index.js\";\nimport { V as V80 } from \"./src/components/va-timeline/VaTimelineSeparator/index.js\";\nimport { V as V81 } from \"./src/components/va-timeline/index.js\";\nimport { V as V82 } from \"./src/components/va-tree-view/index.js\";\nimport { V as V83 } from \"./src/components/va-scroll-container/index.js\";\nimport { V as V84 } from \"./src/components/va-viewer/index.js\";\nimport { V as V85 } from \"./src/components/va-virtual-scroller/index.js\";\nimport { V as V86 } from \"./src/components/va-value/index.js\";\nimport { V as V87 } from \"./src/components/va-file-upload/VaFileUploadGalleryItem/index.js\";\nimport { V as V88 } from \"./src/components/va-file-upload/VaFileUploadList/index.js\";\nimport { V as V89 } from \"./src/components/va-file-upload/VaFileUploadListItem/index.js\";\nimport { V as V90 } from \"./src/components/va-file-upload/VaFileUploadSingleItem/index.js\";\nimport { V as V91 } from \"./src/components/va-file-upload/VaFileUploadUndo/index.js\";\nimport { V as V92 } from \"./src/components/va-file-upload/types.js\";\nimport { V as V93 } from \"./src/components/va-file-upload/index.js\";\nimport { V as V94 } from \"./src/components/va-textarea/index.js\";\nimport { V as V95 } from \"./src/components/va-menu/va-menu.js\";\nimport { u as u10 } from \"./src/components/va-menu/hooks/useMenu.js\";\nexport {\n  B as BreakpointConfigPlugin,\n  C2 as CachePlugin,\n  C as ColorConfigPlugin,\n  C3 as ColorsClassesPlugin,\n  G as GlobalConfigPlugin,\n  T as TabsViewKey,\n  V16 as VaAccordion,\n  V17 as VaAffix,\n  V18 as VaAlert,\n  V19 as VaAppBar,\n  V20 as VaAspectRatio,\n  V21 as VaAvatar,\n  V22 as VaAvatarGroup,\n  V23 as VaBacktop,\n  V24 as VaBadge,\n  a3 as VaBreadcrumbs,\n  V25 as VaBreadcrumbsItem,\n  V14 as VaButton,\n  V26 as VaButtonDropdown,\n  V27 as VaButtonGroup,\n  V28 as VaButtonToggle,\n  d3 as VaCard,\n  b as VaCardActions,\n  c4 as VaCardBlock,\n  V13 as VaCardContent,\n  a as VaCardTitle,\n  V29 as VaCarousel,\n  V30 as VaCheckbox,\n  V31 as VaChip,\n  V12 as VaCollapse,\n  V32 as VaColorIndicator,\n  V33 as VaColorInput,\n  V34 as VaColorPalette,\n  V35 as VaConfig,\n  V36 as VaContent,\n  V37 as VaCounter,\n  V38 as VaDataTable,\n  V39 as VaDateInput,\n  V40 as VaDatePicker,\n  V41 as VaDivider,\n  V43 as VaDropdown,\n  V42 as VaDropdownContent,\n  V4 as VaDropdownPlugin,\n  V11 as VaFallback,\n  V93 as VaFileUpload,\n  V87 as VaFileUploadGalleryItem,\n  V92 as VaFileUploadKey,\n  V88 as VaFileUploadList,\n  V89 as VaFileUploadListItem,\n  V90 as VaFileUploadSingleItem,\n  V91 as VaFileUploadUndo,\n  V44 as VaForm,\n  V45 as VaHover,\n  V6 as VaIcon,\n  V46 as VaImage,\n  V47 as VaInfiniteScroll,\n  V48 as VaInnerLoading,\n  V10 as VaInput,\n  V9 as VaInputWrapper,\n  V49 as VaLayout,\n  b3 as VaList,\n  V50 as VaListItem,\n  d5 as VaListItemLabel,\n  a5 as VaListItemSection,\n  c5 as VaListLabel,\n  e as VaListSeparator,\n  V95 as VaMenu,\n  b2 as VaMenuGroup,\n  a2 as VaMenuItem,\n  V15 as VaMenuList,\n  V8 as VaMessageList,\n  V7 as VaMessageListWrapper,\n  V51 as VaModal,\n  V5 as VaModalPlugin,\n  V52 as VaNavbar,\n  a6 as VaNavbarItem,\n  V53 as VaOptionList,\n  V54 as VaPagination,\n  V55 as VaParallax,\n  V56 as VaPopover,\n  V57 as VaProgressBar,\n  V58 as VaProgressCircle,\n  V59 as VaRadio,\n  V61 as VaRating,\n  V60 as VaRatingItem,\n  V83 as VaScrollContainer,\n  V64 as VaSelect,\n  V63 as VaSelectOption,\n  V62 as VaSelectOptionList,\n  V65 as VaSeparator,\n  V68 as VaSidebar,\n  V67 as VaSidebarItem,\n  a8 as VaSidebarItemContent,\n  b4 as VaSidebarItemTitle,\n  V66 as VaSkeleton,\n  a7 as VaSkeletonGroup,\n  V69 as VaSlider,\n  V70 as VaSpacer,\n  V71 as VaSplit,\n  V72 as VaStepper,\n  V73 as VaSwitch,\n  V75 as VaTab,\n  V76 as VaTabs,\n  V94 as VaTextarea,\n  V77 as VaTimeInput,\n  V78 as VaTimePicker,\n  V81 as VaTimeline,\n  V79 as VaTimelineItem,\n  V80 as VaTimelineSeparator,\n  V74 as VaToast,\n  V3 as VaToastPlugin,\n  V82 as VaTreeView,\n  V86 as VaValue,\n  V84 as VaViewer,\n  V85 as VaVirtualScroller,\n  V2 as VuesticIconAliases,\n  V as VuesticIconFonts,\n  p as colorsPreset,\n  c as createIconsConfig,\n  c2 as createVuestic,\n  c3 as createVuesticEssential,\n  d4 as defineVaDataTableColumns,\n  a4 as defineVaDataTableItems,\n  d6 as defineVaStepperSteps,\n  d2 as defineVuesticConfig,\n  r as registerVuesticWebComponents,\n  r2 as registerVuesticWebComponentsEssential,\n  d as thresholdsPreset,\n  u3 as useBreakpoint,\n  u2 as useColors,\n  u7 as useElementTextColor,\n  u6 as useForm,\n  u as useGlobalConfig,\n  u4 as useI18nConfig,\n  u5 as useIcons,\n  u10 as useMenu,\n  u8 as useModal,\n  u9 as useToast\n};\n//# sourceMappingURL=main.js.map\n",
+      "start": 1709717378881,
+      "end": 1709717393604,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717393604,
+      "end": 1709717393604,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717393604,
+      "end": 1709717393604,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717393604,
+      "end": 1709717393604,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717393604,
+      "end": 1709717393604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717393604,
+      "end": 1709717393604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717393605,
+      "end": 1709717393605,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717393605,
+      "end": 1709717393607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717393607,
+      "end": 1709717393607,
+      "order": "normal"
+    }
+  ]
+}

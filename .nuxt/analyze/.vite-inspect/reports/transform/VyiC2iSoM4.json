@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-date-picker/components/VaMonthPicker/VaMonthPicker.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaMonthPicker.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createElementBlock, mergeProps, Fragment, renderList, createVNode, withCtx, renderSlot, normalizeProps, guardReactiveProps, createTextVNode, toDisplayString } from \"vue\";\nimport { _ as _export_sfc } from \"../../../../../plugin-vue_export-helper.js\";\nconst VaMonthPicker_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = [\"onMouseenter\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_date_picker_cell = resolveComponent(\"va-date-picker-cell\");\n  return openBlock(), createElementBlock(\"div\", mergeProps({ class: \"va-month-picker\" }, _ctx.containerAttributes), [\n    (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.months, (month, monthIndex) => {\n      return openBlock(), createElementBlock(\"div\", {\n        key: monthIndex,\n        class: \"va-month-picker__month-wrapper\",\n        onMouseenter: ($event) => _ctx.hoveredIndex = monthIndex,\n        onMouseleave: _cache[0] || (_cache[0] = ($event) => _ctx.hoveredIndex = -1)\n      }, [\n        createVNode(_component_va_date_picker_cell, {\n          \"in-range\": !!_ctx.isInRange(month),\n          selected: !!_ctx.isSelected(month),\n          disabled: !!_ctx.isDisabled(month),\n          today: !!_ctx.isToday(month),\n          focused: _ctx.hoveredIndex === monthIndex,\n          \"highlight-today\": _ctx.highlightToday,\n          readonly: _ctx.$props.readonly,\n          color: _ctx.color,\n          onClick: ($event) => {\n            _ctx.onClick(month);\n            _ctx.focusedCellIndex = monthIndex;\n          }\n        }, {\n          default: withCtx(() => [\n            renderSlot(_ctx.$slots, \"month\", normalizeProps(guardReactiveProps({ monthIndex, month: _ctx.monthNames[monthIndex] })), () => [\n              createTextVNode(toDisplayString(_ctx.monthNames[monthIndex]), 1)\n            ])\n          ]),\n          _: 2\n        }, 1032, [\"in-range\", \"selected\", \"disabled\", \"today\", \"focused\", \"highlight-today\", \"readonly\", \"color\", \"onClick\"])\n      ], 40, _hoisted_1);\n    }), 128))\n  ], 16);\n}\nconst VaMonthPicker = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  VaMonthPicker as V\n};\n\nimport '../../../../../VaMonthPicker.css';\n//# sourceMappingURL=VaMonthPicker.js.map\n",
+      "start": 1709717427275,
+      "end": 1709717427453,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427453,
+      "end": 1709717427453,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427454,
+      "end": 1709717427454,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427454,
+      "end": 1709717427455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427455,
+      "end": 1709717427455,
+      "order": "normal"
+    }
+  ]
+}

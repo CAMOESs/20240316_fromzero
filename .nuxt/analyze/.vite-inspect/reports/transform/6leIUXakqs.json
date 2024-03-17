@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/assets/style__.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "@charset \"UTF-8\";\n@import url(\"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap\");\n@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);\n:root {\n  --body-bg-color: #e5f4f9;\n  --body-color-light: #8b939c;\n  --body-font: \"Roboto\", sans-serif;\n  --page-bg-color: #f2f5f7;\n  --body-color: #3d4954;\n  --border-color: #b8bec3;\n  --placeholder: #ccd0d2;\n}\n\n* {\n  outline: none;\n}\n\nimg {\n  max-width: 100%;\n}\n\nhtml {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n}\n\nbody {\n  background-color: #fff;\n  font-family: var(--body-font);\n  color: var(--body-color);\n  font-weight: 400;\n  margin: 0;\n}\n\n.likes, .year-book, .author, .main-menu, .profile-menu, .profile, .browse-category, .browse, .header {\n  display: flex;\n  align-items: center;\n}\n\n.book-store {\n  display: flex;\n  flex-direction: column;\n  max-width: 1400px;\n  background-color: var(--page-bg-color);\n  margin: 0 auto;\n  overflow: hidden;\n}\n\n.header {\n  height: 70px;\n  width: 100%;\n  background-color: #ffffff;\n  padding: 0 30px;\n  font-size: 14px;\n  font-weight: 500;\n  color: var(--body-color-light);\n  justify-content: space-between;\n  flex-shrink: 0;\n}\n\n.search-bar {\n  position: relative;\n}\n.search-bar input {\n  height: 100%;\n  width: 100%;\n  display: block;\n  background-color: transparent;\n  border: none;\n  font-weight: 600;\n  padding: 0 10px 0 40px;\n  background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%238b939c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3e%3ccircle cx='11' cy='11' r='8'/%3e%3cpath d='M21 21l-4.35-4.35'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-size: 15px;\n  background-position: 15px 50%;\n  color: var(--body-color);\n  font-family: var(--body-font);\n}\n.search-bar input::placeholder {\n  color: var(--placeholder);\n}\n\n.browse-category {\n  border-right: 1px solid var(--border-color);\n  white-space: nowrap;\n}\n.browse-category svg {\n  width: 16px;\n  margin: 2px 10px 0 8px;\n}\n\n.header-title {\n  font-size: 16px;\n  font-weight: 400;\n  margin-right: 120px;\n}\n.header-title span {\n  font-weight: 500;\n  color: var(--body-color);\n}\n\n.user-img {\n  width: 28px;\n  height: 28px;\n  border-radius: 50%;\n  margin-right: 15px;\n}\n\n.user-profile {\n  position: relative;\n  cursor: pointer;\n  flex-shrink: 0;\n}\n.user-profile:before {\n  content: \"\";\n  position: absolute;\n  background-color: #f86d72;\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n  border: 2px solid var(--theme-bg-color);\n  right: 12px;\n  top: -3px;\n  border: 2px solid #fff;\n}\n\n.profile {\n  flex-shrink: 0;\n}\n.profile-menu {\n  border-left: 1px solid var(--border-color);\n}\n.profile svg {\n  width: 16px;\n  margin: 0 8px 0 15px;\n  flex-shrink: 0;\n}\n\n.book-slide {\n  width: 100%;\n}\n\n.book {\n  background: #fff;\n}\n\n.book-cell {\n  position: relative;\n  display: flex;\n  padding: 25px;\n  width: 40%;\n  height: 250px;\n  margin-right: 1px;\n}\n.book-cell:nth-child(1) {\n  background-color: #fbadaf;\n}\n.book-cell:nth-child(2) {\n  background-color: #a4e0eb;\n}\n.book-cell:nth-child(3) {\n  background-color: #edb9d6;\n}\n.book-cell:nth-child(4) {\n  background-color: #fdca95;\n}\n.book-cell:nth-child(5) {\n  background-color: #cbb5e2;\n}\n\n.flickity-page-dots {\n  display: none;\n}\n\n.flickity-prev-next-button .arrow {\n  fill: #d6d6d6;\n}\n\n.flickity-prev-next-button svg {\n  left: 25%;\n  top: 25%;\n  width: 50%;\n  height: 50%;\n}\n\n.flickity-prev-next-button.previous {\n  left: 15px;\n}\n.flickity-prev-next-button.next {\n  right: 15px;\n}\n\n.flickity-viewport {\n  overflow: visible;\n}\n\n.book-photo {\n  width: 180px;\n  flex-shrink: 0;\n  bottom: -35px;\n  left: 35px;\n  border-radius: 2px;\n  box-shadow: -2px 6px 19px 0px #7f818e;\n  transition: 0.3s ease;\n}\n.book-photo:hover {\n  transform: scale(1.03);\n}\n\n.book-img {\n  flex-shrink: 0;\n}\n\n.book-title {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n}\n\n.book-title {\n  color: #ffffff;\n  font-weight: 600;\n}\n\n.book-author {\n  margin-top: 3px;\n  font-size: 14px;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n}\n\n.book-content {\n  padding: 0 20px;\n  color: #ffffff;\n  overflow: hidden;\n}\n\nfieldset,\nlabel {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  vertical-align: middle;\n}\n\nh1 {\n  /* font-size: 0.5em; */\n  margin: 10px;\n}\n\n.rating {\n  border: none;\n}\n\n.rating > input {\n  display: none;\n}\n\n.rating > label:before {\n  margin-right: 5px;\n  margin-top: 10px;\n  font-size: 0.9em;\n  font-family: FontAwesome;\n  display: inline-block;\n  content: \"\";\n}\n\n.rating > label {\n  color: #fff;\n  float: right;\n}\n\n.rating > input:checked ~ label,\n.rating:not(:checked) > label:hover,\n.rating:not(:checked) > label:hover ~ label {\n  color: #d85d61;\n}\n\n.rating > input:checked + label:hover,\n.rating > input:checked ~ label:hover,\n.rating > label:hover ~ input:checked ~ label,\n.rating > input:checked ~ label:hover ~ label {\n  color: #d85d61;\n}\n\n.blue > input:checked ~ label,\n.blue:not(:checked) > label:hover,\n.blue:not(:checked) > label:hover ~ label {\n  color: #458997;\n}\n\n.blue > input:checked + label:hover,\n.blue > input:checked ~ label:hover,\n.blue > label:hover ~ input:checked ~ label,\n.blue > input:checked ~ label:hover ~ label {\n  color: #458997;\n}\n\n.purple > input:checked ~ label,\n.purple:not(:checked) > label:hover,\n.purple:not(:checked) > label:hover ~ label {\n  color: #a76287;\n}\n\n.purple > input:checked + label:hover,\n.purple > input:checked ~ label:hover,\n.purple > label:hover ~ input:checked ~ label,\n.purple > input:checked ~ label:hover ~ label {\n  color: #a76287;\n}\n\n.yellow > input:checked ~ label,\n.yellow:not(:checked) > label:hover,\n.yellow:not(:checked) > label:hover ~ label {\n  color: #ffad58;\n}\n\n.yellow > input:checked + label:hover,\n.yellow > input:checked ~ label:hover,\n.yellow > label:hover ~ input:checked ~ label,\n.yellow > input:checked ~ label:hover ~ label {\n  color: #ffad58;\n}\n\n.dark-purp > input:checked ~ label,\n.dark-purp:not(:checked) > label:hover,\n.dark-purp:not(:checked) > label:hover ~ label {\n  color: #905587;\n}\n\n.dark-purp > input:checked + label:hover,\n.dark-purp > input:checked ~ label:hover,\n.dark-purp > label:hover ~ input:checked ~ label,\n.dark-purp > input:checked ~ label:hover ~ label {\n  color: #905587;\n}\n\n.book-voters {\n  color: #fff;\n  vertical-align: sub;\n  font-size: 13px;\n  margin-left: 7px;\n  white-space: nowrap;\n  margin-top: 7px;\n}\n\n.book-sum {\n  margin-top: 20px;\n  font-size: 14px;\n  overflow: hidden;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n}\n\n.book-see {\n  margin-top: 25px;\n  text-align: center;\n  background-color: #fff;\n  color: #fbadaf;\n  font-weight: 600;\n  padding: 8px;\n  font-size: 14px;\n  width: 160px;\n  border-radius: 20px;\n}\n.book-see:hover {\n  color: #ff6e72;\n}\n.book-see.book-blue {\n  color: #a4e0eb;\n}\n.book-see.book-blue:hover {\n  color: #22cdec;\n}\n.book-see.book-pink {\n  color: #edb9d6;\n}\n.book-see.book-pink:hover {\n  color: #ff6dbe;\n}\n.book-see.book-yellow {\n  color: #fdca95;\n}\n.book-see.book-yellow:hover {\n  color: #fb9124;\n}\n.book-see.book-purple {\n  color: #cbb5e2;\n}\n.book-see.book-purple:hover {\n  color: #a764ec;\n}\n\n.main-wrapper {\n  width: 100%;\n  display: flex;\n  flex-grow: 1;\n  margin-top: 100px;\n  overflow: hidden;\n}\n\n.books-of {\n  width: 320px;\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex-shrink: 0;\n}\n\n.popular-books {\n  flex-grow: 1;\n  padding: 0 30px 50px;\n  overflow-y: auto;\n}\n\n.genre {\n  font-weight: 500;\n  font-size: 15px;\n}\n\n.main-menu {\n  white-space: nowrap;\n  padding-bottom: 15px;\n  border-bottom: 1px solid #dcddde;\n  position: sticky;\n  top: 0;\n  right: 0;\n  background-color: var(--page-bg-color);\n  z-index: 2;\n}\n\n.book-types {\n  margin-left: auto;\n}\n.book-types a {\n  text-decoration: none;\n  color: var(--body-color);\n  font-size: 14px;\n}\n\n.book-type + .book-type {\n  margin-left: 20px;\n}\n\n.book-type {\n  position: relative;\n  transition: 0.2s;\n}\n.book-type.active, .book-type:hover {\n  -webkit-text-stroke: 0.3px;\n}\n.book-type.active:before, .book-type:hover:before {\n  content: \"\";\n  position: absolute;\n  width: 28px;\n  height: 2px;\n  bottom: -17px;\n  right: 15px;\n  background-color: #67d4ea;\n  box-shadow: 0px -1px 5px 0px #67d4ea;\n}\n.book-type:nth-child(2):before {\n  right: 12px;\n}\n.book-type:nth-child(3):before {\n  right: 8px;\n}\n.book-type:nth-child(4):before {\n  right: 6px;\n}\n.book-type:nth-child(5):before {\n  right: 20px;\n}\n\n.week {\n  padding: 0 30px;\n}\n\n.author + .author {\n  margin-top: 20px;\n}\n.author-name {\n  font-size: 14px;\n}\n.author:last-child {\n  margin-bottom: 40px;\n}\n\n.author-title {\n  padding: 0 0 20px;\n  font-weight: 500;\n  font-size: 15px;\n}\n\n.author-img {\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  margin-right: 16px;\n  object-fit: cover;\n  object-position: center;\n}\n\n.year-book-img {\n  width: 45px;\n  margin-right: 16px;\n}\n.year-book-name {\n  margin-bottom: 15px;\n  font-weight: 500;\n}\n.year-book-author {\n  font-size: 13px;\n}\n.year-book + .year-book {\n  margin-top: 20px;\n}\n\n.year-book-content {\n  display: flex;\n  flex-direction: column;\n  font-size: 14px;\n}\n\n.overlay {\n  position: sticky;\n  bottom: 0;\n  left: 0;\n  width: 340px;\n  flex-shrink: 0;\n  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f2f5f7 65%, #f2f5f7 100%);\n  height: 60px;\n  margin-left: -35px;\n}\n\n.book-cards {\n  display: grid;\n/*   grid-template-columns: repeat(3, 1fr);\n  grid-column-gap: 40px;\n  grid-row-gap: 40px; */\n  padding-top: 40px;\n  position: relative;\n  background-color: #f6f6f6\n}\n\n\n.book-card {\n  margin-top: 0px;\n  background-color: #f6f6f6;\n  height: 270px;\n  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n/*   display: flex;\n  flex-direction: column; */\n  cursor: pointer;\n  padding: 0 0 20px 20px;\n  color: var(--body-color-light);\n}\n.book-card-img {\n  width: 160px;\n  margin-top: -20px;\n  border-radius: 2px;\n  box-shadow: 0px 1px 7px 2px #c7c9d3;\n  border-bottom: 1px solid #dcddde;\n  object-fit: cover;\n  margin-bottom: 20px;\n  transition: 0.3s ease;\n}\n.book-card-img:hover {\n  transform: scale(1.04);\n}\n\n.card-content {\n  color: var(--body-color);\n  padding: 15px;\n  overflow: hidden;\n  width: 100%;\n  position: relative;\n}\n\n.book-name {\n  font-weight: 500;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n}\n\n.book-by {\n  font-size: 13px;\n  color: var(--body-color-light);\n  margin-top: 4px;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n}\n\n.book-rate > label {\n  color: #cccccc;\n}\n\n .rate {\n display: inline-block; \n  white-space: wrap;\n} \n\n.book-rate > input:checked ~ label,\n.book-rate:not(:checked) > label:hover,\n.book-rate:not(:checked) > label:hover ~ label {\n  color: #ff9700;\n}\n\n.book-rate > input:checked + label:hover,\n.book-rate > input:checked ~ label:hover,\n.book-rate > label:hover ~ input:checked ~ label,\n.book-rate > input:checked ~ label:hover ~ label {\n  color: #ff9700;\n}\n\n.card-vote {\n  color: var(--body-color-light);\n}\n\n.card-sum {\n  color: var(--body-color-light);\n  font-size: 13px;\n  line-height: 1.6em;\n  -webkit-line-clamp: 4;\n  margin-top: 15px;\n}\n\n.content-wrapper {\n  display: flex;\n  border-bottom: 1px solid #ebedef;\n  position: relative;\n}\n.content__{\n  display: flex;\n  border-bottom: 1px solid #ebedef;\n  position: relative;\n} \n.content-wrapper:before {\n  content: \"\";\n  position: absolute;\n  background-color: #8f98a9;\n  background-color: #aaaebc;\n  box-shadow: 0 -6px 0 0 #aaaebc, 0 6px 0 0 #aaaebc;\n  width: 4px;\n  height: 4px;\n  border: 0;\n  padding: 0;\n  right: 12px;\n  top: 17px;\n  border-radius: 50%;\n  margin-left: auto;\n}\n\n.like-profile {\n  margin-top: 8px;\n}\n.like-profile + .like-profile {\n  margin-left: -5px;\n}\n\n.like-img {\n  border-radius: 50%;\n  width: 28px;\n  object-fit: cover;\n  border: 2px solid #fff;\n}\n\n.like-name {\n  font-size: 13px;\n  margin-left: 15px;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n}\n.like-name span {\n  font-weight: 600;\n}\n\n@media (max-width: 1103px) {\n  .book-cell {\n    width: 60%;\n  }\n}\n@media (max-width: 765px) {\n  .book-cell {\n    width: 80%;\n  }\n}\n@media (max-width: 575px) {\n  .book-cell {\n    width: 100%;\n  }\n}\n@media (max-width: 458px) {\n  .book-photo {\n    width: 180px;\n  }\n\n  .book-voters {\n    display: none;\n  }\n}\n@media (max-width: 420px) {\n  .book-see {\n    width: 120px;\n    font-size: 13px;\n  }\n\n  .book-photo {\n    width: 130px;\n  }\n\n  .main-wrapper {\n    margin-top: 50px;\n  }\n}\n@media (max-width: 360px) {\n  .rating > label:before {\n    font-size: 0.8em;\n  }\n}\n@media (max-width: 1220px) {\n  .card-vote {\n    display: none;\n  }\n}\n@media (max-width: 1085px) {\n  .book-rate > label {\n    font-size: 0.7em;\n  }\n}\n@media (max-width: 1045px) {\n  .books-of {\n    display: none;\n  }\n}\n@media (max-width: 725px) {\n  .browse-category, .search-bar {\n    display: none;\n  }\n\n  .header-title {\n    margin-right: auto;\n  }\n\n  .book-cards {\n    grid-template-columns: 1fr;\n  }\n\n  .book-types {\n    display: none;\n  }\n}\n@media (max-width: 372px) {\n  .card-content {\n    padding: 20px;\n  }\n}",
+      "start": 1709717377238,
+      "end": 1709717381644,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717381644,
+      "end": 1709717381644,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717381644,
+      "end": 1709717381644,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717381645,
+      "end": 1709717381645,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "@charset \"UTF-8\";@import url(\"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap\");@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);:root{--body-bg-color:#e5f4f9;--body-color-light:#8b939c;--body-font:\"Roboto\",sans-serif;--page-bg-color:#f2f5f7;--body-color:#3d4954;--border-color:#b8bec3;--placeholder:#ccd0d2}*{outline:none}img{max-width:100%}html{box-sizing:border-box;-webkit-font-smoothing:antialiased}body{background-color:#fff;color:var(--body-color);font-family:var(--body-font);font-weight:400;margin:0}.author,.browse,.browse-category,.header,.likes,.main-menu,.profile,.profile-menu,.year-book{align-items:center;display:flex}.book-store{background-color:var(--page-bg-color);display:flex;flex-direction:column;margin:0 auto;max-width:1400px;overflow:hidden}.header{background-color:#fff;color:var(--body-color-light);flex-shrink:0;font-size:14px;font-weight:500;height:70px;justify-content:space-between;padding:0 30px;width:100%}.search-bar{position:relative}.search-bar input{background-color:transparent;background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%238b939c' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E\");background-position:15px 50%;background-repeat:no-repeat;background-size:15px;border:none;color:var(--body-color);display:block;font-family:var(--body-font);font-weight:600;height:100%;padding:0 10px 0 40px;width:100%}.search-bar input::-moz-placeholder{color:var(--placeholder)}.search-bar input::placeholder{color:var(--placeholder)}.browse-category{border-right:1px solid var(--border-color);white-space:nowrap}.browse-category svg{margin:2px 10px 0 8px;width:16px}.header-title{font-size:16px;font-weight:400;margin-right:120px}.header-title span{color:var(--body-color);font-weight:500}.user-img{border-radius:50%;height:28px;margin-right:15px;width:28px}.user-profile{cursor:pointer;flex-shrink:0;position:relative}.user-profile:before{background-color:#f86d72;border:2px solid #fff;border-radius:50%;content:\"\";height:7px;position:absolute;right:12px;top:-3px;width:7px}.profile{flex-shrink:0}.profile-menu{border-left:1px solid var(--border-color)}.profile svg{flex-shrink:0;margin:0 8px 0 15px;width:16px}.book-slide{width:100%}.book{background:#fff}.book-cell{display:flex;height:250px;margin-right:1px;padding:25px;position:relative;width:40%}.book-cell:first-child{background-color:#fbadaf}.book-cell:nth-child(2){background-color:#a4e0eb}.book-cell:nth-child(3){background-color:#edb9d6}.book-cell:nth-child(4){background-color:#fdca95}.book-cell:nth-child(5){background-color:#cbb5e2}.flickity-page-dots{display:none}.flickity-prev-next-button .arrow{fill:#d6d6d6}.flickity-prev-next-button svg{height:50%;left:25%;top:25%;width:50%}.flickity-prev-next-button.previous{left:15px}.flickity-prev-next-button.next{right:15px}.flickity-viewport{overflow:visible}.book-photo{border-radius:2px;bottom:-35px;box-shadow:-2px 6px 19px 0 #7f818e;flex-shrink:0;left:35px;transition:.3s ease;width:180px}.book-photo:hover{transform:scale(1.03)}.book-img{flex-shrink:0}.book-title{color:#fff;font-weight:600}.book-author,.book-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.book-author{font-size:14px;margin-top:3px}.book-content{color:#fff;overflow:hidden;padding:0 20px}fieldset,label{display:inline-block;margin:0;padding:0;vertical-align:middle}h1{margin:10px}.rating{border:none}.rating>input{display:none}.rating>label:before{content:\"\";display:inline-block;font-family:FontAwesome;font-size:.9em;margin-right:5px;margin-top:10px}.rating>label{color:#fff;float:right}.rating:not(:checked)>label:hover,.rating:not(:checked)>label:hover~label,.rating>input:checked+label:hover,.rating>input:checked~label,.rating>input:checked~label:hover,.rating>input:checked~label:hover~label,.rating>label:hover~input:checked~label{color:#d85d61}.blue:not(:checked)>label:hover,.blue:not(:checked)>label:hover~label,.blue>input:checked+label:hover,.blue>input:checked~label,.blue>input:checked~label:hover,.blue>input:checked~label:hover~label,.blue>label:hover~input:checked~label{color:#458997}.purple:not(:checked)>label:hover,.purple:not(:checked)>label:hover~label,.purple>input:checked+label:hover,.purple>input:checked~label,.purple>input:checked~label:hover,.purple>input:checked~label:hover~label,.purple>label:hover~input:checked~label{color:#a76287}.yellow:not(:checked)>label:hover,.yellow:not(:checked)>label:hover~label,.yellow>input:checked+label:hover,.yellow>input:checked~label,.yellow>input:checked~label:hover,.yellow>input:checked~label:hover~label,.yellow>label:hover~input:checked~label{color:#ffad58}.dark-purp:not(:checked)>label:hover,.dark-purp:not(:checked)>label:hover~label,.dark-purp>input:checked+label:hover,.dark-purp>input:checked~label,.dark-purp>input:checked~label:hover,.dark-purp>input:checked~label:hover~label,.dark-purp>label:hover~input:checked~label{color:#905587}.book-voters{color:#fff;font-size:13px;margin-left:7px;margin-top:7px;vertical-align:sub;white-space:nowrap}.book-sum{display:-webkit-box;font-size:14px;margin-top:20px;overflow:hidden;-webkit-line-clamp:3;-webkit-box-orient:vertical}.book-see{background-color:#fff;border-radius:20px;color:#fbadaf;font-size:14px;font-weight:600;margin-top:25px;padding:8px;text-align:center;width:160px}.book-see:hover{color:#ff6e72}.book-see.book-blue{color:#a4e0eb}.book-see.book-blue:hover{color:#22cdec}.book-see.book-pink{color:#edb9d6}.book-see.book-pink:hover{color:#ff6dbe}.book-see.book-yellow{color:#fdca95}.book-see.book-yellow:hover{color:#fb9124}.book-see.book-purple{color:#cbb5e2}.book-see.book-purple:hover{color:#a764ec}.main-wrapper{display:flex;flex-grow:1;margin-top:100px;overflow:hidden;width:100%}.books-of{display:flex;flex-direction:column;flex-shrink:0;overflow-x:hidden;overflow-y:auto;width:320px}.popular-books{flex-grow:1;overflow-y:auto;padding:0 30px 50px}.genre{font-size:15px;font-weight:500}.main-menu{background-color:var(--page-bg-color);border-bottom:1px solid #dcddde;padding-bottom:15px;position:sticky;right:0;top:0;white-space:nowrap;z-index:2}.book-types{margin-left:auto}.book-types a{color:var(--body-color);font-size:14px;text-decoration:none}.book-type+.book-type{margin-left:20px}.book-type{position:relative;transition:.2s}.book-type.active,.book-type:hover{-webkit-text-stroke:.3px}.book-type.active:before,.book-type:hover:before{background-color:#67d4ea;bottom:-17px;box-shadow:0 -1px 5px 0 #67d4ea;content:\"\";height:2px;position:absolute;right:15px;width:28px}.book-type:nth-child(2):before{right:12px}.book-type:nth-child(3):before{right:8px}.book-type:nth-child(4):before{right:6px}.book-type:nth-child(5):before{right:20px}.week{padding:0 30px}.author+.author{margin-top:20px}.author-name{font-size:14px}.author:last-child{margin-bottom:40px}.author-title{font-size:15px;font-weight:500;padding:0 0 20px}.author-img{border-radius:50%;height:30px;margin-right:16px;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center;width:30px}.year-book-img{margin-right:16px;width:45px}.year-book-name{font-weight:500;margin-bottom:15px}.year-book-author{font-size:13px}.year-book+.year-book{margin-top:20px}.year-book-content{display:flex;flex-direction:column;font-size:14px}.overlay{background:linear-gradient(180deg,hsla(0,0%,100%,0) 0,#f2f5f7 65%,#f2f5f7);bottom:0;flex-shrink:0;height:60px;left:0;margin-left:-35px;position:sticky;width:340px}.book-cards{display:grid;padding-top:40px;position:relative}.book-card,.book-cards{background-color:#f6f6f6}.book-card{border-radius:4px;box-shadow:-1px 3px 8px -1px rgba(0,0,0,.1);color:var(--body-color-light);cursor:pointer;height:270px;margin-top:0;padding:0 0 20px 20px}.book-card-img{border-bottom:1px solid #dcddde;border-radius:2px;box-shadow:0 1px 7px 2px #c7c9d3;margin-bottom:20px;margin-top:-20px;-o-object-fit:cover;object-fit:cover;transition:.3s ease;width:160px}.book-card-img:hover{transform:scale(1.04)}.card-content{color:var(--body-color);overflow:hidden;padding:15px;position:relative;width:100%}.book-name{font-weight:500}.book-by,.book-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.book-by{color:var(--body-color-light);font-size:13px;margin-top:4px}.book-rate>label{color:#ccc}.rate{display:inline-block;white-space:wrap}.book-rate:not(:checked)>label:hover,.book-rate:not(:checked)>label:hover~label,.book-rate>input:checked+label:hover,.book-rate>input:checked~label,.book-rate>input:checked~label:hover,.book-rate>input:checked~label:hover~label,.book-rate>label:hover~input:checked~label{color:#ff9700}.card-sum,.card-vote{color:var(--body-color-light)}.card-sum{font-size:13px;line-height:1.6em;-webkit-line-clamp:4;margin-top:15px}.content-wrapper,.content__{border-bottom:1px solid #ebedef;display:flex;position:relative}.content-wrapper:before{background-color:#8f98a9;background-color:#aaaebc;border:0;border-radius:50%;box-shadow:0 -6px 0 0 #aaaebc,0 6px 0 0 #aaaebc;content:\"\";height:4px;margin-left:auto;padding:0;position:absolute;right:12px;top:17px;width:4px}.like-profile{margin-top:8px}.like-profile+.like-profile{margin-left:-5px}.like-img{border:2px solid #fff;border-radius:50%;-o-object-fit:cover;object-fit:cover;width:28px}.like-name{font-size:13px;margin-left:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.like-name span{font-weight:600}@media (max-width:1103px){.book-cell{width:60%}}@media (max-width:765px){.book-cell{width:80%}}@media (max-width:575px){.book-cell{width:100%}}@media (max-width:458px){.book-photo{width:180px}.book-voters{display:none}}@media (max-width:420px){.book-see{font-size:13px;width:120px}.book-photo{width:130px}.main-wrapper{margin-top:50px}}@media (max-width:360px){.rating>label:before{font-size:.8em}}@media (max-width:1220px){.card-vote{display:none}}@media (max-width:1085px){.book-rate>label{font-size:.7em}}@media (max-width:1045px){.books-of{display:none}}@media (max-width:725px){.browse-category,.search-bar{display:none}.header-title{margin-right:auto}.book-cards{grid-template-columns:1fr}.book-types{display:none}}@media (max-width:372px){.card-content{padding:20px}}",
+      "start": 1709717381645,
+      "end": 1709717398956,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717398956,
+      "end": 1709717398956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717398956,
+      "end": 1709717398956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717398956,
+      "end": 1709717398956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717398957,
+      "end": 1709717398957,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717398957,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717398958,
+      "end": 1709717398958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717398959,
+      "end": 1709717398959,
+      "order": "normal"
+    }
+  ]
+}

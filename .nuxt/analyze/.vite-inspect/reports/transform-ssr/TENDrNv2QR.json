@@ -1,0 +1,269 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuetify/lib/components/VSwitch/VSwitch.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": ".v-switch .v-label {\n  padding-inline-start: 10px;\n}\n.v-switch .v-switch__thumb {\n  background-color: rgb(var(--v-theme-surface-bright));\n  color: rgb(var(--v-theme-on-surface-bright));\n}\n\n.v-switch__loader {\n  display: flex;\n}\n.v-switch__loader .v-progress-circular {\n  color: rgb(var(--v-theme-surface));\n}\n\n.v-switch__track,\n.v-switch__thumb {\n  transition: none;\n}\n.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__track,\n.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__thumb {\n  background-color: rgb(var(--v-theme-error));\n  color: rgb(var(--v-theme-on-error));\n}\n\n.v-switch__track {\n  background-color: rgb(var(--v-theme-surface-variant));\n  border-radius: 9999px;\n  height: 14px;\n  opacity: 0.6;\n  width: 36px;\n  cursor: pointer;\n  transition: 0.2s background-color cubic-bezier(0.4, 0, 0.2, 1);\n}\n.v-switch--inset .v-switch__track {\n  border-radius: 9999px;\n  height: 32px;\n  width: 52px;\n}\n\n.v-switch__thumb {\n  align-items: center;\n  border-radius: 50%;\n  display: flex;\n  height: 20px;\n  justify-content: center;\n  width: 20px;\n  pointer-events: none;\n  transition: 0.15s 0.05s transform cubic-bezier(0, 0, 0.2, 1), 0.2s color cubic-bezier(0.4, 0, 0.2, 1), 0.2s background-color cubic-bezier(0.4, 0, 0.2, 1);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0px 2px 4px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)), 0px 4px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)), 0px 1px 10px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));\n}\n.v-switch--inset .v-switch__thumb {\n  height: 24px;\n  width: 24px;\n  transform: scale(0.6666666667);\n  box-shadow: 0px 0px 0px 0px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)), 0px 0px 0px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)), 0px 0px 0px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));\n}\n.v-switch--inset .v-switch__thumb--filled {\n  transform: none;\n}\n.v-switch--inset .v-selection-control--dirty .v-switch__thumb {\n  transform: none;\n  transition: 0.15s 0.05s transform cubic-bezier(0, 0, 0.2, 1);\n}\n\n.v-switch .v-selection-control {\n  min-height: var(--v-input-control-height);\n}\n.v-switch .v-selection-control__input {\n  border-radius: 50%;\n  transition: 0.2s transform cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translateX(-10px);\n  position: absolute;\n}\n.v-switch .v-selection-control__input .v-icon {\n  position: absolute;\n}\n.v-switch .v-selection-control--dirty .v-selection-control__input {\n  transform: translateX(10px);\n}\n.v-switch.v-switch--indeterminate .v-selection-control__input {\n  transform: scale(0.8);\n}\n.v-switch.v-switch--indeterminate .v-switch__thumb {\n  transform: scale(0.75);\n  box-shadow: none;\n}\n.v-switch.v-switch--inset .v-selection-control__wrapper {\n  width: auto;\n}",
+      "start": 1709717460919,
+      "end": 1709717461455,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717461455,
+      "end": 1709717461456,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717461455,
+      "end": 1709717461456,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717461456,
+      "end": 1709717461456,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717461456,
+      "end": 1709717461456,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717461456,
+      "end": 1709717461456,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".v-switch .v-label{padding-inline-start:10px}.v-switch .v-switch__thumb{background-color:rgb(var(--v-theme-surface-bright));color:rgb(var(--v-theme-on-surface-bright))}.v-switch__loader{display:flex}.v-switch__loader .v-progress-circular{color:rgb(var(--v-theme-surface))}.v-switch__thumb,.v-switch__track{transition:none}.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__thumb,.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__track{background-color:rgb(var(--v-theme-error));color:rgb(var(--v-theme-on-error))}.v-switch__track{background-color:rgb(var(--v-theme-surface-variant));border-radius:9999px;cursor:pointer;height:14px;opacity:.6;transition:background-color .2s cubic-bezier(.4,0,.2,1);width:36px}.v-switch--inset .v-switch__track{border-radius:9999px;height:32px;width:52px}.v-switch__thumb{align-items:center;border-radius:50%;box-shadow:0 2px 4px -1px var(--v-shadow-key-umbra-opacity,rgba(0,0,0,.2)),0 4px 5px 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.14)),0 1px 10px 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.12));display:flex;height:20px;justify-content:center;overflow:hidden;pointer-events:none;position:relative;transition:transform .15s cubic-bezier(0,0,.2,1) .05s,color .2s cubic-bezier(.4,0,.2,1),background-color .2s cubic-bezier(.4,0,.2,1);width:20px}.v-switch--inset .v-switch__thumb{box-shadow:0 0 0 0 var(--v-shadow-key-umbra-opacity,rgba(0,0,0,.2)),0 0 0 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.14)),0 0 0 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.12));height:24px;transform:scale(.6666666667);width:24px}.v-switch--inset .v-switch__thumb--filled{transform:none}.v-switch--inset .v-selection-control--dirty .v-switch__thumb{transform:none;transition:transform .15s cubic-bezier(0,0,.2,1) .05s}.v-switch .v-selection-control{min-height:var(--v-input-control-height)}.v-switch .v-selection-control__input{border-radius:50%;position:absolute;transform:translateX(-10px);transition:transform .2s cubic-bezier(.4,0,.2,1)}.v-switch .v-selection-control__input .v-icon{position:absolute}.v-switch .v-selection-control--dirty .v-selection-control__input{transform:translateX(10px)}.v-switch.v-switch--indeterminate .v-selection-control__input{transform:scale(.8)}.v-switch.v-switch--indeterminate .v-switch__thumb{box-shadow:none;transform:scale(.75)}.v-switch.v-switch--inset .v-selection-control__wrapper{width:auto}",
+      "start": 1709717461456,
+      "end": 1709717461463,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuetify/lib/components/VSwitch/VSwitch.css",
+        "mappings": "AAAA,mBACE,yBACF,CACA,2BACE,mDAAoD,CACpD,2CACF,CAEA,kBACE,YACF,CACA,uCACE,iCACF,CAEA,kCAEE,eACF,CACA,kKAEE,0CAA2C,CAC3C,kCACF,CAEA,iBACE,oDAAqD,CACrD,oBAAqB,CAIrB,cAAe,CAHf,WAAY,CACZ,UAAY,CAGZ,uDAA8D,CAF9D,UAGF,CACA,kCACE,oBAAqB,CACrB,WAAY,CACZ,UACF,CAEA,iBACE,kBAAmB,CACnB,iBAAkB,CASlB,6MAAyO,CARzO,YAAa,CACb,WAAY,CACZ,sBAAuB,CAKvB,eAAgB,CAHhB,mBAAoB,CAEpB,iBAAkB,CADlB,oIAAyJ,CAFzJ,UAMF,CACA,kCAIE,6LAAuO,CAHvO,WAAY,CAEZ,4BAA8B,CAD9B,UAGF,CACA,0CACE,cACF,CACA,8DACE,cAAe,CACf,qDACF,CAEA,+BACE,wCACF,CACA,sCACE,iBAAkB,CAGlB,iBAAkB,CADlB,2BAA4B,CAD5B,gDAGF,CACA,8CACE,iBACF,CACA,kEACE,0BACF,CACA,8DACE,mBACF,CACA,mDAEE,eAAgB,CADhB,oBAEF,CACA,wDACE,UACF",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuetify/lib/components/VSwitch/VSwitch.css"
+        ],
+        "sourcesContent": [
+          ".v-switch .v-label {\n  padding-inline-start: 10px;\n}\n.v-switch .v-switch__thumb {\n  background-color: rgb(var(--v-theme-surface-bright));\n  color: rgb(var(--v-theme-on-surface-bright));\n}\n\n.v-switch__loader {\n  display: flex;\n}\n.v-switch__loader .v-progress-circular {\n  color: rgb(var(--v-theme-surface));\n}\n\n.v-switch__track,\n.v-switch__thumb {\n  transition: none;\n}\n.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__track,\n.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__thumb {\n  background-color: rgb(var(--v-theme-error));\n  color: rgb(var(--v-theme-on-error));\n}\n\n.v-switch__track {\n  background-color: rgb(var(--v-theme-surface-variant));\n  border-radius: 9999px;\n  height: 14px;\n  opacity: 0.6;\n  width: 36px;\n  cursor: pointer;\n  transition: 0.2s background-color cubic-bezier(0.4, 0, 0.2, 1);\n}\n.v-switch--inset .v-switch__track {\n  border-radius: 9999px;\n  height: 32px;\n  width: 52px;\n}\n\n.v-switch__thumb {\n  align-items: center;\n  border-radius: 50%;\n  display: flex;\n  height: 20px;\n  justify-content: center;\n  width: 20px;\n  pointer-events: none;\n  transition: 0.15s 0.05s transform cubic-bezier(0, 0, 0.2, 1), 0.2s color cubic-bezier(0.4, 0, 0.2, 1), 0.2s background-color cubic-bezier(0.4, 0, 0.2, 1);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0px 2px 4px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)), 0px 4px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)), 0px 1px 10px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));\n}\n.v-switch--inset .v-switch__thumb {\n  height: 24px;\n  width: 24px;\n  transform: scale(0.6666666667);\n  box-shadow: 0px 0px 0px 0px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)), 0px 0px 0px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)), 0px 0px 0px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));\n}\n.v-switch--inset .v-switch__thumb--filled {\n  transform: none;\n}\n.v-switch--inset .v-selection-control--dirty .v-switch__thumb {\n  transform: none;\n  transition: 0.15s 0.05s transform cubic-bezier(0, 0, 0.2, 1);\n}\n\n.v-switch .v-selection-control {\n  min-height: var(--v-input-control-height);\n}\n.v-switch .v-selection-control__input {\n  border-radius: 50%;\n  transition: 0.2s transform cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translateX(-10px);\n  position: absolute;\n}\n.v-switch .v-selection-control__input .v-icon {\n  position: absolute;\n}\n.v-switch .v-selection-control--dirty .v-selection-control__input {\n  transform: translateX(10px);\n}\n.v-switch.v-switch--indeterminate .v-selection-control__input {\n  transform: scale(0.8);\n}\n.v-switch.v-switch--indeterminate .v-switch__thumb {\n  transform: scale(0.75);\n  box-shadow: none;\n}\n.v-switch.v-switch--inset .v-selection-control__wrapper {\n  width: auto;\n}"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717461463,
+      "end": 1709717461463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default \".v-switch .v-label{padding-inline-start:10px}.v-switch .v-switch__thumb{background-color:rgb(var(--v-theme-surface-bright));color:rgb(var(--v-theme-on-surface-bright))}.v-switch__loader{display:flex}.v-switch__loader .v-progress-circular{color:rgb(var(--v-theme-surface))}.v-switch__thumb,.v-switch__track{transition:none}.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__thumb,.v-selection-control--error:not(.v-selection-control--disabled) .v-switch__track{background-color:rgb(var(--v-theme-error));color:rgb(var(--v-theme-on-error))}.v-switch__track{background-color:rgb(var(--v-theme-surface-variant));border-radius:9999px;cursor:pointer;height:14px;opacity:.6;transition:background-color .2s cubic-bezier(.4,0,.2,1);width:36px}.v-switch--inset .v-switch__track{border-radius:9999px;height:32px;width:52px}.v-switch__thumb{align-items:center;border-radius:50%;box-shadow:0 2px 4px -1px var(--v-shadow-key-umbra-opacity,rgba(0,0,0,.2)),0 4px 5px 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.14)),0 1px 10px 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.12));display:flex;height:20px;justify-content:center;overflow:hidden;pointer-events:none;position:relative;transition:transform .15s cubic-bezier(0,0,.2,1) .05s,color .2s cubic-bezier(.4,0,.2,1),background-color .2s cubic-bezier(.4,0,.2,1);width:20px}.v-switch--inset .v-switch__thumb{box-shadow:0 0 0 0 var(--v-shadow-key-umbra-opacity,rgba(0,0,0,.2)),0 0 0 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.14)),0 0 0 0 var(--v-shadow-key-penumbra-opacity,rgba(0,0,0,.12));height:24px;transform:scale(.6666666667);width:24px}.v-switch--inset .v-switch__thumb--filled{transform:none}.v-switch--inset .v-selection-control--dirty .v-switch__thumb{transform:none;transition:transform .15s cubic-bezier(0,0,.2,1) .05s}.v-switch .v-selection-control{min-height:var(--v-input-control-height)}.v-switch .v-selection-control__input{border-radius:50%;position:absolute;transform:translateX(-10px);transition:transform .2s cubic-bezier(.4,0,.2,1)}.v-switch .v-selection-control__input .v-icon{position:absolute}.v-switch .v-selection-control--dirty .v-selection-control__input{transform:translateX(10px)}.v-switch.v-switch--indeterminate .v-selection-control__input{transform:scale(.8)}.v-switch.v-switch--indeterminate .v-switch__thumb{box-shadow:none;transform:scale(.75)}.v-switch.v-switch--inset .v-selection-control__wrapper{width:auto}\"",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717461464,
+      "end": 1709717461464,
+      "order": "normal"
+    }
+  ]
+}

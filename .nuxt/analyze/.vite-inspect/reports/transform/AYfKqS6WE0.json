@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/homemaintenance.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n      <Header_maintenance />\n         <main style=\"margin-top: 40px;\">\n            <slot></slot>\n         </main>\n         <v-row justify=\"center\" no-gutters style=\"margin-top: 20px;\" class=\"footer\">\n      <v-col class=\"text-center mt-4\" cols=\"12\">\n        {{ new Date().getFullYear() }} <strong>:  EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par </strong> <a href=\"https://ticsmaster.bj/\" target=\"_blank\" style=\"text-decoration: none;\">TICS MASTER SARL </a>\n      </v-col>\n    </v-row>\n   </div>\n</template>\n<script setup>\n   import Header_maintenance from '~/components/Accueil/Header_maintenance.vue';\n   import TheFooter from '~/components/Accueil/Footer.vue';\n</script>\n<style lang=\"scss\">\n.footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 50px; /* ajustez la hauteur selon vos besoins */\n}\n#nav{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important ;\n  background-color: white\n} \n\n</style>\n",
+      "start": 1709717397823,
+      "end": 1709717399083,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717399083,
+      "end": 1709717399083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717399083,
+      "end": 1709717399083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717399083,
+      "end": 1709717399083,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717399083,
+      "end": 1709717399083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717399083,
+      "end": 1709717399083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717399083,
+      "end": 1709717399083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717399084,
+      "end": 1709717399084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { style: {\"margin-top\":\"40px\"} }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"strong\", null, \": EducMaster/ MESTFP / République du bénin. Tous droits réservés. Plateforme réalisée par \", -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"a\", {\n  href: \"https://ticsmaster.bj/\",\n  target: \"_blank\",\n  style: {\"text-decoration\":\"none\"}\n}, \"TICS MASTER SARL \", -1)\n\nimport Header_maintenance from '~/components/Accueil/Header_maintenance.vue';\n   import TheFooter from '~/components/Accueil/Footer.vue';\n\nconst _sfc_main = {\n  __name: 'homemaintenance',\n  setup(__props) {\n\n   \nreturn (_ctx, _cache) => {\n  const _component_v_col = _resolveComponent(\"v-col\")\n  const _component_v_row = _resolveComponent(\"v-row\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(Header_maintenance),\n    _createElementVNode(\"main\", _hoisted_1, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _createVNode(_component_v_row, {\n      justify: \"center\",\n      \"no-gutters\": \"\",\n      style: {\"margin-top\":\"20px\"},\n      class: \"footer\"\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_v_col, {\n          class: \"text-center mt-4\",\n          cols: \"12\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString(new Date().getFullYear()) + \" \", 1),\n            _hoisted_2,\n            _createTextVNode(),\n            _hoisted_3\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    })\n  ]))\n}\n}\n\n}\n\n\nimport \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/homemaintenance.vue?vue&type=style&index=0&lang.scss\"\n\nexport default _sfc_main",
+      "start": 1709717399084,
+      "end": 1709717399087,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717399087,
+      "end": 1709717399087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717399087,
+      "end": 1709717399088,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717399089,
+      "end": 1709717399089,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717399089,
+      "end": 1709717399089,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717399089,
+      "end": 1709717399089,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717399089,
+      "end": 1709717399089,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717399089,
+      "end": 1709717399089,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717399090,
+      "end": 1709717399090,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717399090,
+      "end": 1709717399090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717399090,
+      "end": 1709717399090,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-chip/VaChip.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaChip.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createBlock, resolveDynamicComponent, normalizeClass, normalizeStyle, withCtx, createElementVNode, mergeProps, toHandlers, createCommentVNode, renderSlot, withModifiers, withKeys } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.js\";\nconst VaChip_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = { class: \"va-chip__content\" };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  return _ctx.valueComputed ? (openBlock(), createBlock(resolveDynamicComponent(_ctx.tagComputed), {\n    key: 0,\n    class: normalizeClass([\"va-chip\", _ctx.computedClass]),\n    href: _ctx.hrefComputed,\n    target: _ctx.target,\n    to: _ctx.to,\n    replace: _ctx.replace,\n    exact: _ctx.exact,\n    \"active-class\": _ctx.activeClass,\n    \"exact-active-class\": _ctx.exactActiveClass,\n    style: normalizeStyle(_ctx.computedStyle)\n  }, {\n    default: withCtx(() => [\n      createElementVNode(\"span\", mergeProps({\n        class: \"va-chip__inner\",\n        onFocus: _cache[0] || (_cache[0] = ($event) => _ctx.$emit(\"focus\")),\n        onMouseenter: _cache[1] || (_cache[1] = (...args) => _ctx.onMouseEnter && _ctx.onMouseEnter(...args)),\n        onMouseleave: _cache[2] || (_cache[2] = (...args) => _ctx.onMouseLeave && _ctx.onMouseLeave(...args))\n      }, toHandlers(_ctx.keyboardFocusListeners, true)), [\n        _ctx.icon ? (openBlock(), createBlock(_component_va_icon, {\n          key: 0,\n          class: \"va-chip__icon\",\n          name: _ctx.icon,\n          size: _ctx.iconSize\n        }, null, 8, [\"name\", \"size\"])) : createCommentVNode(\"\", true),\n        createElementVNode(\"span\", _hoisted_1, [\n          renderSlot(_ctx.$slots, \"default\")\n        ]),\n        _ctx.closeable ? (openBlock(), createBlock(_component_va_icon, {\n          key: 1,\n          role: \"button\",\n          name: \"va-close\",\n          class: \"va-chip__close-icon\",\n          \"aria-label\": _ctx.tp(_ctx.$props.ariaCloseLabel),\n          tabindex: _ctx.tabIndexComputed,\n          size: _ctx.iconSize,\n          onClick: withModifiers(_ctx.close, [\"stop\"]),\n          onKeydown: [\n            withKeys(withModifiers(_ctx.close, [\"stop\"]), [\"enter\"]),\n            withKeys(withModifiers(_ctx.close, [\"stop\"]), [\"space\"])\n          ]\n        }, null, 8, [\"aria-label\", \"tabindex\", \"size\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true)\n      ], 16)\n    ]),\n    _: 3\n  }, 8, [\"href\", \"target\", \"to\", \"replace\", \"exact\", \"active-class\", \"exact-active-class\", \"class\", \"style\"])) : createCommentVNode(\"\", true);\n}\nconst _VaChip = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaChip as _\n};\n\nimport '../../../VaChip.css';\n//# sourceMappingURL=VaChip.js.map\n",
+      "start": 1709717416747,
+      "end": 1709717417250,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717417250,
+      "end": 1709717417250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717417250,
+      "end": 1709717417255,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717417255,
+      "end": 1709717417255,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717417255,
+      "end": 1709717417255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717417255,
+      "end": 1709717417302,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717417302,
+      "end": 1709717417302,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717417302,
+      "end": 1709717417302,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717417302,
+      "end": 1709717417302,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717417302,
+      "end": 1709717417302,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717417302,
+      "end": 1709717417315,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717417315,
+      "end": 1709717417315,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717417315,
+      "end": 1709717417327,
+      "order": "normal"
+    }
+  ]
+}

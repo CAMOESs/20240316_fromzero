@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/services/icon/utils/get-icon-configuration.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { m as merge } from \"../../../../vendor.js\";\nimport { i as isMatchDynamicSegments, d as dynamicSegments } from \"./dynamic-segment.js\";\nimport { i as isMatchRegex, r as regexGroupsValues } from \"./regex.js\";\nimport { i as isIconConfigurationString, a as isIconConfigurationRegex } from \"../types.js\";\nconst isMatchConfiguration = (iconName, iconConfiguration) => {\n  if (isIconConfigurationString(iconConfiguration)) {\n    return isMatchDynamicSegments(iconName, iconConfiguration.name);\n  }\n  if (isIconConfigurationRegex(iconConfiguration)) {\n    return isMatchRegex(iconName, iconConfiguration.name);\n  }\n  return false;\n};\nconst resolveIconConfigurationString = (iconName, iconConfiguration) => {\n  const args = dynamicSegments(iconName, iconConfiguration.name);\n  return iconConfiguration.resolve && iconConfiguration.resolve(args);\n};\nconst resolveIconConfigurationRegex = (iconName, iconConfig) => {\n  if (iconConfig.name.global) {\n    throw new Error(`Bad icon config with name ${iconConfig.name}. Please, don't use global regex as name.`);\n  }\n  const args = regexGroupsValues(iconName, iconConfig.name);\n  return iconConfig.resolveFromRegex && iconConfig.resolveFromRegex(...args);\n};\nconst resolveIconConfiguration = (iconName, iconConfiguration) => {\n  if (isIconConfigurationString(iconConfiguration)) {\n    return resolveIconConfigurationString(iconName, iconConfiguration);\n  }\n  if (isIconConfigurationRegex(iconConfiguration)) {\n    return resolveIconConfigurationRegex(iconName, iconConfiguration);\n  }\n  throw Error(\"Unknown icon config\");\n};\nconst findMatchedIconConfiguration = (iconName, globalIconConfig, namesToIgnore = []) => {\n  const matchedConfig = globalIconConfig.find((config) => {\n    if (namesToIgnore.includes(config.name.toString())) {\n      return false;\n    }\n    return isMatchConfiguration(iconName, config);\n  });\n  if (!matchedConfig) {\n    throw new Error(`Can not find icon config from ${iconName}. Please provide default config.`);\n  }\n  return matchedConfig;\n};\nconst findIconConfiguration = (iconName, globalIconConfig, namesToIgnore = []) => {\n  if (!iconName) {\n    return;\n  }\n  const matchedIconConfiguration = findMatchedIconConfiguration(iconName, globalIconConfig, namesToIgnore);\n  const resolvedIconConfiguration = merge(resolveIconConfiguration(iconName, matchedIconConfiguration), matchedIconConfiguration);\n  namesToIgnore = [...namesToIgnore, matchedIconConfiguration.name.toString()];\n  return merge(\n    findIconConfiguration(resolvedIconConfiguration.to, globalIconConfig, namesToIgnore),\n    resolvedIconConfiguration\n  );\n};\nconst iconPropsFromIconConfiguration = (iconConfiguration) => {\n  const junkKeys = [\"name\", \"to\", \"resolve\", \"resolveFromRegex\"];\n  const configuration = iconConfiguration;\n  junkKeys.forEach((key) => {\n    delete configuration[key];\n  });\n  return configuration;\n};\nconst getIconConfiguration = (name, iconConfig) => {\n  const configuration = findIconConfiguration(name, iconConfig);\n  if (configuration === void 0) {\n    return {};\n  }\n  return iconPropsFromIconConfiguration(configuration);\n};\nexport {\n  getIconConfiguration as g\n};\n//# sourceMappingURL=get-icon-configuration.js.map\n",
+      "start": 1709717415633,
+      "end": 1709717416346,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717416346,
+      "end": 1709717416346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717416346,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717416347,
+      "end": 1709717416347,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717416347,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717416348,
+      "end": 1709717416348,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/@floating-ui/vue/dist/floating-ui.vue.esm.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { arrow as arrow$1, computePosition } from '@floating-ui/dom';\nexport { autoPlacement, autoUpdate, computePosition, detectOverflow, flip, getOverflowAncestors, hide, inline, limitShift, offset, platform, shift, size } from '@floating-ui/dom';\nimport { unref, computed, ref, shallowRef, watch, getCurrentScope, onScopeDispose, shallowReadonly } from 'vue-demi';\n\nfunction unwrapElement(element) {\n  var _$el;\n  return (_$el = element == null ? void 0 : element.$el) != null ? _$el : element;\n}\n\n/**\n * Positions an inner element of the floating element such that it is centered to the reference element.\n * @param options The arrow options.\n * @see https://floating-ui.com/docs/arrow\n */\nfunction arrow(options) {\n  return {\n    name: 'arrow',\n    options,\n    fn(args) {\n      const element = unwrapElement(unref(options.element));\n      if (element == null) {\n        return {};\n      }\n      return arrow$1({\n        element,\n        padding: options.padding\n      }).fn(args);\n    }\n  };\n}\n\nfunction getDPR(element) {\n  if (typeof window === 'undefined') {\n    return 1;\n  }\n  const win = element.ownerDocument.defaultView || window;\n  return win.devicePixelRatio || 1;\n}\n\nfunction roundByDPR(element, value) {\n  const dpr = getDPR(element);\n  return Math.round(value * dpr) / dpr;\n}\n\n/**\n * Computes the `x` and `y` coordinates that will place the floating element next to a reference element when it is given a certain CSS positioning strategy.\n * @param reference The reference template ref.\n * @param floating The floating template ref.\n * @param options The floating options.\n * @see https://floating-ui.com/docs/vue\n */\nfunction useFloating(reference, floating, options) {\n  if (options === void 0) {\n    options = {};\n  }\n  const whileElementsMountedOption = options.whileElementsMounted;\n  const openOption = computed(() => {\n    var _unref;\n    return (_unref = unref(options.open)) != null ? _unref : true;\n  });\n  const middlewareOption = computed(() => unref(options.middleware));\n  const placementOption = computed(() => {\n    var _unref2;\n    return (_unref2 = unref(options.placement)) != null ? _unref2 : 'bottom';\n  });\n  const strategyOption = computed(() => {\n    var _unref3;\n    return (_unref3 = unref(options.strategy)) != null ? _unref3 : 'absolute';\n  });\n  const transformOption = computed(() => {\n    var _unref4;\n    return (_unref4 = unref(options.transform)) != null ? _unref4 : true;\n  });\n  const referenceElement = computed(() => unwrapElement(reference.value));\n  const floatingElement = computed(() => unwrapElement(floating.value));\n  const x = ref(0);\n  const y = ref(0);\n  const strategy = ref(strategyOption.value);\n  const placement = ref(placementOption.value);\n  const middlewareData = shallowRef({});\n  const isPositioned = ref(false);\n  const floatingStyles = computed(() => {\n    const initialStyles = {\n      position: strategy.value,\n      left: '0',\n      top: '0'\n    };\n    if (!floatingElement.value) {\n      return initialStyles;\n    }\n    const xVal = roundByDPR(floatingElement.value, x.value);\n    const yVal = roundByDPR(floatingElement.value, y.value);\n    if (transformOption.value) {\n      return {\n        ...initialStyles,\n        transform: \"translate(\" + xVal + \"px, \" + yVal + \"px)\",\n        ...(getDPR(floatingElement.value) >= 1.5 && {\n          willChange: 'transform'\n        })\n      };\n    }\n    return {\n      position: strategy.value,\n      left: xVal + \"px\",\n      top: yVal + \"px\"\n    };\n  });\n  let whileElementsMountedCleanup;\n  function update() {\n    if (referenceElement.value == null || floatingElement.value == null) {\n      return;\n    }\n    computePosition(referenceElement.value, floatingElement.value, {\n      middleware: middlewareOption.value,\n      placement: placementOption.value,\n      strategy: strategyOption.value\n    }).then(position => {\n      x.value = position.x;\n      y.value = position.y;\n      strategy.value = position.strategy;\n      placement.value = position.placement;\n      middlewareData.value = position.middlewareData;\n      isPositioned.value = true;\n    });\n  }\n  function cleanup() {\n    if (typeof whileElementsMountedCleanup === 'function') {\n      whileElementsMountedCleanup();\n      whileElementsMountedCleanup = undefined;\n    }\n  }\n  function attach() {\n    cleanup();\n    if (whileElementsMountedOption === undefined) {\n      update();\n      return;\n    }\n    if (referenceElement.value != null && floatingElement.value != null) {\n      whileElementsMountedCleanup = whileElementsMountedOption(referenceElement.value, floatingElement.value, update);\n      return;\n    }\n  }\n  function reset() {\n    if (!openOption.value) {\n      isPositioned.value = false;\n    }\n  }\n  watch([middlewareOption, placementOption, strategyOption], update, {\n    flush: 'sync'\n  });\n  watch([referenceElement, floatingElement], attach, {\n    flush: 'sync'\n  });\n  watch(openOption, reset, {\n    flush: 'sync'\n  });\n  if (getCurrentScope()) {\n    onScopeDispose(cleanup);\n  }\n  return {\n    x: shallowReadonly(x),\n    y: shallowReadonly(y),\n    strategy: shallowReadonly(strategy),\n    placement: shallowReadonly(placement),\n    middlewareData: shallowReadonly(middlewareData),\n    isPositioned: shallowReadonly(isPositioned),\n    floatingStyles,\n    update\n  };\n}\n\nexport { arrow, useFloating };\n",
+      "start": 1709717427319,
+      "end": 1709717427483,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427483,
+      "end": 1709717427483,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427483,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427484,
+      "end": 1709717427484,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427484,
+      "end": 1709717427485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427485,
+      "end": 1709717427485,
+      "order": "normal"
+    }
+  ]
+}

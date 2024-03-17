@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/@sidebase/nuxt-auth/dist/runtime/utils/fetch.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { callWithNuxt } from \"#app\";\nimport { joinPathToApiURL } from \"./url.mjs\";\nexport const _fetch = async (nuxt, path, fetchOptions) => {\n  const joinedPath = await callWithNuxt(nuxt, () => joinPathToApiURL(path));\n  try {\n    return $fetch(joinedPath, fetchOptions);\n  } catch (error) {\n    console.error(\"Error in `nuxt-auth`-app-side data fetching: Have you added the authentication handler server-endpoint `[...].ts`? Have you added the authentication handler in a non-default location (default is `~/server/api/auth/[...].ts`) and not updated the module-setting `auth.basePath`? Error is:\");\n    console.error(error);\n    throw new Error(\"Runtime error, checkout the console logs to debug, open an issue at https://github.com/sidebase/nuxt-auth/issues/new/choose if you continue to have this problem\");\n  }\n};\n",
+      "start": 1709717413761,
+      "end": 1709717414325,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717414325,
+      "end": 1709717414325,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717414325,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717414326,
+      "end": 1709717414326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717414326,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717414327,
+      "end": 1709717414327,
+      "order": "normal"
+    }
+  ]
+}

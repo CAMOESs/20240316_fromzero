@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-input/VaInput.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaInput.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createBlock, mergeProps, createSlots, withCtx, withModifiers, withKeys, createCommentVNode, renderSlot, normalizeProps, guardReactiveProps, createElementBlock, renderList } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.js\";\nconst _hoisted_1 = [\"value\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_icon = resolveComponent(\"va-icon\");\n  const _component_va_input_wrapper = resolveComponent(\"va-input-wrapper\");\n  return openBlock(), createBlock(_component_va_input_wrapper, mergeProps({\n    ..._ctx.fieldListeners,\n    ..._ctx.wrapperProps\n  }, {\n    class: [\"va-input\", _ctx.$attrs.class],\n    style: _ctx.$attrs.style,\n    loading: _ctx.$props.loading || _ctx.isLoading,\n    error: _ctx.computedError,\n    \"error-messages\": _ctx.computedErrorMessages,\n    \"error-count\": _ctx.errorCount,\n    \"counter-value\": _ctx.valueLengthComputed,\n    onClick: _ctx.onFieldClick\n  }), createSlots({\n    icon: withCtx((slotScope) => [\n      _ctx.canBeCleared ? (openBlock(), createBlock(_component_va_icon, mergeProps({\n        key: 0,\n        role: \"button\",\n        \"aria-label\": _ctx.tp(_ctx.$props.ariaResetLabel)\n      }, _ctx.clearIconProps, {\n        onClick: withModifiers(_ctx.reset, [\"stop\"]),\n        onKeydown: [\n          withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"enter\"]),\n          withKeys(withModifiers(_ctx.reset, [\"stop\"]), [\"space\"])\n        ]\n      }), null, 16, [\"aria-label\", \"onClick\", \"onKeydown\"])) : createCommentVNode(\"\", true),\n      renderSlot(_ctx.$slots, \"icon\", normalizeProps(guardReactiveProps(slotScope)))\n    ]),\n    default: withCtx(() => [\n      !_ctx.$slots.content ? (openBlock(), createElementBlock(\"input\", mergeProps({\n        key: 0,\n        ref: \"input\",\n        class: \"va-input__content__input\"\n      }, { ..._ctx.computedInputAttributes, ..._ctx.inputEvents }, { value: _ctx.computedValue }), null, 16, _hoisted_1)) : createCommentVNode(\"\", true)\n    ]),\n    _: 2\n  }, [\n    renderList(_ctx.filterSlots, (name) => {\n      return {\n        name,\n        fn: withCtx((slotScope) => [\n          renderSlot(_ctx.$slots, name, normalizeProps(guardReactiveProps(slotScope)))\n        ])\n      };\n    })\n  ]), 1040, [\"class\", \"style\", \"loading\", \"error\", \"error-messages\", \"error-count\", \"counter-value\", \"onClick\"]);\n}\nconst _VaInput = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaInput as _\n};\n//# sourceMappingURL=VaInput.js.map\n",
+      "start": 1709717416357,
+      "end": 1709717416619,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717416620,
+      "end": 1709717416620,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717416620,
+      "end": 1709717416621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717416621,
+      "end": 1709717416621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717416621,
+      "end": 1709717416621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717416621,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717416622,
+      "end": 1709717416622,
+      "order": "normal"
+    }
+  ]
+}

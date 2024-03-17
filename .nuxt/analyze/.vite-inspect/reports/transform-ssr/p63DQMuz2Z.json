@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-progress-bar/VaProgressBar.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { defineComponent, computed } from \"vue\";\nimport { b as clamp } from \"../../../vendor.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { u as useTextColor } from \"../../composables/useTextColor.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaProgressBar\",\n  props: {\n    ...useComponentPresetProp,\n    modelValue: { type: Number, default: 0 },\n    indeterminate: { type: Boolean, default: false },\n    color: { type: String, default: \"primary\" },\n    size: {\n      type: [Number, String],\n      default: \"medium\"\n    },\n    buffer: { type: Number, default: 100 },\n    rounded: { type: Boolean, default: true },\n    reverse: { type: Boolean, default: false },\n    contentInside: { type: Boolean, default: false },\n    showPercent: { type: Boolean, default: false },\n    max: { type: Number, default: 100 },\n    ariaLabel: { type: String, default: \"$t:progressState\" }\n  },\n  setup(props) {\n    const { getColor, getHoverColor } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const { textColorComputed } = useTextColor(colorComputed);\n    const isTextSize = computed(() => typeof props.size === \"string\" && [\"small\", \"medium\", \"large\"].includes(props.size));\n    const getCSSHeight = () => {\n      if (typeof props.size === \"number\") {\n        return `${props.size}px`;\n      }\n      if (isTextSize.value) {\n        return;\n      }\n      return props.size;\n    };\n    const { tp } = useTranslation();\n    const progressBarValue = computed(() => 100 / props.max * props.modelValue);\n    return {\n      rootClass: computed(() => ({\n        \"va-progress-bar--square\": !props.rounded,\n        [`va-progress-bar--${props.size}`]: isTextSize.value\n      })),\n      rooStyle: computed(() => ({\n        \"--va-progress-bar-color\": colorComputed.value,\n        \"--va-progress-bar-background-color\": getHoverColor(colorComputed.value)\n      })),\n      wrapperStyle: computed(() => ({\n        height: getCSSHeight()\n      })),\n      bufferStyle: computed(() => ({\n        width: `${props.indeterminate ? 100 : clamp(props.buffer, 0, 100)}%`,\n        color: textColorComputed.value,\n        [props.reverse ? \"right\" : \"left\"]: 0\n      })),\n      progressStyle: computed(() => ({\n        marginLeft: props.reverse ? \"auto\" : void 0,\n        width: `${clamp(progressBarValue.value, 0, 100)}%`\n      })),\n      intermediateStyle: computed(() => ({\n        animationDirection: props.reverse ? \"reverse\" : \"normal\"\n      })),\n      ariaAttributesComputed: computed(() => ({\n        role: \"progressbar\",\n        \"aria-label\": tp(props.ariaLabel),\n        \"aria-valuenow\": !props.indeterminate ? props.modelValue : void 0\n      }))\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaProgressBar.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717508027,
+      "end": 1709717508170,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508171,
+      "end": 1709717508171,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508171,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508172,
+      "end": 1709717508172,
+      "order": "normal"
+    }
+  ]
+}

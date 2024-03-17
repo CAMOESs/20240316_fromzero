@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/VaProgressBar.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": ":root,\n:host {\n  --va-progress-bar-width: 100%;\n  --va-progress-bar-position: relative;\n  --va-progress-bar-overflow: hidden;\n  --va-progress-bar-height: 0.5rem;\n  --va-progress-bar-border-radius: 9999999px;\n  /* Small */\n  --va-progress-bar-sm-height: 2px;\n  /* Large */\n  --va-progress-bar-lg-height: 16px;\n  /* Info */\n  --va-progress-bar-info-font-weight: 700;\n  --va-progress-bar-info-text-align: center;\n  --va-progress-bar-info-text-transform: uppercase;\n  --va-progress-bar-info-not-empty-margin-bottom: 0.1rem;\n  /* Buffer */\n  --va-progress-bar-buffer-opacity: 0.3;\n  --va-progress-bar-buffer-transition: width ease 2s;\n  /* Overlay */\n  --va-progress-bar-transition: width ease 2s;\n  --va-progress-bar-letter-spacing: 0.6px;\n  --va-progress-bar-line-height: 1;\n  --va-progress-bar-font-size: 0.8em;\n  --va-progress-bar-font-weight: 700;\n}\n.va-progress-bar {\n  width: var(--va-progress-bar-width);\n  position: relative;\n  overflow: hidden;\n  font-family: var(--va-font-family);\n  line-height: var(--va-progress-bar-line-height);\n}\n.va-progress-bar__info {\n  font-weight: var(--va-progress-bar-info-font-weight);\n  text-align: var(--va-progress-bar-info-text-align);\n  text-transform: var(--va-progress-bar-info-text-transform);\n}\n.va-progress-bar__info:not(:empty) {\n  margin-bottom: var(--va-progress-bar-info-not-empty-margin-bottom);\n}\n.va-progress-bar__wrapper {\n  position: relative;\n  overflow: hidden;\n  border-radius: var(--va-progress-bar-border-radius);\n}\n.va-progress-bar--small .va-progress-bar__wrapper {\n  height: var(--va-progress-bar-sm-height);\n}\n.va-progress-bar--medium .va-progress-bar__wrapper {\n  height: var(--va-progress-bar-height);\n}\n.va-progress-bar--large .va-progress-bar__wrapper {\n  height: var(--va-progress-bar-lg-height);\n}\n.va-progress-bar--square .va-progress-bar__wrapper {\n  --va-progress-bar-border-radius: 0;\n}\n.va-progress-bar__buffer {\n  position: absolute;\n  top: 0;\n  height: inherit;\n  border-radius: inherit;\n  transition: var(--va-progress-bar-buffer-transition);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  letter-spacing: var(--va-progress-bar-letter-spacing);\n  font-size: var(--va-progress-bar-font-size);\n  font-weight: var(--va-progress-bar-font-weight);\n  background-color: var(--va-progress-bar-background-color);\n}\n.va-progress-bar__progress {\n  height: inherit;\n  border-radius: inherit;\n  transition: var(--va-progress-bar-transition);\n  background-color: var(--va-progress-bar-color);\n}\n.va-progress-bar__progress--indeterminate-start {\n  background-color: var(--va-progress-bar-color);\n  animation: va-progress-bar-indeterminate-start 2s ease-in infinite;\n  position: absolute;\n  height: inherit;\n}\n.va-progress-bar__progress--indeterminate-end {\n  background-color: var(--va-progress-bar-color);\n  animation: va-progress-bar-indeterminate-end 2s ease-out 1s infinite;\n  position: absolute;\n  height: inherit;\n}\n@keyframes va-progress-bar-indeterminate-start {\n0% {\n    width: 10%;\n    left: -10%;\n}\n50% {\n    width: 100%;\n    left: 100%;\n}\n100% {\n    width: 100%;\n    left: 100%;\n}\n}\n@keyframes va-progress-bar-indeterminate-end {\n0% {\n    width: 100%;\n    left: -100%;\n}\n50% {\n    width: 10%;\n    left: 100%;\n}\n100% {\n    width: 10%;\n    left: 100%;\n}\n}",
+      "start": 1709717422984,
+      "end": 1709717423115,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423115,
+      "end": 1709717423115,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423115,
+      "end": 1709717423115,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423115,
+      "end": 1709717423115,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ":host,:root{--va-progress-bar-width:100%;--va-progress-bar-position:relative;--va-progress-bar-overflow:hidden;--va-progress-bar-height:0.5rem;--va-progress-bar-border-radius:9999999px;--va-progress-bar-sm-height:2px;--va-progress-bar-lg-height:16px;--va-progress-bar-info-font-weight:700;--va-progress-bar-info-text-align:center;--va-progress-bar-info-text-transform:uppercase;--va-progress-bar-info-not-empty-margin-bottom:0.1rem;--va-progress-bar-buffer-opacity:0.3;--va-progress-bar-buffer-transition:width ease 2s;--va-progress-bar-transition:width ease 2s;--va-progress-bar-letter-spacing:0.6px;--va-progress-bar-line-height:1;--va-progress-bar-font-size:0.8em;--va-progress-bar-font-weight:700}.va-progress-bar{font-family:var(--va-font-family);line-height:var(--va-progress-bar-line-height);overflow:hidden;position:relative;width:var(--va-progress-bar-width)}.va-progress-bar__info{font-weight:var(--va-progress-bar-info-font-weight);text-align:var(--va-progress-bar-info-text-align);text-transform:var(--va-progress-bar-info-text-transform)}.va-progress-bar__info:not(:empty){margin-bottom:var(--va-progress-bar-info-not-empty-margin-bottom)}.va-progress-bar__wrapper{border-radius:var(--va-progress-bar-border-radius);overflow:hidden;position:relative}.va-progress-bar--small .va-progress-bar__wrapper{height:var(--va-progress-bar-sm-height)}.va-progress-bar--medium .va-progress-bar__wrapper{height:var(--va-progress-bar-height)}.va-progress-bar--large .va-progress-bar__wrapper{height:var(--va-progress-bar-lg-height)}.va-progress-bar--square .va-progress-bar__wrapper{--va-progress-bar-border-radius:0}.va-progress-bar__buffer{align-items:center;background-color:var(--va-progress-bar-background-color);border-radius:inherit;display:flex;font-size:var(--va-progress-bar-font-size);font-weight:var(--va-progress-bar-font-weight);height:inherit;justify-content:center;letter-spacing:var(--va-progress-bar-letter-spacing);position:absolute;top:0;transition:var(--va-progress-bar-buffer-transition)}.va-progress-bar__progress{background-color:var(--va-progress-bar-color);border-radius:inherit;height:inherit;transition:var(--va-progress-bar-transition)}.va-progress-bar__progress--indeterminate-start{animation:va-progress-bar-indeterminate-start 2s ease-in infinite;background-color:var(--va-progress-bar-color);height:inherit;position:absolute}.va-progress-bar__progress--indeterminate-end{animation:va-progress-bar-indeterminate-end 2s ease-out 1s infinite;background-color:var(--va-progress-bar-color);height:inherit;position:absolute}@keyframes va-progress-bar-indeterminate-start{0%{left:-10%;width:10%}50%{left:100%;width:100%}to{left:100%;width:100%}}@keyframes va-progress-bar-indeterminate-end{0%{left:-100%;width:100%}50%{left:100%;width:10%}to{left:100%;width:10%}}",
+      "start": 1709717423115,
+      "end": 1709717423125,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423125,
+      "end": 1709717423125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423125,
+      "end": 1709717423125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423125,
+      "end": 1709717423125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423125,
+      "end": 1709717423125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423125,
+      "end": 1709717423125,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423125,
+      "end": 1709717423125,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423125,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423126,
+      "end": 1709717423126,
+      "order": "normal"
+    }
+  ]
+}

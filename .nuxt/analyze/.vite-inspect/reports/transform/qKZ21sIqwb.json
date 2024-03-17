@@ -1,0 +1,223 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/next/dist/server/web/spec-extension/adapters/reflect.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nObject.defineProperty(exports, \"ReflectAdapter\", {\n    enumerable: true,\n    get: function() {\n        return ReflectAdapter;\n    }\n});\nclass ReflectAdapter {\n    static get(target, prop, receiver) {\n        const value = Reflect.get(target, prop, receiver);\n        if (typeof value === \"function\") {\n            return value.bind(target);\n        }\n        return value;\n    }\n    static set(target, prop, value, receiver) {\n        return Reflect.set(target, prop, value, receiver);\n    }\n    static has(target, prop) {\n        return Reflect.has(target, prop);\n    }\n    static deleteProperty(target, prop) {\n        return Reflect.deleteProperty(target, prop);\n    }\n}\n\n//# sourceMappingURL=reflect.js.map",
+      "start": 1709717423905,
+      "end": 1709717424249,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717424249,
+      "end": 1709717424249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as reflect } from \"\\u0000/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/next/dist/server/web/spec-extension/adapters/reflect.js?commonjs-exports\";\n\n(function (exports) {\n\t\"use strict\";\n\tObject.defineProperty(exports, \"__esModule\", {\n\t    value: true\n\t});\n\tObject.defineProperty(exports, \"ReflectAdapter\", {\n\t    enumerable: true,\n\t    get: function() {\n\t        return ReflectAdapter;\n\t    }\n\t});\n\tclass ReflectAdapter {\n\t    static get(target, prop, receiver) {\n\t        const value = Reflect.get(target, prop, receiver);\n\t        if (typeof value === \"function\") {\n\t            return value.bind(target);\n\t        }\n\t        return value;\n\t    }\n\t    static set(target, prop, value, receiver) {\n\t        return Reflect.set(target, prop, value, receiver);\n\t    }\n\t    static has(target, prop) {\n\t        return Reflect.has(target, prop);\n\t    }\n\t    static deleteProperty(target, prop) {\n\t        return Reflect.deleteProperty(target, prop);\n\t    }\n\t}\n\n\t//# sourceMappingURL=reflect.js.map \n} (reflect));\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(reflect);\nexport { reflect as __moduleExports };",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": null,
+        "sources": [
+          null
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "names": [],
+        "mappings": ";;;;CAAA,YAAY,CAAC;CACb,MAAM,CAAC,cAAc,UAAU,YAAY,EAAE;CAC7C,IAAI,KAAK,EAAE,IAAI;CACf,CAAC,CAAC,CAAC;CACH,MAAM,CAAC,cAAc,CAAC,OAAO,EAAE,gBAAgB,EAAE;CACjD,IAAI,UAAU,EAAE,IAAI;CACpB,IAAI,GAAG,EAAE,WAAW;CACpB,QAAQ,OAAO,cAAc,CAAC;CAC9B,KAAK;CACL,CAAC,CAAC,CAAC;CACH,MAAM,cAAc,CAAC;CACrB,IAAI,OAAO,GAAG,CAAC,MAAM,EAAE,IAAI,EAAE,QAAQ,EAAE;CACvC,QAAQ,MAAM,KAAK,GAAG,OAAO,CAAC,GAAG,CAAC,MAAM,EAAE,IAAI,EAAE,QAAQ,CAAC,CAAC;CAC1D,QAAQ,IAAI,OAAO,KAAK,KAAK,UAAU,EAAE;CACzC,YAAY,OAAO,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,CAAC;CACtC,SAAS;CACT,QAAQ,OAAO,KAAK,CAAC;CACrB,KAAK;CACL,IAAI,OAAO,GAAG,CAAC,MAAM,EAAE,IAAI,EAAE,KAAK,EAAE,QAAQ,EAAE;CAC9C,QAAQ,OAAO,OAAO,CAAC,GAAG,CAAC,MAAM,EAAE,IAAI,EAAE,KAAK,EAAE,QAAQ,CAAC,CAAC;CAC1D,KAAK;CACL,IAAI,OAAO,GAAG,CAAC,MAAM,EAAE,IAAI,EAAE;CAC7B,QAAQ,OAAO,OAAO,CAAC,GAAG,CAAC,MAAM,EAAE,IAAI,CAAC,CAAC;CACzC,KAAK;CACL,IAAI,OAAO,cAAc,CAAC,MAAM,EAAE,IAAI,EAAE;CACxC,QAAQ,OAAO,OAAO,CAAC,cAAc,CAAC,MAAM,EAAE,IAAI,CAAC,CAAC;CACpD,KAAK;CACL,CAAC;AACD;CACA"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717424250,
+      "end": 1709717424250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717424251,
+      "end": 1709717424251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717424251,
+      "end": 1709717424251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717424251,
+      "end": 1709717424251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717424251,
+      "end": 1709717424251,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717424251,
+      "end": 1709717424251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717424251,
+      "end": 1709717424251,
+      "order": "normal"
+    }
+  ]
+}

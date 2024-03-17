@@ -1,0 +1,294 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue?vue&type=style&index=0&lang.scss?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.p.h1.h2.h3.h4.h5.span.li {\n    font-family: Montserrat;\n}\n\n.pop-outin {\n  animation: 2s anim-popoutin ease infinite;\n}\n\n@keyframes anim-popoutin {\n  0% {\n    color: black;\n    transform: scale(0);\n    opacity: 0;\n    text-shadow: 0 0 0 rgba(0, 0, 0, 0);\n  }\n  25% {\n    color: rgb(255, 255, 255);\n    transform: scale(2);\n    opacity: 1;\n    text-shadow: 3px 10px 5px rgb(63, 63, 63);\n  }\n  50% {\n    color: rgb(255, 255, 255);\n    transform: scale(1);\n    opacity: 1;\n    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);\n  }\n  100% {\n    /* animate nothing to add pause at the end of animation */\n    transform: scale(1);\n    opacity: 1;\n    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);\n  }\n}\n\n.fromtop {\n  animation: 2s anim-fromtop linear infinite;\n}\n@keyframes anim-fromtop {\n  0% { opacity: 0; transform: translateY(-100%);}\n  25% { opacity: 1; transform: translateY(0%);}\n  50% {\n  }\n  100% {\n  }\n}\n\n.header_ {\n    padding: 70px;\n    text-align: center;\n    background-image: linear-gradient(to left top, rgba(46, 42, 42, 0.6), hsl(224, 53%, 55%)), url('/images/bga.jpeg');\n    background-repeat: no-repeat;\n    background-attachment: auto;\n    background-size: cover;\n    background-position: center;\n    color: white;\n    height: 500px;\n}\n\n.soso {\n    display: block;\n    margin-left: auto;\n    margin-top: 75px;\n    margin-right: auto\n}\n",
+      "start": 1709717497454,
+      "end": 1709717497454,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n    <div>\n        <div class=\"header_\">\n            <div class=\"soso\">\n                <div class='line'>\n                    <h1>Site en Maintenance</h1>\n                </div>\n            </div>\n            <br>\n            <v-row class=\"ma-0 pa-0\">\n                <v-col cols=\"3\" style=\"\" class=\"ma-0 pa-1\"></v-col>\n                <v-col cols=\"2\" style=\"background-color:rgb(0,104,40);\" class=\"ma-0 pa-1\"></v-col>\n                <v-col cols=\"2\" style=\"background-color:rgb(255,190,0);\" class=\"ma-0 pa-1\"></v-col>\n                <v-col cols=\"2\" style=\"background-color:rgb(235,0,0);\" class=\"ma-0 pa-1\"></v-col>\n                <v-col cols=\"3\" style=\"\" class=\"ma-0 pa-1\"></v-col>\n            </v-row>\n            <br>\n            <p>{{ maintenance.message }}</p>\n        </div>\n\n    </div>\n</template>\n\n<script setup>\nimport { redirect } from 'next/dist/server/api-utils';\n\ndefinePageMeta({\n    layout: \"homemaintenance\",\n    auth: false,\n    middleware:[\"maintenancesite\"]  \n   /*  middleware:[\n   async function (to, from) {\n    let response = await useFetch(\"/api/maintenance\");\n    let maintenance_ = response.data.value;\n      if (maintenance_?.status == false) {\n        //this.$router.push(\"/\");\n        //return navigateTo(\"/\");\n            return navigateTo('/connexion')\n      }\n    },\n    ]  */\n});\nlet maintenance=ref()\n\nmaintenance.value = (await useFetch(\"/api/systeme/maintenance\")).data.value;\n\n</script>\n\n<style lang=\"scss\">\n.p.h1.h2.h3.h4.h5.span.li {\n    font-family: Montserrat;\n}\n\n.pop-outin {\n  animation: 2s anim-popoutin ease infinite;\n}\n\n@keyframes anim-popoutin {\n  0% {\n    color: black;\n    transform: scale(0);\n    opacity: 0;\n    text-shadow: 0 0 0 rgba(0, 0, 0, 0);\n  }\n  25% {\n    color: rgb(255, 255, 255);\n    transform: scale(2);\n    opacity: 1;\n    text-shadow: 3px 10px 5px rgb(63, 63, 63);\n  }\n  50% {\n    color: rgb(255, 255, 255);\n    transform: scale(1);\n    opacity: 1;\n    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);\n  }\n  100% {\n    /* animate nothing to add pause at the end of animation */\n    transform: scale(1);\n    opacity: 1;\n    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);\n  }\n}\n\n.fromtop {\n  animation: 2s anim-fromtop linear infinite;\n}\n@keyframes anim-fromtop {\n  0% { opacity: 0; transform: translateY(-100%);}\n  25% { opacity: 1; transform: translateY(0%);}\n  50% {\n  }\n  100% {\n  }\n}\n\n.header_ {\n    padding: 70px;\n    text-align: center;\n    background-image: linear-gradient(to left top, rgba(46, 42, 42, 0.6), hsl(224, 53%, 55%)), url('/images/bga.jpeg');\n    background-repeat: no-repeat;\n    background-attachment: auto;\n    background-size: cover;\n    background-position: center;\n    color: white;\n    height: 500px;\n}\n\n.soso {\n    display: block;\n    margin-left: auto;\n    margin-top: 75px;\n    margin-right: auto\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717497454,
+      "end": 1709717497454,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717497454,
+      "end": 1709717497454,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717497454,
+      "end": 1709717497454,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717497454,
+      "end": 1709717497454,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717497454,
+      "end": 1709717497454,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".p.h1.h2.h3.h4.h5.span.li{font-family:Montserrat}.pop-outin{animation:anim-popoutin 2s ease infinite}@keyframes anim-popoutin{0%{color:#000;opacity:0;text-shadow:0 0 0 transparent;transform:scale(0)}25%{color:#fff;opacity:1;text-shadow:3px 10px 5px #3f3f3f;transform:scale(2)}50%{color:#fff;opacity:1;text-shadow:1px 0 0 transparent;transform:scale(1)}to{opacity:1;text-shadow:1px 0 0 transparent;transform:scale(1)}}.fromtop{animation:anim-fromtop 2s linear infinite}@keyframes anim-fromtop{0%{opacity:0;transform:translateY(-100%)}25%{opacity:1;transform:translateY(0)}}.header_{background-attachment:auto;background-image:linear-gradient(to left top,rgba(46,42,42,.6),#4f70c9),url(__VITE_PUBLIC_ASSET__c2f03437__);background-position:50%;background-repeat:no-repeat;background-size:cover;color:#fff;height:500px;padding:70px;text-align:center}.soso{display:block;margin-left:auto;margin-right:auto;margin-top:75px}",
+      "start": 1709717497454,
+      "end": 1709717497594,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue",
+        "mappings": "AACA,0BACI,uBAGJ,WACE,yCAGF,yBACE,GACE,WAEA,UACA,8BAFA,mBAIF,IACE,WAEA,UACA,iCAFA,mBAIF,IACE,WAEA,UACA,gCAFA,mBAIF,GAGE,UACA,gCAFA,oBAMJ,SACE,0CAEF,wBACE,GAAK,UAAY,4BACjB,IAAM,UAAY,yBAOpB,SAKI,2BAFA,6GAIA,wBAHA,4BAEA,sBAEA,WACA,aARA,aACA,kBAUJ,MACI,cACA,iBAEA,kBADA",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717497594,
+      "end": 1709717497594,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717497594,
+      "end": 1709717497594,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717497594,
+      "end": 1709717497594,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".p.h1.h2.h3.h4.h5.span.li{font-family:Montserrat}.pop-outin{animation:anim-popoutin 2s ease infinite}@keyframes anim-popoutin{0%{color:#000;opacity:0;text-shadow:0 0 0 transparent;transform:scale(0)}25%{color:#fff;opacity:1;text-shadow:3px 10px 5px #3f3f3f;transform:scale(2)}50%{color:#fff;opacity:1;text-shadow:1px 0 0 transparent;transform:scale(1)}to{opacity:1;text-shadow:1px 0 0 transparent;transform:scale(1)}}.fromtop{animation:anim-fromtop 2s linear infinite}@keyframes anim-fromtop{0%{opacity:0;transform:translateY(-100%)}25%{opacity:1;transform:translateY(0)}}.header_{background-attachment:auto;background-image:linear-gradient(to left top,rgba(46,42,42,.6),#4f70c9),url(__VITE_PUBLIC_ASSET__c2f03437__);background-position:50%;background-repeat:no-repeat;background-size:cover;color:#fff;height:500px;padding:70px;text-align:center}.soso{display:block;margin-left:auto;margin-right:auto;margin-top:75px}",
+      "start": 1709717497610,
+      "end": 1709717497614,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue",
+        "mappings": "AAAA,0BAA0B,sBAAsB,CAAC,WAAW,wCAAwC,CAAC,yBAAyB,GAAG,UAAU,CAAC,SAAS,CAAC,6BAA6B,CAAC,kBAAkB,CAAC,IAAI,UAAU,CAAC,SAAS,CAAC,gCAAgC,CAAC,kBAAkB,CAAC,IAAI,UAAU,CAAC,SAAS,CAAC,+BAA+B,CAAC,kBAAkB,CAAC,GAAG,SAAS,CAAC,+BAA+B,CAAC,kBAAkB,CAAC,CAAC,SAAS,yCAAyC,CAAC,wBAAwB,GAAG,SAAS,CAAC,2BAA2B,CAAC,IAAI,SAAS,CAAC,uBAAuB,CAAC,CAAC,SAAS,0BAA0B,CAAC,4GAA4G,CAAC,uBAAuB,CAAC,2BAA2B,CAAC,qBAAqB,CAAC,UAAU,CAAC,YAAY,CAAC,YAAY,CAAC,iBAAiB,CAAC,MAAM,aAAa,CAAC,gBAAgB,CAAC,iBAAiB,CAAC,eAAe",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717497615,
+      "end": 1709717497615,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717497615,
+      "end": 1709717497615,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717497615,
+      "end": 1709717497615,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717497615,
+      "end": 1709717497615,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717497615,
+      "end": 1709717497615,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717497615,
+      "end": 1709717497615,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717497615,
+      "end": 1709717497616,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717497616,
+      "end": 1709717497616,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717497616,
+      "end": 1709717497616,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717497616,
+      "end": 1709717497616,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default \".p.h1.h2.h3.h4.h5.span.li{font-family:Montserrat}.pop-outin{animation:anim-popoutin 2s ease infinite}@keyframes anim-popoutin{0%{color:#000;opacity:0;text-shadow:0 0 0 transparent;transform:scale(0)}25%{color:#fff;opacity:1;text-shadow:3px 10px 5px #3f3f3f;transform:scale(2)}50%{color:#fff;opacity:1;text-shadow:1px 0 0 transparent;transform:scale(1)}to{opacity:1;text-shadow:1px 0 0 transparent;transform:scale(1)}}.fromtop{animation:anim-fromtop 2s linear infinite}@keyframes anim-fromtop{0%{opacity:0;transform:translateY(-100%)}25%{opacity:1;transform:translateY(0)}}.header_{background-attachment:auto;background-image:linear-gradient(to left top,rgba(46,42,42,.6),#4f70c9),url(__VITE_PUBLIC_ASSET__c2f03437__);background-position:50%;background-repeat:no-repeat;background-size:cover;color:#fff;height:500px;padding:70px;text-align:center}.soso{display:block;margin-left:auto;margin-right:auto;margin-top:75px}\"",
+      "start": 1709717497616,
+      "end": 1709717497616,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717497616,
+      "end": 1709717497617,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717497617,
+      "end": 1709717497617,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717497618,
+      "end": 1709717497618,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717497618,
+      "end": 1709717497618,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717497618,
+      "end": 1709717497618,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717497618,
+      "end": 1709717497618,
+      "order": "normal"
+    }
+  ]
+}

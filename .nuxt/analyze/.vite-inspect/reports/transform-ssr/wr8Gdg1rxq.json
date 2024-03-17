@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/composables/useCSSVariables.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed } from \"vue\";\nimport { k as kebabCase } from \"../../vendor.mjs\";\nconst useCSSVariables = (prefix, cb) => {\n  return computed(() => Object.entries(cb()).reduce((acc, [key, value]) => {\n    acc[`--${prefix}-${kebabCase(key)}`] = value;\n    return acc;\n  }, {}));\n};\nexport {\n  useCSSVariables as u\n};\n//# sourceMappingURL=useCSSVariables.mjs.map\n",
+      "start": 1709717513699,
+      "end": 1709717513895,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513895,
+      "end": 1709717513895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717513895,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717513896,
+      "end": 1709717513896,
+      "order": "normal"
+    }
+  ]
+}

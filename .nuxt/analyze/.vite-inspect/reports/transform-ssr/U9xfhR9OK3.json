@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-stepper/VaStepper.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaStepper.vue_vue_type_script_lang.mjs\";\nimport { resolveComponent, openBlock, createElementBlock, mergeProps, createElementVNode, normalizeClass, withKeys, Fragment, renderList, renderSlot, normalizeProps, createCommentVNode, guardReactiveProps, createVNode, createBlock } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.mjs\";\nconst VaStepper_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = {\n  key: 0,\n  class: \"va-stepper__step-content\"\n};\nconst _hoisted_2 = { class: \"va-stepper__controls\" };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_stepper_step_button = resolveComponent(\"va-stepper-step-button\");\n  const _component_va_stepper_controls = resolveComponent(\"va-stepper-controls\");\n  return openBlock(), createElementBlock(\"div\", mergeProps({\n    class: [\"va-stepper\", { \"va-stepper--vertical\": _ctx.$props.vertical }]\n  }, _ctx.ariaAttributesComputed), [\n    createElementVNode(\"ol\", {\n      class: normalizeClass([\"va-stepper__navigation\", { \"va-stepper__navigation--vertical\": _ctx.$props.vertical }]),\n      ref: \"stepperNavigation\",\n      onClick: _cache[0] || (_cache[0] = (...args) => _ctx.onValueChange && _ctx.onValueChange(...args)),\n      onKeyup: [\n        _cache[1] || (_cache[1] = withKeys((...args) => _ctx.onValueChange && _ctx.onValueChange(...args), [\"enter\"])),\n        _cache[2] || (_cache[2] = withKeys((...args) => _ctx.onValueChange && _ctx.onValueChange(...args), [\"space\"])),\n        _cache[3] || (_cache[3] = withKeys(($event) => _ctx.onArrowKeyPress(\"prev\"), [\"left\"])),\n        _cache[4] || (_cache[4] = withKeys(($event) => _ctx.onArrowKeyPress(\"next\"), [\"right\"]))\n      ],\n      onFocusout: _cache[5] || (_cache[5] = (...args) => _ctx.resetFocus && _ctx.resetFocus(...args))\n    }, [\n      (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.$props.steps, (step, i) => {\n        return openBlock(), createElementBlock(Fragment, {\n          key: i + step.label\n        }, [\n          i > 0 ? renderSlot(_ctx.$slots, \"divider\", normalizeProps(mergeProps({ key: 0 }, _ctx.getIterableSlotData(step, i))), () => [\n            createElementVNode(\"span\", {\n              class: normalizeClass([\"va-stepper__divider\", { \"va-stepper__divider--vertical\": _ctx.$props.vertical }]),\n              \"aria-hidden\": \"true\"\n            }, null, 2)\n          ]) : createCommentVNode(\"\", true),\n          renderSlot(_ctx.$slots, `step-button-${i}`, normalizeProps(guardReactiveProps(_ctx.getIterableSlotData(step, i))), () => [\n            createVNode(_component_va_stepper_step_button, {\n              stepIndex: i,\n              color: _ctx.getStepperButtonColor(i),\n              modelValue: _ctx.modelValue,\n              nextDisabled: _ctx.nextDisabled,\n              step,\n              stepControls: _ctx.stepControls,\n              navigationDisabled: _ctx.navigationDisabled,\n              focus: _ctx.focusedStep\n            }, null, 8, [\"stepIndex\", \"color\", \"modelValue\", \"nextDisabled\", \"step\", \"stepControls\", \"navigationDisabled\", \"focus\"])\n          ])\n        ], 64);\n      }), 128))\n    ], 34),\n    createElementVNode(\"div\", {\n      class: normalizeClass([\"va-stepper__step-content-wrapper\", { \"va-stepper__step-content-wrapper--vertical\": _ctx.$props.vertical }])\n    }, [\n      (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.$props.steps, (step, i) => {\n        return openBlock(), createElementBlock(Fragment, { key: i }, [\n          _ctx.$slots[`step-content-${i}`] && _ctx.modelValue === i ? (openBlock(), createElementBlock(\"div\", _hoisted_1, [\n            renderSlot(_ctx.$slots, `step-content-${i}`, normalizeProps(guardReactiveProps(_ctx.getIterableSlotData(step, i))))\n          ])) : createCommentVNode(\"\", true)\n        ], 64);\n      }), 128)),\n      createElementVNode(\"div\", _hoisted_2, [\n        !_ctx.controlsHidden ? (openBlock(), createBlock(_component_va_stepper_controls, {\n          key: 0,\n          modelValue: _ctx.modelValue,\n          nextDisabled: _ctx.nextDisabled,\n          steps: _ctx.steps,\n          stepControls: _ctx.stepControls,\n          finishButtonHidden: _ctx.finishButtonHidden,\n          onFinish: _cache[6] || (_cache[6] = ($event) => _ctx.$emit(\"finish\"))\n        }, null, 8, [\"modelValue\", \"nextDisabled\", \"steps\", \"stepControls\", \"finishButtonHidden\"])) : createCommentVNode(\"\", true),\n        renderSlot(_ctx.$slots, \"controls\", normalizeProps(guardReactiveProps(_ctx.getIterableSlotData(_ctx.steps[_ctx.modelValue], _ctx.modelValue))))\n      ])\n    ], 2)\n  ], 16);\n}\nconst _VaStepper = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaStepper as _\n};\n//# sourceMappingURL=VaStepper.mjs.map\n",
+      "start": 1709717501986,
+      "end": 1709717502403,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502403,
+      "end": 1709717502403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502403,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502404,
+      "end": 1709717502404,
+      "order": "normal"
+    }
+  ]
+}

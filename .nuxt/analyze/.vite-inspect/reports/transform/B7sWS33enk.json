@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/composables/useColors.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, capitalize } from \"vue\";\nimport { w as warn } from \"../utils/console.js\";\nimport { u as useCache } from \"./useCache.js\";\nimport { u as useReactiveComputed } from \"./useReactiveComputed.js\";\nimport { a as getBoxShadowColor, f as getBoxShadowColorFromBg, c as getHoverColor, b as getFocusColor, g as getGradientBackground, s as shiftHSLAColor, h as setHSLAColor, d as colorToRgba, i as getStateMaskGradientBackground, n as normalizeColorName, j as cssVariableName, k as isColor, l as isCSSVariable, m as getColorLightness } from \"../services/color/utils.js\";\nimport { k as kebabCase } from \"../../vendor.js\";\nimport { u as useGlobalConfig } from \"./useGlobalConfig.js\";\nconst useColorProps = {\n  color: {\n    type: String,\n    default: \"\"\n  }\n};\nconst useColors = () => {\n  const gc = useGlobalConfig();\n  if (!gc) {\n    throw new Error(\"useColors must be used in setup function or Vuestic GlobalConfigPlugin is not registered!\");\n  }\n  const { globalConfig } = gc;\n  const colors = useReactiveComputed({\n    get: () => globalConfig.value.colors.presets[globalConfig.value.colors.currentPresetName],\n    set: (v) => {\n      setColors(v);\n    }\n  });\n  const setColors = (colors2) => {\n    globalConfig.value.colors.presets[globalConfig.value.colors.currentPresetName] = {\n      ...globalConfig.value.colors.variables,\n      ...colors2\n    };\n  };\n  const getColors = () => {\n    return colors;\n  };\n  const getColor = (prop, defaultColor, preferVariables) => {\n    if (!defaultColor) {\n      defaultColor = colors.primary;\n    }\n    if (prop === \"transparent\") {\n      return \"#ffffff00\";\n    }\n    if (prop === \"currentColor\") {\n      return prop;\n    }\n    if (prop == null ? void 0 : prop.startsWith(\"on\")) {\n      const colorName = prop.slice(2);\n      if (colors[normalizeColorName(colorName)]) {\n        return getColor(getTextColor(getColor(colorName)), void 0, preferVariables);\n      }\n    }\n    if (!prop) {\n      prop = getColor(defaultColor);\n    }\n    const colorValue = colors[prop] || colors[normalizeColorName(prop)];\n    if (colorValue) {\n      return preferVariables ? `var(${cssVariableName(prop)})` : colorValue;\n    }\n    if (isColor(prop)) {\n      return prop;\n    }\n    if (preferVariables && isCSSVariable(prop)) {\n      return prop;\n    }\n    warn(`'${prop}' is not a proper color! Use HEX or default color themes\n      names (https://vuestic.dev/en/styles/colors#default-color-themes)`);\n    return getColor(defaultColor);\n  };\n  const getComputedColor = (color) => {\n    return computed({\n      get() {\n        return getColor(color);\n      },\n      set(v) {\n        setColors({ [color]: v });\n      }\n    });\n  };\n  const colorsToCSSVariable = (colors2, prefix = \"va\") => {\n    return Object.keys(colors2).filter((key) => colors2[key] !== void 0).reduce((acc, colorName) => {\n      acc[`--${prefix}-${kebabCase(colorName)}`] = getColor(colors2[colorName], void 0, true);\n      acc[`--${prefix}-on-${kebabCase(colorName)}`] = getColor(getTextColor(getColor(colors2[colorName])), void 0, true);\n      return acc;\n    }, {});\n  };\n  const cache = useCache();\n  const getColorLightnessFromCache = (color) => {\n    if (typeof color !== \"string\") {\n      return getColorLightness(color);\n    }\n    if (!cache.colorContrast[color]) {\n      cache.colorContrast[color] = getColorLightness(color);\n    }\n    return cache.colorContrast[color];\n  };\n  const computedDarkColor = computed(() => {\n    return getColorLightnessFromCache(getColor(\"textPrimary\")) > 255 / 2 ? \"textInverted\" : \"textPrimary\";\n  });\n  const computedLightColor = computed(() => {\n    return getColorLightnessFromCache(getColor(\"textPrimary\")) > 255 / 2 ? \"textPrimary\" : \"textInverted\";\n  });\n  const getTextColor = (color, darkColor, lightColor) => {\n    const onColorName = `on${capitalize(String(color))}`;\n    if (colors[onColorName]) {\n      return colors[onColorName];\n    }\n    darkColor = darkColor || computedDarkColor.value;\n    lightColor = lightColor || computedLightColor.value;\n    return getColorLightnessFromCache(color) > globalConfig.value.colors.threshold ? darkColor : lightColor;\n  };\n  const currentPresetName = computed({\n    get: () => globalConfig.value.colors.currentPresetName,\n    set: (v) => {\n      applyPreset(v);\n    }\n  });\n  const presets = computed(() => globalConfig.value.colors.presets);\n  const applyPreset = (presetName) => {\n    globalConfig.value.colors.currentPresetName = presetName;\n    if (!globalConfig.value.colors.presets[presetName]) {\n      return warn(`Preset ${presetName} does not exist`);\n    }\n  };\n  return {\n    colors,\n    currentPresetName,\n    presets,\n    applyPreset,\n    setColors,\n    getColors,\n    getColor,\n    getComputedColor,\n    getBoxShadowColor,\n    getBoxShadowColorFromBg,\n    getHoverColor,\n    getFocusColor,\n    getGradientBackground,\n    getTextColor,\n    shiftHSLAColor,\n    setHSLAColor,\n    colorsToCSSVariable,\n    colorToRgba,\n    getStateMaskGradientBackground\n  };\n};\nexport {\n  useColorProps as a,\n  useColors as u\n};\n//# sourceMappingURL=useColors.js.map\n",
+      "start": 1709717401008,
+      "end": 1709717401905,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717401905,
+      "end": 1709717401905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717401905,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717401906,
+      "end": 1709717401906,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717401906,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717401907,
+      "end": 1709717401907,
+      "order": "normal"
+    }
+  ]
+}

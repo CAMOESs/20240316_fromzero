@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-layout/hooks/useLayout.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed, provide, inject, watchEffect, onBeforeUnmount } from \"vue\";\nconst useLayoutProps = {\n  top: {\n    type: Object,\n    default: () => ({ order: 2 })\n  },\n  right: {\n    type: Object,\n    default: () => ({ order: 1 })\n  },\n  left: {\n    type: Object,\n    default: () => ({ order: 1 })\n  },\n  bottom: {\n    type: Object,\n    default: () => ({ order: 2 })\n  }\n};\nconst VaLayoutKey = \"VaLayout\";\nconst useLayout = (props) => {\n  const items = ref({\n    top: null,\n    right: null,\n    bottom: null,\n    left: null\n  });\n  const paddings = computed(() => {\n    const { top, right, bottom, left } = items.value;\n    const { top: topConfig, right: rightConfig, bottom: bottomConfig, left: leftConfig } = props;\n    return {\n      top: top && !topConfig.absolute ? top.sizes.height : 0,\n      right: right && !rightConfig.absolute ? right.sizes.width : 0,\n      bottom: bottom && !bottomConfig.absolute ? bottom.sizes.height : 0,\n      left: left && !leftConfig.absolute ? left.sizes.width : 0\n    };\n  });\n  const orders = computed(() => ({\n    top: props.top.order || 0,\n    right: props.right.order || 0,\n    bottom: props.bottom.order || 0,\n    left: props.left.order || 0\n  }));\n  provide(VaLayoutKey, {\n    items,\n    paddings,\n    orders\n  });\n  return {\n    paddings,\n    orders,\n    items\n  };\n};\nconst useFixedLayoutChild = (area, sizes) => {\n  const layout = inject(VaLayoutKey, null);\n  if (!layout) {\n    throw new Error(\"VaLayoutChild must be used inside VaLayout\");\n  }\n  watchEffect(() => {\n    if (sizes.value) {\n      layout.items.value[area] = {\n        sizes: sizes.value\n      };\n    } else {\n      layout.items.value[area] = null;\n    }\n  });\n  onBeforeUnmount(() => {\n    layout.items.value[area] = null;\n  });\n  return {\n    paddings: computed(() => {\n      return Object.keys(layout.paddings.value).reduce((acc, key) => {\n        if (layout.orders.value[key] > layout.orders.value[area]) {\n          acc[key] = layout.paddings.value[key];\n        }\n        return acc;\n      }, {});\n    })\n  };\n};\nexport {\n  useLayout as a,\n  useFixedLayoutChild as b,\n  useLayoutProps as u\n};\n//# sourceMappingURL=useLayout.js.map\n",
+      "start": 1709717427437,
+      "end": 1709717427625,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427625,
+      "end": 1709717427625,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427626,
+      "end": 1709717427626,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427626,
+      "end": 1709717427626,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427626,
+      "end": 1709717427626,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427626,
+      "end": 1709717427626,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427626,
+      "end": 1709717427627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427627,
+      "end": 1709717427627,
+      "order": "normal"
+    }
+  ]
+}

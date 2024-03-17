@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/VaStepper.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": ":root {\n  --va-stepper-step-button-inactive-color: var(--va-secondary);\n  --va-stepper-step-button-hover-highlight-opacity: 0.1;\n  --va-stepper-step-button-disabled-opacity: 0.5;\n  --va-stepper-step-button-padding: 1rem;\n  --va-stepper-step-button-number-size: 1.2rem;\n  --va-stepper-step-button-icon-size: 2rem;\n  --va-stepper-step-button-gap: 0.5rem;\n  --va-stepper-step-button-icon-border-radius: 100%;\n  --va-stepper-step-border-radius: var(--va-square-border-radius);\n  --va-stepper-divider-color: var(--va-secondary);\n  --va-stepper-divider-length: auto;\n  --va-stepper-divider-min-length: 2rem;\n  --va-stepper-divider-thickness: 1px;\n  --va-stepper-divider-spacing: 0.5rem;\n  --va-stepper-divider-vertical-margin-left: 2rem;\n  --va-stepper-step-content-wrapper-padding: 0.5rem 1rem;\n  --va-stepper-step-content-margin: 0.8rem 0 2rem;\n  --va-stepper-controls-gap: 1rem;\n}\n.va-stepper {\n  display: flex;\n  flex-direction: column;\n}\n.va-stepper--vertical {\n  flex-direction: row;\n}\n.va-stepper__navigation {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.va-stepper__navigation--vertical {\n  flex-direction: column;\n  align-items: flex-start;\n  flex-wrap: nowrap;\n}\n.va-stepper__divider {\n  flex-grow: 1;\n  height: var(--va-stepper-divider-thickness);\n  width: var(--va-stepper-divider-length);\n  min-width: var(--va-stepper-divider-min-length);\n  margin: 0 var(--va-stepper-divider-spacing);\n  background: var(--va-stepper-divider-color);\n}\n.va-stepper__divider--vertical {\n  min-height: var(--va-stepper-divider-min-length);\n  height: var(--va-stepper-divider-length);\n  width: var(--va-stepper-divider-thickness);\n  min-width: var(--va-stepper-divider-thickness);\n  margin: var(--va-stepper-divider-spacing) 0;\n  margin-left: var(--va-stepper-divider-vertical-margin-left);\n}\n.va-stepper__step-content-wrapper {\n  padding: var(--va-stepper-step-content-wrapper-padding);\n}\n.va-stepper__step-content {\n  margin: var(--va-stepper-step-content-margin);\n}\n.va-stepper__controls {\n  display: flex;\n  gap: var(--va-stepper-controls-gap);\n}",
+      "start": 1709717423428,
+      "end": 1709717423669,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423669,
+      "end": 1709717423669,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423669,
+      "end": 1709717423669,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423669,
+      "end": 1709717423669,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ":root{--va-stepper-step-button-inactive-color:var(--va-secondary);--va-stepper-step-button-hover-highlight-opacity:0.1;--va-stepper-step-button-disabled-opacity:0.5;--va-stepper-step-button-padding:1rem;--va-stepper-step-button-number-size:1.2rem;--va-stepper-step-button-icon-size:2rem;--va-stepper-step-button-gap:0.5rem;--va-stepper-step-button-icon-border-radius:100%;--va-stepper-step-border-radius:var(--va-square-border-radius);--va-stepper-divider-color:var(--va-secondary);--va-stepper-divider-length:auto;--va-stepper-divider-min-length:2rem;--va-stepper-divider-thickness:1px;--va-stepper-divider-spacing:0.5rem;--va-stepper-divider-vertical-margin-left:2rem;--va-stepper-step-content-wrapper-padding:0.5rem 1rem;--va-stepper-step-content-margin:0.8rem 0 2rem;--va-stepper-controls-gap:1rem}.va-stepper{display:flex;flex-direction:column}.va-stepper--vertical{flex-direction:row}.va-stepper__navigation{align-items:center;display:flex;flex-wrap:wrap;justify-content:center}.va-stepper__navigation--vertical{align-items:flex-start;flex-direction:column;flex-wrap:nowrap}.va-stepper__divider{background:var(--va-stepper-divider-color);flex-grow:1;height:var(--va-stepper-divider-thickness);margin:0 var(--va-stepper-divider-spacing);min-width:var(--va-stepper-divider-min-length);width:var(--va-stepper-divider-length)}.va-stepper__divider--vertical{height:var(--va-stepper-divider-length);margin:var(--va-stepper-divider-spacing) 0;margin-left:var(--va-stepper-divider-vertical-margin-left);min-height:var(--va-stepper-divider-min-length);min-width:var(--va-stepper-divider-thickness);width:var(--va-stepper-divider-thickness)}.va-stepper__step-content-wrapper{padding:var(--va-stepper-step-content-wrapper-padding)}.va-stepper__step-content{margin:var(--va-stepper-step-content-margin)}.va-stepper__controls{display:flex;gap:var(--va-stepper-controls-gap)}",
+      "start": 1709717423669,
+      "end": 1709717423679,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423679,
+      "end": 1709717423679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717423679,
+      "end": 1709717423680,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423680,
+      "end": 1709717423680,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423680,
+      "end": 1709717423681,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423681,
+      "end": 1709717423681,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423681,
+      "end": 1709717423681,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423681,
+      "end": 1709717423681,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423681,
+      "end": 1709717423681,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423681,
+      "end": 1709717423681,
+      "order": "normal"
+    }
+  ]
+}

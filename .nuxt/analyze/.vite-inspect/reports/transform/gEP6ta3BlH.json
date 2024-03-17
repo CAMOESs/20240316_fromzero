@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-color-input/VaColorInput.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, computed } from \"vue\";\nimport { V as VaColorIndicator } from \"../va-color-indicator/index.js\";\nimport { V as VaInput } from \"../va-input/index.js\";\nimport { t as throttle } from \"../../../vendor.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { u as useStatefulEmits, a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nconst VaInputProps = extractComponentProps(VaInput);\nconst _sfc_main = defineComponent({\n  name: \"VaColorInput\",\n  components: {\n    VaInput,\n    VaColorIndicator\n  },\n  emits: [...useStatefulEmits],\n  props: {\n    ...VaInputProps,\n    ...useStatefulProps,\n    ...useComponentPresetProp,\n    modelValue: { type: String, default: null },\n    disabled: { type: Boolean, default: false },\n    indicator: {\n      type: String,\n      default: \"dot\",\n      validator: (value) => [\"dot\", \"square\"].includes(value)\n    },\n    ariaOpenColorPickerLabel: { type: String, default: \"$t:openColorPicker\" }\n  },\n  setup: (props, { emit }) => {\n    const colorPicker = shallowRef();\n    const { valueComputed } = useStateful(props, emit);\n    const callPickerDialog = () => {\n      var _a;\n      return !props.disabled && ((_a = colorPicker.value) == null ? void 0 : _a.click());\n    };\n    const tabIndexComputed = computed(() => props.disabled ? -1 : 0);\n    const inputValue = computed({\n      get: () => props.modelValue,\n      set: throttle((value) => emit(\"update:modelValue\", value), 500)\n    });\n    return {\n      ...useTranslation(),\n      valueComputed,\n      inputValue,\n      callPickerDialog,\n      colorPicker,\n      tabIndexComputed,\n      vaInputProps: filterComponentProps(VaInputProps)\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaColorInput.css';\n//# sourceMappingURL=VaColorInput.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717422051,
+      "end": 1709717422250,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422250,
+      "end": 1709717422250,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422250,
+      "end": 1709717422250,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422250,
+      "end": 1709717422250,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422250,
+      "end": 1709717422250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422250,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422251,
+      "end": 1709717422251,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422251,
+      "end": 1709717422252,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422252,
+      "end": 1709717422252,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422252,
+      "end": 1709717422252,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422252,
+      "end": 1709717422252,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422253,
+      "end": 1709717422253,
+      "order": "normal"
+    }
+  ]
+}

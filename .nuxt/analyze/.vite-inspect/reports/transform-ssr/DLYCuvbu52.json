@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-input/VaInput.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, computed, toRefs, watch } from \"vue\";\nimport { o as omit, p as pick } from \"../../../vendor.mjs\";\nimport { u as useCleaveProps, a as useCleave } from \"./hooks/useCleave.mjs\";\nimport { V as VaInputWrapper } from \"../va-input-wrapper/index.mjs\";\nimport { V as VaIcon } from \"../va-icon/index.mjs\";\nimport { c as combineFunctions } from \"../../utils/combine-functions.mjs\";\nimport { u as useFocusableProps, a as useFocusable } from \"../../composables/useFocusable.mjs\";\nimport { u as useClearableProps, a as useClearableEmits, b as useClearable } from \"../../composables/useClearable.mjs\";\nimport { b as useValidationProps, u as useValidationEmits, a as useValidation } from \"../../composables/useValidation.mjs\";\nimport { u as useDeprecatedCondition } from \"../../composables/useDeprecatedCondition.mjs\";\nimport { u as useEmitProxy } from \"../../composables/useEmitProxy.mjs\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.mjs\";\nimport { u as useFormFieldProps } from \"../../composables/useFormField.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { a as useStatefulProps, u as useStatefulEmits, b as useStateful } from \"../../composables/useStateful.mjs\";\nimport { u as useEvent } from \"../../composables/useEvent.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.mjs\";\nconst VaInputWrapperProps = extractComponentProps(VaInputWrapper);\nconst { createEmits: createInputEmits, createListeners: createInputListeners } = useEmitProxy(\n  [\"change\", \"keyup\", \"keypress\", \"keydown\", \"focus\", \"blur\", \"input\"]\n);\nconst { createEmits: createFieldEmits, createListeners: createFieldListeners } = useEmitProxy([\n  \"click\",\n  \"click-prepend\",\n  \"click-append\",\n  \"click-prepend-inner\",\n  \"click-append-inner\"\n]);\nconst _sfc_main = defineComponent({\n  name: \"VaInput\",\n  components: { VaInputWrapper, VaIcon },\n  props: {\n    ...VaInputWrapperProps,\n    ...useFormFieldProps,\n    ...useFocusableProps,\n    ...useValidationProps,\n    ...useClearableProps,\n    ...useCleaveProps,\n    ...useComponentPresetProp,\n    ...useStatefulProps,\n    // input\n    placeholder: { type: String, default: \"\" },\n    tabindex: { type: [String, Number], default: 0 },\n    modelValue: { type: [Number, String], default: \"\" },\n    type: { type: String, default: \"text\" },\n    inputClass: { type: String, default: \"\" },\n    pattern: { type: String },\n    inputmode: { type: String, default: \"text\" },\n    counter: { type: Boolean, default: false },\n    // style\n    ariaResetLabel: { type: String, default: \"$t:reset\" },\n    /** Set value to input when model value is updated */\n    strictBindInputValue: { type: Boolean, default: false }\n  },\n  emits: [\n    \"update:modelValue\",\n    ...useValidationEmits,\n    ...useClearableEmits,\n    ...createInputEmits(),\n    ...createFieldEmits(),\n    ...useStatefulEmits\n  ],\n  inheritAttrs: false,\n  setup(props, { emit, attrs, slots }) {\n    useDeprecatedCondition([\n      () => props.type !== \"textarea\" || 'Use VaTextarea component instead of VaInput with type=\"textarea\"'\n    ]);\n    const input = shallowRef();\n    const { valueComputed } = useStateful(props, emit, \"modelValue\");\n    const reset = () => withoutValidation(() => {\n      emit(\"update:modelValue\", props.clearValue);\n      emit(\"clear\");\n      resetValidation();\n    });\n    const { focus, blur } = useFocusable(input, props);\n    const filterSlots = computed(() => {\n      const iconSlot = [\"icon\"];\n      return Object.keys(slots).filter((slot) => !iconSlot.includes(slot));\n    });\n    const {\n      isDirty,\n      computedError,\n      computedErrorMessages,\n      listeners: { onBlur, onFocus },\n      validationAriaAttributes,\n      isLoading,\n      withoutValidation,\n      resetValidation\n    } = useValidation(props, emit, { reset, focus, value: valueComputed });\n    const { modelValue } = toRefs(props);\n    const {\n      canBeCleared,\n      clearIconProps\n    } = useClearable(props, modelValue, input, computedError);\n    const { computedValue, onInput } = useCleave(input, props, valueComputed);\n    const inputListeners = createInputListeners(emit);\n    const inputEvents = {\n      ...inputListeners,\n      onFocus: combineFunctions(onFocus, inputListeners.onFocus),\n      onBlur: combineFunctions(onBlur, inputListeners.onBlur),\n      onInput: combineFunctions(onInput, inputListeners.onInput)\n    };\n    const setInputValue = (newValue) => {\n      if (!props.strictBindInputValue) {\n        return;\n      }\n      const target = input.value;\n      if (!target) {\n        return;\n      }\n      const selectionStart = target.selectionStart || 0;\n      const selectionEnd = target.selectionEnd || 0;\n      if (target.value !== newValue) {\n        target.value = String(newValue);\n      }\n      target.setSelectionRange(selectionStart, selectionEnd);\n    };\n    watch(computedValue, (newValue) => {\n      setInputValue(String(newValue));\n    });\n    useEvent(\"input\", () => {\n      setInputValue(String(valueComputed.value));\n    }, input);\n    const tabIndexComputed = computed(() => props.disabled ? -1 : props.tabindex);\n    const computedChildAttributes = computed(() => ({\n      \"aria-label\": props.inputAriaLabel || props.label,\n      \"aria-labelledby\": props.inputAriaLabelledby,\n      \"aria-required\": props.requiredMark,\n      tabindex: tabIndexComputed.value,\n      class: props.inputClass,\n      \"aria-disabled\": props.disabled,\n      \"aria-readonly\": props.readonly,\n      ...validationAriaAttributes.value,\n      ...omit(attrs, [\"class\", \"style\"])\n    }));\n    const computedInputAttributes = computed(() => ({\n      ...computedChildAttributes.value,\n      ...pick(props, [\"type\", \"disabled\", \"readonly\", \"placeholder\", \"pattern\", \"inputmode\", \"minlength\", \"maxlength\"])\n    }));\n    const valueLengthComputed = computed(\n      () => props.counter && typeof computedValue.value === \"string\" ? computedValue.value.length : void 0\n    );\n    const onFieldClick = (e) => {\n      if (!e.target || !(\"tagName\" in e.target)) {\n        return;\n      }\n      if (e.target.tagName === \"INPUT\" || e.target.tagName === \"TEXTAREA\") {\n        return;\n      }\n      focus();\n    };\n    return {\n      ...useTranslation(),\n      onFieldClick,\n      input,\n      inputEvents,\n      isLoading,\n      valueLengthComputed,\n      computedChildAttributes,\n      computedInputAttributes,\n      wrapperProps: filterComponentProps(VaInputWrapperProps),\n      computedValue,\n      tabIndexComputed,\n      // Validations\n      computedError,\n      computedErrorMessages,\n      // Icon\n      canBeCleared,\n      clearIconProps,\n      fieldListeners: createFieldListeners(emit),\n      filterSlots,\n      isDirty,\n      reset,\n      focus,\n      blur\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaInput.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717506578,
+      "end": 1709717506753,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506753,
+      "end": 1709717506753,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717506754,
+      "end": 1709717506754,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/services/color/plugin/create-color-config-plugin.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, watch } from \"vue\";\nimport { i as isServer } from \"../../../utils/ssr.js\";\nimport { j as cssVariableName } from \"../utils.js\";\nimport { g as generateUniqueId } from \"../../../utils/uuid.js\";\nimport { a as addOrUpdateStyleElement } from \"../../../utils/dom.js\";\nimport { u as useColors } from \"../../../composables/useColors.js\";\nconst generateCSSVariable = (key, value) => {\n  return `${cssVariableName(key)}: ${value};\n`;\n};\nconst createColorConfigPlugin = (app, config) => {\n  const { colors: configColors, getTextColor, getColor, currentPresetName, applyPreset } = useColors();\n  const renderCSSVariables = (colors = configColors) => {\n    if (!colors) {\n      return;\n    }\n    const colorNames = Object.keys(colors);\n    const renderedColors = colorNames.map((key) => `${cssVariableName(key)}: ${colors[key]}`).join(\";\");\n    const renderedOnColors = colorNames.map((key) => `${cssVariableName(`on-${key}`)}: ${getColor(getTextColor(colors[key]))}`).join(\";\");\n    return `${renderedColors};${renderedOnColors}`;\n  };\n  const renderCSSVariablesStyleContent = (colors = configColors) => {\n    const colorNames = Object.keys(colors);\n    let result = \":root {\\n\";\n    colorNames.forEach((key) => {\n      result += generateCSSVariable(key, colors[key]);\n    });\n    colorNames.forEach((key) => {\n      result += generateCSSVariable(`on-${key}`, getColor(getTextColor(colors[key])));\n    });\n    result += \"}\\n\";\n    return result;\n  };\n  const uniqueId = computed(generateUniqueId);\n  const updateColors = (newValue) => {\n    if (!newValue) {\n      return;\n    }\n    if (isServer()) {\n      return;\n    }\n    const styleContent = renderCSSVariablesStyleContent(newValue);\n    addOrUpdateStyleElement(`va-color-variables-${uniqueId.value}`, () => styleContent);\n  };\n  watch(configColors, (newValue) => {\n    updateColors(newValue);\n  }, { immediate: true, deep: true });\n  return {\n    colors: configColors,\n    currentPresetName,\n    renderCSSVariables,\n    updateColors,\n    renderCSSVariablesStyleContent\n  };\n};\nexport {\n  createColorConfigPlugin as c\n};\n//# sourceMappingURL=create-color-config-plugin.js.map\n",
+      "start": 1709717416145,
+      "end": 1709717416461,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717416461,
+      "end": 1709717416461,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717416461,
+      "end": 1709717416461,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717416461,
+      "end": 1709717416461,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717416462,
+      "end": 1709717416462,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717416462,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717416463,
+      "end": 1709717416463,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717416463,
+      "end": 1709717416469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717416469,
+      "end": 1709717416469,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-badge/hooks/useFloatingPositionStyles.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed } from \"vue\";\nimport { p as placementsPositionsWithAliases, u as usePlacementAliases } from \"../../../composables/usePlacementAliases.mjs\";\nimport { u as useParsableMeasure } from \"../../../composables/useParsableMeasure.mjs\";\nconst { isParsableMeasure, parseSizeValue } = useParsableMeasure();\nconst useFloatingPositionProps = {\n  overlap: { type: Boolean, default: false },\n  placement: {\n    type: String,\n    default: \"top-end\",\n    validator: (position) => placementsPositionsWithAliases.includes(position)\n  },\n  offset: {\n    type: [Number, String, Array],\n    default: 0,\n    validator: (value) => {\n      if (Array.isArray(value)) {\n        return value.every(isParsableMeasure);\n      }\n      if (typeof value === \"string\") {\n        return isParsableMeasure(value);\n      }\n      return !isNaN(value);\n    }\n  }\n};\nconst useFloatingPosition = (props, floating) => {\n  if (!floating.value) {\n    return {};\n  }\n  const { position, align } = usePlacementAliases(props);\n  const alignmentShiftComputed = computed(() => {\n    const alignOptions = {\n      start: props.overlap ? \"-50%\" : \"-100%\",\n      center: \"-50%\",\n      end: props.overlap ? \"-50%\" : \"0%\"\n    };\n    return alignOptions[align.value];\n  });\n  const offsetMarginComputed = computed(() => {\n    if (!props.offset) {\n      return {};\n    }\n    const mainAxis = [\"left\", \"right\"].includes(position.value) ? \"top\" : \"left\";\n    const crossAxis = mainAxis === \"top\" ? \"left\" : \"top\";\n    if (Array.isArray(props.offset)) {\n      const [x, y] = props.offset.map(parseSizeValue);\n      return {\n        [`margin-${mainAxis}`]: `${x}px`,\n        [`margin-${crossAxis}`]: `${y}px`\n      };\n    }\n    const offset = parseSizeValue(props.offset);\n    return {\n      [`margin-${crossAxis}`]: `${offset}px`\n    };\n  });\n  const alignmentComputed = computed(() => {\n    const mainAxis = [\"left\", \"right\"].includes(position.value) ? \"top\" : \"left\";\n    const crossAxis = mainAxis === \"top\" ? \"left\" : \"top\";\n    let shiftValue = \"0%\";\n    if (crossAxis === \"top\" && position.value === \"bottom\") {\n      shiftValue = \"100%\";\n    }\n    if (crossAxis === \"left\" && position.value === \"right\") {\n      shiftValue = \"100%\";\n    }\n    const alignmentOptions = {\n      start: { [mainAxis]: \"0%\", [crossAxis]: shiftValue },\n      center: { [mainAxis]: \"50%\", [crossAxis]: shiftValue },\n      end: { [mainAxis]: \"100%\", [crossAxis]: shiftValue }\n    };\n    return alignmentOptions[align.value];\n  });\n  const transformComputed = computed(() => {\n    const coords = {\n      top: {\n        x: alignmentShiftComputed.value,\n        y: props.overlap ? \"-50%\" : \"-100%\"\n      },\n      bottom: {\n        x: alignmentShiftComputed.value,\n        y: props.overlap ? \"-50%\" : \"0%\"\n      },\n      left: {\n        x: props.overlap ? \"-50%\" : \"-100%\",\n        y: alignmentShiftComputed.value\n      },\n      right: {\n        x: props.overlap ? \"-50%\" : \"0%\",\n        y: alignmentShiftComputed.value\n      }\n    };\n    const { x, y } = coords[position.value];\n    return { transform: `translate(${x}, ${y})` };\n  });\n  return computed(() => ({\n    ...alignmentComputed.value,\n    ...transformComputed.value,\n    ...offsetMarginComputed.value\n  }));\n};\nexport {\n  useFloatingPosition as a,\n  useFloatingPositionProps as u\n};\n//# sourceMappingURL=useFloatingPositionStyles.mjs.map\n",
+      "start": 1709717513178,
+      "end": 1709717513309,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513309,
+      "end": 1709717513309,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513309,
+      "end": 1709717513309,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513309,
+      "end": 1709717513310,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513309,
+      "end": 1709717513310,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513310,
+      "end": 1709717513310,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513310,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513310,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717513311,
+      "end": 1709717513311,
+      "order": "normal"
+    }
+  ]
+}

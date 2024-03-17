@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-button-group/VaButtonGroup.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { o as omit } from \"../../../vendor.js\";\nimport { V as VaButton } from \"../va-button/index.js\";\nimport { V as VaConfig } from \"../va-config/VaConfig.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nconst VaButtonProps = omit(extractComponentProps(VaButton), [\"block\", \"gradient\"]);\nconst _sfc_main = defineComponent({\n  name: \"VaButtonGroup\",\n  components: { VaConfig },\n  props: {\n    ...VaButtonProps,\n    ...useComponentPresetProp,\n    grow: { type: Boolean, default: false },\n    gradient: { type: Boolean, default: false }\n  },\n  setup: (props) => {\n    const { getColor, getGradientBackground } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const { textColorComputed } = useTextColor(colorComputed);\n    const filteredProps = filterComponentProps(VaButtonProps);\n    const buttonConfig = computed(() => ({\n      VaButton: {\n        ...filteredProps.value,\n        ...props.gradient && {\n          color: \"#00000000\",\n          textColor: textColorComputed.value\n        }\n      }\n    }));\n    const computedClass = useBem(\"va-button-group\", () => ({\n      square: !props.round,\n      grow: props.grow,\n      small: props.size === \"small\",\n      large: props.size === \"large\"\n    }));\n    const backgroundColor = computed(\n      () => props.gradient ? getGradientBackground(colorComputed.value) : \"transparent\"\n    );\n    return { buttonConfig, computedClass, backgroundColor };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaButtonGroup.css';\n//# sourceMappingURL=VaButtonGroup.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717421911,
+      "end": 1709717422095,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422095,
+      "end": 1709717422095,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422095,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422096,
+      "end": 1709717422096,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422096,
+      "end": 1709717422097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422097,
+      "end": 1709717422097,
+      "order": "normal"
+    }
+  ]
+}

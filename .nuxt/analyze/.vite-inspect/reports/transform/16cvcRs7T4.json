@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-data-table/hooks/useStylable.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed } from \"vue\";\nimport { s as safeCSSLength } from \"../../../utils/css.js\";\nimport { c as useSelectableProp } from \"./useCommonProps.js\";\nimport { u as useColors } from \"../../../composables/useColors.js\";\nconst prefix = \"--va-data-table\";\nconst isFunction = (val) => typeof val === \"function\";\nconst useStylableProps = {\n  ...useSelectableProp,\n  selectedColor: { type: String, default: \"primary\" },\n  allowFooterSorting: { type: Boolean, default: false },\n  stickyHeader: { type: Boolean, default: false },\n  stickyFooter: { type: Boolean, default: false },\n  height: { type: [String, Number] }\n};\nconst getClass = (classes) => isFunction(classes) ? classes() : classes;\nconst getStyle = (styles) => isFunction(styles) ? styles() : styles;\nconst useStylable = (props) => {\n  const { getColor, getFocusColor, getHoverColor } = useColors();\n  const color = computed(() => getColor(props.selectedColor));\n  const CSSVariables = computed(() => ({\n    hoverColor: getHoverColor(color.value),\n    selectedColor: props.selectable ? getFocusColor(color.value) : void 0,\n    tableHeight: props.height ? safeCSSLength(props.height) : \"var(--va-data-table-height)\",\n    theadBg: props.stickyHeader ? \"var(--va-data-table-thead-background, var(--va-data-table-header-background))\" : \"var(--va-data-table-thead-background)\",\n    tfootBg: props.stickyFooter ? \"var(--va-data-table-tfoot-background, var(--va-data-table-header-background))\" : \"var(--va-data-table-tfoot-background)\"\n  }));\n  const getHeaderCSSVariables = (column) => ({\n    [`${prefix}-width`]: column.width && safeCSSLength(column.width),\n    [`${prefix}-align`]: column.thAlign,\n    [`${prefix}-vertical-align`]: column.thVerticalAlign,\n    [`${prefix}-cursor`]: column.sortable ? \"pointer\" : \"default\"\n  });\n  const getCellCSSVariables = (cell) => ({\n    [`${prefix}-align`]: cell.column.tdAlign,\n    [`${prefix}-vertical-align`]: cell.column.tdVerticalAlign\n  });\n  const getFooterCSSVariables = (column) => ({\n    [`${prefix}-align`]: column.thAlign,\n    [`${prefix}-vertical-align`]: column.thVerticalAlign,\n    [`${prefix}-cursor`]: props.allowFooterSorting && column.sortable ? \"pointer\" : \"default\"\n  });\n  return {\n    CSSVariables,\n    getHeaderCSSVariables,\n    getCellCSSVariables,\n    getFooterCSSVariables,\n    getClass,\n    getStyle\n  };\n};\nexport {\n  useStylable as a,\n  useStylableProps as u\n};\n//# sourceMappingURL=useStylable.js.map\n",
+      "start": 1709717427170,
+      "end": 1709717427311,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427311,
+      "end": 1709717427311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427311,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427312,
+      "end": 1709717427312,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427312,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427313,
+      "end": 1709717427313,
+      "order": "normal"
+    }
+  ]
+}

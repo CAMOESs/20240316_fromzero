@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-data-table/hooks/useTableScroll.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { getCurrentInstance, computed } from \"vue\";\nimport { u as useElementRef } from \"../../../composables/useElementRef.js\";\nimport { u as useIntersectionObserver } from \"../../../composables/useIntersectionObserver.js\";\nconst useTableScrollProps = {\n  scrollTopMargin: { type: Number, default: 0 },\n  scrollBottomMargin: { type: Number, default: 0 }\n};\nconst useTableScrollEmits = [\"scroll:top\", \"scroll:bottom\"];\nconst useTableScroll = (props, emit) => {\n  var _a;\n  const vNodeProps = (_a = getCurrentInstance()) == null ? void 0 : _a.vnode.props;\n  const doRenderTopTrigger = (vNodeProps == null ? void 0 : vNodeProps[\"onScroll:top\"]) !== void 0;\n  const doRenderBottomTrigger = (vNodeProps == null ? void 0 : vNodeProps[\"onScroll:bottom\"]) !== void 0;\n  const scrollContainer = useElementRef();\n  const topTrigger = useElementRef();\n  const bottomTrigger = useElementRef();\n  const isObservable = computed(() => !!scrollContainer.value);\n  const intersectionHandler = (entries) => {\n    entries.forEach((entry) => {\n      if (entry.isIntersecting) {\n        entry.target === topTrigger.value ? emit(\"scroll:top\") : emit(\"scroll:bottom\");\n      }\n    });\n  };\n  const targets = computed(() => {\n    const list = [];\n    if (isObservable.value) {\n      topTrigger.value && list.push(topTrigger.value);\n      bottomTrigger.value && list.push(bottomTrigger.value);\n    }\n    return list;\n  });\n  const options = computed(() => ({\n    root: scrollContainer.value,\n    rootMargin: `${props.scrollTopMargin ?? 0}px 0px ${props.scrollBottomMargin ?? 0}px 0px`\n  }));\n  useIntersectionObserver(intersectionHandler, options, targets);\n  return {\n    scrollContainer,\n    topTrigger,\n    bottomTrigger,\n    doRenderTopTrigger,\n    doRenderBottomTrigger\n  };\n};\nexport {\n  useTableScrollEmits as a,\n  useTableScroll as b,\n  useTableScrollProps as u\n};\n//# sourceMappingURL=useTableScroll.js.map\n",
+      "start": 1709717427217,
+      "end": 1709717427386,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427386,
+      "end": 1709717427386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427386,
+      "end": 1709717427387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427387,
+      "end": 1709717427387,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427387,
+      "end": 1709717427387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427392,
+      "end": 1709717427392,
+      "order": "normal"
+    }
+  ]
+}

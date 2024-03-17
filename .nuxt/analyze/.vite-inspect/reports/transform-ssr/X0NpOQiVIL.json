@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-sidebar/VaSidebarItem/VaSidebarItem.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { a as useSidebarItem } from \"../hooks/useSidebar.mjs\";\nimport { u as useComponentPresetProp } from \"../../../composables/useComponentPreset.mjs\";\nimport { e as applyColors } from \"../../../services/color/utils.mjs\";\nimport { u as useRouterLinkProps, a as useRouterLink } from \"../../../composables/useRouterLink.mjs\";\nimport { u as useElementRef } from \"../../../composables/useElementRef.mjs\";\nimport { u as useHover } from \"../../../composables/useHover.mjs\";\nimport { u as useColors } from \"../../../composables/useColors.mjs\";\nimport { u as useKeyboardOnlyFocus } from \"../../../composables/useKeyboardOnlyFocus.mjs\";\nimport { u as useTextColor } from \"../../../composables/useTextColor.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaSidebarItem\",\n  props: {\n    ...useRouterLinkProps,\n    ...useComponentPresetProp,\n    active: { type: Boolean, default: false },\n    textColor: { type: String, default: void 0 },\n    activeColor: { type: String, default: \"primary\" },\n    hoverColor: { type: String, default: void 0 },\n    hoverOpacity: { type: [Number, String], default: 0.2 },\n    borderColor: { type: String, default: void 0 }\n  },\n  setup(props) {\n    const rootElement = useElementRef();\n    const sidebar = useSidebarItem();\n    const { isHovered } = useHover(rootElement);\n    const { getColor, getHoverColor, getFocusColor } = useColors();\n    const { hasKeyboardFocus, keyboardFocusListeners } = useKeyboardOnlyFocus();\n    const backgroundColorComputed = computed(() => {\n      if (props.active && !isHovered.value && !hasKeyboardFocus.value) {\n        return getColor(props.activeColor);\n      }\n      if (hasKeyboardFocus.value) {\n        return getFocusColor(getColor(props.hoverColor || props.activeColor));\n      }\n      return \"#ffffff00\";\n    });\n    const textBackground = computed(() => applyColors(getColor(sidebar == null ? void 0 : sidebar.color), backgroundColorComputed.value));\n    const { textColorComputed } = useTextColor(textBackground);\n    const computedStyle = computed(() => {\n      const style = { color: textColorComputed.value };\n      if (isHovered.value || props.active || hasKeyboardFocus.value) {\n        style.backgroundColor = backgroundColorComputed.value;\n      }\n      if (props.active) {\n        const mergedProps = { ...sidebar, ...props };\n        style.borderColor = getColor(mergedProps.borderColor || mergedProps.activeColor);\n      }\n      if (hasKeyboardFocus.value) {\n        style.backgroundColor = getFocusColor(getColor(props.hoverColor || props.activeColor));\n      }\n      if (isHovered.value) {\n        style.backgroundColor = getHoverColor(\n          getColor(props.hoverColor || props.activeColor),\n          Number(props.hoverOpacity)\n        );\n      }\n      return style;\n    });\n    const { tagComputed, hrefComputed, linkAttributesComputed } = useRouterLink(props);\n    return {\n      rootElement,\n      computedStyle,\n      keyboardFocusListeners,\n      tagComputed,\n      hrefComputed,\n      isHovered,\n      backgroundColorComputed,\n      bg: getColor(sidebar == null ? void 0 : sidebar.color),\n      textBackground,\n      linkAttributesComputed\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaSidebarItem.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717508074,
+      "end": 1709717508282,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508282,
+      "end": 1709717508282,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717508282,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717508283,
+      "end": 1709717508283,
+      "order": "normal"
+    }
+  ]
+}

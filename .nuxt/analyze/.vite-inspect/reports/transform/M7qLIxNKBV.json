@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-input-wrapper/VaInputWrapper.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { p as pick } from \"../../../vendor.js\";\nimport { V as VaInputLabel } from \"./components/VaInputLabel.js\";\nimport { V as VaIcon } from \"../va-icon/index.js\";\nimport { u as useInputFieldAriaProps, a as useInputFieldAria } from \"./hooks/useInputFieldAria.js\";\nimport { W as WithSlotInheritance } from \"../../utils/with-slot-inheritance/with-slot-inheritance.js\";\nimport { V as VaMessageList } from \"../va-message-list/VaMessageList.js\";\nimport { u as useFormFieldProps } from \"../../composables/useFormField.js\";\nimport { u as useSyncProp } from \"../../composables/useSyncProp.js\";\nimport { u as useFocusDeep } from \"../../composables/useFocusDeep.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { b as useValidationProps } from \"../../composables/useValidation.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nconst VaInputLabelProps = extractComponentProps(VaInputLabel);\nconst _sfc_main = defineComponent({\n  name: \"VaInputWrapper\",\n  components: { VaMessageList: WithSlotInheritance(VaMessageList), VaIcon, VaInputLabel },\n  props: {\n    ...useComponentPresetProp,\n    ...useInputFieldAriaProps,\n    ...useFormFieldProps,\n    ...useValidationProps,\n    ...VaInputLabelProps,\n    modelValue: { type: null, default: \"\" },\n    counter: { type: Boolean },\n    maxLength: { type: Number, default: void 0 },\n    label: { type: String, default: \"\" },\n    placeholder: { type: String, default: \"\" },\n    color: { type: String, default: \"primary\" },\n    background: { type: String },\n    success: { type: Boolean, default: false },\n    loading: { type: Boolean, default: false },\n    requiredMark: { type: Boolean, default: false },\n    innerLabel: { type: Boolean, default: false }\n  },\n  emits: [\n    \"click\",\n    \"click-prepend\",\n    \"click-append\",\n    \"click-prepend-inner\",\n    \"click-append-inner\",\n    \"click-field\",\n    \"update:modelValue\"\n  ],\n  setup(props, { emit, slots }) {\n    const { getColor } = useColors();\n    const [vModel] = useSyncProp(\"modelValue\", props, emit, \"\");\n    const isFocused = useFocusDeep();\n    const counterValue = computed(\n      () => props.counter && typeof vModel.value === \"string\" ? vModel.value.length : void 0\n    );\n    const wrapperClass = useBem(\"va-input-wrapper\", () => ({\n      ...pick(props, [\"success\", \"error\", \"disabled\", \"readonly\"]),\n      focused: Boolean(isFocused.value),\n      labeled: Boolean(props.label || slots.label),\n      labeledInner: Boolean(props.label || slots.label) && props.innerLabel\n    }));\n    const colorComputed = computed(() => getColor(props.color));\n    const backgroundComputed = computed(() => props.background ? getColor(props.background) : \"#ffffff00\");\n    const messagesComputed = computed(() => props.error ? props.errorMessages : props.messages);\n    const { textColorComputed } = useTextColor(backgroundComputed);\n    const messagesColor = computed(() => {\n      if (props.error) {\n        return \"danger\";\n      }\n      if (props.success) {\n        return \"success\";\n      }\n      return \"\";\n    });\n    const errorLimit = computed(() => props.error ? Number(props.errorCount) : 99);\n    const isCounterVisible = computed(() => counterValue.value !== void 0);\n    const counterComputed = computed(\n      () => props.maxLength !== void 0 ? `${counterValue.value}/${props.maxLength}` : counterValue.value\n    );\n    const {\n      labelId,\n      characterCountId,\n      ariaAttributes\n    } = useInputFieldAria(props);\n    const vaInputLabelProps = filterComponentProps(VaInputLabelProps);\n    const focus = () => {\n      isFocused.value = true;\n    };\n    const blur = () => {\n      isFocused.value = false;\n    };\n    return {\n      focus,\n      blur,\n      labelId,\n      characterCountId,\n      ariaAttributes,\n      vModel,\n      counterValue,\n      vaInputLabelProps,\n      wrapperClass,\n      textColorComputed,\n      isCounterVisible,\n      counterComputed,\n      colorComputed,\n      backgroundComputed,\n      messagesColor,\n      messagesComputed,\n      errorLimit\n    };\n  },\n  methods: {}\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaInputWrapper.css';\n//# sourceMappingURL=VaInputWrapper.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717421123,
+      "end": 1709717421290,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717421290,
+      "end": 1709717421290,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717421290,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717421291,
+      "end": 1709717421291,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717421291,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717421292,
+      "end": 1709717421292,
+      "order": "normal"
+    }
+  ]
+}

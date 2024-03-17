@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-button-dropdown/VaButtonDropdown.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { o as omit } from \"../../../vendor.js\";\nimport { V as VaButton } from \"../va-button/index.js\";\nimport { V as VaButtonGroup } from \"../va-button-group/index.js\";\nimport { V as VaDropdown } from \"../va-dropdown/index.js\";\nimport { V as VaDropdownContent } from \"../va-dropdown/components/VaDropdownContent/index.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.js\";\nimport { a as usePlacementAliasesProps } from \"../../composables/usePlacementAliases.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nimport { u as useEmitProxy } from \"../../composables/useEmitProxy.js\";\nconst { createEmits, createVOnListeners: createListeners } = useEmitProxy([\"click\"]);\nconst { createEmits: createMainButtonEmits, createVOnListeners: createMainButtonListeners } = useEmitProxy(\n  [{ listen: \"click\", emit: \"main-button-click\" }]\n);\nconst VaButtonProps = omit(extractComponentProps(VaButton), [\"iconRight\", \"block\"]);\nconst VaDropdownProps = extractComponentProps(VaDropdown);\nconst _sfc_main = defineComponent({\n  name: \"VaButtonDropdown\",\n  components: {\n    VaButton,\n    VaDropdown,\n    VaButtonGroup,\n    VaDropdownContent\n  },\n  emits: [\"update:modelValue\", ...createEmits(), ...createMainButtonEmits()],\n  props: {\n    ...useComponentPresetProp,\n    ...VaButtonProps,\n    ...VaDropdownProps,\n    ...useStatefulProps,\n    ...usePlacementAliasesProps,\n    modelValue: { type: Boolean, default: false },\n    stateful: { type: Boolean, default: true },\n    icon: { type: String, default: \"va-arrow-down\" },\n    openedIcon: { type: String, default: \"va-arrow-up\" },\n    hideIcon: { type: Boolean, default: false },\n    leftIcon: { type: Boolean, default: false },\n    iconColor: { type: String, default: \"\" },\n    disabled: { type: Boolean, default: false },\n    disableButton: { type: Boolean, default: false },\n    disableDropdown: { type: Boolean, default: false },\n    offset: { type: [Number, Array], default: 2 },\n    keepAnchorWidth: { type: Boolean, default: false },\n    closeOnContentClick: { type: Boolean, default: true },\n    split: { type: Boolean },\n    splitTo: { type: String, default: \"\" },\n    splitHref: { type: String, default: \"\" },\n    loading: { type: Boolean, default: false },\n    label: { type: String },\n    ariaLabel: { type: String, default: \"$t:toggleDropdown\" }\n  },\n  setup(props, { emit, slots }) {\n    const { valueComputed } = useStateful(props, emit);\n    const computedIcon = computed(() => valueComputed.value ? props.openedIcon : props.icon);\n    const computedClass = useBem(\"va-button-dropdown\", () => ({\n      split: props.split\n    }));\n    const computedButtonIcons = computed(() => {\n      if (props.hideIcon) {\n        return {};\n      }\n      const propName = (props.label || slots.label) && !props.leftIcon ? \"icon-right\" : \"icon\";\n      return { [propName]: computedIcon.value };\n    });\n    const buttonPropsFiltered = computed(() => {\n      let ignoredProps = [\"to\", \"href\", \"loading\", \"icon\"];\n      const presetProps = [\n        \"plain\",\n        \"textOpacity\",\n        \"backgroundOpacity\",\n        \"hoverOpacity\",\n        \"hoverBehavior\",\n        \"hoverOpacity\",\n        \"pressedOpacity\",\n        \"pressedBehavior\",\n        \"pressedOpacity\"\n      ];\n      if (props.preset) {\n        ignoredProps = [...ignoredProps, ...presetProps];\n      }\n      const filteredProps = omit(VaButtonProps, ignoredProps);\n      return Object.keys(filteredProps);\n    });\n    const buttonPropsComputed = computed(\n      () => Object.entries(props).filter(([key, _]) => buttonPropsFiltered.value.includes(key)).reduce((acc, [key, value]) => {\n        Object.assign(acc, { [key]: value });\n        return acc;\n      }, {})\n    );\n    const computedMainButtonProps = computed(() => ({\n      to: props.splitTo,\n      href: props.splitHref,\n      loading: props.loading\n    }));\n    const hideDropdown = () => {\n      valueComputed.value = false;\n    };\n    return {\n      ...useTranslation(),\n      vaDropdownProps: filterComponentProps(VaDropdownProps),\n      hideDropdown,\n      valueComputed,\n      computedIcon,\n      computedClass,\n      computedButtonIcons,\n      buttonPropsComputed,\n      computedMainButtonProps,\n      listeners: createListeners(emit),\n      mainButtonListeners: createMainButtonListeners(emit)\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaButtonDropdown.css';\n//# sourceMappingURL=VaButtonDropdown.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717421899,
+      "end": 1709717422086,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422086,
+      "end": 1709717422086,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422086,
+      "end": 1709717422087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422087,
+      "end": 1709717422087,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-date-picker/components/VaDatePickerHeader/VaDatePickerHeader.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent } from \"vue\";\nimport { u as useView } from \"../../hooks/view.js\";\nimport { V as VaButton } from \"../../../va-button/index.js\";\nimport { u as useElementTextColor } from \"../../../../composables/useElementTextColor.js\";\nimport { u as useElementBackground } from \"../../../../composables/useElementBackground.js\";\nimport { u as useCurrentElement } from \"../../../../composables/useCurrentElement.js\";\nimport { u as useTranslation } from \"../../../../composables/useTranslation.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaDatePickerHeader\",\n  components: { VaButton },\n  emits: [\"update:view\"],\n  props: {\n    monthNames: { type: Array, required: true },\n    view: { type: Object },\n    color: { type: String },\n    disabled: { type: Boolean, default: false },\n    ariaNextPeriodLabel: { type: String, default: \"$t:nextPeriod\" },\n    ariaPreviousPeriodLabel: { type: String, default: \"$t:previousPeriod\" },\n    ariaSwitchViewLabel: { type: String, default: \"$t:switchView\" }\n  },\n  setup(props, { emit }) {\n    const { syncView, prev, next } = useView(props, emit);\n    const switchView = () => {\n      if (syncView.value.type === \"day\") {\n        syncView.value = { ...syncView.value, type: \"month\" };\n      } else if (syncView.value.type === \"month\") {\n        syncView.value = { ...syncView.value, type: \"year\" };\n      }\n    };\n    const changeView = (view) => {\n      syncView.value = view;\n    };\n    const currentColor = useElementTextColor(useElementBackground(useCurrentElement()));\n    return {\n      ...useTranslation(),\n      currentColor,\n      prev,\n      next,\n      changeView,\n      switchView,\n      syncView\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaDatePickerHeader.css';\n//# sourceMappingURL=VaDatePickerHeader.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717428305,
+      "end": 1709717429130,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429130,
+      "end": 1709717429130,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717429131,
+      "end": 1709717429131,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717429131,
+      "end": 1709717429131,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717429131,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717429132,
+      "end": 1709717429132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717429153,
+      "end": 1709717429153,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717429153,
+      "end": 1709717429153,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717429153,
+      "end": 1709717429153,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717429153,
+      "end": 1709717429153,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717429153,
+      "end": 1709717429153,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717429154,
+      "end": 1709717429154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717429154,
+      "end": 1709717429154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717429154,
+      "end": 1709717429154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717429154,
+      "end": 1709717429154,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717429154,
+      "end": 1709717429154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717429154,
+      "end": 1709717429154,
+      "order": "normal"
+    }
+  ]
+}

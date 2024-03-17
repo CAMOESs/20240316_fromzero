@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-popover/VaPopover.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { V as VaDropdown } from \"../va-dropdown/index.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { V as VaIcon } from \"../va-icon/index.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nconst VaDropdownProps = extractComponentProps(VaDropdown, [\"closeOnClickOutside\"]);\nconst _sfc_main = defineComponent({\n  name: \"VaPopover\",\n  components: { VaDropdown, VaIcon },\n  props: {\n    ...VaDropdownProps,\n    ...useComponentPresetProp,\n    trigger: { default: \"hover\" },\n    color: { type: String, default: \"#1b1a1f\" },\n    // TODO: Make sure add this color to pallete\n    textColor: { type: String },\n    icon: { type: String, default: \"\" },\n    title: { type: String, default: \"\" },\n    message: { type: String, default: \"\" },\n    autoHide: { type: Boolean, default: true },\n    offset: { type: [Array, Number], default: 4 }\n  },\n  setup(props, { slots }) {\n    const VaDropdownPropValues = filterComponentProps(VaDropdownProps);\n    const { getColor, getBoxShadowColor } = useColors();\n    const { textColorComputed } = useTextColor(computed(() => getColor(props.color)));\n    const showIconComputed = computed(() => props.icon || slots.icon);\n    const showTitleComputed = computed(() => props.title || slots.title);\n    const showBodyComputed = computed(() => props.message || slots.body);\n    const showPopoverContentComputed = computed(\n      () => showTitleComputed.value || showBodyComputed.value\n    );\n    const computedPopoverStyle = computed(() => ({\n      boxShadow: `var(--va-popover-content-box-shadow) ${getBoxShadowColor(getColor(props.color))}`,\n      backgroundColor: getColor(props.color),\n      color: textColorComputed.value\n    }));\n    return {\n      textColorComputed,\n      VaDropdownPropValues,\n      showBodyComputed,\n      showIconComputed,\n      showTitleComputed,\n      computedPopoverStyle,\n      showPopoverContentComputed\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaPopover.css';\n//# sourceMappingURL=VaPopover.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717422969,
+      "end": 1709717423092,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423092,
+      "end": 1709717423092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423092,
+      "end": 1709717423093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423093,
+      "end": 1709717423093,
+      "order": "normal"
+    }
+  ]
+}

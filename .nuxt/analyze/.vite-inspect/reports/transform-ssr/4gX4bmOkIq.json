@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/composables/useElementBackground.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, watchEffect } from \"vue\";\nconst parseRgba = (rgba) => {\n  let values;\n  if (rgba.startsWith(\"rgba\")) {\n    values = rgba.substring(5, rgba.length - 1).split(\",\");\n  } else {\n    values = rgba.substring(4, rgba.length - 1).split(\",\");\n  }\n  values[0] = Number(values[0]);\n  values[1] = Number(values[1]);\n  values[2] = Number(values[2]);\n  if (values[3] === void 0) {\n    values[3] = 1;\n  } else {\n    values[3] = Number(values[3]);\n  }\n  return values;\n};\nconst toHex = (color) => {\n  return \"#\" + (color[0] | 1 << 8).toString(16).slice(1) + (color[1] | 1 << 8).toString(16).slice(1) + (color[2] | 1 << 8).toString(16).slice(1) + (color[3] * 255 | 1 << 8).toString(16).slice(1);\n};\nconst getParentsWithBackground = (el) => {\n  const parents = [];\n  let currentEl = el;\n  while (currentEl) {\n    if (!(currentEl instanceof HTMLElement) || !currentEl) {\n      return parents;\n    }\n    const { backgroundColor, willChange } = window.getComputedStyle(currentEl);\n    const bgWillChange = willChange.includes(\"background\");\n    const parsedColor = parseRgba(backgroundColor);\n    if (parsedColor[3] === 1 && !bgWillChange) {\n      parents.push(currentEl);\n      return parents;\n    }\n    if (parsedColor[3] !== 0 || bgWillChange) {\n      parents.push(currentEl);\n    }\n    currentEl = currentEl.parentElement;\n  }\n  return parents;\n};\nconst WATCHER_CLASS = \"va-background-watcher\";\nconst watchElementBackground = (el, cb) => {\n  el.className = WATCHER_CLASS + \" \" + el.className;\n  el.addEventListener(\"transitionend\", (e) => {\n    if (e.target !== el) {\n      return;\n    }\n    cb();\n  });\n  return () => {\n    el.className = el.className.replace(WATCHER_CLASS, \"\");\n    el.removeEventListener(\"transitionend\", cb);\n  };\n};\nconst watchElementsBackground = (els, cb) => {\n  const unwatchers = els.map((el) => watchElementBackground(el, cb));\n  return () => {\n    unwatchers.forEach((unwatch) => unwatch());\n  };\n};\nconst applyColors = (color1, color2) => {\n  const weight = color2[3];\n  if (weight === 1) {\n    return color2;\n  }\n  if (weight === 0) {\n    return color1;\n  }\n  const c1 = Math.round(color1[0] * (1 - weight) + color2[0] * weight);\n  const c2 = Math.round(color1[1] * (1 - weight) + color2[1] * weight);\n  const c3 = Math.round(color1[2] * (1 - weight) + color2[2] * weight);\n  return [c1, c2, c3, 1];\n};\nconst getColorFromElements = (els) => {\n  let currentColor = [0, 0, 0, 0];\n  for (let i = els.length - 1; i >= 0; i--) {\n    currentColor = applyColors(currentColor, parseRgba(window.getComputedStyle(els[i]).backgroundColor));\n  }\n  return currentColor;\n};\nconst useElementBackground = (el) => {\n  const color = ref(\"#000000\");\n  let unWatchAll = () => void 0;\n  watchEffect(() => {\n    unWatchAll();\n    if (el.value) {\n      const parents = getParentsWithBackground(el.value);\n      unWatchAll = watchElementsBackground(parents, () => {\n        color.value = toHex(getColorFromElements(parents));\n      });\n      color.value = toHex(getColorFromElements(parents));\n    }\n  });\n  return color;\n};\nexport {\n  useElementBackground as u\n};\n//# sourceMappingURL=useElementBackground.mjs.map\n",
+      "start": 1709717513937,
+      "end": 1709717514270,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514270,
+      "end": 1709717514270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514270,
+      "end": 1709717514270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514270,
+      "end": 1709717514270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514270,
+      "end": 1709717514270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514270,
+      "end": 1709717514270,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717514270,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514271,
+      "end": 1709717514271,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514272,
+      "end": 1709717514272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514272,
+      "end": 1709717514273,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514273,
+      "end": 1709717514273,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514273,
+      "end": 1709717514273,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514273,
+      "end": 1709717514273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514273,
+      "end": 1709717514273,
+      "order": "normal"
+    }
+  ]
+}

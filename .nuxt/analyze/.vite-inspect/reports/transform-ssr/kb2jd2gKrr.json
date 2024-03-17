@@ -1,0 +1,294 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue?vue&type=style&index=0&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.lolo {\n  margin-left: 10px;\n padding: 5px;\n height: 80px;\n \n}\n\n@media screen and (max-width: 900px) {\n  .lolo {\n    width: 120px;\n    height: 50px;\n  }\n  .lolo {\n    width: 120px;\n    height: 60px;\n    margin-left: 10px;\n  margin-right: 5px;\n  }\n}\n\n/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 600px) {\n  .lolo {\n    width: 150px;\n    height: 70px;\n    margin-left: 10px;\n    margin-right: 5px;\n  }\n}\n\n#nav{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important ;\n  background-color: white\n} \n\n",
+      "start": 1709717514544,
+      "end": 1709717514544,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div>\n    <v-layout>\n      <ClientOnly>\n        <v-app-bar elevation=\"4\" id=\"nav\" style=\"height: 77px;\">\n          <img\n            class=\"lolo\"\n            src=\"/images/logo.png\"\n            alt=\"#\"\n          />\n\n          <v-spacer> </v-spacer>\n      \n        </v-app-bar>\n      </ClientOnly>\n    </v-layout>\n\n  </div>\n</template>\n<script>\nexport default {\n  name: \"TheHeader\",\n};\n</script>\n\n<style lang=\"scss\">\n.lolo {\n  margin-left: 10px;\n padding: 5px;\n height: 80px;\n \n}\n\n@media screen and (max-width: 900px) {\n  .lolo {\n    width: 120px;\n    height: 50px;\n  }\n  .lolo {\n    width: 120px;\n    height: 60px;\n    margin-left: 10px;\n  margin-right: 5px;\n  }\n}\n\n/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 600px) {\n  .lolo {\n    width: 150px;\n    height: 70px;\n    margin-left: 10px;\n    margin-right: 5px;\n  }\n}\n\n#nav{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important ;\n  background-color: white\n} \n\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514544,
+      "end": 1709717514544,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514544,
+      "end": 1709717514544,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514544,
+      "end": 1709717514544,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514544,
+      "end": 1709717514544,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514544,
+      "end": 1709717514544,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".lolo{height:80px;margin-left:10px;padding:5px}@media screen and (max-width:900px){.lolo{height:50px;height:60px;margin-left:10px;margin-right:5px;width:120px}}@media screen and (max-width:600px){.lolo{height:70px;margin-left:10px;margin-right:5px;width:150px}}#nav{background-color:#fff;box-shadow:0 0 7px rgba(0,0,0,.11)!important}",
+      "start": 1709717514544,
+      "end": 1709717514577,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue",
+        "mappings": "AACA,MAGC,YAFC,iBACD,YAKD,oCACE,MAEE,YAIA,YACA,iBACF,iBAHE,aAQJ,oCACE,MAEE,YACA,iBACA,iBAHA,aAOJ,KAEE,sBADA",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514577,
+      "end": 1709717514577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514577,
+      "end": 1709717514577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514577,
+      "end": 1709717514577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".lolo{height:80px;margin-left:10px;padding:5px}@media screen and (max-width:900px){.lolo{height:50px;height:60px;margin-left:10px;margin-right:5px;width:120px}}@media screen and (max-width:600px){.lolo{height:70px;margin-left:10px;margin-right:5px;width:150px}}#nav{background-color:#fff;box-shadow:0 0 7px rgba(0,0,0,.11)!important}",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue",
+        "mappings": "AAAA,MAAM,WAAW,CAAC,gBAAgB,CAAC,WAAW,CAAC,oCAAoC,MAAM,WAAW,CAAC,WAAW,CAAC,gBAAgB,CAAC,gBAAgB,CAAC,WAAW,CAAC,CAAC,oCAAoC,MAAM,WAAW,CAAC,gBAAgB,CAAC,gBAAgB,CAAC,WAAW,CAAC,CAAC,KAAK,qBAAqB,CAAC,4CAA4C",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Header_maintenance.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514578,
+      "end": 1709717514578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514579,
+      "end": 1709717514579,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514580,
+      "end": 1709717514580,
+      "order": "normal"
+    }
+  ]
+}

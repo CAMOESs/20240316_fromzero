@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-tree-view/hooks/useTreeHelpers.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { a as getValueByKey } from \"../../../utils/value-by-key.js\";\nconst useTreeViewProps = {\n  nodes: {\n    type: Array,\n    default: []\n  },\n  stateful: {\n    type: Boolean,\n    default: true\n  },\n  selectable: {\n    type: Boolean,\n    default: false\n  },\n  selectionType: {\n    type: String,\n    default: \"leaf\",\n    validator: (v) => [\"leaf\", \"independent\"].includes(v)\n  },\n  valueBy: {\n    type: [String, Function],\n    default: \"id\"\n  },\n  textBy: {\n    type: [String, Function],\n    default: \"label\"\n  },\n  trackBy: {\n    type: [String, Function],\n    default: \"id\"\n  },\n  iconBy: {\n    type: [String, Function],\n    default: \"icon\"\n  },\n  disabledBy: {\n    type: [String, Function],\n    default: \"disabled\"\n  },\n  expandedBy: {\n    type: [String, Function],\n    default: \"expanded\"\n  },\n  checkedBy: {\n    type: [String, Function],\n    default: \"checked\"\n  },\n  childrenBy: {\n    type: [String, Function],\n    default: \"children\"\n  },\n  expandAll: {\n    type: Boolean,\n    default: false\n  },\n  expanded: {\n    type: Array,\n    default: []\n  },\n  expandNodeBy: {\n    type: String,\n    default: \"leaf\"\n  },\n  filter: {\n    type: String,\n    default: \"\"\n  },\n  filterMethod: {\n    type: Function,\n    default: void 0\n  },\n  checked: {\n    type: Array,\n    default: []\n  },\n  color: {\n    type: String,\n    default: \"primary\"\n  }\n};\nconst useTreeViewEmits = [\"update:modelValue\", \"update:checked\", \"update:expanded\", \"update:selected\"];\nconst useTreeHelpers = (props) => {\n  const isStringOrNumber = (node) => {\n    const typeOfNode = typeof node;\n    return typeOfNode === \"string\" || typeOfNode === \"number\";\n  };\n  const getNodeProperty = (node, key) => !key || isStringOrNumber(node) ? node : getValueByKey(node, key);\n  const getValue = (node) => getNodeProperty(node, props.valueBy);\n  const getNodeByValue = (value) => {\n    if (!props.valueBy) {\n      return value;\n    }\n    return props.nodes.find((node) => value === getValue(node)) || value;\n  };\n  const getText = (node) => getNodeProperty(node, props.textBy);\n  const getChecked = (node) => getNodeProperty(node, props.checkedBy);\n  const getDisabled = (node) => getNodeProperty(node, props.disabledBy);\n  const getExpanded = (node) => getNodeProperty(node, props.expandedBy);\n  const getTrackBy = (node) => getNodeProperty(node, props.trackBy);\n  const getChildren = (node) => getNodeProperty(node, props.childrenBy) ?? [];\n  const iterateNodes = (nodes, cb) => {\n    nodes.forEach((node) => {\n      const children = node.children || [];\n      if (children.length) {\n        iterateNodes(children, cb);\n      }\n      cb(node);\n    });\n  };\n  return {\n    getText,\n    getValue,\n    getChecked,\n    getTrackBy,\n    getChildren,\n    getDisabled,\n    getExpanded,\n    iterateNodes,\n    getNodeByValue,\n    getNodeProperty\n  };\n};\nexport {\n  useTreeViewEmits as a,\n  useTreeHelpers as b,\n  useTreeViewProps as u\n};\n//# sourceMappingURL=useTreeHelpers.js.map\n",
+      "start": 1709717427718,
+      "end": 1709717427949,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427949,
+      "end": 1709717427949,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427949,
+      "end": 1709717427950,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427950,
+      "end": 1709717427950,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427950,
+      "end": 1709717427953,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427954,
+      "end": 1709717427954,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427954,
+      "end": 1709717427955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427955,
+      "end": 1709717427955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427955,
+      "end": 1709717427955,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427955,
+      "end": 1709717427955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427955,
+      "end": 1709717427955,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427955,
+      "end": 1709717427955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427955,
+      "end": 1709717427955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427955,
+      "end": 1709717427956,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427956,
+      "end": 1709717427956,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427956,
+      "end": 1709717427956,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427956,
+      "end": 1709717427956,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427956,
+      "end": 1709717427956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427956,
+      "end": 1709717427956,
+      "order": "normal"
+    }
+  ]
+}

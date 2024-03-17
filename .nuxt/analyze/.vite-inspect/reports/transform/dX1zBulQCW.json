@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-chip/VaChip.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { p as pick } from \"../../../vendor.js\";\nimport { V as VaIcon } from \"../va-icon/index.js\";\nimport { a as useColorProps, u as useColors } from \"../../composables/useColors.js\";\nimport { a as getBoxShadowColor, b as getFocusColor, c as getHoverColor } from \"../../services/color/utils.js\";\nimport { u as useStatefulEmits, a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.js\";\nimport { u as useRouterLinkProps, a as useRouterLink } from \"../../composables/useRouterLink.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nimport { u as useKeyboardOnlyFocus } from \"../../composables/useKeyboardOnlyFocus.js\";\nimport { u as useHover } from \"../../composables/useHover.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nimport { u as useBem } from \"../../composables/useBem.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaChip\",\n  components: { VaIcon },\n  emits: [...useStatefulEmits, \"focus\"],\n  props: {\n    ...useRouterLinkProps,\n    ...useColorProps,\n    ...useStatefulProps,\n    ...useComponentPresetProp,\n    modelValue: { type: Boolean, default: true },\n    closeable: { type: Boolean, default: false },\n    outline: { type: Boolean, default: false },\n    disabled: { type: Boolean, default: false },\n    readonly: { type: Boolean, default: false },\n    square: { type: Boolean, default: false },\n    shadow: { type: Boolean, default: false },\n    flat: { type: Boolean, default: false },\n    icon: { type: String, default: \"\" },\n    tag: { type: String, default: \"span\" },\n    size: {\n      type: String,\n      default: \"medium\",\n      validator: (value) => [\"small\", \"medium\", \"large\"].includes(value)\n    },\n    ariaCloseLabel: { type: String, default: \"$t:close\" }\n  },\n  setup(props, { emit }) {\n    const { getColor } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const borderColor = computed(() => props.outline ? colorComputed.value : \"\");\n    const isTransparentBackground = computed(() => Boolean(props.outline || props.flat));\n    const { textColorComputed } = useTextColor(colorComputed, isTransparentBackground);\n    const { hasKeyboardFocus, keyboardFocusListeners } = useKeyboardOnlyFocus();\n    const shadowStyle = computed(() => {\n      if (!props.shadow || props.flat || props.outline || props.disabled || hasKeyboardFocus.value) {\n        return;\n      }\n      return `0 0.125rem 0.19rem 0 ${getBoxShadowColor(colorComputed.value)}`;\n    });\n    const { valueComputed } = useStateful(props, emit);\n    const { tagComputed, hrefComputed } = useRouterLink(props);\n    const { isHovered, onMouseEnter, onMouseLeave } = useHover();\n    return {\n      ...useTranslation(),\n      keyboardFocusListeners,\n      valueComputed,\n      hrefComputed,\n      tagComputed,\n      onMouseEnter,\n      onMouseLeave,\n      isHovered,\n      close: () => {\n        if (!props.disabled) {\n          valueComputed.value = false;\n        }\n      },\n      iconSize: computed(() => props.size),\n      tabIndexComputed: computed(() => props.disabled ? -1 : 0),\n      computedClass: useBem(\"va-chip\", () => ({\n        ...pick(props, [\"disabled\", \"readonly\", \"square\"]),\n        small: props.size === \"small\",\n        large: props.size === \"large\"\n      })),\n      computedStyle: computed(() => {\n        const result = {\n          color: textColorComputed.value,\n          borderColor: borderColor.value,\n          background: \"\",\n          boxShadow: shadowStyle.value\n        };\n        if (props.outline || props.flat) {\n          if (hasKeyboardFocus.value) {\n            result.background = getFocusColor(colorComputed.value);\n          } else if (!props.readonly && isHovered.value) {\n            result.background = getHoverColor(colorComputed.value);\n          }\n        } else {\n          result.background = colorComputed.value;\n        }\n        return result;\n      })\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaChip.css';\n//# sourceMappingURL=VaChip.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717422011,
+      "end": 1709717422128,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422128,
+      "end": 1709717422128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422129,
+      "end": 1709717422129,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422130,
+      "end": 1709717422130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422130,
+      "end": 1709717422130,
+      "order": "normal"
+    }
+  ]
+}

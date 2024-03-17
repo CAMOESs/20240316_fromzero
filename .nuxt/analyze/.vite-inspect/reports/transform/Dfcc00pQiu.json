@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/utils/headless.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { Comment, h, Text, Suspense, Teleport, Fragment } from \"vue\";\nconst toNode = (v, attrs) => {\n  if (!v) {\n    return null;\n  }\n  if (!(\"type\" in v) || v.type === Text || typeof v === \"string\") {\n    return h(\"div\", attrs, v);\n  }\n  if (v.type === Comment) {\n    return v;\n  }\n  if (\"$el\" in v) {\n    return toNode(v.$el, attrs);\n  }\n  if (v.type === Suspense) {\n    return h(v.ssContent, attrs);\n  }\n  if (v.type === Teleport) {\n    if (v.children === null) {\n      return v;\n    }\n    const anchor = toNode(v.children[0], attrs);\n    if (anchor) {\n      v.children[0] = h(anchor, attrs);\n    }\n    return v;\n  }\n  if (v.type === Fragment) {\n    if (v.children === null) {\n      return v;\n    }\n    if (v.children.length === 1) {\n      return h(Fragment, v.props, [toNode(v.children[0], attrs)]);\n    }\n    return h(\"div\", attrs, v);\n  }\n  if (typeof v.type.render === \"function\") {\n    const component = h(v);\n    if (Array.isArray(component.children) && component.children.length > 1) {\n      return h(\"div\", attrs, component.children);\n    }\n  }\n  return h(v, attrs);\n};\nconst renderSlotNode = (slot, slotBind = {}, nodeAttributes = {}) => {\n  const children = slot == null ? void 0 : slot(slotBind);\n  if (!children) {\n    return null;\n  }\n  const nonCommentChildren = children.filter((v) => v.type !== Comment);\n  if (nonCommentChildren.length === 0) {\n    return null;\n  }\n  if (nonCommentChildren.length === 1) {\n    return toNode(nonCommentChildren[0], nodeAttributes);\n  }\n  return h(\"div\", nodeAttributes, children);\n};\nconst renderSlotNodes = (slot, slotBind = {}, nodeAttributes = {}) => {\n  const children = slot == null ? void 0 : slot(slotBind);\n  if (!children) {\n    return null;\n  }\n  return children.map((v) => toNode(v, nodeAttributes));\n};\nexport {\n  renderSlotNode as a,\n  renderSlotNodes as r\n};\n//# sourceMappingURL=headless.js.map\n",
+      "start": 1709717422128,
+      "end": 1709717422538,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422538,
+      "end": 1709717422538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422538,
+      "end": 1709717422539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422539,
+      "end": 1709717422539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422540,
+      "end": 1709717422540,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422540,
+      "end": 1709717422540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422540,
+      "end": 1709717422540,
+      "order": "normal"
+    }
+  ]
+}

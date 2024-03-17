@@ -1,0 +1,252 @@
+{
+  "resolvedId": "virtual:nuxt:/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/.nuxt/routes.mjs",
+  "transforms": [
+    {
+      "name": "virtual",
+      "result": "import { default as change_45passwordEoCGan1StwMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/change-password.vue?macro=true\";\nimport { default as connexionGQuwDELFDtMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/connexion.vue?macro=true\";\nimport { default as indexiKMi9JIVaEMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/index.vue?macro=true\";\nimport { default as maintenanceq0kFxLezuhMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue?macro=true\";\nimport { default as indexP22LHbDRuzMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/candidats/index.vue?macro=true\";\nimport { default as indexryUFc3tY7VMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/configuration/index.vue?macro=true\";\nimport { default as signatairesV1pFbn4VXSMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/configuration/signataires.vue?macro=true\";\nimport { default as indexlXakjR39bHMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/index.vue?macro=true\";\nimport { default as mon_45compte2Oq01pmam6Meta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/mon-compte.vue?macro=true\";\nimport { default as indexSz9spm48NVMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/sessions/index.vue?macro=true\";\nimport { default as indexybLOughXhTMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/utilisateurs-profils/index.vue?macro=true\";\nimport { default as profils3IHAEHJuoEMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/utilisateurs-profils/profils.vue?macro=true\";\nimport { default as utilisateursLLAQoCl6XTMeta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/utilisateurs-profils/utilisateurs.vue?macro=true\";\nimport { default as tableau_45de_45borduLtohUTm73Meta } from \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord.vue?macro=true\";\nexport default [\n  {\n    name: change_45passwordEoCGan1StwMeta?.name ?? \"change-password\",\n    path: change_45passwordEoCGan1StwMeta?.path ?? \"/change-password\",\n    meta: change_45passwordEoCGan1StwMeta || {},\n    alias: change_45passwordEoCGan1StwMeta?.alias || [],\n    redirect: change_45passwordEoCGan1StwMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/change-password.vue\").then(m => m.default || m)\n  },\n  {\n    name: connexionGQuwDELFDtMeta?.name ?? \"connexion\",\n    path: connexionGQuwDELFDtMeta?.path ?? \"/connexion\",\n    meta: connexionGQuwDELFDtMeta || {},\n    alias: connexionGQuwDELFDtMeta?.alias || [],\n    redirect: connexionGQuwDELFDtMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/connexion.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexiKMi9JIVaEMeta?.name ?? \"index\",\n    path: indexiKMi9JIVaEMeta?.path ?? \"/\",\n    meta: indexiKMi9JIVaEMeta || {},\n    alias: indexiKMi9JIVaEMeta?.alias || [],\n    redirect: indexiKMi9JIVaEMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: maintenanceq0kFxLezuhMeta?.name ?? \"maintenance\",\n    path: maintenanceq0kFxLezuhMeta?.path ?? \"/maintenance\",\n    meta: maintenanceq0kFxLezuhMeta || {},\n    alias: maintenanceq0kFxLezuhMeta?.alias || [],\n    redirect: maintenanceq0kFxLezuhMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/maintenance.vue\").then(m => m.default || m)\n  },\n  {\n    path: tableau_45de_45borduLtohUTm73Meta?.path ?? \"/tableau-de-bord\",\n    children: [\n  {\n    name: indexP22LHbDRuzMeta?.name ?? \"tableau-de-bord-candidats\",\n    path: indexP22LHbDRuzMeta?.path ?? \"candidats\",\n    meta: indexP22LHbDRuzMeta || {},\n    alias: indexP22LHbDRuzMeta?.alias || [],\n    redirect: indexP22LHbDRuzMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/candidats/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexryUFc3tY7VMeta?.name ?? \"tableau-de-bord-configuration\",\n    path: indexryUFc3tY7VMeta?.path ?? \"configuration\",\n    meta: indexryUFc3tY7VMeta || {},\n    alias: indexryUFc3tY7VMeta?.alias || [],\n    redirect: indexryUFc3tY7VMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/configuration/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: signatairesV1pFbn4VXSMeta?.name ?? \"tableau-de-bord-configuration-signataires\",\n    path: signatairesV1pFbn4VXSMeta?.path ?? \"configuration/signataires\",\n    meta: signatairesV1pFbn4VXSMeta || {},\n    alias: signatairesV1pFbn4VXSMeta?.alias || [],\n    redirect: signatairesV1pFbn4VXSMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/configuration/signataires.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexlXakjR39bHMeta?.name ?? \"tableau-de-bord\",\n    path: indexlXakjR39bHMeta?.path ?? \"\",\n    meta: indexlXakjR39bHMeta || {},\n    alias: indexlXakjR39bHMeta?.alias || [],\n    redirect: indexlXakjR39bHMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: mon_45compte2Oq01pmam6Meta?.name ?? \"tableau-de-bord-mon-compte\",\n    path: mon_45compte2Oq01pmam6Meta?.path ?? \"mon-compte\",\n    meta: mon_45compte2Oq01pmam6Meta || {},\n    alias: mon_45compte2Oq01pmam6Meta?.alias || [],\n    redirect: mon_45compte2Oq01pmam6Meta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/mon-compte.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexSz9spm48NVMeta?.name ?? \"tableau-de-bord-sessions\",\n    path: indexSz9spm48NVMeta?.path ?? \"sessions\",\n    meta: indexSz9spm48NVMeta || {},\n    alias: indexSz9spm48NVMeta?.alias || [],\n    redirect: indexSz9spm48NVMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/sessions/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexybLOughXhTMeta?.name ?? \"tableau-de-bord-utilisateurs-profils\",\n    path: indexybLOughXhTMeta?.path ?? \"utilisateurs-profils\",\n    meta: indexybLOughXhTMeta || {},\n    alias: indexybLOughXhTMeta?.alias || [],\n    redirect: indexybLOughXhTMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/utilisateurs-profils/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: profils3IHAEHJuoEMeta?.name ?? \"tableau-de-bord-utilisateurs-profils-profils\",\n    path: profils3IHAEHJuoEMeta?.path ?? \"utilisateurs-profils/profils\",\n    meta: profils3IHAEHJuoEMeta || {},\n    alias: profils3IHAEHJuoEMeta?.alias || [],\n    redirect: profils3IHAEHJuoEMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/utilisateurs-profils/profils.vue\").then(m => m.default || m)\n  },\n  {\n    name: utilisateursLLAQoCl6XTMeta?.name ?? \"tableau-de-bord-utilisateurs-profils-utilisateurs\",\n    path: utilisateursLLAQoCl6XTMeta?.path ?? \"utilisateurs-profils/utilisateurs\",\n    meta: utilisateursLLAQoCl6XTMeta || {},\n    alias: utilisateursLLAQoCl6XTMeta?.alias || [],\n    redirect: utilisateursLLAQoCl6XTMeta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord/utilisateurs-profils/utilisateurs.vue\").then(m => m.default || m)\n  }\n],\n    name: tableau_45de_45borduLtohUTm73Meta?.name ?? undefined,\n    meta: tableau_45de_45borduLtohUTm73Meta || {},\n    alias: tableau_45de_45borduLtohUTm73Meta?.alias || [],\n    redirect: tableau_45de_45borduLtohUTm73Meta?.redirect || undefined,\n    component: () => import(\"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/pages/tableau-de-bord.vue\").then(m => m.default || m)\n  }\n]",
+      "start": 1709717461690,
+      "end": 1709717461690,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717461691,
+      "end": 1709717461691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717461692,
+      "end": 1709717461692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717461692,
+      "end": 1709717461692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717461692,
+      "end": 1709717461692,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717461692,
+      "end": 1709717461692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717461692,
+      "end": 1709717461692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717461693,
+      "end": 1709717461693,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717461693,
+      "end": 1709717461693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717461693,
+      "end": 1709717461693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717461693,
+      "end": 1709717461695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717461693,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717461696,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717461696,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717461696,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717461696,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717461696,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717461696,
+      "end": 1709717461696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717461696,
+      "end": 1709717461697,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717461697,
+      "end": 1709717461697,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717461699,
+      "end": 1709717461699,
+      "order": "normal"
+    }
+  ]
+}

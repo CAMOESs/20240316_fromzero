@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-tree-view/hooks/useTreeView.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, toRefs, ref, provide } from \"vue\";\nimport { b as useTreeHelpers } from \"./useTreeHelpers.js\";\nimport { T as TreeViewKey } from \"../types.js\";\nimport { u as useTreeKeyboardNavigation } from \"./useTreeKeyboardNavigation.js\";\nimport { u as useColors } from \"../../../composables/useColors.js\";\nimport { b as useStateful } from \"../../../composables/useStateful.js\";\nconst useTreeView = (props, emit) => {\n  const { getColor } = useColors();\n  const colorComputed = computed(() => getColor(props.color));\n  const isLeafSelectionComputed = computed(() => props.selectionType === \"leaf\");\n  const {\n    getText,\n    getValue,\n    getChecked,\n    getTrackBy,\n    getChildren,\n    getDisabled,\n    getExpanded,\n    iterateNodes,\n    getNodeProperty\n  } = useTreeHelpers(props);\n  const { nodes, expandAll, filter, filterMethod, textBy } = toRefs(props);\n  const { valueComputed: expandedList } = useStateful(props, emit, \"expanded\");\n  const { valueComputed: checkedList } = useStateful(props, emit, \"checked\");\n  const selectedNode = ref();\n  const selectedNodeComputed = computed({\n    get: () => selectedNode.value,\n    set: (node) => {\n      const value = getValue(node);\n      if (selectedNode.value !== value) {\n        selectedNode.value = value;\n        emit(\"update:selected\", node);\n      }\n    }\n  });\n  const updateModel = (model, values, state) => {\n    if (state) {\n      model.value = model.value.concat(values).filter((value, idx, self) => self.indexOf(value) === idx);\n    } else {\n      model.value = model.value.filter((v) => !values.includes(v));\n    }\n  };\n  const toggleCheckbox = (node, state) => {\n    let stateValue = state === null ? true : state;\n    if (state && node.indeterminate) {\n      stateValue = false;\n    }\n    const values = [getValue(node)];\n    if (isLeafSelectionComputed.value && node.hasChildren) {\n      const toggleChildren = (nodes2) => {\n        nodes2.forEach((node2) => {\n          if (node2.disabled) {\n            return;\n          }\n          const children = getChildren(node2);\n          if (children.length) {\n            toggleChildren(children);\n          }\n          values.push(getValue(node2));\n        });\n      };\n      toggleChildren(getChildren(node));\n    }\n    updateModel(checkedList, values, stateValue);\n  };\n  const toggleNode = (node) => {\n    if (node.hasChildren) {\n      updateModel(expandedList, [getValue(node)], !node.expanded);\n    }\n  };\n  const createNode = ({ node, level, children = [], computedFilterMethod: computedFilterMethod2 }) => {\n    var _a;\n    const valueBy = getValue(node);\n    let matchesFilter = true;\n    const hasChildren = !!children.length;\n    const disabled = getDisabled(node) || false;\n    let indeterminate = false;\n    let checked = checkedList.value.includes(valueBy) || false;\n    if (isLeafSelectionComputed.value && hasChildren) {\n      const isAllChildrenChecked = children.every((c) => c.checked);\n      checked = isAllChildrenChecked;\n      indeterminate = !isAllChildrenChecked && children.some((c) => c.indeterminate || c.checked);\n      if (indeterminate) {\n        checked = null;\n      }\n    }\n    if (filter.value) {\n      matchesFilter = (children == null ? void 0 : children.some((c) => c.matchesFilter)) || ((_a = computedFilterMethod2.value) == null ? void 0 : _a.call(computedFilterMethod2, node, filter.value, textBy.value));\n    }\n    return {\n      ...node,\n      level,\n      checked,\n      children,\n      disabled,\n      expanded: expandedList.value.includes(valueBy) || false,\n      hasChildren,\n      matchesFilter,\n      indeterminate\n    };\n  };\n  const computedFilterMethod = computed(() => {\n    if (filterMethod == null ? void 0 : filterMethod.value) {\n      return filterMethod.value;\n    }\n    return (node, filter2) => getText(node).toLowerCase().includes(filter2.toLowerCase());\n  });\n  const buildTree = (nodes2, level = 0) => nodes2.map((node) => {\n    const treeItemChildren = getChildren(node);\n    if (treeItemChildren.length) {\n      const children = buildTree(treeItemChildren, level + 1);\n      return createNode({ node, level, children, computedFilterMethod });\n    }\n    return createNode({ node, level, computedFilterMethod });\n  });\n  const getFilteredNodes = (nodes2) => nodes2.filter((node) => {\n    if (node.children) {\n      node.children = getFilteredNodes(node.children);\n    }\n    if (node.children.length === 0) {\n      node.hasChildren = false;\n    }\n    return node.matchesFilter;\n  });\n  const { handleKeyboardNavigation } = useTreeKeyboardNavigation(props, { emit, toggleCheckbox, toggleNode });\n  provide(TreeViewKey, {\n    selectedNodeComputed,\n    colorComputed,\n    iconBy: props.iconBy,\n    selectable: props.selectable,\n    expandNodeBy: props.expandNodeBy,\n    getText,\n    getValue,\n    getTrackBy,\n    toggleNode,\n    toggleCheckbox,\n    getNodeProperty,\n    handleKeyboardNavigation\n  });\n  const treeItems = computed(() => buildTree(nodes.value));\n  const checkForInitialValues = () => {\n    const expandedValues = [];\n    const checkedValues = [];\n    iterateNodes(nodes.value, (node) => {\n      if (expandAll.value) {\n        expandedValues.push(getValue(node));\n      } else {\n        getExpanded(node) && expandedValues.push(getValue(node));\n      }\n      if (getChecked(node)) {\n        checkedValues.push(getValue(node));\n      }\n    });\n    if (expandedValues.length) {\n      updateModel(expandedList, expandedValues, true);\n    }\n    if (checkedValues.length) {\n      updateModel(checkedList, checkedValues, true);\n    }\n  };\n  checkForInitialValues();\n  return {\n    treeItems: computed(() => getFilteredNodes(treeItems.value)),\n    getText,\n    getTrackBy,\n    toggleCheckbox\n  };\n};\nconst useTreeView$1 = useTreeView;\nexport {\n  useTreeView$1 as u\n};\n//# sourceMappingURL=useTreeView.js.map\n",
+      "start": 1709717427716,
+      "end": 1709717427930,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427931,
+      "end": 1709717427931,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427931,
+      "end": 1709717427933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427933,
+      "end": 1709717427933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427933,
+      "end": 1709717427933,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427933,
+      "end": 1709717427933,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427933,
+      "end": 1709717427933,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427934,
+      "end": 1709717427934,
+      "order": "normal"
+    }
+  ]
+}

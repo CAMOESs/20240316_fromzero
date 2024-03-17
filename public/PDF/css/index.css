@@ -1,0 +1,122 @@
+/** @format */
+
+@font-face {
+  font-family: "abandon-light";
+  src: url("/server/utils/PDF/font/abandon-light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.font-weight-black {
+  color: black;
+  font-weight: bold;
+}
+/* * {
+  color: black;
+}
+ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid black;
+  padding: 2px 0;
+}
+thead {
+  background-color: #093e73 !important;
+  color: #ffffff !important;
+}
+h1 {
+  font-size: 18px;
+  text-decoration: underline;
+}
+.text-center {
+  text-align: center;
+}
+.text-bold {
+  font-weight: bold;
+}
+.header,
+.headerr {
+  justify-content: justify;
+  /* margin-left: 2em; */
+  margin-right: 4em;
+  width: 100%;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+  margin-top: 20px;
+  background-color: #d1ecf1 !important;
+}
+.header_new {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-color {
+  color: #093e73;
+  font-style: italic;
+  font-size: 13px;
+}
+.header-more {
+  justify-content: center;
+  background-color: beige !important;
+  color: #5c4902;
+  height: 50px;
+  font-style: italic;
+  text-align: center;
+  font-size: 15px;
+  padding-top: 15px;
+}
+.big-headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #093e73;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.tr-second {
+  color: white;
+}
+.tr-thead {
+  background-color: #093e73 !important;
+  color: #ffffff !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl; /* Rotation du texte à 90 degrés dans le sens inverse des aiguilles d'une montre */
+  text-orientation: upright; /* Garde le texte orienté vers le haut */
+  transform: rotate(
+    90deg
+  ); /* Rotation supplémentaire pour rétablir l'orientation vers le haut */
+  transform-origin: center; /* Centre de rotation */
+  white-space: nowrap; /* Empêche le texte de se retourner sur plusieurs lignes */
+  font-size: 18px; /* Taille de la police */
+  /* width: 30px;  */ /* Largeur du conteneur */
+}
+.vertical-table {
+  writing-mode: vertical-rl;
+  /* text-orientation: upright; */
+  transform: rotate(180deg);
+  transform-origin: center;
+  white-space: nowrap;
+  font-size: 16px;
+  width: 30px;
+  /* border-collapse: collapse; */
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-bold {
+  font-weight: bold;
+}
+.text-center {
+  text-align: center;
+}

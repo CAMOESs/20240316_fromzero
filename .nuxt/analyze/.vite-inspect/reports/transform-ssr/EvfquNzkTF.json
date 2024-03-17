@@ -1,0 +1,282 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/middleware/change-password.global.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** @format */\n\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut, data } = useSession();\n  //@ts-ignore\n  if (data.value?.user?.is_change_password == 0) {\n    if (to.path != \"/change-password\") {\n      if (to.path != \"/connexion\") return navigateTo(\"/change-password\");\n    }\n  }\n  //@ts-ignore\n  if (data.value?.user?.is_change_password == 1) {\n    if (to.path == \"/change-password\") {\n      return navigateTo(\"/\");\n    }\n  }\n});\n",
+      "start": 1709717477041,
+      "end": 1709717489175,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717489175,
+      "end": 1709717489175,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717489175,
+      "end": 1709717489175,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717489175,
+      "end": 1709717489175,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717489175,
+      "end": 1709717489175,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717489175,
+      "end": 1709717489175,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717489175,
+      "end": 1709717489175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut, data } = useSession();\n  if (data.value?.user?.is_change_password == 0) {\n    if (to.path != \"/change-password\") {\n      if (to.path != \"/connexion\")\n        return navigateTo(\"/change-password\");\n    }\n  }\n  if (data.value?.user?.is_change_password == 1) {\n    if (to.path == \"/change-password\") {\n      return navigateTo(\"/\");\n    }\n  }\n});\n",
+      "start": 1709717489175,
+      "end": 1709717491101,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/middleware/change-password.global.ts"
+        ],
+        "sourcesContent": [
+          "/** @format */\n\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut, data } = useSession();\n  //@ts-ignore\n  if (data.value?.user?.is_change_password == 0) {\n    if (to.path != \"/change-password\") {\n      if (to.path != \"/connexion\") return navigateTo(\"/change-password\");\n    }\n  }\n  //@ts-ignore\n  if (data.value?.user?.is_change_password == 1) {\n    if (to.path == \"/change-password\") {\n      return navigateTo(\"/\");\n    }\n  }\n});\n"
+        ],
+        "mappings": "AAEA,eAAe,0BAA0B,OAAO,IAAI,aAAa;AAC/D,QAAM,EAAE,QAAQ,SAAS,KAAK,IAAI,WAAW;AAE7C,MAAI,KAAK,OAAO,MAAM,sBAAsB,GAAG;AAC7C,QAAI,GAAG,QAAQ,oBAAoB;AACjC,UAAI,GAAG,QAAQ;AAAc,eAAO,WAAW,kBAAkB;AAAA,IACnE;AAAA,EACF;AAEA,MAAI,KAAK,OAAO,MAAM,sBAAsB,GAAG;AAC7C,QAAI,GAAG,QAAQ,oBAAoB;AACjC,aAAO,WAAW,GAAG;AAAA,IACvB;AAAA,EACF;AACF,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717491101,
+      "end": 1709717491101,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717491102,
+      "end": 1709717491102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717491105,
+      "end": 1709717491105,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717491105,
+      "end": 1709717491105,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717491106,
+      "end": 1709717491106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717491106,
+      "end": 1709717491106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware, navigateTo } from '#app/composables/router';\nimport useSession from '/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/@sidebase/nuxt-auth/dist/runtime/composables/useSession.mjs';\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut, data } = useSession();\n  if (data.value?.user?.is_change_password == 0) {\n    if (to.path != \"/change-password\") {\n      if (to.path != \"/connexion\")\n        return navigateTo(\"/change-password\");\n    }\n  }\n  if (data.value?.user?.is_change_password == 1) {\n    if (to.path == \"/change-password\") {\n      return navigateTo(\"/\");\n    }\n  }\n});\n",
+      "start": 1709717491106,
+      "end": 1709717491107,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware, navigateTo } from '#app/composables/router';\nimport useSession from '/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/@sidebase/nuxt-auth/dist/runtime/composables/useSession.mjs';\nexport default defineNuxtRouteMiddleware(async (to, redirect) => {\n  const { status, signOut, data } = useSession();\n  if (data.value?.user?.is_change_password == 0) {\n    if (to.path != \"/change-password\") {\n      if (to.path != \"/connexion\")\n        return navigateTo(\"/change-password\");\n    }\n  }\n  if (data.value?.user?.is_change_password == 1) {\n    if (to.path == \"/change-password\") {\n      return navigateTo(\"/\");\n    }\n  }\n});\n",
+      "start": 1709717491106,
+      "end": 1709717491107,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717491107,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717491107,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717491108,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717491108,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717491108,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717491108,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717491108,
+      "end": 1709717491108,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717491108,
+      "end": 1709717491109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717491109,
+      "end": 1709717491109,
+      "order": "normal"
+    }
+  ]
+}

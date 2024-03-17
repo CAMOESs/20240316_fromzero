@@ -1,0 +1,80 @@
+{
+  "id": 1,
+  "created_at": "2023-12-01T14:48:32.000Z",
+  "updated_at": "2023-12-01T14:48:32.000Z",
+  "authorization_type_id": 1,
+  "school_nature_id": 6,
+  "sous_secteur_id": 4,
+  "cycle_id": 1,
+  "option_id": null,
+  "serie_id": null,
+  "village_id": 43,
+  "new_village_id": null,
+  "coord_gps": "1.14512,1.121",
+  "new_coord_gps": null,
+  "location": "gbogbotahouè",
+  "reason_id": null,
+  "other_reason": null,
+  "school_new_name": "Les élites de Dieu",
+  "school_new_acronym": null,
+  "effectif_troisieme": null,
+  "school_id": null,
+  "year_id": 8,
+  "creation_date": null,
+  "people_authorization_request_id": 14,
+  "school_vocation": "manque d'école dans le village",
+  "observation_ccd": null,
+  "observation_ccn": null,
+  "school_type_id": 4,
+  "classroom_capacity": null,
+  "juridical_status_id": null,
+  "third_grade_class_school_id": null,
+  "third_grade_class_school_distance": null,
+  "rapport_ccn": null,
+  "rapport_des_leves_de_reserve": null,
+  "AuthorizationType": {
+    "name": "Création / ouverture du second cycle d'un établissement"
+  },
+  "SchoolNature": { "acronym": "Privé" },
+  "SousSecteur": { "acronym": "ESG" },
+  "Cycle": { "appelation": "Cycle 1" },
+  "Option": null,
+  "Serie": null,
+  "NewVillage": null,
+  "Village": {
+    "name": "BOFOUNOU",
+    "District": {
+      "name": "FOUNOUGO",
+      "Municipality": {
+        "name": "BANIKOARA",
+        "Department": { "name": "ALIBORI" }
+      }
+    }
+  },
+  "Reason": null,
+  "School": null,
+  "Year": {
+    "id": 8,
+    "created_at": "2023-04-13T07:50:42.000Z",
+    "updated_at": "2023-07-27T15:50:08.000Z",
+    "year": "2022",
+    "academic_year": "2022-2023",
+    "in_progress": true
+  },
+  "PeopleAuthorizationRequests": {
+    "id": 14,
+    "created_at": "2023-12-01T14:48:31.000Z",
+    "updated_at": "2023-12-01T14:48:31.000Z",
+    "lastname": "DJOSSOU",
+    "firstname": "Romualde",
+    "email": "bienaime@gmail.com",
+    "sex": "M",
+    "date_of_birth": "1993-12-13T00:00:00.000Z",
+    "place_of_birth": "dhodho",
+    "nationality": "Béninoise",
+    "phone_number": "98184185",
+    "association": false
+  },
+  "SchoolType": { "acronym": "LYCEE GENERAL" },
+  "JuridicalStatus": null
+}

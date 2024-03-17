@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-date-picker/hooks/grid-keyboard-navigation.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, unref } from \"vue\";\nfunction isUndefined(t) {\n  return t === void 0;\n}\nconst useGridKeyboardNavigation = ({\n  rowSize,\n  start,\n  end,\n  onSelected,\n  onFocusIndex\n}) => {\n  const focusedCellIndex = ref(-1);\n  let previouslyClicked = false;\n  const onMousedown = () => {\n    previouslyClicked = true;\n  };\n  const onFocus = () => {\n    if (previouslyClicked) {\n      return;\n    }\n    previouslyClicked = false;\n    const index = onFocusIndex === void 0 ? unref(start) || 0 : unref(onFocusIndex);\n    focusedCellIndex.value = index;\n  };\n  const onBlur = () => {\n    previouslyClicked = false;\n    focusedCellIndex.value = -1;\n  };\n  const onKeydown = (e) => {\n    if ([\"ArrowRight\", \"ArrowLeft\", \"ArrowDown\", \"ArrowUp\", \"Enter\", \"Space\"].includes(e.key)) {\n      e.preventDefault();\n      e.stopPropagation();\n    }\n    if (e.key === \"Enter\" || e.key === \"Space\") {\n      if (onSelected === void 0) {\n        return;\n      }\n      onSelected(focusedCellIndex.value);\n      return;\n    }\n    if (e.key === \"ArrowRight\") {\n      focusedCellIndex.value += 1;\n    }\n    if (e.key === \"ArrowLeft\") {\n      focusedCellIndex.value -= 1;\n    }\n    if (e.key === \"ArrowDown\") {\n      focusedCellIndex.value += rowSize;\n    }\n    if (e.key === \"ArrowUp\") {\n      focusedCellIndex.value -= rowSize;\n    }\n    if (!isUndefined(start) && focusedCellIndex.value < unref(start)) {\n      focusedCellIndex.value = unref(start);\n    }\n    if (!isUndefined(end) && focusedCellIndex.value > unref(end) - 1) {\n      focusedCellIndex.value = unref(end) - 1;\n    }\n  };\n  const containerAttributes = {\n    onFocus,\n    onKeydown,\n    onBlur,\n    onMousedown,\n    tabindex: 0\n  };\n  return {\n    focusedCellIndex,\n    containerAttributes\n  };\n};\nexport {\n  useGridKeyboardNavigation as u\n};\n//# sourceMappingURL=grid-keyboard-navigation.mjs.map\n",
+      "start": 1709717514400,
+      "end": 1709717514595,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514595,
+      "end": 1709717514595,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514595,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514596,
+      "end": 1709717514596,
+      "order": "normal"
+    }
+  ]
+}

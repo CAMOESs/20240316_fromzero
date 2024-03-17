@@ -1,0 +1,1 @@
+import{H as n,I as o,i,n as r}from"./entry.febd1464.js";const u=n(async()=>{let e,a,s=([e,a]=o(()=>i("/api/systeme/maintenance-1","$rwewVS1IUH")),e=await e,a(),e);console.log(s);let t=s.data.value;if((t==null?void 0:t.status)==!1)return r("/")});export{u as default};

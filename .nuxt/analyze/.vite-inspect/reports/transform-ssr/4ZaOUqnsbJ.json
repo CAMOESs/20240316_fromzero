@@ -1,0 +1,294 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue?vue&type=style&index=0&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.table-example--pagination {\n  display: flex;\n  justify-content: center;\n}\n\ntable,th,td {\n  border: 1px solid #1e1a1af2 !important;\n  border-collapse: collapse !important;\n}\n",
+      "start": 1709717502602,
+      "end": 1709717502602,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue"
+        ],
+        "names": [],
+        "mappings": ";AAgTA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC",
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<!-- @format -->\n\n<template>\n  <!--Technique possible si on utilise pas computer-->\n  <input\n    v-show=\"false\"\n    :value=\"items\"\n    @input=\"$emit('update:items', $event.target.value)\"\n  />\n  <input\n    v-show=\"false\"\n    :value=\"header\"\n    @input=\"$emit('update:header', $event.target.value)\"\n  />\n  <input\n    v-show=\"false\"\n    :value=\"selected\"\n    @input=\"$emit('update:selected', $event.target.value)\"\n  />\n  <input\n    v-show=\"false\"\n    :value=\"expanded\"\n    @input=\"$emit('update:expanded', $event.target.value)\"\n  />\n  <input\n    v-show=\"false\"\n    :value=\"filter\"\n    @input=\"$emit('update:filter', $event.target.value)\"\n  />\n  <div >\n    \n  \n  <v-table class=\"ma-5 mr-16\" style=\"overflow: scroll; width : 100%;\">\n    <thead>\n      <tr style=\"background-color: #093e73; color: white !important;\">\n        <th v-if=\"with_selected\" style=\"width:10px;\">\n          <v-btn\n            variant=\"plain\"\n            @click=\"cliquer_sur_bouton_all()\"\n            :icon=\"tableau_est_vide()?'mdi mdi-checkbox-blank-outline':tableau_rempli()?'mdi mdi-checkbox-marked':'mdi mdi-minus-box'\"\n          ></v-btn>\n        </th>\n        <!-- <th class=\"text-left\" style=\"color: white !important;\">\n        Details\n        </th> -->\n        <template v-for=\"(elt,index) in header\" :key=\"index\">\n          <th class=\"text-center\" style=\"color: white !important;\">\n            <slot\n              :name=\"`header(${elt.value?elt.value:elt.key})`\"\n              >{{elt.text}}</slot\n            >\n          </th>\n        </template>\n      </tr>\n    </thead>\n    <tbody>\n      <template v-if=\"items.length===0\">\n        <tr>\n          <td\n            :colspan=\"with_selected?''+(header.length+1):''+(header.length)\"\n            class=\"px-5 pb-2 text-center\"\n          >\n            <slot name=\"noData\">\n              {{no_data}}\n            </slot>\n          </td>\n        </tr>\n      </template>\n      <template v-else>\n        <template v-if=\"items_display.length===0\">\n          <tr>\n            <td\n              :colspan=\"with_selected?''+(header.length+1):''+(header.length)\"\n              class=\"px-5 pb-2 text-center\"\n            >\n              <slot name=\"noDataToSearch\">\n                {{no_data_to_search}}\n              </slot>\n            </td>\n          </tr>\n        </template>\n        <template v-else>\n          <template v-for=\"(element,index) in items_display\" :key=\"element.id\">\n            <tr>\n              <td v-if=\"with_selected\">\n                <v-btn\n                  variant=\"plain\"\n                  @click=\"cliquer_sur_un_element(element)\"\n                  :icon=\"est_dans_le_tableau(element)?'mdi mdi-checkbox-marked':'mdi mdi-checkbox-blank-outline'\"\n                ></v-btn>\n              </td>\n\n              <template v-for=\"(elt,index_elt) in header\" :key=\"index_elt\">\n                <td\n                  v-if=\"elt.is_to_expanded\"\n                  style=\"text-align:center; vertical-align: middle;\"\n                >\n                  <v-btn\n                    variant=\"plain\"\n                    @click=\"expanded_un_element(element)\"\n                    :icon=\"est_dans_expanded(element)?'mdi mdi-chevron-up':'mdi mdi-chevron-down'\"\n                  ></v-btn>\n                </td>\n                <td v-else>\n                  <slot\n                    :name=\"`item(${elt.value?elt.value:elt.key})`\"\n                    :item=\"getValueFromPropertyString(element,elt.value?elt.value:elt.key)\"\n                    :elt_item=\"element\"\n                    :index=\"index\"\n                    >{{getValueFromPropertyString(element,elt.value?elt.value:elt.key)}}</slot\n                  >\n                </td>\n              </template>\n            </tr>\n            <tr v-if=\"est_dans_expanded(element)\" class=\"py-1\">\n              <td\n                :colspan=\"with_selected?''+(header.length+1):''+(header.length)\"\n                class=\"px-5 pb-2\"\n              >\n                <slot name=\"expanded\" :item=\"element\"> </slot>\n              </td>\n            </tr>\n          </template>\n        </template>\n      </template>\n    </tbody>\n  </v-table>\n</div>\n</template>\n\n<script setup>\n\nconst headers = useRequestHeaders([\"cookie\"]);\ndefineEmits(['update:title','update:items','update:selected','update:expanded','update:filter','update:header'])\nconst props = defineProps([\n  \"header\",\n  \"items\",\n  \"selected\",\n  \"expanded\",\n  \"with_selected\",\n  \"no_data\",\n  \"filter\",\n  \"no_data_to_search\"\n]);\n  const school_types = ref([]);\n  const select_all=ref(false);\n  // const expanded=ref([]);\n  const search_text = ref(\"\");\n\n   /**\n     *\n     *\n    */\n  let items_display = computed(() => {\n    if(props.filter){\n      let tab_filt =[]\n      for(let i=0, l=props.header.length; i<l; i++){\n        for(let j=0, m=props.items.length; j<m; j++){\n          // console.log(props.header)\n          // console.log(props.filter)\n          // console.log(props.header[i].value?props.header[i].value:props.header[i].key)\n          // console.log(getValueFromPropertyString(props.items[j], props.header[i].value?props.header[i].value:props.header[i].key).toString())\n          let re = new RegExp(props.filter, 'i');\n          // console.log(getValueFromPropertyString(props.items[j], props.header[i].value?props.header[i].value:props.header[i].key).toString().search(re))\n          if(getValueFromPropertyString(props.items[j], props.header[i].value?props.header[i].value:props.header[i].key).toString().search(re)!==-1){\n            tab_filt.push(props.items[j])\n          }\n        }\n      }\n      // console.log(tab_filt)\n      return tab_filt\n    } else {\n      // console.log(\"abc\")\n      return [...props.items]\n    }\n  })\n  function est_dans_le_tableau(item) {\n    let length = props.selected.length;\n    for(let i = 0; i<length; i++) {\n      //les propriétés aussi dans le même ordre\n      if(JSON.stringify(props.selected[i])==JSON.stringify(item)) return true;\n    }\n      return false;\n  }\n\n  function getValueFromPropertyString(object, propertyString) {\n    // console.log(\"propertyString\")\n    // console.log(propertyString)\n    // console.log(\"object\")\n    // console.log(object)\n    // if(propertyString){\n      let properties = propertyString.split(\".\"); // Séparer les parties de la chaîne\n\n      // Parcourir les parties de la chaîne pour accéder à la valeur finale\n      let value = object;\n      if(typeof value ==='object'){\n        for (let property of properties) {\n          if(typeof value ==='object'){\n            value = value[property];\n            // console.log(\"value\");\n            // console.log(value);\n            if (value===undefined || value === null) {\n              return undefined; // Propriété non trouvée\n            }\n          } else{\n            return undefined;\n          }\n        }\n\n        return value;\n      } else{\n        // console.log(\"je suis à l'intérieur de value\")\n        // console.log(value)\n        return undefined\n      }\n    // } else{\n    //   return undefined\n    // }\n  }\n\n  function mettre_dans_le_tableau(item){\n    props.selected.push(item);\n  }\n\n  function enlever_du_tableau(item) {\n  let length = props.selected.length;\n    for(let i = 0; i<length; i++) {\n      if(JSON.stringify(props.selected[i])==JSON.stringify(item)) {\n        props.selected.splice(i, 1);\n        break;\n      }\n    }\n  }\n\n  function remplir_le_tableau(){\n    for(let i=0, l=props.selected.length ; i<l ; i++){\n      props.selected.pop();\n    }\n    for(let i=0, l=props.items.length ; i<l ; i++){\n      props.selected.push(props.items[i]);\n    }\n  }\n\n  function vider_le_tableau(){\n    for(let i=0, l=props.selected.length ; i<l ; i++){\n      props.selected.pop();\n    }\n  }\n\n  function tableau_est_vide(){\n    if(props.selected.length == 0 ) return true;\n    return false\n  }\n\n  function tableau_rempli(){\n    if(props.selected.length==props.items.length) return true;\n    return false;\n  }\n\n  function cliquer_sur_un_element(element){\n    if(est_dans_le_tableau(element)) enlever_du_tableau(element);\n    else  mettre_dans_le_tableau(element);\n  }\n\n  function cliquer_sur_bouton_all(){\n    if(tableau_rempli()) vider_le_tableau();\n    else {\n      remplir_le_tableau()\n    };\n  }\n\n  function est_dans_expanded(item){\n    if(!Array.isArray(props.expanded)) return false\n    // console.log(\"props.expanded\")\n    // console.log(props.expanded)\n    let length = props.expanded.length;\n    for(let i = 0; i<length; i++) {\n      //les propriétés aussi dans le même ordre\n      if(JSON.stringify(props.expanded[i])==JSON.stringify(item)) return true;\n    }\n      return false;\n  }\n\n  function mettre_dans_expanded(item){\n    props.expanded.push(item);\n  }\n\n  function enlever_de_expanded(item) {\n  let length = props.expanded.length;\n    for(let i = 0; i<length; i++) {\n      if(JSON.stringify(props.expanded[i])==JSON.stringify(item)) {\n        props.expanded.splice(i, 1);\n        break;\n      }\n    }\n  }\n\n  function expanded_un_element(element){\n    if(est_dans_expanded(element)) enlever_de_expanded(element);\n    else mettre_dans_expanded(element);\n  }\n</script>\n\n<style>\n.table-example--pagination {\n  display: flex;\n  justify-content: center;\n}\n\ntable,th,td {\n  border: 1px solid #1e1a1af2 !important;\n  border-collapse: collapse !important;\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502602,
+      "end": 1709717502602,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717502602,
+      "end": 1709717502602,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502603,
+      "end": 1709717502603,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717502603,
+      "end": 1709717502603,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717502603,
+      "end": 1709717502604,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".table-example--pagination{display:flex;justify-content:center}table,td,th{border:1px solid #1e1a1af2!important;border-collapse:collapse!important}",
+      "start": 1709717502604,
+      "end": 1709717502607,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue",
+        "mappings": "AACA,2BACE,YAAa,CACb,sBACF,CAEA,YACE,oCAAsC,CACtC,kCACF",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue"
+        ],
+        "sourcesContent": [
+          "\n.table-example--pagination {\n  display: flex;\n  justify-content: center;\n}\n\ntable,th,td {\n  border: 1px solid #1e1a1af2 !important;\n  border-collapse: collapse !important;\n}\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717502607,
+      "end": 1709717502607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717502607,
+      "end": 1709717502607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717502607,
+      "end": 1709717502607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".table-example--pagination{display:flex;justify-content:center}table,td,th{border:1px solid #1e1a1af2!important;border-collapse:collapse!important}",
+      "start": 1709717502607,
+      "end": 1709717502607,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue",
+        "mappings": "AAAA,2BAA2B,YAAY,CAAC,sBAAsB,CAAC,YAAY,oCAAoC,CAAC,kCAAkC",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Ma/table.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717502608,
+      "end": 1709717502608,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717502609,
+      "end": 1709717502609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717502609,
+      "end": 1709717502609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717502609,
+      "end": 1709717502609,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717502610,
+      "end": 1709717502610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717502610,
+      "end": 1709717502610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717502610,
+      "end": 1709717502610,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717502610,
+      "end": 1709717502610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717502611,
+      "end": 1709717502611,
+      "order": "normal"
+    }
+  ]
+}

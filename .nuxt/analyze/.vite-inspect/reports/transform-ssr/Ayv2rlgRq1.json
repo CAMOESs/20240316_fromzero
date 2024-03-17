@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-data-table/hooks/useSelectableRow.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed, watch } from \"vue\";\nimport { g as getItemKey } from \"./useRows.mjs\";\nimport { c as useSelectableProp, b as useItemsTrackByProp } from \"./useCommonProps.mjs\";\nconst useSelectableProps = {\n  ...useSelectableProp,\n  ...useItemsTrackByProp,\n  modelValue: { type: Array },\n  selectMode: { type: String, default: \"multiple\" }\n};\nconst useSelectableRow = (paginatedRows, props, emit) => {\n  const selectedItemsFallback = ref([]);\n  const selectedItemsSync = computed({\n    get() {\n      if (props.modelValue === void 0) {\n        return selectedItemsFallback.value;\n      } else {\n        return props.modelValue;\n      }\n    },\n    set(modelValue) {\n      if (props.modelValue === void 0) {\n        selectedItemsFallback.value = modelValue;\n      }\n      emit(\"update:modelValue\", modelValue);\n    }\n  });\n  const prevSelectedRowIndex = ref(-1);\n  watch(() => props.selectMode, (newSelectMode, oldSelectMode) => {\n    if (newSelectMode === \"single\" && oldSelectMode === \"multiple\") {\n      selectedItemsSync.value = [];\n      setPrevSelectedRowIndex(-1);\n    }\n  });\n  watch(paginatedRows, () => {\n    setPrevSelectedRowIndex(-1);\n  });\n  watch(selectedItemsSync, (currentSelectedItems, previousSelectedItems = []) => {\n    emit(\"selectionChange\", {\n      currentSelectedItems,\n      previousSelectedItems\n    });\n  }, { immediate: true });\n  const getKey = (source) => getItemKey(source, props.itemsTrackBy);\n  const noRowsSelected = computed(() => !paginatedRows.value.some(({ source }) => selectedItemsSync.value.includes(getKey(source))));\n  const allRowsSelected = computed(() => {\n    if (paginatedRows.value.length === 0) {\n      return false;\n    }\n    return paginatedRows.value.every(({ source }) => selectedItemsSync.value.includes(getKey(source)));\n  });\n  const severalRowsSelected = computed(() => !noRowsSelected.value && !allRowsSelected.value);\n  function isRowSelected(row) {\n    return selectedItemsSync.value.includes(getKey(row.source));\n  }\n  function selectAllRows() {\n    selectedItemsSync.value = [.../* @__PURE__ */ new Set([\n      ...selectedItemsSync.value,\n      ...paginatedRows.value.map((row) => getKey(row.source))\n    ])];\n  }\n  function unselectAllRows() {\n    const paginatedRowsKeys = paginatedRows.value.map((row) => getKey(row.source));\n    selectedItemsSync.value = selectedItemsSync.value.filter((item) => !paginatedRowsKeys.includes(item));\n  }\n  function selectRow(row) {\n    selectedItemsSync.value = [...selectedItemsSync.value, getKey(row.source)];\n  }\n  function selectOnlyRow(row) {\n    selectedItemsSync.value = [getKey(row.source)];\n  }\n  function unselectRow(row) {\n    const index = selectedItemsSync.value.findIndex((item) => item === getKey(row.source));\n    selectedItemsSync.value = [\n      ...selectedItemsSync.value.slice(0, index),\n      ...selectedItemsSync.value.slice(index + 1)\n    ];\n  }\n  function setPrevSelectedRowIndex(rowInitialIndex) {\n    if (rowInitialIndex === -1) {\n      prevSelectedRowIndex.value = -1;\n    } else {\n      const prevSelectedRow = paginatedRows.value.find((row) => row.initialIndex === rowInitialIndex);\n      prevSelectedRow ? prevSelectedRowIndex.value = paginatedRows.value.indexOf(prevSelectedRow) : prevSelectedRowIndex.value = -1;\n    }\n  }\n  function getRowsToSelect(targetIndex) {\n    let start;\n    let end;\n    if (isRowSelected(paginatedRows.value[prevSelectedRowIndex.value])) {\n      start = Math.min(prevSelectedRowIndex.value, targetIndex);\n      end = Math.max(prevSelectedRowIndex.value, targetIndex);\n    } else {\n      start = Math.min(prevSelectedRowIndex.value + 1, targetIndex);\n      end = Math.max(prevSelectedRowIndex.value - 1, targetIndex);\n    }\n    return paginatedRows.value.slice(start, end + 1);\n  }\n  function mergeSelection(rowsToSelect) {\n    const rowsToSelectedItems = rowsToSelect.map((row) => getKey(row.source));\n    if (noRowsSelected.value) {\n      selectedItemsSync.value = rowsToSelectedItems;\n      return;\n    }\n    const isInternalSelection = rowsToSelectedItems.every((item) => selectedItemsSync.value.includes(item));\n    if (isInternalSelection) {\n      selectedItemsSync.value = selectedItemsSync.value.filter((item) => !rowsToSelectedItems.includes(item));\n      return;\n    }\n    selectedItemsSync.value = [.../* @__PURE__ */ new Set([\n      ...selectedItemsSync.value,\n      ...rowsToSelectedItems\n    ])];\n  }\n  function toggleRowSelection(row) {\n    if (!props.selectable) {\n      return;\n    }\n    if (isRowSelected(row)) {\n      unselectRow(row);\n      props.selectMode === \"single\" ? setPrevSelectedRowIndex(-1) : setPrevSelectedRowIndex(row.initialIndex);\n    } else {\n      props.selectMode === \"single\" ? selectOnlyRow(row) : selectRow(row);\n      setPrevSelectedRowIndex(row.initialIndex);\n    }\n  }\n  function ctrlSelectRow(row) {\n    if (!props.selectable) {\n      return;\n    }\n    toggleRowSelection(row);\n  }\n  function shiftSelectRows(row) {\n    if (!props.selectable) {\n      return;\n    }\n    if (props.selectMode === \"single\" || prevSelectedRowIndex.value === -1) {\n      return toggleRowSelection(row);\n    }\n    const targetIndex = paginatedRows.value.indexOf(row);\n    mergeSelection(getRowsToSelect(targetIndex));\n    setPrevSelectedRowIndex(-1);\n  }\n  function toggleBulkSelection() {\n    if (allRowsSelected.value) {\n      unselectAllRows();\n    } else {\n      selectAllRows();\n    }\n    setPrevSelectedRowIndex(-1);\n  }\n  return {\n    ctrlSelectRow,\n    shiftSelectRows,\n    toggleRowSelection,\n    toggleBulkSelection,\n    isRowSelected,\n    noRowsSelected,\n    severalRowsSelected,\n    allRowsSelected\n  };\n};\nexport {\n  useSelectableRow as a,\n  useSelectableProps as u\n};\n//# sourceMappingURL=useSelectableRow.mjs.map\n",
+      "start": 1709717513243,
+      "end": 1709717513399,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717513400,
+      "end": 1709717513400,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513400,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717513400,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717513401,
+      "end": 1709717513401,
+      "order": "normal"
+    }
+  ]
+}

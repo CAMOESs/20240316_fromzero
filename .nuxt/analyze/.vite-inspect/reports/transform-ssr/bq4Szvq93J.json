@@ -1,0 +1,294 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue?vue&type=style&index=0&scoped=69d45604&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n\n\n.v_container_styleus{\n  padding-top: 60px;\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\n.btn_drawer_styleus{\n  background-color: inherit !important;\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n.v_app_bar_styleus{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important;\n  background-color: white;\n  color:white;\n  height: 70px;\n}\n.footers {\n  background-image: url(\"/binding_dark.png\");\n  background-color: #cccccc;\n  height: 300px;\n}\n\n.c_ {\n  width: 250px;\n  height: 65px;\n  padding: 5px;\n  margin-top: 10px;\n}\n\n@media screen and (max-width: 900px) {\n  .c_ {\n    width: 150px;\n    height: 300px;\n    margin-left: 30px;\n    margin-right: 30px;\n    /*filter: contrast(0%) brightness(200%);*/\n    object-fit: contain;\n  }\n\n}\n\n\n/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 600px) {\n  .c_ {\n    width: 150px;\n    height: 300px;\n    margin-left: 30px;\n    margin-right: 30px;\n    /*filter: contrast(0%) brightness(200%);*/\n    object-fit: contain;\n  }\n}\n",
+      "start": 1709717514137,
+      "end": 1709717514137,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<!-- @format -->\n\n<template>\n  <div>\n    <v-layout>\n      <v-app-bar elevation=\"4\" id=\"nav\" style=\"height: 80px;\">\n        <NuxtLink to=\"/\">\n          <img src=\"/images/logo.png\" class=\"logo\" alt=\"#\" />\n        </NuxtLink>\n        <div id=\"teleport-target\"></div>\n        <v-spacer> </v-spacer>\n        <!-- <v-btn\n          class=\"white--text mr-4\"\n          variant=\"outlined\"\n          @click.stop=\"drawer = !drawer\"\n        >\n          <span class=\"d-xs-block\" style=\"color: black\"\n            ><v-icon>mdi-account-box</v-icon></span\n          >\n        </v-btn> -->\n        <v-menu\n          v-model=\"menu\"\n          :close-on-content-click=\"false\"\n          location=\"bottom\"\n        >\n          <template v-slot:activator=\"{ props }\">\n            <!-- <v-btn color=\"indigo\" > Menu as Popover </v-btn> -->\n            <v-btn class=\"white--text mr-4\" variant=\"outlined\" v-bind=\"props\">\n              <span class=\"d-xs-block\" style=\"color: black\"\n                ><v-icon>mdi-account-box</v-icon></span\n              >\n            </v-btn>\n          </template>\n\n          <v-card min-width=\"300\">\n            <div style=\"text-align: center;\">\n              <!-- {{ session_information.data.value.user.username ? session_information.data.value.user.email : '' }} -->\n              <h1>\n                {{ $auth().username }}\n              </h1>\n              <p>\n                {{ $auth().email }}\n              </p>\n              <p style=\"font-size : 10px\">\n                {{ get_roles($auth().roles) }}\n              </p>\n            </div>\n            <v-divider></v-divider>\n\n            <v-list density=\"compact\" nav>\n              <v-list-item\n                style=\"color:#093e73\"\n                prepend-icon=\"mdi-account-edit\"\n                to=\"/tableau-de-bord/mon-compte\"\n                title=\"Mon compte\"\n                value=\"Mon compte\"\n              ></v-list-item>\n              <v-list-item\n                style=\"color:red\"\n                prepend-icon=\"mdi-logout\"\n                @click=\"logout\"\n                title=\"Déconnexion\"\n                value=\"Déconnexion\"\n              ></v-list-item>\n            </v-list>\n          </v-card>\n        </v-menu>\n      </v-app-bar>\n\n      <v-app dark>\n        <v-main>\n          <!--   <v-navigation-drawer\n            style=\"margin-top: 80px;height: 220px\"\n            v-model=\"drawer\"\n            temporary\n            location=\"right\"\n          >\n            <v-list-item\n              class=\"text-center\"\n              style=\"color:#093e73;text-transform:uppercase\"\n            >\n              {{ session_information.data.value.user.username ? session_information.data.value.user.email : ''\n              }}AAA\n            </v-list-item>\n\n            <v-divider></v-divider>\n\n            <v-list density=\"compact\" nav>\n              <v-list-item\n                style=\"color:#093e73\"\n                prepend-icon=\"mdi-home\"\n                to=\"/\"\n                title=\"Accueil\"\n                value=\"Accueil\"\n              ></v-list-item>\n              <v-list-item\n                style=\"color:#093e73\"\n                prepend-icon=\"mdi-account-edit\"\n                to=\"/tableau-de-bord/mon-compte\"\n                title=\"Mon compte\"\n                value=\"Mon compte\"\n              ></v-list-item>\n              <v-list-item\n                v-if=\"$auth() && $auth()?.student_id\"\n                style=\"color:#093e73\"\n                prepend-icon=\"mdi-refresh-circle\"\n                to=\"/tableau-de-bord\"\n                title=\"Choisir un autre enfant\"\n              ></v-list-item>\n              <v-list-item\n                style=\"color:#093e73\"\n                prepend-icon=\"mdi-logout\"\n                @click=\"logout\"\n                title=\"Déconnexion\"\n                value=\"Déconnexion\"\n              ></v-list-item>\n            </v-list>\n          </v-navigation-drawer> -->\n\n          <v-container fluid class=\"v_container_styleus\">\n            <slot></slot>\n          </v-container>\n        </v-main>\n        <v-main style=\"height: 250px\"></v-main>\n      </v-app>\n    </v-layout>\n  </div>\n</template>\n\n<script setup>\nimport { useDisplay } from \"vuetify/lib/framework.mjs\";\n  const { $auth } = useNuxtApp();\n  let {name} = useDisplay();\n  let menu = ref(false)\n\n  const permanent = computed(() => {\n    return  name.value!== 'xs';\n  })\n  const { signOut } = useSession()\n  function get_roles(txt ){\n    if(!txt) return  \"()\"\n\n    return  `(${txt.split('#').join(', ')})`\n  }\n  const logout = async function(){\n    await signOut({redirect:\"/\"});\n  }\n</script>\n<style scoped>\n\n\n.v_container_styleus{\n  padding-top: 60px;\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\n.btn_drawer_styleus{\n  background-color: inherit !important;\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n.v_app_bar_styleus{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important;\n  background-color: white;\n  color:white;\n  height: 70px;\n}\n.footers {\n  background-image: url(\"/binding_dark.png\");\n  background-color: #cccccc;\n  height: 300px;\n}\n\n.c_ {\n  width: 250px;\n  height: 65px;\n  padding: 5px;\n  margin-top: 10px;\n}\n\n@media screen and (max-width: 900px) {\n  .c_ {\n    width: 150px;\n    height: 300px;\n    margin-left: 30px;\n    margin-right: 30px;\n    /*filter: contrast(0%) brightness(200%);*/\n    object-fit: contain;\n  }\n\n}\n\n\n/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 600px) {\n  .c_ {\n    width: 150px;\n    height: 300px;\n    margin-left: 30px;\n    margin-right: 30px;\n    /*filter: contrast(0%) brightness(200%);*/\n    object-fit: contain;\n  }\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514138,
+      "end": 1709717514138,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717514138,
+      "end": 1709717514138,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514154,
+      "end": 1709717514154,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717514154,
+      "end": 1709717514155,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717514156,
+      "end": 1709717514156,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".v_container_styleus{padding-top:60px}.btn_drawer_styleus,.v_container_styleus{padding-left:0!important;padding-right:0!important}.btn_drawer_styleus{background-color:inherit!important;margin-left:0!important;margin-right:0!important}.v_app_bar_styleus{background-color:#fff;box-shadow:0 0 7px rgba(0,0,0,.11)!important;color:#fff;height:70px}.footers{background-color:#ccc;background-image:url(__VITE_PUBLIC_ASSET__af589567__);height:300px}.c_{height:65px;margin-top:10px;padding:5px;width:250px}@media screen and (max-width:900px){.c_{height:300px;margin-left:30px;margin-right:30px;-o-object-fit:contain;object-fit:contain;width:150px}}@media screen and (max-width:600px){.c_{height:300px;margin-left:30px;margin-right:30px;-o-object-fit:contain;object-fit:contain;width:150px}}",
+      "start": 1709717514156,
+      "end": 1709717514165,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue",
+        "mappings": "AAGA,qBACE,gBAGF,CACA,yCAHE,wBAA0B,CAC1B,yBAQF,CANA,oBACE,kCAAoC,CAGpC,uBAAyB,CACzB,wBACF,CACA,mBAEE,qBAAuB,CADvB,4CAA+C,CAE/C,UAAW,CACX,WACF,CACA,SAEE,qBAAyB,CADzB,qDAA0C,CAE1C,YACF,CAEA,IAEE,WAAY,CAEZ,eAAgB,CADhB,WAAY,CAFZ,WAIF,CAEA,oCACE,IAEE,YAAa,CACb,gBAAiB,CACjB,iBAAkB,CAElB,qBAAmB,CAAnB,kBAAmB,CALnB,WAMF,CAEF,CAIA,oCACE,IAEE,YAAa,CACb,gBAAiB,CACjB,iBAAkB,CAElB,qBAAmB,CAAnB,kBAAmB,CALnB,WAMF,CACF",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue"
+        ],
+        "sourcesContent": [
+          "\n\n\n.v_container_styleus{\n  padding-top: 60px;\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\n.btn_drawer_styleus{\n  background-color: inherit !important;\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n.v_app_bar_styleus{\n  box-shadow: 0 0 7px rgb(0 0 0 / 11%) !important;\n  background-color: white;\n  color:white;\n  height: 70px;\n}\n.footers {\n  background-image: url(\"/binding_dark.png\");\n  background-color: #cccccc;\n  height: 300px;\n}\n\n.c_ {\n  width: 250px;\n  height: 65px;\n  padding: 5px;\n  margin-top: 10px;\n}\n\n@media screen and (max-width: 900px) {\n  .c_ {\n    width: 150px;\n    height: 300px;\n    margin-left: 30px;\n    margin-right: 30px;\n    /*filter: contrast(0%) brightness(200%);*/\n    object-fit: contain;\n  }\n\n}\n\n\n/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 600px) {\n  .c_ {\n    width: 150px;\n    height: 300px;\n    margin-left: 30px;\n    margin-right: 30px;\n    /*filter: contrast(0%) brightness(200%);*/\n    object-fit: contain;\n  }\n}\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717514165,
+      "end": 1709717514165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717514166,
+      "end": 1709717514166,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717514166,
+      "end": 1709717514166,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".v_container_styleus[data-v-69d45604]{padding-top:60px}.btn_drawer_styleus[data-v-69d45604],.v_container_styleus[data-v-69d45604]{padding-left:0!important;padding-right:0!important}.btn_drawer_styleus[data-v-69d45604]{background-color:inherit!important;margin-left:0!important;margin-right:0!important}.v_app_bar_styleus[data-v-69d45604]{background-color:#fff;box-shadow:0 0 7px rgba(0,0,0,.11)!important;color:#fff;height:70px}.footers[data-v-69d45604]{background-color:#ccc;background-image:url(__VITE_PUBLIC_ASSET__af589567__);height:300px}.c_[data-v-69d45604]{height:65px;margin-top:10px;padding:5px;width:250px}@media screen and (max-width:900px){.c_[data-v-69d45604]{height:300px;margin-left:30px;margin-right:30px;-o-object-fit:contain;object-fit:contain;width:150px}}@media screen and (max-width:600px){.c_[data-v-69d45604]{height:300px;margin-left:30px;margin-right:30px;-o-object-fit:contain;object-fit:contain;width:150px}}",
+      "start": 1709717514166,
+      "end": 1709717514168,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue",
+        "mappings": "AAAA,sCAAqB,gBAAgB,CAAC,2EAAyC,wBAAwB,CAAC,yBAAyB,CAAC,qCAAoB,kCAAkC,CAAC,uBAAuB,CAAC,wBAAwB,CAAC,oCAAmB,qBAAqB,CAAC,4CAA4C,CAAC,UAAU,CAAC,WAAW,CAAC,0BAAS,qBAAqB,CAAC,qDAAqD,CAAC,YAAY,CAAC,qBAAI,WAAW,CAAC,eAAe,CAAC,WAAW,CAAC,WAAW,CAAC,oCAAoC,qBAAI,YAAY,CAAC,gBAAgB,CAAC,iBAAiB,CAAC,qBAAqB,CAAC,kBAAkB,CAAC,WAAW,CAAC,CAAC,oCAAoC,qBAAI,YAAY,CAAC,gBAAgB,CAAC,iBAAiB,CAAC,qBAAqB,CAAC,kBAAkB,CAAC,WAAW,CAAC",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/layouts/default.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1709717514168,
+      "end": 1709717514168,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717514169,
+      "end": 1709717514169,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717514169,
+      "end": 1709717514169,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717514169,
+      "end": 1709717514169,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717514169,
+      "end": 1709717514169,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717514169,
+      "end": 1709717514169,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717514169,
+      "end": 1709717514169,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514170,
+      "end": 1709717514170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717514170,
+      "end": 1709717514170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717514171,
+      "end": 1709717514171,
+      "order": "normal"
+    }
+  ]
+}

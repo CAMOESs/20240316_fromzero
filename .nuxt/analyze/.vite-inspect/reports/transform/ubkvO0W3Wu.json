@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-file-upload/VaFileUploadGalleryItem/VaFileUploadGalleryItem.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, ref, computed, onMounted, watch, toRef } from \"vue\";\nimport { V as VaFileUploadKey } from \"../types.js\";\nimport { u as useTextColor } from \"../../../composables/useTextColor.js\";\nimport { V as VaFileUploadUndo } from \"../VaFileUploadUndo/index.js\";\nimport { V as VaButton } from \"../../va-button/index.js\";\nimport { V as VaListItem, a as VaListItemSection } from \"../../va-list/index.js\";\nimport { d as colorToRgba } from \"../../../services/color/utils.js\";\nimport { u as useStrictInject } from \"../../../composables/useStrictInject.js\";\nimport { u as useFocus } from \"../../../composables/useFocus.js\";\nimport { u as useBem } from \"../../../composables/useBem.js\";\nimport { u as useTranslation } from \"../../../composables/useTranslation.js\";\nconst INJECTION_ERROR_MESSAGE = \"The VaFileUploadGalleryItem component should be used in the context of VaFileUpload component\";\nconst _sfc_main = defineComponent({\n  name: \"VaFileUploadGalleryItem\",\n  components: {\n    VaFileUploadUndo,\n    VaButton,\n    VaListItem,\n    VaListItemSection\n  },\n  emits: [\"remove\"],\n  props: {\n    file: { type: Object, default: null },\n    color: { type: String, default: \"success\" },\n    ariaRemoveFileLabel: { type: String, default: \"$t:removeFile\" }\n  },\n  setup(props, { emit }) {\n    const {\n      undo,\n      disabled,\n      undoDuration\n    } = useStrictInject(VaFileUploadKey, INJECTION_ERROR_MESSAGE);\n    const { isFocused, onFocus, onBlur } = useFocus();\n    const previewImage = ref(\"\");\n    const removed = ref(false);\n    const overlayStylesComputed = computed(() => ({\n      backgroundColor: colorToRgba(props.color, 0.7)\n    }));\n    const classesComputed = useBem(\"va-file-upload-gallery-item\", () => ({\n      notImage: !previewImage.value,\n      focused: isFocused.value,\n      undo: removed.value\n    }));\n    const removeImage = () => {\n      if (undo.value) {\n        removed.value = true;\n        setTimeout(() => {\n          if (!removed.value) {\n            return;\n          }\n          emit(\"remove\");\n          removed.value = false;\n        }, undoDuration.value ?? 0);\n      } else {\n        emit(\"remove\");\n        removed.value = false;\n      }\n    };\n    const recoverImage = () => {\n      removed.value = false;\n    };\n    const convertToImg = () => {\n      if (!props.file.name || !props.file.image) {\n        return;\n      }\n      if (props.file.image.url) {\n        previewImage.value = props.file.image.url;\n      } else if (props.file.image instanceof File) {\n        const reader = new FileReader();\n        reader.readAsDataURL(props.file.image);\n        reader.onload = (e) => {\n          var _a, _b;\n          if (((_a = e.target) == null ? void 0 : _a.result).includes(\"image\")) {\n            previewImage.value = (_b = e.target) == null ? void 0 : _b.result;\n          }\n        };\n      }\n    };\n    onMounted(convertToImg);\n    watch(() => props.file, convertToImg);\n    const { t, tp } = useTranslation();\n    const { textColorComputed } = useTextColor(toRef(props, \"color\"));\n    return {\n      t,\n      tp,\n      undo,\n      textColorComputed,\n      removed,\n      disabled,\n      isFocused,\n      previewImage,\n      classesComputed,\n      overlayStylesComputed,\n      onBlur,\n      onFocus,\n      removeImage,\n      recoverImage\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../VaFileUploadGalleryItem.css';\n//# sourceMappingURL=VaFileUploadGalleryItem.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423565,
+      "end": 1709717423850,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423850,
+      "end": 1709717423850,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423850,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423851,
+      "end": 1709717423851,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423851,
+      "end": 1709717423853,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423853,
+      "end": 1709717423853,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423853,
+      "end": 1709717423853,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423853,
+      "end": 1709717423853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423853,
+      "end": 1709717423853,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423853,
+      "end": 1709717423853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423854,
+      "end": 1709717423854,
+      "order": "normal"
+    }
+  ]
+}

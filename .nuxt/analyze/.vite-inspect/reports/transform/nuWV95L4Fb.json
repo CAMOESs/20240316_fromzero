@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/composables/useThrottle.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { toRef, unref, ref, watch } from \"vue\";\nconst useThrottleProps = {\n  delay: {\n    type: Number,\n    default: 0,\n    validator: (value) => value >= 0\n  }\n};\nfunction useThrottleFunction(fn, props) {\n  const delay = toRef(props, \"delay\") ?? 0;\n  const isThrottled = ref(true);\n  let lastCallResult = void 0;\n  return function(...args) {\n    const invoke = () => fn.apply(this, args);\n    if (!unref(delay)) {\n      return invoke();\n    }\n    if (isThrottled.value) {\n      isThrottled.value = false;\n      setTimeout(() => isThrottled.value = true, unref(delay));\n      lastCallResult = invoke();\n    }\n    return lastCallResult;\n  };\n}\nfunction useThrottleValue(value, props) {\n  const delay = toRef(props, \"delay\") ?? 0;\n  if (!unref(delay)) {\n    return value;\n  }\n  const isThrottled = ref(true);\n  const previousCallValue = ref();\n  const previousReturnedValue = ref();\n  const currentCallValue = ref();\n  watch(value, () => {\n    previousCallValue.value = value.value;\n    const lastCallValue = setTimeout(() => {\n      currentCallValue.value = previousCallValue.value;\n    }, unref(delay));\n    if (isThrottled.value) {\n      isThrottled.value = false;\n      currentCallValue.value = value.value;\n      previousReturnedValue.value = value.value;\n      clearTimeout(lastCallValue);\n      setTimeout(() => isThrottled.value = true, unref(delay));\n    } else {\n      currentCallValue.value = previousReturnedValue.value;\n    }\n  }, { immediate: true });\n  return currentCallValue;\n}\nexport {\n  useThrottleValue as a,\n  useThrottleFunction as b,\n  useThrottleProps as u\n};\n//# sourceMappingURL=useThrottle.js.map\n",
+      "start": 1709717427222,
+      "end": 1709717427372,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427373,
+      "end": 1709717427373,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427373,
+      "end": 1709717427374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427374,
+      "end": 1709717427374,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-file-upload/VaFileUploadListItem/VaFileUploadListItem.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaFileUploadListItem.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createBlock, normalizeClass, withCtx, createVNode, createElementVNode, createElementBlock, toDisplayString, createCommentVNode, withModifiers, withKeys } from \"vue\";\nimport { _ as _export_sfc } from \"../../../../plugin-vue_export-helper.js\";\nconst VaFileUploadListItem_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = { class: \"va-file-upload-list-item__content\" };\nconst _hoisted_2 = {\n  key: 0,\n  class: \"va-file-upload-list-item__name\"\n};\nconst _hoisted_3 = { class: \"va-file-upload-list-item__size\" };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_file_upload_undo = resolveComponent(\"va-file-upload-undo\");\n  const _component_va_list_item_section = resolveComponent(\"va-list-item-section\");\n  const _component_va_button = resolveComponent(\"va-button\");\n  const _component_va_list_item = resolveComponent(\"va-list-item\");\n  return openBlock(), createBlock(_component_va_list_item, {\n    class: normalizeClass([\"va-file-upload-list-item\", _ctx.computedClasses]),\n    tabindex: \"-1\",\n    disabled: _ctx.disabled,\n    \"aria-disabled\": _ctx.disabled\n  }, {\n    default: withCtx(() => [\n      _ctx.removed && _ctx.undo ? (openBlock(), createBlock(_component_va_list_item_section, { key: 0 }, {\n        default: withCtx(() => [\n          createVNode(_component_va_file_upload_undo, { onRecover: _ctx.recoverFile }, null, 8, [\"onRecover\"])\n        ]),\n        _: 1\n      })) : (openBlock(), createBlock(_component_va_list_item_section, { key: 1 }, {\n        default: withCtx(() => [\n          createElementVNode(\"div\", _hoisted_1, [\n            _ctx.file && _ctx.file.name ? (openBlock(), createElementBlock(\"div\", _hoisted_2, toDisplayString(_ctx.file && _ctx.file.name), 1)) : createCommentVNode(\"\", true),\n            createElementVNode(\"div\", _hoisted_3, toDisplayString(_ctx.file && _ctx.file.size), 1),\n            !_ctx.disabled ? (openBlock(), createBlock(_component_va_button, {\n              key: 1,\n              flat: \"\",\n              color: \"danger\",\n              icon: \"clear\",\n              class: \"va-file-upload-list-item__delete\",\n              \"aria-label\": _ctx.tp(_ctx.$props.ariaRemoveFileLabel),\n              onClick: withModifiers(_ctx.removeFile, [\"stop\"]),\n              onKeydown: [\n                withKeys(withModifiers(_ctx.removeFile, [\"stop\"]), [\"enter\"]),\n                withKeys(withModifiers(_ctx.removeFile, [\"stop\"]), [\"space\"])\n              ],\n              onFocus: _ctx.onFocus,\n              onBlur: _ctx.onBlur\n            }, null, 8, [\"aria-label\", \"onClick\", \"onKeydown\", \"onFocus\", \"onBlur\"])) : createCommentVNode(\"\", true)\n          ])\n        ]),\n        _: 1\n      }))\n    ]),\n    _: 1\n  }, 8, [\"class\", \"disabled\", \"aria-disabled\"]);\n}\nconst _VaFileUploadListItem = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaFileUploadListItem as _\n};\n\nimport '../../../../VaFileUploadListItem.css';\n//# sourceMappingURL=VaFileUploadListItem.js.map\n",
+      "start": 1709717418172,
+      "end": 1709717418342,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717418342,
+      "end": 1709717418342,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717418342,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717418343,
+      "end": 1709717418343,
+      "order": "normal"
+    }
+  ]
+}

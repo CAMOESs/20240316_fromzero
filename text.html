@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+  * {
+    border : solid 1px black;
+  } 
+      .text-bold {
+          font-weight: bold;
+      }
+
+      .text-center {
+          text-align: center;
+      }
+
+      .body {
+          background: url("http://10.10.2.251:5070/PDF/Images/diplomes/20240223_bg_diplome_cqm.png") no-repeat center center;
+          height: 95vh;
+          break-after: page;
+         
+      }
+      h1{
+        font-size : 45px
+      } 
+      h2{
+        font-size : 20px
+      } 
+      .content {
+          width: 75%;
+          margin: auto;
+          padding-top: 30px;
+      }
+
+      .header {
+          display: flex;
+          text-transform: uppercase;
+
+      }
+
+      .header-first {
+          flex: 1;
+      }
+
+      .photo {
+          width: 3cm;
+          height: 3.5cm;
+          border: solid black 1px;
+          display: flex;
+          justify-content: center;
+          margin-left : 0.5cm;
+          align-items: center;
+      }
+      .header-first-iem-1 {
+          display: flex;
+      }
+
+      .drapeau {
+          width: 70px;
+          height : 50px
+      }
+
+      .benin {
+          flex: 1;
+          text-align: center;
+      }
+      .benin * {
+        
+            margin : 2px auto;
+        }
+
+      .benin hr {
+          width: 150px;
+          border: none;
+          border-top: 3px solid black;
+          height: 5px;
+      }
+
+      .header-first-iem-2 {
+          text-align: center;
+          
+          
+      }
+      .header-first-iem-2 * {
+        margin : 3px auto
+      } 
+      .main{
+        font-size : 18px;
+        line-height: 30px;
+      } 
+      .footer {
+          display: flex;
+          align-content: space-between;
+          margin: 10px 0px 0px 0px;
+      }
+
+      .footer-item {
+          flex: 1;
+          margin: 0px 10px;
+      }
+
+      .footer-item img {
+          height: 70px;
+          margin : auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="body">
+    <div class="content">
+      <div class="header" style="text-transform: uppercase;">
+        <div class="header-first">
+          
+        </div>
+        <!-- <div class="header-first ">
+           <div class="header-first-iem-1 ">
+            <img src="http://10.10.2.251:5070/PDF/Images/diplomes/drapeaux-benin.png" alt="Drapeau benin" class="drapeau" />
+            <div class="benin">
+              <p class="text-bold" style="color : #ef412a;" >République du Bénin</p>
+              <hr />
+              <p>
+                Ministere des enseignement secondaire <br />
+                technique et de la formation professionnelle
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="header-first-iem-2">
+            <h1>Attestation du diplôme</h1>
+            <h2>Du certificat de qualification aux métiers (CQM)</h2>
+          </div> 
+        </div>
+        <div class="photo">
+          <div>photo</div>
+        </div>
+      </div>
+      -->
+      <div class="main">
+        Le Ministère des enseignement secondaire, technique et de la formation
+        professionnelle <br />
+        vue le Procès-verbal de la délibération de l examen du CQM en date du
+        <span class="text-bold">19 février 2024</span> <br />
+        M.<span class="text-bold">
+        <span style="text-transform: capitalize">${candidat.firstname}</span>
+        <span style="text-transform: uppercase">${candidat.lastname}</span>
+        </span>
+        <br />
+        Né(e) le <span class="text-bold">${dateformatFr_long(
+          candidat.date_of_birth
+        )}</span> à
+        <span class="text-bold">${candidat.place_of_birth}</span> <br />
+        a suivi avec succès l'exament du certificat de qualification au
+        métiers (CQM) <br />
+        Métier : <span class="text-bold">${candidat.metier}</span> <br />
+        Session de <span class="text-bold">${session?.Month.name} ${
+        session?.year
+      }</span> <br />
+        conformement à la décision : 
+        <span class="text-bold">
+          ${session?.reference} du ${dateformatFr_(session?.date_of_pv)}
+        </span>
+        <br />
+        En foi de quoi, la presente Attestation du diplôme lui est délivré
+        pour servir et valoir ce que de droit.
+      </div>
+      <div class="footer">
+        ${signatures
+          .map((signature: any, index: number) => {
+            let filename = `server/public/images/signataire/signataire_${index}.${signature.exe}`;
+            let imgTag;
+            if (existsSync(filename)) {
+              // Si le fichier existe, lisez son contenu
+              const imageData = readFileSync(filename);
+              const base64Image = Buffer.from(imageData).toString("base64");
+
+              // Utilisez les données de l'image dans l'attribut src de l'élément img
+              imgTag = `<img src="data:image/png;base64,${base64Image}" alt="signature_${index}" />`;
+            } else {
+              imgTag = `<img src="" alt="signature_${index}" />`;
+            }
+            return signature.showed == "true"
+              ? ` <div class="footer-item">
+         <div class="text-center text-bold">
+           ${signature.title_of_sign}
+         </div>
+         <div style="display : flex; justify-content: center">
+         
+         ${imgTag}
+        <!-- <img src="${process.env.AUTH_HOSTNAME}/api/showphoto?t=signataire_${index}.${signature.exe}" alt="signature" /> -->
+       </div>
+       </div>
+         `
+              : "";
+          })
+          
+        </div>
+    </div>
+  </div>
+   
+  </body>
+</html>
+
+
+
+<!--  -->
+
+<!--  -->
+<!--  -->
+<div class="header" style="text-transform: uppercase;">
+  <div class="header-first ">
+    <div class="header-first-iem-1 ">
+      <img src="${
+        process.env.AUTH_HOSTNAME
+      }/PDF/Images/diplomes/drapeaux-benin.png" alt="Drapeau benin" class="drapeau" />
+      <div class="benin">
+        <p class="text-bold" style="color : #ef412a;" >République du Bénin</p>
+        <hr />
+        <p>
+          Ministere des enseignement secondaire <br />
+          technique et de la formation professionnelle
+        </p>
+        <hr />
+      </div>
+    </div>
+    <div class="header-first-iem-2">
+      <h1>Attestation du diplôme</h1>
+      <h2>Du certificat de qualification aux métiers (CQM)</h2>
+    </div>
+  </div>
+  <div class="photo">
+    <div>photo</div>
+  </div>
+</div>

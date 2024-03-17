@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-switch/VaSwitch.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { _ as _sfc_main } from \"./VaSwitch.vue_vue_type_script_lang.js\";\nimport { resolveComponent, openBlock, createBlock, normalizeClass, normalizeStyle, withCtx, createElementVNode, mergeProps, toHandlers, withKeys, createElementBlock, renderSlot, createTextVNode, toDisplayString, createCommentVNode, normalizeProps, guardReactiveProps, withModifiers } from \"vue\";\nimport { _ as _export_sfc } from \"../../../plugin-vue_export-helper.js\";\nconst VaSwitch_vue_vue_type_style_index_0_lang = \"\";\nconst _hoisted_1 = { class: \"va-switch__inner\" };\nconst _hoisted_2 = { class: \"va-switch__checker-wrapper\" };\nconst _hoisted_3 = { class: \"va-switch__checker\" };\nconst _hoisted_4 = { class: \"va-switch__checker-circle\" };\nconst _hoisted_5 = [\"id\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_va_progress_circle = resolveComponent(\"va-progress-circle\");\n  const _component_VaMessageListWrapper = resolveComponent(\"VaMessageListWrapper\");\n  return openBlock(), createBlock(_component_VaMessageListWrapper, {\n    class: normalizeClass([\"va-switch\", _ctx.computedClass]),\n    style: normalizeStyle(_ctx.styleComputed),\n    disabled: _ctx.$props.disabled,\n    success: _ctx.$props.success,\n    messages: _ctx.$props.messages,\n    error: _ctx.computedError,\n    \"error-messages\": _ctx.computedErrorMessages,\n    \"error-count\": _ctx.$props.errorCount\n  }, {\n    default: withCtx(() => [\n      createElementVNode(\"div\", {\n        ref: \"container\",\n        class: \"va-switch__container\",\n        tabindex: \"-1\",\n        onBlur: _cache[7] || (_cache[7] = (...args) => _ctx.onBlur && _ctx.onBlur(...args))\n      }, [\n        createElementVNode(\"div\", _hoisted_1, [\n          createElementVNode(\"input\", mergeProps({\n            ref: \"input\",\n            type: \"checkbox\",\n            class: \"va-switch__input\",\n            role: \"switch\"\n          }, _ctx.inputAttributesComputed, toHandlers(_ctx.keyboardFocusListeners, true), {\n            onFocus: _cache[0] || (_cache[0] = (...args) => _ctx.onFocus && _ctx.onFocus(...args)),\n            onBlur: _cache[1] || (_cache[1] = (...args) => _ctx.onBlur && _ctx.onBlur(...args)),\n            onKeypress: _cache[2] || (_cache[2] = withKeys((...args) => _ctx.onEnterKeyPress && _ctx.onEnterKeyPress(...args), [\"enter\"])),\n            onChange: _cache[3] || (_cache[3] = (...args) => _ctx.toggleSelection && _ctx.toggleSelection(...args))\n          }), null, 16),\n          createElementVNode(\"div\", {\n            class: \"va-switch__track\",\n            \"aria-hidden\": \"true\",\n            style: normalizeStyle(_ctx.trackStyle)\n          }, [\n            _ctx.computedInnerLabel || _ctx.$slots.innerLabel ? (openBlock(), createElementBlock(\"div\", {\n              key: 0,\n              class: \"va-switch__track-label\",\n              style: normalizeStyle(_ctx.trackLabelStyle)\n            }, [\n              renderSlot(_ctx.$slots, \"innerLabel\", {}, () => [\n                createTextVNode(toDisplayString(_ctx.computedInnerLabel), 1)\n              ])\n            ], 4)) : createCommentVNode(\"\", true),\n            createElementVNode(\"div\", _hoisted_2, [\n              createElementVNode(\"div\", _hoisted_3, [\n                renderSlot(_ctx.$slots, \"checker\", normalizeProps(guardReactiveProps({ value: _ctx.isChecked })), () => [\n                  createElementVNode(\"div\", _hoisted_4, [\n                    _ctx.$props.loading ? (openBlock(), createBlock(_component_va_progress_circle, {\n                      key: 0,\n                      indeterminate: \"\",\n                      size: _ctx.progressCircleSize,\n                      color: _ctx.trackStyle.backgroundColor\n                    }, null, 8, [\"size\", \"color\"])) : createCommentVNode(\"\", true)\n                  ])\n                ])\n              ])\n            ])\n          ], 4)\n        ]),\n        _ctx.computedLabel || _ctx.$slots.default ? (openBlock(), createElementBlock(\"div\", {\n          key: 0,\n          ref: \"label\",\n          class: \"va-switch__label\",\n          style: normalizeStyle(_ctx.labelStyle),\n          id: _ctx.ariaLabelIdComputed,\n          onBlur: _cache[4] || (_cache[4] = (...args) => _ctx.onBlur && _ctx.onBlur(...args)),\n          onClick: _cache[5] || (_cache[5] = (...args) => _ctx.toggleSelection && _ctx.toggleSelection(...args)),\n          onKeydown: _cache[6] || (_cache[6] = withKeys(withModifiers((...args) => _ctx.toggleSelection && _ctx.toggleSelection(...args), [\"stop\"]), [\"enter\"]))\n        }, [\n          renderSlot(_ctx.$slots, \"default\", {}, () => [\n            createTextVNode(toDisplayString(_ctx.computedLabel), 1)\n          ])\n        ], 44, _hoisted_5)) : createCommentVNode(\"\", true)\n      ], 544)\n    ]),\n    _: 3\n  }, 8, [\"class\", \"style\", \"disabled\", \"success\", \"messages\", \"error\", \"error-messages\", \"error-count\"]);\n}\nconst _VaSwitch = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\nexport {\n  _VaSwitch as _\n};\n\nimport '../../../VaSwitch.css';\n//# sourceMappingURL=VaSwitch.js.map\n",
+      "start": 1709717418072,
+      "end": 1709717418187,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717418187,
+      "end": 1709717418187,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717418187,
+      "end": 1709717418187,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717418187,
+      "end": 1709717418187,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717418187,
+      "end": 1709717418187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717418188,
+      "end": 1709717418188,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717418188,
+      "end": 1709717418189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717418189,
+      "end": 1709717418189,
+      "order": "normal"
+    }
+  ]
+}

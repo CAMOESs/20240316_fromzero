@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-tree-view/components/VaTreeNode/VaTreeNode.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { T as TreeViewKey } from \"../../types.js\";\nimport { V as VaCheckbox } from \"../../../va-checkbox/index.js\";\nimport { u as useStrictInject } from \"../../../../composables/useStrictInject.js\";\nimport { V as VaIcon } from \"../../../va-icon/index.js\";\nimport { u as useBem } from \"../../../../composables/useBem.js\";\nconst INJECTION_ERROR_MESSAGE = \"The VaTreeNode component should be used in the context of VaTreeView component\";\nconst _sfc_main = defineComponent({\n  name: \"VaTreeNode\",\n  props: {\n    node: {\n      type: Object,\n      required: true\n    }\n  },\n  components: { VaCheckbox, VaIcon },\n  setup: (props) => {\n    const {\n      iconBy,\n      selectable,\n      expandNodeBy,\n      colorComputed,\n      selectedNodeComputed,\n      getText,\n      getTrackBy,\n      toggleNode,\n      toggleCheckbox,\n      getNodeProperty,\n      handleKeyboardNavigation\n    } = useStrictInject(TreeViewKey, INJECTION_ERROR_MESSAGE);\n    const labelComputed = computed(() => getText(props.node) || \"\");\n    const isExpandedComputed = computed(() => props.node.hasChildren ? !!props.node.expanded : void 0);\n    const iconComputed = computed(() => getNodeProperty(props.node, iconBy));\n    const roleComputed = computed(() => props.node.hasChildren ? \"group\" : \"treeitem\");\n    const treeNodeClassComputed = useBem(\"va-tree-node\", () => ({\n      disabled: Boolean(props.node.disabled),\n      checked: Boolean(props.node.checked),\n      hasChildren: Boolean(props.node.hasChildren),\n      [`level-${props.node.level}`]: true,\n      [`expand-by-${expandNodeBy}`]: true\n    }));\n    const expandedClassComputed = useBem(\"va-tree-node-children\", () => ({\n      expanded: !!isExpandedComputed.value\n    }));\n    const indentClassComputed = useBem(\"va-tree-node-content\", () => ({\n      indent: props.node.hasChildren === false\n    }));\n    const cursorClassComputed = useBem(\"va-tree-node-content\", () => ({\n      clickable: props.node.hasChildren === true && expandNodeBy === \"node\"\n    }));\n    const tabIndexComputed = computed(() => props.node.disabled ? -1 : 0);\n    const onNodeClick = (type) => {\n      const nodeType = expandNodeBy === \"node\" && type === \"leaf\" ? \"node\" : type;\n      if (expandNodeBy === nodeType) {\n        toggleNode(props.node);\n      }\n      selectedNodeComputed.value = props.node;\n    };\n    return {\n      selectable,\n      expandNodeBy,\n      getText,\n      getTrackBy,\n      toggleNode,\n      onNodeClick,\n      handleKeyboardNavigation,\n      toggleCheckbox,\n      roleComputed,\n      iconComputed,\n      labelComputed,\n      colorComputed,\n      tabIndexComputed,\n      indentClassComputed,\n      isExpandedComputed,\n      expandedClassComputed,\n      treeNodeClassComputed,\n      cursorClassComputed\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaTreeNode.css';\n//# sourceMappingURL=VaTreeNode.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717429462,
+      "end": 1709717429849,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717429849,
+      "end": 1709717429849,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717429849,
+      "end": 1709717429850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717429850,
+      "end": 1709717429850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717429850,
+      "end": 1709717429850,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717429850,
+      "end": 1709717429850,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717429850,
+      "end": 1709717429852,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717429855,
+      "end": 1709717429855,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717429855,
+      "end": 1709717429856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717429856,
+      "end": 1709717429856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717429856,
+      "end": 1709717429856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717429856,
+      "end": 1709717429856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717429856,
+      "end": 1709717429856,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717429856,
+      "end": 1709717429856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717429856,
+      "end": 1709717429856,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-data-table/VaDataTable.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed } from \"vue\";\nimport { p as pick, o as omit } from \"../../../vendor.js\";\nimport { u as useColumnsProps, a as useColumns } from \"./hooks/useColumns.js\";\nimport { u as usePaginatedRowsProps, a as usePaginatedRows } from \"./hooks/usePaginatedRows.js\";\nimport { u as useSelectableProps, a as useSelectableRow } from \"./hooks/useSelectableRow.js\";\nimport { u as useStylableProps, a as useStylable } from \"./hooks/useStylable.js\";\nimport { u as useBindingProps, a as useBinding } from \"./hooks/useBinding.js\";\nimport { u as useAnimationNameProps, a as useAnimationName } from \"./hooks/useAnimationName.js\";\nimport { u as useRowsProps, a as useRows } from \"./hooks/useRows.js\";\nimport { u as useFilterableProps, a as useFilterable } from \"./hooks/useFilterable.js\";\nimport { u as useSortableProps, a as useSortable } from \"./hooks/useSortable.js\";\nimport { u as useTableScrollProps, a as useTableScrollEmits, b as useTableScroll } from \"./hooks/useTableScroll.js\";\nimport { V as VaDataTableThRow } from \"./components/index.js\";\nimport { V as VaVirtualScroller } from \"../va-virtual-scroller/index.js\";\nimport { V as VaInnerLoading } from \"../va-inner-loading/index.js\";\nimport { V as VaCheckbox } from \"../va-checkbox/index.js\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.js\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.js\";\nimport { u as useThrottleProps } from \"../../composables/useThrottle.js\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.js\";\nimport { u as useTranslation } from \"../../composables/useTranslation.js\";\nconst VaVirtualScrollerProps = extractComponentProps(VaVirtualScroller, [\"items\", \"trackBy\", \"horizontal\", \"disabled\", \"table\"]);\nconst VaDataTableThRowProps = extractComponentProps(VaDataTableThRow);\nconst _sfc_main = defineComponent({\n  name: \"VaDataTable\",\n  components: {\n    VaDataTableThRow,\n    VaVirtualScroller,\n    VaInnerLoading,\n    VaCheckbox\n  },\n  inheritAttrs: false,\n  props: {\n    ...useComponentPresetProp,\n    ...VaVirtualScrollerProps,\n    ...useAnimationNameProps,\n    ...useBindingProps,\n    ...useTableScrollProps,\n    ...useSortableProps,\n    ...useStylableProps,\n    ...useColumnsProps,\n    ...useFilterableProps,\n    ...usePaginatedRowsProps,\n    ...useRowsProps,\n    ...useSelectableProps,\n    ...useThrottleProps,\n    ...pick(VaDataTableThRowProps, [\"ariaSelectAllRowsLabel\", \"ariaSortColumnByLabel\"]),\n    hoverable: { type: Boolean, default: false },\n    clickable: { type: Boolean, default: false },\n    loading: { type: Boolean, default: false },\n    loadingColor: { type: String, default: \"primary\" },\n    noDataHtml: { type: String, default: \"No items\" },\n    noDataFilteredHtml: { type: String, default: \"No items match the provided filtering condition\" },\n    hideDefaultHeader: { type: Boolean, default: false },\n    footerClone: { type: Boolean, default: false },\n    striped: { type: Boolean, default: false },\n    virtualScroller: { type: Boolean, default: false },\n    virtualTrackBy: { type: [String, Number], default: \"initialIndex\" },\n    grid: { type: Boolean, default: false },\n    gridColumns: { type: Number, default: 0 },\n    wrapperSize: { type: [Number, String], default: \"auto\" },\n    ariaSelectRowLabel: { type: String, default: \"$t:selectRowByIndex\" }\n  },\n  emits: [\n    \"update:modelValue\",\n    // `modelValue` is selectedItems\n    \"update:sortBy\",\n    \"update:sortingOrder\",\n    \"filtered\",\n    \"sorted\",\n    \"selectionChange\",\n    \"row:click\",\n    \"row:dblclick\",\n    \"row:contextmenu\",\n    \"columnSorted\",\n    ...useTableScrollEmits\n  ],\n  setup(props, { attrs, emit }) {\n    const { columnsComputed } = useColumns(props);\n    const { rowsComputed } = useRows(columnsComputed, props);\n    const { filteredRows } = useFilterable(rowsComputed, props, emit);\n    const {\n      sortBySync,\n      sortingOrderSync,\n      toggleSorting,\n      sortedRows,\n      sortingOrderIconName\n    } = useSortable(columnsComputed, filteredRows, props, emit);\n    const { paginatedRows } = usePaginatedRows(sortedRows, props);\n    const {\n      ctrlSelectRow,\n      shiftSelectRows,\n      toggleBulkSelection,\n      isRowSelected,\n      severalRowsSelected,\n      allRowsSelected,\n      toggleRowSelection\n    } = useSelectableRow(paginatedRows, props, emit);\n    const {\n      CSSVariables,\n      getCellCSSVariables,\n      getClass,\n      getStyle\n    } = useStylable(props);\n    const { getRowBind, getCellBind } = useBinding(props);\n    const animationName = useAnimationName(props, paginatedRows);\n    const showNoDataHtml = computed(() => props.items.length === 0);\n    const showNoDataFilteredHtml = computed(() => paginatedRows.value.length === 0);\n    const onRowClickHandler = (name, event, row) => {\n      emit(name, {\n        event,\n        item: row.source,\n        itemIndex: row.initialIndex,\n        row\n      });\n      if (props.selectable && props.grid) {\n        toggleRowSelection(row);\n      }\n    };\n    const computedTableAttributes = computed(() => ({\n      ...omit(attrs, [\"class\", \"style\"]),\n      class: pick(props, [\"striped\", \"selectable\", \"hoverable\", \"clickable\"])\n    }));\n    const filteredVirtualScrollerProps = filterComponentProps(VaVirtualScrollerProps);\n    const virtualScrollerPropsComputed = computed(() => ({\n      ...filteredVirtualScrollerProps.value,\n      items: paginatedRows.value,\n      trackBy: props.virtualTrackBy,\n      disabled: !props.virtualScroller,\n      table: true\n    }));\n    const computedAttributes = computed(() => ({\n      class: [\n        { \"va-data-table--sticky\": props.stickyHeader || props.stickyFooter },\n        { \"va-data-table--scroll\": !!props.height },\n        { \"va-data-table--virtual-scroller\": isVirtualScroll.value },\n        { \"va-data-table--grid\": props.grid },\n        attrs.class\n      ],\n      style: [attrs.style],\n      ...virtualScrollerPropsComputed.value\n    }));\n    const filteredThProps = filterComponentProps(VaDataTableThRowProps);\n    const thAttributesComputed = computed(() => ({\n      ...filteredThProps.value,\n      columns: columnsComputed.value,\n      sortingOrderIconName: sortingOrderIconName.value,\n      severalRowsSelected: severalRowsSelected.value,\n      sortingOrderSync: sortingOrderSync.value,\n      allRowsSelected: allRowsSelected.value,\n      sortBySync: sortBySync.value\n    }));\n    const {\n      scrollContainer,\n      topTrigger,\n      bottomTrigger,\n      doRenderTopTrigger,\n      doRenderBottomTrigger\n    } = useTableScroll(props, emit);\n    const isVirtualScroll = computed(() => props.virtualScroller && !props.grid);\n    const gridColumnsCount = computed(() => props.gridColumns || \"var(--va-data-table-grid-tbody-columns)\");\n    return {\n      ...useTranslation(),\n      scrollContainer,\n      topTrigger,\n      bottomTrigger,\n      columnsComputed,\n      ctrlSelectRow,\n      shiftSelectRows,\n      toggleBulkSelection,\n      isRowSelected,\n      toggleSorting,\n      CSSVariables,\n      getCellCSSVariables,\n      getClass,\n      getStyle,\n      thAttributesComputed,\n      showNoDataHtml,\n      showNoDataFilteredHtml,\n      onRowClickHandler,\n      computedAttributes,\n      computedTableAttributes,\n      animationName,\n      getRowBind,\n      getCellBind,\n      doRenderTopTrigger,\n      doRenderBottomTrigger,\n      isVirtualScroll,\n      gridColumnsCount\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../VaDataTable.css';\n//# sourceMappingURL=VaDataTable.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717422084,
+      "end": 1709717422345,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717422345,
+      "end": 1709717422345,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717422345,
+      "end": 1709717422345,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717422345,
+      "end": 1709717422345,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717422345,
+      "end": 1709717422345,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717422345,
+      "end": 1709717422345,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717422346,
+      "end": 1709717422346,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717422346,
+      "end": 1709717422348,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717422348,
+      "end": 1709717422348,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717422348,
+      "end": 1709717422348,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717422349,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717422350,
+      "end": 1709717422350,
+      "order": "normal"
+    }
+  ]
+}

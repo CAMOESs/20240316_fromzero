@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-select/components/VaSelectOptionList/VaSelectOptionList.vue_vue_type_script_lang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, computed, ref, watch } from \"vue\";\nimport { p as pick } from \"../../../../../vendor.js\";\nimport { s as scrollToElement } from \"../../../../utils/scroll-to-element.js\";\nimport { V as VaVirtualScroller } from \"../../../va-virtual-scroller/index.js\";\nimport { V as VaSelectOption } from \"../VaSelectOption/index.js\";\nimport { i as isNilValue } from \"../../../../utils/isNilValue.js\";\nimport { u as unwrapEl } from \"../../../../utils/unwrapEl.js\";\nimport { u as useObjectRefs } from \"../../../../composables/useObjectRefs.js\";\nimport { a as useColorProps } from \"../../../../composables/useColors.js\";\nimport { u as useComponentPresetProp } from \"../../../../composables/useComponentPreset.js\";\nimport { u as useSelectableListProps, a as useSelectableList } from \"../../../../composables/useSelectableList.js\";\nimport { u as useThrottleProps, a as useThrottleValue } from \"../../../../composables/useThrottle.js\";\nconst _sfc_main = defineComponent({\n  name: \"VaSelectOptionList\",\n  components: { VaVirtualScroller, VaSelectOption },\n  emits: [\n    \"select-option\",\n    \"update:hoveredOption\",\n    \"no-previous-option-to-hover\",\n    \"scroll-bottom\"\n  ],\n  props: {\n    ...useColorProps,\n    ...useComponentPresetProp,\n    ...useSelectableListProps,\n    ...useThrottleProps,\n    noOptionsText: { type: String, default: \"Items not found\" },\n    getSelectedState: { type: Function, required: true },\n    multiple: { type: Boolean, default: false },\n    search: { type: String, default: \"\" },\n    tabindex: { type: [String, Number], default: 0 },\n    hoveredOption: { type: [String, Number, Boolean, Object], default: null },\n    virtualScroller: { type: Boolean, default: true },\n    highlightMatchedText: { type: Boolean, default: true },\n    minSearchChars: { type: Number, default: 0 },\n    autoSelectFirstOption: { type: Boolean, default: false },\n    selectedTopShown: { type: Boolean, default: false }\n  },\n  setup(props, { emit }) {\n    const root = shallowRef();\n    const focus = () => {\n      var _a;\n      (_a = root.value) == null ? void 0 : _a.focus({ preventScroll: true });\n    };\n    const rootHeight = computed(() => {\n      var _a;\n      return ((_a = root.value) == null ? void 0 : _a.clientHeight) ?? 200;\n    });\n    const handleScrollToBottom = () => emit(\"scroll-bottom\");\n    const onScroll = (event) => {\n      const target = event.target;\n      if (!target) {\n        return;\n      }\n      if (target.scrollTop + target.clientHeight === target.scrollHeight) {\n        handleScrollToBottom();\n      }\n    };\n    const lastInteractionSource = ref(\"\");\n    const currentOptionComputed = computed(() => props.hoveredOption ?? null);\n    const updateCurrentOption = (option, source) => {\n      emit(\"update:hoveredOption\", option);\n      lastInteractionSource.value = source;\n    };\n    const { getText, getGroupBy, getTrackBy, getDisabled } = useSelectableList(props);\n    const currentSelectedOptionText = computed(() => {\n      var _a;\n      const selected = (_a = props.options) == null ? void 0 : _a.find((option) => props.getSelectedState(option));\n      return selected ? getText(selected) : \"\";\n    });\n    const isSearchedOptionSelected = computed(() => {\n      var _a;\n      return currentSelectedOptionText.value.toLowerCase() === ((_a = props.search) == null ? void 0 : _a.toLowerCase());\n    });\n    const filteredOptions = computed(() => {\n      if (!props.search || props.search.length < props.minSearchChars || isSearchedOptionSelected.value) {\n        return props.options;\n      }\n      return props.options.filter((option) => {\n        const optionText = getText(option).toUpperCase();\n        const search = props.search.toUpperCase();\n        return optionText.includes(search);\n      });\n    });\n    const optionGroups = computed(() => filteredOptions.value.reduce((groups, option) => {\n      const groupBy = getGroupBy(option);\n      if (!groupBy) {\n        groups._noGroup.push(option);\n      } else {\n        if (!groups[groupBy]) {\n          groups[groupBy] = [];\n        }\n        groups[groupBy].push(option);\n      }\n      return groups;\n    }, { _noGroup: [] }));\n    const optionGroupsThrottled = useThrottleValue(optionGroups, props);\n    const isValueExists = (value) => !isNilValue(value);\n    const updateHoveredOption = (option) => {\n      if (option === currentOptionComputed.value || isValueExists(option) && getDisabled(option)) {\n        return;\n      }\n      updateCurrentOption(option ?? null, \"mouse\");\n    };\n    const updateFocusedOption = (option) => {\n      updateCurrentOption(option ?? null, \"keyboard\");\n    };\n    const selectHoveredOption = () => {\n      const previousOption = previousOptionComputed.value && typeof previousOptionComputed.value === \"object\" ? { ...previousOptionComputed.value } : previousOptionComputed.value;\n      emit(\"select-option\");\n      if (props.selectedTopShown) {\n        updateHoveredOption(previousOption);\n      }\n    };\n    const groupedOptions = computed(() => Object.values(optionGroupsThrottled.value).flat());\n    const currentOptions = computed(() => filteredOptions.value.some((el) => getGroupBy(el)) ? groupedOptions.value : filteredOptions.value);\n    const currentOptionIndex = computed(() => currentOptions.value.findIndex((option) => {\n      return isValueExists(currentOptionComputed.value) && getTrackBy(option) === getTrackBy(currentOptionComputed.value);\n    }));\n    const selectOptionProps = computed(() => ({\n      ...pick(props, [\"getSelectedState\", \"color\", \"search\", \"highlightMatchedText\", \"minSearchChars\"]),\n      getText,\n      getTrackBy\n    }));\n    const findNextActiveOption = (startSearchIndex, reversedSearch = false) => {\n      const searchBase = [...currentOptions.value || []];\n      const searchBaseOrdered = reversedSearch ? searchBase.reverse() : searchBase;\n      const startIndex = reversedSearch ? startSearchIndex * -1 - 1 : startSearchIndex;\n      return searchBaseOrdered.slice(startIndex).find((option) => !getDisabled(option));\n    };\n    const previousOptionComputed = computed(() => {\n      const previousOptionIndex = currentOptionIndex.value - 1;\n      const previousOption = currentOptions.value[previousOptionIndex];\n      const previousOptionCheck = isValueExists(previousOption) && !(previousOptionIndex === 0 && getDisabled(previousOption));\n      if (previousOptionCheck) {\n        return findNextActiveOption(currentOptionIndex.value - 1, true);\n      }\n      return void 0;\n    });\n    const selectOption = (option) => {\n      updateHoveredOption(option);\n      emit(\"select-option\");\n    };\n    const handleMouseMove = (option) => {\n      if (!props.selectedTopShown) {\n        updateHoveredOption(option);\n      }\n    };\n    const handleMouseEnter = (option) => {\n      if (props.selectedTopShown) {\n        updateHoveredOption(option);\n      }\n    };\n    const focusPreviousOption = () => {\n      if (!isValueExists(currentOptionComputed.value)) {\n        updateFocusedOption(findNextActiveOption(0, true));\n        return;\n      }\n      if (isValueExists(previousOptionComputed.value)) {\n        updateFocusedOption(previousOptionComputed.value);\n      } else {\n        emit(\"no-previous-option-to-hover\");\n      }\n    };\n    const focusNextOption = () => {\n      if (!isValueExists(currentOptionComputed.value)) {\n        focusFirstOption();\n        return;\n      }\n      const nextOptionIndex = currentOptionIndex.value + 1;\n      const nextOption = currentOptions.value[nextOptionIndex];\n      const nextOptionCheck = isValueExists(nextOption) && !(nextOptionIndex === currentOptions.value.length - 1 && getDisabled(nextOption));\n      if (nextOptionCheck) {\n        updateFocusedOption(findNextActiveOption(currentOptionIndex.value + 1));\n      }\n    };\n    const focusFirstOption = () => updateFocusedOption(findNextActiveOption(0));\n    const { itemRefs, setItemRef } = useObjectRefs();\n    const virtualScrollerRef = shallowRef();\n    const scrollToOption = (option) => {\n      var _a;\n      if (!isValueExists(option)) {\n        return;\n      }\n      const element = unwrapEl(itemRefs.value[getTrackBy(option)]);\n      if (element) {\n        scrollToElement(element);\n      }\n      if (props.virtualScroller) {\n        (_a = virtualScrollerRef.value) == null ? void 0 : _a[0].virtualScrollTo(currentOptionIndex.value);\n      }\n    };\n    watch(() => props.hoveredOption, (newOption) => {\n      (!lastInteractionSource.value || lastInteractionSource.value === \"keyboard\") && isValueExists(newOption) && scrollToOption(newOption);\n    });\n    watch(filteredOptions, () => {\n      if (!props.autoSelectFirstOption) {\n        return;\n      }\n      focusFirstOption();\n    }, { immediate: true });\n    return {\n      root,\n      virtualScrollerRef,\n      rootHeight,\n      optionGroups: optionGroupsThrottled,\n      filteredOptions,\n      selectOptionProps,\n      currentOptionComputed,\n      onScroll,\n      getTrackBy,\n      setItemRef,\n      getDisabled,\n      selectHoveredOption,\n      handleMouseMove,\n      handleMouseEnter,\n      updateHoveredOption,\n      handleScrollToBottom,\n      selectOption,\n      focusPreviousOption,\n      focusNextOption,\n      focusFirstOption,\n      scrollToOption,\n      focus\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n\nimport '../../../../../VaSelectOptionList.css';\n//# sourceMappingURL=VaSelectOptionList.vue_vue_type_script_lang.js.map\n",
+      "start": 1709717423090,
+      "end": 1709717423209,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717423209,
+      "end": 1709717423209,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717423209,
+      "end": 1709717423209,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717423209,
+      "end": 1709717423209,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717423209,
+      "end": 1709717423209,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717423209,
+      "end": 1709717423209,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717423210,
+      "end": 1709717423210,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717423210,
+      "end": 1709717423211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717423211,
+      "end": 1709717423211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717423211,
+      "end": 1709717423212,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717423212,
+      "end": 1709717423212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717423212,
+      "end": 1709717423212,
+      "order": "normal"
+    }
+  ]
+}

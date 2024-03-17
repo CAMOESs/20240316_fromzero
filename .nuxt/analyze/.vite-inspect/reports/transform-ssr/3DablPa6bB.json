@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/services/config-transport/createProxyComponent.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { getCurrentInstance, computed, shallowReadonly, normalizeClass, normalizeStyle } from \"vue\";\nimport { u as useComponentConfigProps } from \"../component-config/utils/use-component-config-props.mjs\";\nimport { o as omit } from \"../../../vendor.mjs\";\nconst toCamelCase = (str) => str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());\nconst findCamelCased = (obj, key) => {\n  const found = Object.keys(obj).find((k) => toCamelCase(k) === key);\n  return found && obj[found];\n};\nconst createPropsWithCustomConfig = (instance, propsFromConfig) => {\n  const instanceProps = instance.props;\n  return new Proxy(instanceProps, {\n    get: (target, key) => {\n      var _a;\n      if (typeof key !== \"string\") {\n        return target[key];\n      }\n      const incomingProps = instance.vnode.props || {};\n      const originalProp = target[key];\n      const propFromConfig = (_a = propsFromConfig.value) == null ? void 0 : _a[key];\n      const incomingProp = findCamelCased(incomingProps, key);\n      if (incomingProp !== void 0) {\n        return originalProp;\n      }\n      if (propFromConfig !== void 0) {\n        return propFromConfig;\n      }\n      return originalProp;\n    }\n  });\n};\nconst createAttrsWithCustomConfig = (instance, propsFromConfig) => {\n  const instanceAttrs = instance.attrs;\n  return new Proxy(instanceAttrs, {\n    get: (target, key) => {\n      var _a;\n      if (typeof key !== \"string\") {\n        return target[key];\n      }\n      if (key === \"class\") {\n        return (normalizeClass(propsFromConfig.value.class) + \" \" + instanceAttrs.class).trim();\n      }\n      if (key === \"style\") {\n        return normalizeStyle([propsFromConfig.value.style, instanceAttrs.style]);\n      }\n      const attrFromConfig = (_a = propsFromConfig.value) == null ? void 0 : _a[key];\n      if (attrFromConfig !== void 0) {\n        return attrFromConfig;\n      }\n      return target[key];\n    },\n    ownKeys(target) {\n      return [.../* @__PURE__ */ new Set([...Object.keys(instanceAttrs), ...Object.keys(propsFromConfig.value)])];\n    },\n    getOwnPropertyDescriptor(target, key) {\n      return Reflect.getOwnPropertyDescriptor(propsFromConfig.value, key) ?? Reflect.getOwnPropertyDescriptor(instanceAttrs, key);\n    }\n  });\n};\nconst createProxyComponent = (component) => {\n  const customSetup = (originalProps, ctx) => {\n    var _a;\n    const instance = getCurrentInstance();\n    const propsFromConfig = useComponentConfigProps(component, originalProps);\n    const attrsFromConfig = computed(() => {\n      return omit(propsFromConfig.value, Object.keys(originalProps));\n    });\n    const props = createPropsWithCustomConfig(instance, propsFromConfig);\n    const attrs = createAttrsWithCustomConfig(instance, attrsFromConfig);\n    instance.props = props;\n    instance.attrs = attrs;\n    return (_a = component.setup) == null ? void 0 : _a.call(component, shallowReadonly(props), {\n      ...ctx,\n      attrs\n    });\n  };\n  return new Proxy(component, {\n    get(target, key) {\n      if (key === \"setup\") {\n        return customSetup;\n      }\n      return target[key];\n    }\n  });\n};\nexport {\n  createProxyComponent as c\n};\n//# sourceMappingURL=createProxyComponent.mjs.map\n",
+      "start": 1709717506413,
+      "end": 1709717506638,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506638,
+      "end": 1709717506638,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717506638,
+      "end": 1709717506638,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506638,
+      "end": 1709717506638,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717506638,
+      "end": 1709717506638,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717506638,
+      "end": 1709717506638,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717506638,
+      "end": 1709717506638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717506646,
+      "end": 1709717506646,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717506646,
+      "end": 1709717506646,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717506646,
+      "end": 1709717506646,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717506646,
+      "end": 1709717506646,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717506647,
+      "end": 1709717506647,
+      "order": "normal"
+    }
+  ]
+}

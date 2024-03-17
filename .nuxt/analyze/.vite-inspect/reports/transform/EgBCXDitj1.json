@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/composables/useSize.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, getCurrentInstance } from \"vue\";\nimport { u as useGlobalConfig } from \"./useGlobalConfig.js\";\nconst sizesConfig = {\n  defaultSize: 48,\n  sizes: {\n    small: 32,\n    medium: 48,\n    large: 64\n  }\n};\nconst fontSizesConfig = {\n  defaultSize: 1,\n  sizes: {\n    small: 0.75,\n    medium: 1,\n    large: 1.25\n  }\n};\nconst useSizeProps = {\n  size: {\n    type: [String, Number],\n    default: \"\",\n    validator: (size) => {\n      return typeof size === \"string\" || typeof size === \"number\";\n    }\n  },\n  sizesConfig: {\n    type: Object,\n    default: () => sizesConfig\n  },\n  fontSizesConfig: {\n    type: Object,\n    default: () => fontSizesConfig\n  }\n};\nconst fontRegex = /(?<fontSize>\\d+)(?<extension>px|rem)/i;\nconst convertToRem = (px) => px / 16 - 0.5;\nconst useSize = (props, componentName = ((_a) => (_a = getCurrentInstance()) == null ? void 0 : _a.type.name)()) => {\n  const { getGlobalConfig } = useGlobalConfig();\n  const sizesConfigGlobal = computed(() => {\n    var _a2, _b;\n    return componentName ? (_b = (_a2 = getGlobalConfig().components) == null ? void 0 : _a2[componentName]) == null ? void 0 : _b.sizesConfig : void 0;\n  });\n  const sizeComputed = computed(() => {\n    var _a2, _b, _c;\n    const { defaultSize, sizes } = props.sizesConfig;\n    const defaultSizeGlobal = (_a2 = sizesConfigGlobal.value) == null ? void 0 : _a2.defaultSize;\n    if (!props.size) {\n      return `${defaultSize || defaultSizeGlobal}px`;\n    }\n    if (typeof props.size === \"string\") {\n      const sizeFromGlobalConfig = (_c = (_b = sizesConfigGlobal.value) == null ? void 0 : _b.sizes) == null ? void 0 : _c[props.size];\n      const sizeFromProps = sizes[props.size];\n      if (sizeFromProps) {\n        return `${sizeFromProps}px`;\n      }\n      if (sizeFromGlobalConfig) {\n        return `${sizeFromGlobalConfig}px`;\n      }\n      return props.size;\n    }\n    return `${props.size}px`;\n  });\n  const fontSizeInRem = computed(() => {\n    const { defaultSize, sizes } = props.fontSizesConfig;\n    if (!props.size) {\n      return defaultSize;\n    }\n    if (typeof props.size === \"string\") {\n      if (props.size in sizes) {\n        return sizes[props.size];\n      }\n      const fontSizeParsed = props.size.match(fontRegex);\n      if (!fontSizeParsed || !fontSizeParsed.groups) {\n        throw new Error(\"Size prop should be either valid string or number\");\n      }\n      const { extension, fontSize } = fontSizeParsed.groups;\n      return extension === \"rem\" ? +fontSize : convertToRem(+fontSize);\n    }\n    return convertToRem(props.size);\n  });\n  const fontSizeComputed = computed(() => `${fontSizeInRem.value}rem`);\n  return {\n    sizeComputed,\n    fontSizeComputed,\n    fontSizeInRem\n  };\n};\nexport {\n  useSize as a,\n  useSizeProps as u\n};\n//# sourceMappingURL=useSize.js.map\n",
+      "start": 1709717426879,
+      "end": 1709717427049,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427049,
+      "end": 1709717427049,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427049,
+      "end": 1709717427050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427050,
+      "end": 1709717427050,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Footer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n   <Suspense>\n  <div>\n  <!-- <v-row class=\"ma-0 pa-0\" > \n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(0, 104, 40)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(255, 190, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(235, 0, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n  </v-row>\n  <footer class=\"footers d-flex flex-column\">\n    <v-row class=\"d-flex flex-column ma-0 pa-0\">\n      <v-row justify=\"center\" class=\"mt-4 ma-0 pa-0\"  >\n        <img\n          src=\"/images/mestf_13.png\"\n          alt=\"#\"\n          style=\"\n            filter: contrast(0%) brightness(200%);\n            object-fit: contain;\n            height: 91px;\n            width: 300px;\n          \"\n        />\n      </v-row>\n\n      <div v-if=\"(accueilc && accueilc.statut=='Publié')\" align=\"center\" class=\"mb-16 pb-4 ml-4\">\n        <p class=\"p-small text-white\">\n         {{accueilc && accueilc.institution ? accueilc.institution :'EducMaster/Ministère des Enseignements Secondaire, Technique et de la Formation Professionnelle' }} \n        </p>\n        <p class=\"p-small text-white\" v-if=\"accueilc\">\n          Copyright © 2023 - Tous droits réservés. {{accueilc && accueilc.concepteur ? 'Plateforme réalisée par TICS MASTER SARL':'' }}  \n        </p>\n      </div>\n\n      <div v-if=\"(accueilc && accueilc.statut=='Brouillon')\"  align=\"center\" class=\"mb-16 pb-4 ml-4\">\n        <p class=\"p-small text-white\">\n          EducMaster/Ministère des Enseignements Secondaire, Technique et de la Formation Professionnelle \n        </p>\n        <p class=\"p-small text-white\">\n          Copyright © 2023 - Tous droits réservés.Plateforme réalisée par TICS MASTER SARL  \n        </p>\n      </div>\n    </v-row>\n  </footer> -->\n  <v-row class=\"ma-0 pa-0\">\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(0, 104, 40)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(255, 190, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(235, 0, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n  </v-row>\n</div>\n</Suspense>\n</template>\n<script>\nexport default {\n  name: \"TheFooter\",\n  props: {\n        accueilc:  Array()\n    }\n};\n</script>\n<style lang=\"scss\">\n.footers {\n  background-image: url(\"/binding_dark.png\");\n  background-color: #cccccc;\n  background-size: cover;\n  height: 300px;\n}\n</style>\n",
+      "start": 1709717497444,
+      "end": 1709717498139,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717498140,
+      "end": 1709717498140,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717498141,
+      "end": 1709717498141,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\nconst _sfc_main = {\n  name: \"TheFooter\",\n  props: {\n        accueilc:  Array()\n    }\n};\n\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSuspense as _ssrRenderSuspense } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_v_row = _resolveComponent(\"v-row\")\n  const _component_v_col = _resolveComponent(\"v-col\")\n\n  _ssrRenderSuspense(_push, {\n    default: () => {\n      _push(`<div>`)\n      _push(_ssrRenderComponent(_component_v_row, { class: \"ma-0 pa-0\" }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(_ssrRenderComponent(_component_v_col, {\n              cols: \"4\",\n              style: {\"background-color\":\"rgb(0, 104, 40)\"},\n              class: \"ma-0 pa-1\"\n            }, null, _parent, _scopeId))\n            _push(_ssrRenderComponent(_component_v_col, {\n              cols: \"4\",\n              style: {\"background-color\":\"rgb(255, 190, 0)\"},\n              class: \"ma-0 pa-1\"\n            }, null, _parent, _scopeId))\n            _push(_ssrRenderComponent(_component_v_col, {\n              cols: \"4\",\n              style: {\"background-color\":\"rgb(235, 0, 0)\"},\n              class: \"ma-0 pa-1\"\n            }, null, _parent, _scopeId))\n          } else {\n            return [\n              _createVNode(_component_v_col, {\n                cols: \"4\",\n                style: {\"background-color\":\"rgb(0, 104, 40)\"},\n                class: \"ma-0 pa-1\"\n              }),\n              _createVNode(_component_v_col, {\n                cols: \"4\",\n                style: {\"background-color\":\"rgb(255, 190, 0)\"},\n                class: \"ma-0 pa-1\"\n              }),\n              _createVNode(_component_v_col, {\n                cols: \"4\",\n                style: {\"background-color\":\"rgb(235, 0, 0)\"},\n                class: \"ma-0 pa-1\"\n              })\n            ]\n          }\n        }),\n        _: 1\n      }, _parent))\n      _push(`</div>`)\n    },\n    _: 1\n  })\n}\n\nimport \"/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Footer.vue?vue&type=style&index=0&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Accueil/Footer.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1709717498141,
+      "end": 1709717498158,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Footer.vue",
+        "names": [],
+        "sources": [
+          "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/components/Accueil/Footer.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n   <Suspense>\n  <div>\n  <!-- <v-row class=\"ma-0 pa-0\" > \n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(0, 104, 40)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(255, 190, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(235, 0, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n  </v-row>\n  <footer class=\"footers d-flex flex-column\">\n    <v-row class=\"d-flex flex-column ma-0 pa-0\">\n      <v-row justify=\"center\" class=\"mt-4 ma-0 pa-0\"  >\n        <img\n          src=\"/images/mestf_13.png\"\n          alt=\"#\"\n          style=\"\n            filter: contrast(0%) brightness(200%);\n            object-fit: contain;\n            height: 91px;\n            width: 300px;\n          \"\n        />\n      </v-row>\n\n      <div v-if=\"(accueilc && accueilc.statut=='Publié')\" align=\"center\" class=\"mb-16 pb-4 ml-4\">\n        <p class=\"p-small text-white\">\n         {{accueilc && accueilc.institution ? accueilc.institution :'EducMaster/Ministère des Enseignements Secondaire, Technique et de la Formation Professionnelle' }} \n        </p>\n        <p class=\"p-small text-white\" v-if=\"accueilc\">\n          Copyright © 2023 - Tous droits réservés. {{accueilc && accueilc.concepteur ? 'Plateforme réalisée par TICS MASTER SARL':'' }}  \n        </p>\n      </div>\n\n      <div v-if=\"(accueilc && accueilc.statut=='Brouillon')\"  align=\"center\" class=\"mb-16 pb-4 ml-4\">\n        <p class=\"p-small text-white\">\n          EducMaster/Ministère des Enseignements Secondaire, Technique et de la Formation Professionnelle \n        </p>\n        <p class=\"p-small text-white\">\n          Copyright © 2023 - Tous droits réservés.Plateforme réalisée par TICS MASTER SARL  \n        </p>\n      </div>\n    </v-row>\n  </footer> -->\n  <v-row class=\"ma-0 pa-0\">\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(0, 104, 40)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(255, 190, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n    <v-col\n      cols=\"4\"\n      style=\"background-color: rgb(235, 0, 0)\"\n      class=\"ma-0 pa-1\"\n    ></v-col>\n  </v-row>\n</div>\n</Suspense>\n</template>\n<script>\nexport default {\n  name: \"TheFooter\",\n  props: {\n        accueilc:  Array()\n    }\n};\n</script>\n<style lang=\"scss\">\n.footers {\n  background-image: url(\"/binding_dark.png\");\n  background-color: #cccccc;\n  background-size: cover;\n  height: 300px;\n}\n</style>\n"
+        ],
+        "mappings": ";AA2EA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACb,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACjB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;QACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACrB;AACJ,CAAC;;;;;;;;;;aA/EE,CAuEQ;;oDAlBF,KAAK,EAAC,WAAW;0BAAxB,CAgBQ;;;cAdJ,IAAI,EAAC,GAAG;cACR,KAAyC,EAAzC,sCAAyC;cACzC,KAAK,EAAC,WAAW;;;cAGjB,IAAI,EAAC,GAAG;cACR,KAA0C,EAA1C,uCAA0C;cAC1C,KAAK,EAAC,WAAW;;;cAGjB,IAAI,EAAC,GAAG;cACR,KAAwC,EAAxC,qCAAwC;cACxC,KAAK,EAAC,WAAW;;;;cAbnB,aAIS;gBAHP,IAAI,EAAC,GAAG;gBACR,KAAyC,EAAzC,sCAAyC;gBACzC,KAAK,EAAC,WAAW;;cAEnB,aAIS;gBAHP,IAAI,EAAC,GAAG;gBACR,KAA0C,EAA1C,uCAA0C;gBAC1C,KAAK,EAAC,WAAW;;cAEnB,aAIS;gBAHP,IAAI,EAAC,GAAG;gBACR,KAAwC,EAAxC,qCAAwC;gBACxC,KAAK,EAAC,WAAW"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717498159,
+      "end": 1709717498159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717498159,
+      "end": 1709717498159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717498159,
+      "end": 1709717498159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717498160,
+      "end": 1709717498160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717498160,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717498160,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717498163,
+      "end": 1709717498163,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717498163,
+      "end": 1709717498166,
+      "order": "normal"
+    }
+  ]
+}

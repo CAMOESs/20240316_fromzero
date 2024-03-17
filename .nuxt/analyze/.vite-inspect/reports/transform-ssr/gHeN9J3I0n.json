@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-counter/VaCounter.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, shallowRef, toRefs, computed, toRef } from \"vue\";\nimport { p as pick, o as omit } from \"../../../vendor.mjs\";\nimport { s as safeCSSLength } from \"../../utils/css.mjs\";\nimport { u as useCounterPropsValidation } from \"./hooks/useCounterPropsValidation.mjs\";\nimport { V as VaInputWrapper } from \"../va-input-wrapper/index.mjs\";\nimport { V as VaButton } from \"../va-button/index.mjs\";\nimport { a as useFocusEmits, u as useFocus } from \"../../composables/useFocus.mjs\";\nimport { u as useLongPress } from \"../../composables/useLongPress.mjs\";\nimport { e as extractComponentProps } from \"../../utils/component-options/extract-component-options.mjs\";\nimport { u as useFormFieldProps } from \"../../composables/useFormField.mjs\";\nimport { a as useStatefulProps, b as useStateful } from \"../../composables/useStateful.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { u as useClearableProps } from \"../../composables/useClearable.mjs\";\nimport { u as useValidationEmits, a as useValidation } from \"../../composables/useValidation.mjs\";\nimport { u as useTemplateRef } from \"../../composables/useTemplateRef.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nimport { f as filterComponentProps } from \"../../utils/component-options/filter-props.mjs\";\nimport { u as useEmitProxy } from \"../../composables/useEmitProxy.mjs\";\nconst { createEmits: createInputEmits, createListeners: createInputListeners } = useEmitProxy(\n  [\"change\"]\n);\nconst { createEmits: createFieldEmits, createListeners: createFieldListeners } = useEmitProxy([\n  { listen: \"click-prepend\", emit: \"click:decrease-button\" },\n  { listen: \"click-append\", emit: \"click:increase-button\" },\n  { listen: \"click-prepend-inner\", emit: \"click:decrease-icon\" },\n  { listen: \"click-append-inner\", emit: \"click:increase-icon\" }\n]);\nconst VaInputWrapperProps = extractComponentProps(VaInputWrapper);\nconst _sfc_main = defineComponent({\n  name: \"VaCounter\",\n  components: { VaInputWrapper, VaButton },\n  props: {\n    ...useFormFieldProps,\n    ...useStatefulProps,\n    ...useComponentPresetProp,\n    ...useClearableProps,\n    ...VaInputWrapperProps,\n    // input\n    modelValue: { type: [String, Number], default: 0 },\n    manualInput: { type: Boolean, default: false },\n    min: { type: Number, default: void 0 },\n    max: { type: Number, default: void 0 },\n    step: { type: Number, default: 1 },\n    color: { type: String, default: \"primary\" },\n    // icons & buttons\n    increaseIcon: { type: String, default: \"add\" },\n    decreaseIcon: { type: String, default: \"remove\" },\n    buttons: { type: Boolean, default: false },\n    flat: { type: Boolean, default: true },\n    rounded: { type: Boolean, default: false },\n    margins: { type: [String, Number], default: \"4px\" },\n    longPressDelay: { type: Number, default: 500 },\n    ariaLabel: { type: String, default: \"$t:counterValue\" },\n    ariaDecreaseLabel: { type: String, default: \"$t:decreaseCounter\" },\n    ariaIncreaseLabel: { type: String, default: \"$t:increaseCounter\" }\n  },\n  emits: [\n    \"update:modelValue\",\n    ...useValidationEmits,\n    ...createInputEmits(),\n    ...createFieldEmits(),\n    ...useFocusEmits\n  ],\n  inheritAttrs: false,\n  setup(props, { emit, attrs, slots }) {\n    const input = shallowRef();\n    const { min, max, step } = toRefs(props);\n    const {\n      isFocused,\n      focus,\n      blur\n    } = useFocus(input, emit);\n    const { valueComputed } = useStateful(props, emit);\n    const reset = () => withoutValidation(() => {\n      emit(\"update:modelValue\", props.clearValue);\n      emit(\"clear\");\n      resetValidation();\n    });\n    const {\n      computedError,\n      computedErrorMessages,\n      withoutValidation,\n      resetValidation\n    } = useValidation(props, emit, { reset, focus, value: valueComputed });\n    const setCountInput = ({ target }) => {\n      valueComputed.value = Number(target == null ? void 0 : target.value);\n    };\n    const setCountChange = ({ target }) => {\n      calculateCounterValue(Number(target == null ? void 0 : target.value));\n    };\n    const getRoundDownWithStep = (value) => {\n      if (typeof min.value === \"undefined\" || !step.value) {\n        return value;\n      }\n      return min.value + step.value * Math.floor((value - min.value) / step.value);\n    };\n    const calculateCounterValue = (counterValue) => {\n      if (typeof min.value !== \"undefined\" && counterValue < min.value) {\n        valueComputed.value = min.value;\n        return;\n      }\n      if (max.value && counterValue > max.value) {\n        valueComputed.value = getRoundDownWithStep(max.value);\n        return;\n      }\n      valueComputed.value = getRoundDownWithStep(counterValue);\n    };\n    const isMinReached = computed(() => {\n      if (typeof min.value === \"undefined\") {\n        return false;\n      }\n      return Number(valueComputed.value) <= min.value;\n    });\n    const isMaxReached = computed(() => {\n      if (typeof max.value === \"undefined\") {\n        return false;\n      }\n      return step.value ? Number(valueComputed.value) > max.value - step.value : Number(valueComputed.value) >= max.value;\n    });\n    const tabIndexComputed = computed(() => props.disabled ? -1 : 0);\n    const isDecreaseActionDisabled = computed(() => isMinReached.value || props.disabled);\n    const isIncreaseActionDisabled = computed(() => isMaxReached.value || props.disabled);\n    const decreaseCount = () => {\n      if (isDecreaseActionDisabled.value) {\n        return;\n      }\n      calculateCounterValue(Number(valueComputed.value) - step.value);\n    };\n    const increaseCount = () => {\n      if (isIncreaseActionDisabled.value) {\n        return;\n      }\n      calculateCounterValue(Number(valueComputed.value) + step.value);\n    };\n    useLongPress(useTemplateRef(\"decreaseButtonRef\"), {\n      onUpdate: decreaseCount,\n      delay: toRef(props, \"longPressDelay\")\n    });\n    useLongPress(useTemplateRef(\"increaseButtonRef\"), {\n      onUpdate: increaseCount,\n      delay: toRef(props, \"longPressDelay\")\n    });\n    const { getColor } = useColors();\n    const colorComputed = computed(() => getColor(props.color));\n    const decreaseIconProps = computed(() => ({\n      class: { \"va-counter__icon--inactive\": isDecreaseActionDisabled.value },\n      color: colorComputed.value,\n      icon: props.decreaseIcon,\n      plain: true,\n      disabled: isDecreaseActionDisabled.value,\n      readonly: props.readonly,\n      tabindex: -1,\n      \"aria-label\": tp(props.ariaDecreaseLabel),\n      ...!isDecreaseActionDisabled.value && { onClick: decreaseCount }\n    }));\n    const increaseIconProps = computed(() => ({\n      class: { \"va-counter__icon--inactive\": isIncreaseActionDisabled.value },\n      color: colorComputed.value,\n      icon: props.increaseIcon,\n      plain: true,\n      disabled: isIncreaseActionDisabled.value,\n      readonly: props.readonly,\n      tabindex: -1,\n      \"aria-label\": tp(props.ariaIncreaseLabel),\n      ...!isIncreaseActionDisabled.value && { onClick: increaseCount }\n    }));\n    const isSquareCorners = computed(() => (typeof props.margins === \"string\" ? parseFloat(props.margins) : props.margins) === 0);\n    const buttonsColor = () => {\n      if (isFocused.value) {\n        return props.color;\n      }\n      return \"background-border\";\n    };\n    const buttonProps = computed(() => ({\n      ...pick(props, [\"color\", \"textColor\"]),\n      round: props.rounded,\n      preset: props.flat ? \"secondary\" : \"\",\n      borderColor: props.flat ? buttonsColor() : \"\"\n    }));\n    const decreaseButtonProps = computed(() => ({\n      ...buttonProps.value,\n      icon: props.decreaseIcon,\n      disabled: isDecreaseActionDisabled.value,\n      \"aria-label\": tp(props.ariaDecreaseLabel),\n      ...!isDecreaseActionDisabled.value && { onClick: decreaseCount }\n    }));\n    const increaseButtonProps = computed(() => ({\n      ...buttonProps.value,\n      icon: props.increaseIcon,\n      disabled: isIncreaseActionDisabled.value,\n      \"aria-label\": tp(props.ariaIncreaseLabel),\n      ...!isIncreaseActionDisabled.value && { onClick: increaseCount }\n    }));\n    const { tp } = useTranslation();\n    const inputAttributesComputed = computed(() => ({\n      tabindex: tabIndexComputed.value,\n      \"aria-label\": tp(props.ariaLabel),\n      \"aria-valuemin\": min.value,\n      \"aria-valuemax\": max.value,\n      ...omit(attrs, [\"class\", \"style\"]),\n      ...pick(props, [\"disabled\", \"min\", \"max\", \"step\"]),\n      readonly: props.readonly || !props.manualInput\n    }));\n    const classComputed = computed(() => [\n      attrs.class,\n      { \"va-counter--input-square\": isSquareCorners.value },\n      { \"va-counter--content-slot\": slots.content && props.buttons }\n    ].filter(Boolean));\n    const styleComputed = computed(() => ({\n      ...attrs.style || {}\n    }));\n    const marginComputed = computed(() => safeCSSLength(props.margins));\n    useCounterPropsValidation(props);\n    return {\n      tp,\n      input,\n      valueComputed,\n      isFocused,\n      computedError,\n      computedErrorMessages,\n      fieldListeners: createFieldListeners(emit),\n      inputListeners: createInputListeners(emit),\n      inputWrapperPropsComputed: filterComponentProps(VaInputWrapperProps),\n      inputAttributesComputed,\n      setCountInput,\n      setCountChange,\n      decreaseCount,\n      increaseCount,\n      decreaseIconProps,\n      increaseIconProps,\n      decreaseButtonProps,\n      increaseButtonProps,\n      colorComputed,\n      classComputed,\n      styleComputed,\n      marginComputed,\n      focus,\n      blur\n    };\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaCounter.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717507135,
+      "end": 1709717507518,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717507518,
+      "end": 1709717507518,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507518,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507518,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717507519,
+      "end": 1709717507519,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/esm-node/src/components/va-breadcrumbs/VaBreadcrumbs.vue_vue_type_script_lang.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed, ref, h, Fragment } from \"vue\";\nimport { h as hasOwnProperty } from \"../../utils/has-own-property.mjs\";\nimport { r as resolveSlot } from \"../../utils/resolveSlot.mjs\";\nimport { u as useAlignProps, a as useAlign } from \"../../composables/useAlign.mjs\";\nimport { u as useComponentPresetProp } from \"../../composables/useComponentPreset.mjs\";\nimport { u as useColors } from \"../../composables/useColors.mjs\";\nimport { u as useTranslation } from \"../../composables/useTranslation.mjs\";\nconst _sfc_main = defineComponent({\n  name: \"VaBreadcrumbs\",\n  props: {\n    ...useAlignProps,\n    ...useComponentPresetProp,\n    separator: { type: String, default: \"/\" },\n    color: { type: String, default: null },\n    disabledColor: { type: String, default: \"secondary\" },\n    activeColor: { type: String, default: null },\n    separatorColor: { type: String, default: null },\n    ariaLabel: { type: String, default: \"$t:breadcrumbs\" }\n  },\n  setup(props, { slots }) {\n    const { alignComputed } = useAlign(props);\n    const { getColor } = useColors();\n    const computedThemesSeparatorColor = computed(() => {\n      return props.separatorColor ? getColor(props.separatorColor) : null;\n    });\n    const computedThemesColor = computed(() => props.color ? getColor(props.color) : null);\n    const computedThemesActiveColor = computed(() => {\n      return props.activeColor ? getColor(props.activeColor) : null;\n    });\n    const childNodeFilter = (result, node) => {\n      const nodes = node && node.type === Fragment && node.children ? node.children : [node];\n      return [\n        ...result,\n        ...nodes.filter((node2) => {\n          var _a, _b;\n          return !!((_b = (_a = node2 == null ? void 0 : node2.type) == null ? void 0 : _a.name) == null ? void 0 : _b.match(/VaBreadcrumbsItem$/));\n        })\n      ];\n    };\n    const createSeparatorComponent = () => {\n      const separatorNode = resolveSlot(slots.separator) || [props.separator];\n      return h(\"span\", {\n        \"aria-hidden\": true,\n        class: [\"va-breadcrumbs__separator\"],\n        style: [{ color: computedThemesSeparatorColor.value }]\n      }, separatorNode);\n    };\n    const isDisabledChild = (child) => {\n      const childPropData = child == null ? void 0 : child.props;\n      if (!childPropData || !hasOwnProperty(childPropData, \"disabled\")) {\n        return false;\n      }\n      if (childPropData.disabled === \"\") {\n        return true;\n      }\n      return Boolean(childPropData.disabled);\n    };\n    const isAllChildLinks = ref(true);\n    const getChildren = () => {\n      const defaultSlotContent = resolveSlot(slots.default);\n      if (!defaultSlotContent) {\n        return;\n      }\n      const childNodes = defaultSlotContent.reduce(childNodeFilter, []) || [];\n      const childNodesLength = childNodes.length;\n      const isLastIndexChildNodes = (index) => index === childNodesLength - 1;\n      const isChildLink = (child) => {\n        const childPropData = child == null ? void 0 : child.props;\n        if (!childPropData || !hasOwnProperty(childPropData, \"to\")) {\n          return false;\n        }\n        return !!(childPropData.to && !childPropData.disabled);\n      };\n      const createChildComponent = (child, index) => h(\n        \"span\",\n        {\n          class: [\"va-breadcrumbs__item\", { \"va-breadcrumbs__item--disabled\": isDisabledChild(child) }],\n          \"aria-current\": isLastIndexChildNodes(index) && isChildLink(child) ? \"location\" : false,\n          style: {\n            color: isDisabledChild(child) ? getColor(props.disabledColor) : isLastIndexChildNodes(index) ? computedThemesActiveColor.value : computedThemesColor.value\n          }\n        },\n        [child]\n      );\n      const children = [];\n      if (childNodesLength) {\n        childNodes.forEach((child, index) => {\n          if (isAllChildLinks.value && !isChildLink(child)) {\n            isAllChildLinks.value = false;\n          }\n          children.push(createChildComponent(child, index));\n          if (!isLastIndexChildNodes(index)) {\n            children.push(createSeparatorComponent());\n          }\n        });\n      }\n      return children;\n    };\n    const { tp } = useTranslation();\n    return () => h(\"div\", {\n      class: \"va-breadcrumbs\",\n      style: alignComputed.value,\n      role: isAllChildLinks.value ? \"navigation\" : void 0,\n      \"aria-label\": isAllChildLinks.value ? tp(props.ariaLabel) : void 0\n    }, getChildren());\n  }\n});\nexport {\n  _sfc_main as _\n};\n//# sourceMappingURL=VaBreadcrumbs.vue_vue_type_script_lang.mjs.map\n",
+      "start": 1709717501097,
+      "end": 1709717501525,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717501525,
+      "end": 1709717501525,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717501526,
+      "end": 1709717501526,
+      "order": "normal"
+    }
+  ]
+}

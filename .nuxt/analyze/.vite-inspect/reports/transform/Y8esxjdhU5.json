@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/mnt/1c4c2374-6f70-425b-ab4c-d1db6332863a/carlos/project/2024/CQM/node_modules/vuestic-ui/dist/es/src/components/va-alert/useAlertStyles.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, toRef } from \"vue\";\nimport { u as useElementTextColor } from \"../../composables/useElementTextColor.js\";\nimport { u as useElementBackground } from \"../../composables/useElementBackground.js\";\nimport { u as useCurrentElement } from \"../../composables/useCurrentElement.js\";\nimport { u as useColors } from \"../../composables/useColors.js\";\nimport { u as useTextColor } from \"../../composables/useTextColor.js\";\nconst useAlertStyles = (props) => {\n  const { getColor } = useColors();\n  const isTransparentBackground = computed(() => Boolean(props.outline || props.border));\n  const { textColorComputed } = useTextColor(toRef(props, \"color\"), isTransparentBackground);\n  const colorComputed = computed(() => getColor(props.color));\n  const alertStyle = computed(() => {\n    let background = colorComputed.value;\n    let boxShadow = \"none\";\n    if (props.outline) {\n      background = \"transparent\";\n    }\n    if (props.border) {\n      background = \"var(--va-background-primary)\";\n      boxShadow = \"var(--va-alert-box-shadow)\";\n    }\n    return {\n      border: props.outline ? `1px solid ${colorComputed.value}` : \"\",\n      padding: props.dense ? \"var(--va-alert-padding-y-dense) var(--va-alert-padding-x)\" : \"\",\n      backgroundColor: background,\n      boxShadow\n    };\n  });\n  const currentColor = useElementTextColor(useElementBackground(useCurrentElement()));\n  const contentStyle = computed(() => {\n    return {\n      alignItems: props.center ? \"center\" : \"\",\n      color: props.border || props.outline ? currentColor.value : textColorComputed.value\n    };\n  });\n  const titleStyle = computed(() => {\n    return { color: textColorComputed.value };\n  });\n  const borderStyle = computed(() => ({\n    backgroundColor: props.borderColor ? getColor(props.borderColor) : colorComputed.value\n  }));\n  return {\n    alertStyle,\n    contentStyle,\n    titleStyle,\n    borderStyle\n  };\n};\nexport {\n  useAlertStyles as u\n};\n//# sourceMappingURL=useAlertStyles.js.map\n",
+      "start": 1709717427049,
+      "end": 1709717427203,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709717427203,
+      "end": 1709717427203,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709717427203,
+      "end": 1709717427204,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709717427204,
+      "end": 1709717427204,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709717427204,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709717427205,
+      "end": 1709717427205,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709717427205,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709717427206,
+      "end": 1709717427206,
+      "order": "normal"
+    }
+  ]
+}
